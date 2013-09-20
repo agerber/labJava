@@ -1,0 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Lecture-2 covers chapters 5-7 from Big Java: Late Objects
+
+Chapter 5: Methods
+Chapter 6: Arrays and ArrayLists
+Chapter 7: Input/Output and Exception Handling
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

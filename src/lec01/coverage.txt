@@ -1,0 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Lecture-1 covers chapters 1-4 from Big Java: Late Objects
+
+Chapter 1: Inroduction
+Chapter 2: Fundamental Data Types
+Chapter 3: Decisions
+Chapter 4: Loops
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

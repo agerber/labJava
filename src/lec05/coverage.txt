@@ -1,0 +1,8 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Lecture-5 covers chapters 10-11 from Big Java: Late Objects
+
+Chapter 10: Graphical User Interfaces
+Chapter 11: Advanced User Interfaces
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
