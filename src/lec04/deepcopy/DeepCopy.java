@@ -1,6 +1,6 @@
 package lec04.deepcopy;
-import edu.uchicago.cs.java.lec04.realestate.Asciify;
-import edu.uchicago.cs.java.lec04.realestate.House;
+import lec04.realestate.Asciify;
+import lec04.realestate.House;
 
 
 public class DeepCopy {

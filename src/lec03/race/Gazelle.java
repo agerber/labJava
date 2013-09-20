@@ -1,6 +1,6 @@
 package lec03.race;
 
-import edu.uchicago.cs.java.lec03.boxing.Animal;
+import lec03.boxing.Animal;
 
 public class Gazelle extends Animal implements Raceable {
 

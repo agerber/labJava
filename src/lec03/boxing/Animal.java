@@ -1,6 +1,6 @@
 package lec03.boxing;
 
-import edu.uchicago.cs.java.lec03.ascii.Asciify;
+import lec03.ascii.Asciify;
 
 
 public abstract class Animal {

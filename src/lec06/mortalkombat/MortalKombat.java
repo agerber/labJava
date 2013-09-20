@@ -49,7 +49,7 @@ import javax.swing.Timer;
 
 import javax.swing.SwingConstants;
 
-import edu.uchicago.cs.java.lec06.blackjack.Card;
+
 
 public class MortalKombat {
 	//the dimension of the image panel

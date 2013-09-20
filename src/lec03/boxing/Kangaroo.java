@@ -1,6 +1,6 @@
 package lec03.boxing;
 
-import edu.uchicago.cs.java.lec03.race.Raceable;
+import lec03.race.Raceable;
 
 
 public class Kangaroo extends Animal implements Raceable, Boxable {

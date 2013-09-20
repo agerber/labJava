@@ -1,6 +1,6 @@
 package lec03.poster;
 
-import edu.uchicago.cs.java.lec03.boxing.Animal;
+import lec03.boxing.Animal;
 
 
 //this is not abstract

@@ -1,7 +1,7 @@
 package lec03.race;
 
-import edu.uchicago.cs.java.lec03.boxing.Human;
-import edu.uchicago.cs.java.lec03.boxing.Kangaroo;
+import lec03.boxing.Human;
+import lec03.boxing.Kangaroo;
 
 public class SprintRace {
 

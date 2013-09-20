@@ -1,6 +1,6 @@
 package lec03.poster;
 
-import edu.uchicago.cs.java.lec03.ascii.Asciify;
+import lec03.ascii.Asciify;
 
 
 public class Banner {
