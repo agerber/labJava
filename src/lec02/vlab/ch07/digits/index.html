@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Java for Everyone Screencast</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
+  <link href="../Slidy/slidy.css" rel="stylesheet" type="text/css" />
+  <link href="../styles.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" charset="utf-8"
+          src="../Slidy/slidy.js">
+  </script>
+</head>
+
+<body>
+
+<div class="slide"><div class="title"><div class="cell">
+Java for Everyone
+<br/>
+Screencast
+<br/>
+<img src="../jfe-cover.png"/>
+</div></div></div>
+<div class="slide"><div class="title"><div class="cell">
+Detecting Accounting Fraud
+<br/>
+<img src="numbers.png"/>
+</div></div></div>
+<div class="slide"><div class="title"><div class="cell">
+Understand the Problem
+</div></div></div>
+
+<div class="slide"><ul>
+<li>Given: A large data set such as <a href="
+https://www.cia.gov/library/publications/the-world-factbook/rankorder/2119rank.html">population</a> or <a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html">gross domestic product</a> by country</li>
+<li>Look at distribution of digits</li>
+<li>Shouldn't each digit be equally probable?</li>
+<li>The <em>first</em> digit is not equally distributed (<a href="http://mathworld.wolfram.com/BenfordsLaw.html">Benford's Law</a>)
+<li>Task: Print frequencies of 1, 2, 3, ..., 9 as first digit</li>
+</li></ul></div>
+
+<div class="slide"><ul>
+<li>Numeric data from various sources from the web</li>
+<li>Web pages pasted into text files</li>
+<li>Numbers are mixed with text</li>
+<li>Numbers can have commas (16,249.95)</li>
+<li>Convert any sequence of 0-9 . , to a number</li>
+<li>May fail; for example 130.65.86.66</li>
+<li>Ignore numbers < 1</li>
+</ul></div></div>
+
+<div class="slide"><div class="title"><div class="cell">
+Design an Algorithm
+</div></div></div>
+
+<div class="slide"><div class="marker">
+<pre>Ask the user for the file name
+Construct a scanner for reading from the file
+Read all numbers from the scanner
+Get the digit distribution for the numbers
+Print the distribution
+</pre></div></div>
+
+<div class="slide"><div class="marker"><pre><b>Read all numbers from a scanner</b>
+Set as scanner delimiter anything but digits . ,  
+Set values to an empty ArrayList&lt;Double&gt;
+For each word from the scanner
+   Remove commas
+   Try 
+      Convert the word to a floating-point number
+      Add the number to values
+   Catch NumberFormatException
+      Ignore this word
+Return values</pre></div></div>
+
+<div class="slide"><div class="marker">
+<pre><b>Get the digit distribution for a collection of numbers</b>
+Construct an array of ten counters. (Index 0 is unused)
+For each number
+   If the number is >= 1
+      Get the first digit
+      Increment counters[digit]
+Return counters
+</pre></div></div>
+
+<div class="slide"><div class="title"><div class="cell">
+Write the Program
+</div></div></div>
+
+<div class="slide"><div class="title"><div class="cell">
+Test the Program
+</div></div></div>
+
+</body>
+</html>

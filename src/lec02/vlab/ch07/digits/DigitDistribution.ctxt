@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=in
+comment0.target=java.util.ArrayList\ getNumbers(java.util.Scanner)
+comment0.text=\n\ \ \ \ \ \ Reads\ all\ numbers\ in\ the\ input.\n\ \ \ \ \ \ @param\ in\ a\ scanner\n\ \ \ \ \ \ @return\ an\ array\ list\ of\ all\ numbers\ in\ the\ input\n
+comment1.params=values
+comment1.target=int[]\ getFirstDigitCounts(java.util.ArrayList)
+comment1.text=\n\ \ \ \ \ \ Gets\ the\ counts\ of\ the\ first\ non-zero\ digits\ in\ a\ list\ of\ numbers\n\ \ \ \ \ \ @param\ values\ a\ list\ of\ numbers\n\ \ \ \ \ \ @param\ an\ array\ of\ counts\ whose\ ith\ element\ is\ the\ \n\ \ \ \ \ \ count\ of\ values\ starting\ with\ the\ digit\ i\n
+comment2.params=args
+comment2.target=void\ main([Ljava.lang.String;)
+numComments=3

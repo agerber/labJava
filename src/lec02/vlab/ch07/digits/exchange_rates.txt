@@ -1,0 +1,49 @@
+  Argentine Peso         4.02532         0.248427 
+  Australian Dollar      1.17927         0.847982 
+  Botswana Pula          7.12758         0.1403 
+  Brazilian Real         1.80061         0.555367 
+  British Pound          0.683846        1.46232 
+  Brunei dollar          1.4046          0.711946 
+  Bulgarian Lev          1.61276         0.620055 
+  Canadian Dollar        1.03084         0.970083 
+  Chilean Peso           537.337         0.00186103 
+  Chinese Yuan           6.83228         0.146364 
+  Colombian Peso         1924.21         0.000519694 
+  Croatian Kuna          5.9638          0.167678 
+  Danish Krone           6.13433         0.163017 
+  Estonian Kroon         12.9023         0.0775056 
+  Euro                   0.824606        1.2127 
+  Hong Kong Dollar       7.79368         0.128309 
+  Hungarian Forint       230.56          0.00433727 
+  Iceland Krona          130.155         0.00768315 
+  Indian Rupee           46.8451         0.0213469 
+  Israeli New Shekel     3.85272         0.259557 
+  Japanese Yen           91.6385         0.0109124 
+  Kazakhstani Tenge      146.92          0.00680643 
+  Kuwaiti Dinar          0.29245         3.41939 
+  Latvian Lat            0.583491        1.71382 
+  Libyan Dinar           1.9324          0.517491 
+  Lithuanian Litas       2.8472          0.351222 
+  Malaysian Ringgit      3.2835          0.304553 
+  Mauritius Rupee        33.0863         0.030224 
+  Mexican Peso           12.6925         0.0787867 
+  Nepalese Rupee         75.16           0.0133049 
+  New Zealand Dollar     1.45304         0.688212 
+  Norwegian Kroner       6.46079         0.15478 
+  Omani Rial             0.3845          2.60078 
+  Pakistan Rupee         85.3262         0.0117197 
+  Qatari Rial            3.64            0.274725 
+  Romanian Leu           3.47926         0.287417 
+  Russian Ruble          31.4101         0.0318369 
+  Saudi Riyal            3.75            0.266667 
+  Singapore Dollar   	 1.40175  	 0.713394 
+  South African Rand   	 7.71914  	 0.129548 
+  South Korean Won   	 1245.97  	 0.000802588 
+  Sri Lanka Rupee   	 113.512  	 0.00880964 
+  Swedish Krona   	 7.90055  	 0.126573 
+  Swiss Franc   	 1.14563  	 0.872882 
+  Taiwan Dollar   	 32.4325  	 0.0308333 
+  Thai Baht   	         32.4647  	 0.0308027 
+  Trinidad/Tobago Dollar 6.33538  	 0.157844 
+  Turkish Lira   	 1.57912  	 0.633264 
+  Venezuelan Bolivar   	 4.29468  	 0.232846        
