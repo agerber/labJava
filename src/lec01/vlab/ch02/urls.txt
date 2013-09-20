@@ -1,0 +1,3 @@
+http://itouchmap.com/latlong.html
+http://en.wikipedia.org/wiki/Great-circle_distance
+http://maps.google.com/

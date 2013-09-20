@@ -8,11 +8,11 @@ package lec10.glab.playsounds;
 //grossly simplified  and re-factored to the following
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import javazoom.jl.player.Player;
+//import javazoom.jl.player.Player;
 
 public class Mp3 implements Runnable {
     private String strFileName;
-    private Player ply;
+    //private Player ply;
 	private FileInputStream fis;
 	private BufferedInputStream bis; 
 
@@ -26,8 +26,8 @@ public class Mp3 implements Runnable {
             try { 
                 fis = new FileInputStream(strFileName);
                 bis = new BufferedInputStream(fis);
-                ply = new Player(bis);
-            	ply.play(); 
+            //    ply = new Player(bis);
+            //	ply.play();
             	
             	
             }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Java for Everyone Screencast</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
+  <link href="../Slidy/slidy.css" rel="stylesheet" type="text/css" />
+  <link href="../styles.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" charset="utf-8"
+          src="../Slidy/slidy.js">
+  </script>
+</head>
+
+<body>
+
+<div class="slide"><div class="title"><div class="cell">
+Java for Everyone
+<br/>
+Screencast
+<br/>
+<img src="../jfe-cover.png"/>
+</div></div></div>
+<div class="slide"><div class="title"><div class="cell">
+Distances on Earth
+<br/>
+<img src="earth.png"/>
+</div></div></div>
+<div class="slide"><div class="title"><div class="cell">
+Understand the Problem
+</div></div></div>
+
+<div class="slide">
+<ul><li><a href="http://itouchmap.com/latlong.html">Find Latitude and Longitude</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Great-circle_distance">Great Circle Distance</a></li>
+<li><a href="http://maps.google.com/">Google Maps</a></li></ul>
+</div>
+<div class="slide"><div class="title"><div class="cell">
+Calculate by Hand 
+</div></div></div>
+
+<div class="slide"><div class="title"><div class="cell">
+Design an Algorithm
+</div></div></div>
+<div class="slide">
+<div class="marker">
+<p>Read first latitude &nbsp;&nbsp;&nbsp;<b>Remind user to enter degrees</b></p>
+<p>Read first longitude</p>
+<p>Read second latitude and longitude</p>
+<p>Convert all inputs to radians (&times; &pi; / 180)</p>
+<p>arc length = acos ( sin (lat1) sin (lat2) + cos (lat1) cos (lat2) <br/>&nbsp;&nbsp;&nbsp;cos (long2 - long1) )</p>
+<p>distance = arc length &times; radius of the earth</p>
+</div>
+</div>
+
+<div class="slide"><div class="title"><div class="cell">
+Develop Test Cases
+</div></div></div>
+<div class="slide">
+
+<div class="marker">
+<p><b>Test Case 1</b></p>
+<p>Starting point latitude 45&deg;, longitude 30&deg;<br/>
+Ending point latitude -45&deg;, longitude 30&deg;</p>
+<p>Expected distance: 1/4 of the circumference of the earth<br/>
+&nbsp;&nbsp;&nbsp;= 1/4 &times; 2 &times; &pi; &times; 3958 &asymp; 6217 miles</p>
+<p><b>Test Case 2</b></p>
+<p>Starting point latitude 40.759&deg;, longitude -73.984&deg;&nbsp;&nbsp;&nbsp;<b>Times Sq NY</b><br/>
+Ending point latitude 37.794&deg;, longitude -122.395&deg;&nbsp;&nbsp;&nbsp;<b>San Francisco</b></p>
+<p>Expected distance: Somewhat less than 2919 miles</p>
+</div></div>
+
+<div class="slide"><div class="title"><div class="cell">
+Write the Program
+</div></div></div>
+
+<div class="slide"><div class="title"><div class="cell">
+Test the Program
+</div></div></div>
+
+</body>
+</html>

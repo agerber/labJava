@@ -9,7 +9,7 @@ package lec10.glab.playsounds;
 //grossly simplified  and re-factored to the following
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import javazoom.jl.player.Player;
+//import javazoom.jl.player.Player;
 //import java.applet.AudioClip;
 
 //import javax.sound.sampled.AudioInputStream;
@@ -18,7 +18,7 @@ import javazoom.jl.player.Player;
 
 public class Mp3Loop implements Runnable {
     private String strFileName;
-    private Player ply;
+   // private Player ply;
 	private FileInputStream fis;
 	private BufferedInputStream bis; 
 
@@ -37,20 +37,20 @@ public class Mp3Loop implements Runnable {
         
                 fis = new FileInputStream(strFileName);
                 bis = new BufferedInputStream(fis);
-                ply = new Player(bis);
-            	ply.play(); 
+               // ply = new Player(bis);
+            	//ply.play();
             	bis.close();
           
             	while(true){
 
-            		if (ply.isComplete()){
-            			
-            	          fis     = new FileInputStream(strFileName);
-                          bis = new BufferedInputStream(fis);
-                          ply = new Player(bis);
-                     	  ply.play(); 
-                     	  bis.close();
-            		}
+//            		if (ply.isComplete()){
+//
+//            	          fis     = new FileInputStream(strFileName);
+//                          bis = new BufferedInputStream(fis);
+//                          ply = new Player(bis);
+//                     	  ply.play();
+//                     	  bis.close();
+//            		}
             	}
 
             	
