@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 /**
 Given two circles in the 1st quad of a cartesian 2D plane, determine if they are colliding or not.
+This belongs in lec02
  */
 public class CollisionDetect {
 
