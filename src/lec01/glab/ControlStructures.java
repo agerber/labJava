@@ -1,4 +1,4 @@
-package lec02.glab;
+package lec01.glab;
 import java.util.StringTokenizer;
 
 public class ControlStructures {
