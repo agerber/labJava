@@ -21,13 +21,18 @@ public class ArrayListManipulation {
 		strNames.add("Marcia");
 		strNames.add("Jan");
 		strNames.add("Cindy");
+
+
 		
 		//let's iterate over this ArrayList
 		for (String str : strNames) {
 			System.out.println(str);
 		}
-		
-		System.out.println("-----------------------------");
+
+
+
+
+        System.out.println("-----------------------------");
 		
 		String[] strMikesFamilyMembers = {"Mike", "Gregg", "Peter", "Bobby"};
 		
