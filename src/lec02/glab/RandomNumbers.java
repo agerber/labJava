@@ -29,9 +29,8 @@ public class RandomNumbers {
 		System.out.println("--------------------------");
 		
 		//roll the die 20 times
-		for (int nRoll = 0; nRoll < 20; nRoll++) {
+		for (int nRoll = 0; nRoll < 20; nRoll++)
 			System.out.print(" >" + yFacets[ran.nextInt(6)] );
-        }
 
 		
 	
