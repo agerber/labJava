@@ -1,6 +1,7 @@
 package lec02.glab;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,6 +32,16 @@ public class StaticDriver {
         System.out.println(Convert.tempToImperial(100.0));
 
         System.out.println(Math.pow(2,3));
+
+
+        ArrayList<Student> stuStudents = new ArrayList<>();
+        Student stu;
+        for (int nC = 0; nC < 100 ; nC++) {
+            stu =  new Student(String.valueOf( Student.SCHOOL  + " name: " + nC), nC);
+            stuStudents.add(stu);
+        }
+
+        System.out.println(Student.getInstanceNum());
 
 
 

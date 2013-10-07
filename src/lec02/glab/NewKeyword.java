@@ -71,36 +71,3 @@ public class NewKeyword {
 
 }
 
- class Student{
-    private String mName;
-    private int mGraduate;
-
-     Student(String name, int graduate) {
-         mName = name;
-         mGraduate = graduate;
-     }
-
-     int getGraduate() {
-         return mGraduate;
-     }
-
-     void setGraduate(int graduate) {
-         mGraduate = graduate;
-     }
-
-     private String getName() {
-        return mName;
-    }
-
-    private void setName(String name) {
-        mName = name;
-    }
-
-     @Override
-     public String toString() {
-         return "Student{" +
-                 "mName='" + mName + '\'' +
-                 ", mGraduate=" + mGraduate +
-                 '}';
-     }
- }
