@@ -13,17 +13,16 @@ public class SprintRace {
 		
 		  
 		Raceable[] racRacers = new Raceable[3];
+
 		
-		
-		
-		racRacers[0] = new Human("file:\\\\\\C:\\dev\\lec03\\src\\edu\\uchicago\\cs\\java\\lec03\\resources\\run_human.gif",
+		racRacers[0] = new Human("/src/lec03/glab/resources/run_human.gif",
 				Raceable.DIM);
 		
-		racRacers[1] = new Gazelle("file:\\\\\\C:\\dev\\lec03\\src\\edu\\uchicago\\cs\\java\\lec03\\resources\\run_gazelle.jpg",
+		racRacers[1] = new Gazelle("/src/lec03/glab/resources/run_gazelle.jpg",
 				Raceable.DIM);
 		
 
-		racRacers[2] = new Kangaroo("file:\\\\\\C:\\dev\\lec03\\src\\edu\\uchicago\\cs\\java\\lec03\\resources\\run_roo.png",
+		racRacers[2] = new Kangaroo("/src/lec03/glab/resources/run_roo.png",
 				Raceable.DIM);
 		  
 		

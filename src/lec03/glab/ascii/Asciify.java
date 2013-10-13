@@ -276,7 +276,7 @@ public class Asciify {
 	
 		char[][] cAsciis = new char[nDimH][nDimW];
 
-        String strPath = " file://" +  System.getProperty("user.dir") + strClipURL ;
+        String strPath = " file:///" +  System.getProperty("user.dir") + strClipURL ;
 
 
 
@@ -325,7 +325,9 @@ public class Asciify {
 		int nGreyValue;
 		char[][] cAsciis;
 
-       String strPath = " file://" +  System.getProperty("user.dir") + strClipURL ;
+       //file:///C:/dev/java/labJava/src/lec03/glab/resources/box_human.jpg
+
+       String strPath = " file:///" +  System.getProperty("user.dir") + strClipURL ;
 		
 		
 		// sournd with try/catch
