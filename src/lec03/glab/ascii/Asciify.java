@@ -85,7 +85,7 @@ public class Asciify {
 							null,
 							e.getMessage()
 									+ " make sure you copy the URL of an image from the Internet to the clipboard before executing this program." +
-									"you may use local files too; for exmaple: file:\\\\\\C:\\dir\\image.jpg");
+									"you may use local files too; for exmaple: file:///C://dir//image.jpg");
 
 		}
 
@@ -112,25 +112,7 @@ public class Asciify {
 	}
 	
 	
-	private static BufferedImage resize(BufferedImage bufImage, int nDimW) {
 
-		// get the size of the width
-		int nWidth = bufImage.getWidth();
-		double dScalingW = (double)nDimW / nWidth;
-		
-		BufferedImage bufResizedImage = new BufferedImage(
-				(int) (bufImage.getWidth() * dScalingW),
-				(int) (bufImage.getHeight() * dScalingW),
-				BufferedImage.TYPE_INT_ARGB);
-		Graphics2D g = bufResizedImage.createGraphics();
-		g.drawImage(bufImage, 0, 0, (int) (bufImage.getWidth() * dScalingW),
-				(int) (bufImage.getHeight() * dScalingW), null);
-		g.dispose();
-		return bufResizedImage;
-
-	}
-	
-	
 	private static BufferedImage resize(BufferedImage bufImage, int nDimW, int nDimH) {
 
 		// get the size of the width
@@ -154,7 +136,7 @@ public class Asciify {
 	
 
 	private static BufferedImage getBuffered(String strURL) throws IOException {
-		// String imagesRootPath = "http://www.mysite.com/images";
+
 		try {
 			URL url = new URL(strURL);
 			BufferedImage bufImage = ImageIO.read(url);
@@ -268,18 +250,33 @@ public class Asciify {
 	return cVal; // return the character
 
  }
+
+    private static String formatUri(String strUri) {
+
+        //if this is a http or https protocol
+            //then just reutrn it
+        //else
+            //format it as    "file:///" +  System.getProperty("user.dir") + strUri ;
+
+        if (strUri.startsWith("http")){
+                 return strUri;
+        }else {
+           return "file:///" +  System.getProperty("user.dir") + strUri ;
+        }
+
+    }
 	
 	
 	public static char[][] getAsciiChars(String strClipURL, int nDimW, int nDimH){
 		
 		int nGreyValue;
+
+
 	
 		char[][] cAsciis = new char[nDimH][nDimW];
 
-        String strPath = " file:///" +  System.getProperty("user.dir") + strClipURL ;
-
-
-
+        //uses forward-slashes compatible with mac and pac
+        String strPath = formatUri( strClipURL) ;
 
 		// sournd with try/catch
 		try {
@@ -320,55 +317,7 @@ public class Asciify {
 		return cAsciis;
 	}
 	
-   public static char[][] getAsciiChars(String strClipURL, int nDimW){
-		
-		int nGreyValue;
-		char[][] cAsciis;
 
-       //file:///C:/dev/java/labJava/src/lec03/glab/resources/box_human.jpg
-
-       String strPath = " file:///" +  System.getProperty("user.dir") + strClipURL ;
-		
-		
-		// sournd with try/catch
-		try {
-
-		
-			BufferedImage bufImg = getBuffered(strPath);
-			// resize it to dim
-			bufImg = resize(bufImg, nDimW);
-			Color colPixel;
-			//String strAscii;
-			cAsciis = new char[bufImg.getHeight()][nDimW];
-
-			for (int nRow = 0; nRow < bufImg.getHeight(); nRow++) 
-														
-			{
-				for (int nCol = 0; nCol < bufImg.getWidth(); nCol++) 
-									
-				{
-					 colPixel = new Color(bufImg.getRGB(nCol, nRow));
-																
-					nGreyValue = (int)(((colPixel.getRed() * 0.2989)
-							+ (colPixel.getBlue() * 0.5870) + (colPixel
-							.getGreen() * 0.1140))); 
-			
-					cAsciis[nRow][nCol] = getAsciiValueChar(nGreyValue);
-		
-				}
-	
-		
-
-			}
-		
-		} catch (Exception e) {
-
-			
-			return null;
-		}
-
-		return cAsciis;
-	}
 	
 
 
