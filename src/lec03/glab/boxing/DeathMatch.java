@@ -13,7 +13,8 @@ public class DeathMatch {
 
 		
 		Boxable boxPuncher   = new Human(
-				"file:\\\\\\C:\\dev\\lec03\\src\\edu\\uchicago\\cs\\java\\lec03\\resources\\box_human.jpg",
+
+				"/src/lec03/glab/resources/box_human.jpg",
 			60, 	
 			"I'm the greatest, float like a butterfly, sting like a bee!", 
 			1000,
@@ -22,7 +23,8 @@ public class DeathMatch {
 				);
 		
 		
-		Boxable boxPunchee = new Kangaroo("file:\\\\\\C:\\dev\\lec03\\src\\edu\\uchicago\\cs\\java\\lec03\\resources\\box_roo.gif",
+		Boxable boxPunchee = new Kangaroo(
+                "/src/lec03/glab/resources/box_roo.gif",
 				60, 	
 				1000,
 				Boxable.ACC_KANGAROO,

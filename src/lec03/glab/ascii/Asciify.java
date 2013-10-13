@@ -275,12 +275,17 @@ public class Asciify {
 		int nGreyValue;
 	
 		char[][] cAsciis = new char[nDimH][nDimW];
-		
+
+        String strPath = " file://" +  System.getProperty("user.dir") + strClipURL ;
+
+
+
+
 		// sournd with try/catch
 		try {
 
 		
-			BufferedImage bufImg = getBuffered(strClipURL);
+			BufferedImage bufImg = getBuffered(strPath);
 			// resize it to dim
 			bufImg = resize(bufImg, nDimW, nDimH);
 			Color colPixel;
@@ -319,13 +324,15 @@ public class Asciify {
 		
 		int nGreyValue;
 		char[][] cAsciis;
+
+       String strPath = " file://" +  System.getProperty("user.dir") + strClipURL ;
 		
 		
 		// sournd with try/catch
 		try {
 
 		
-			BufferedImage bufImg = getBuffered(strClipURL);
+			BufferedImage bufImg = getBuffered(strPath);
 			// resize it to dim
 			bufImg = resize(bufImg, nDimW);
 			Color colPixel;
