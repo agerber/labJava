@@ -1,6 +1,6 @@
 package lec03.glab.dice;
 
-public class MyDieHarness {
+public class MyDieDriver {
 
 	/**
 	 * @param args

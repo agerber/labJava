@@ -47,12 +47,7 @@ public class PolySimple {
 		numTemps.add(new Integer(-60));
 		numTemps.add(new Double(-1.8));
 		numTemps.add(new Double(3.1));
-		
-	
-		
-	
 
-	
        for (Number num : numTemps) {
 		
     	   if (num instanceof Double){

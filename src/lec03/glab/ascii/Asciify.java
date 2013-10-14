@@ -258,7 +258,7 @@ public class Asciify {
         //else
             //format it as    "file:///" +  System.getProperty("user.dir") + strUri ;
 
-        if (strUri.startsWith("http")){
+        if (strUri.startsWith("http") || strUri.startsWith("file") ){
                  return strUri;
         }else {
            return "file:///" +  System.getProperty("user.dir") + strUri ;
@@ -270,9 +270,6 @@ public class Asciify {
 	public static char[][] getAsciiChars(String strClipURL, int nDimW, int nDimH){
 		
 		int nGreyValue;
-
-
-	
 		char[][] cAsciis = new char[nDimH][nDimW];
 
         //uses forward-slashes compatible with mac and pac
@@ -280,8 +277,6 @@ public class Asciify {
 
 		// sournd with try/catch
 		try {
-
-		
 			BufferedImage bufImg = getBuffered(strPath);
 			// resize it to dim
 			bufImg = resize(bufImg, nDimW, nDimH);

@@ -2,48 +2,48 @@ package lec03.glab.dice;
 
 public class MyDie {
 
-	private double length;
-	private double width;
-	private double height;
-	private String[] facets;
+	private double mLength;
+	private double mWidth;
+	private double mHeight;
+	private String[] mFacets;
 	
 	
 	
 	
-	public MyDie(double length, double width, double height, String[] facets) {
+	public MyDie(double dLength, double dWidth, double dHeight, String[] strFacets) {
 		super();
-		this.length = length;
-		this.width = width;
-		this.height = height;
-		this.facets = facets;
+		this.mLength = dLength;
+		this.mWidth = dWidth;
+		this.mHeight = dHeight;
+		this.mFacets = strFacets;
 	}
 	
 
 
 
 	public double getLength() {
-		return length;
+		return mLength;
 	}
 	public void setLength(double length) {
-		this.length = length;
+		this.mLength = length;
 	}
 	public double getWidth() {
-		return width;
+		return mWidth;
 	}
 	public void setWidth(double width) {
-		this.width = width;
+		this.mWidth = width;
 	}
 	public double getHeight() {
-		return height;
+		return mHeight;
 	}
 	public void setHeight(double height) {
-		this.height = height;
+		this.mHeight = height;
 	}
 	public String[] getFacets() {
-		return facets;
+		return mFacets;
 	}
 	public void setFacets(String[] facets) {
-		this.facets = facets;
+		this.mFacets = facets;
 	}
 	
 	
@@ -54,8 +54,8 @@ public class MyDie {
 		String strBuild = "";
 		
 		strBuild = "Area: " + calcArea() + "\n";
-		for(int nC = 0; nC < facets.length; nC++){
-			strBuild = strBuild + " " + facets[nC];
+		for(int nC = 0; nC < mFacets.length; nC++){
+			strBuild = strBuild + " " + mFacets[nC];
 		}
 		
 		return strBuild;
@@ -63,7 +63,7 @@ public class MyDie {
 	}
 	
 	private double calcArea(){
-		return width * height * length;
+		return mWidth * mHeight * mLength;
 	}
 	
 	

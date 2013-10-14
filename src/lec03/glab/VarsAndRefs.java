@@ -25,8 +25,7 @@ public class VarsAndRefs {
 		
 		nNumerator = 5;
 		nDenominator = 2;
-		
-		
+
 		nResult = nNumerator / nDenominator;
 		fResult = nNumerator / nDenominator;
 		
