@@ -34,7 +34,7 @@ public class MoreNewKeyword {
 
 
         System.out.println("---------call method swap------------");
-        swap(stuOne, stuTwo);
+        falseSwap(stuOne, stuTwo);
 
         System.out.println("stuOne: " + stuOne);
         System.out.println("stuTwo: " + stuTwo);
@@ -57,7 +57,7 @@ public class MoreNewKeyword {
 
     }
 
-    public static void swap(Student stuFirst, Student stuSecond){
+    public static void falseSwap(Student stuFirst, Student stuSecond){
 
         Student stuTemporary = stuFirst;
         stuFirst = stuSecond;

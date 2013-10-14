@@ -40,7 +40,7 @@ public class VarsAndRefs {
 		
 		int nNumber = 5;
 		
-		//compiler will complain
+
 		System.out.println(nNumber);
 
 	}

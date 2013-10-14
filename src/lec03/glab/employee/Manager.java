@@ -2,20 +2,20 @@ package lec03.glab.employee;
 
 public class Manager extends Employee {
 	
-	private double dBonus;
+	private double mBonus;
 
 	public Manager(String name, double salary, int nYear, int nMonth, int nDay,
 			double bonus) {
 		super(name, salary, nYear, nMonth, nDay);
-		dBonus = bonus;
+		mBonus = bonus;
 	}
 
 	public double getBonus() {
-		return dBonus;
+		return mBonus;
 	}
 
 	public void setBonus(double bonus) {
-		dBonus = bonus;
+		mBonus = bonus;
 	}
 
 	@Override

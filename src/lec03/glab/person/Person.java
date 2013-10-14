@@ -1,4 +1,4 @@
-package lec02.glab;
+package lec03.glab.person;
 
 import java.util.ArrayList;
 
@@ -6,94 +6,94 @@ public class Person {
 	
 	
 	//fields of this class
-	private String strFirstName;
-	private String strLastName;
-	private byte yAge; //-128 to 127
-	private boolean bVeteran;
-	private String strSocialSecurityNum;
-	private ArrayList<Person> perDependents;
+	private String mFirstName;
+	private String mLastName;
+	private byte mAge; //-128 to 127
+	private boolean mVeteran;
+	private String mSocialNum;
+	private ArrayList<Person> mDependants;
 	
 	
 	public Person(String firstName, String lastName, byte age, boolean veteran,
-			String socialSecurityNum, ArrayList<Person> arlDependents) {
+			String socialSecurityNum, ArrayList<Person> perDependents) {
 		super();
-		this.strFirstName = firstName;
-		this.strLastName = lastName;
-		this.yAge = age;
-		this.bVeteran = veteran;
-		this.strSocialSecurityNum = socialSecurityNum;
-		this.perDependents = arlDependents;
+		this.mFirstName = firstName;
+		this.mLastName = lastName;
+		this.mAge = age;
+		this.mVeteran = veteran;
+		this.mSocialNum = socialSecurityNum;
+		this.mDependants = perDependents;
 	}
 	
 
 
 	public Person(String firstName, String lastName, byte age) {
 		super();
-		this.strFirstName = firstName;
-		this.strLastName = lastName;
-		this.yAge = age;
+		this.mFirstName = firstName;
+		this.mLastName = lastName;
+		this.mAge = age;
 	}
 
 
 
 
 	public String getFirstName() {
-		return this.strFirstName;
+		return this.mFirstName;
 	}
 
 
 	public void setFirstName(String firstName) {
-		this.strFirstName = firstName;
+		this.mFirstName = firstName;
 	}
 
 
 	public String getLastName() {
-		return this.strLastName;
+		return this.mLastName;
 	}
 
 
 	public void setLastName(String lastName) {
-		this.strLastName = lastName;
+		this.mLastName = lastName;
 	}
 
 
 	public byte getAge() {
-		return this.yAge;
+		return this.mAge;
 	}
 
 
 	public void setAge(byte age) {
-		this.yAge = age;
+		this.mAge = age;
 	}
 
 
 	public boolean isVeteran() {
-		return this.bVeteran;
+		return this.mVeteran;
 	}
 
 
 	public void setVeteran(boolean veteran) {
-		this.bVeteran = veteran;
+		this.mVeteran = veteran;
 	}
 
 
 	public String getSocialSecurityNum() {
-		return this.strSocialSecurityNum;
+		return this.mSocialNum;
 	}
 
 
 	public void setSocialSecurityNum(String socialSecurityNum) {
-		this.strSocialSecurityNum = socialSecurityNum;
+		this.mSocialNum = socialSecurityNum;
 	}
 
 
 	public ArrayList<Person> getArlDependents() {
-		return this.perDependents;
+		return this.mDependants;
 	}
 
 
 	public void setArlDependents(ArrayList<Person> arlDependents) {
-		this.perDependents = arlDependents;
+		this.mDependants = arlDependents;
 	}
 	
 	
@@ -105,10 +105,10 @@ public class Person {
 				+ "Age: " + getAge() + " Veteran status: " + isVeteran() +
 				" SSN: " + getSocialSecurityNum());
 		
-		if(perDependents != null && perDependents.size() != 0){
+		if(mDependants != null && mDependants.size() != 0){
 			
 			stb.append("\n\tDependents: \n");
-			for (Person p: perDependents) {
+			for (Person p: mDependants) {
 				stb.append("\t\t\t" + p.getFirstName() + " " + p.getLastName() + " Age: " + p.getAge());
 				stb.append('\n');
 			}

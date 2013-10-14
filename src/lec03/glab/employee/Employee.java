@@ -8,8 +8,8 @@ import java.util.GregorianCalendar;
 public class Employee extends Person {
 
 	
-	private double dSalary;
-	private Date datHireDay;
+	private double mSalary;
+	private Date mHireDate;
 	
 	
 	
@@ -17,9 +17,9 @@ public class Employee extends Person {
 	
 	public Employee(String strName, double dSalary, int nYear, int nMonth, int nDay) {
 		super(strName);
-		this.dSalary = dSalary;
+		this.mSalary = dSalary;
 		GregorianCalendar greHire = new GregorianCalendar(nYear, nMonth -1, nDay);
-		this.datHireDay = greHire.getTime();
+		this.mHireDate = greHire.getTime();
 		
 	}
 	
@@ -31,7 +31,7 @@ public class Employee extends Person {
 
 
 	public double getSalary() {
-		return dSalary;
+		return mSalary;
 	}
 
 
@@ -42,7 +42,7 @@ public class Employee extends Person {
 
 
 	public void setSalary(double salary) {
-		dSalary = salary;
+		mSalary = salary;
 	}
 
 
@@ -52,8 +52,8 @@ public class Employee extends Person {
 
 
 
-	public Date getDatHireDay() {
-		return datHireDay;
+	public Date getHireDate() {
+		return mHireDate;
 	}
 
 
@@ -63,8 +63,8 @@ public class Employee extends Person {
 
 
 
-	public void setDatHireDay(Date datHireDay) {
-		this.datHireDay = datHireDay;
+	public void setHireDate(Date hireDate) {
+		this.mHireDate = hireDate;
 	}
 
 
@@ -72,8 +72,8 @@ public class Employee extends Person {
 
 
 	public void raiseSalary(double dPercent){
-		double dRaise = dSalary * dPercent / 100;
-		dSalary += dRaise;
+		double dRaise = mSalary * dPercent / 100;
+		mSalary += dRaise;
 	}
 
 
@@ -81,7 +81,7 @@ public class Employee extends Person {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return String.format("an Employee with a salary of $%.2f", dSalary);
+		return String.format("an Employee with a salary of $%.2f", mSalary);
 	}
 
 }

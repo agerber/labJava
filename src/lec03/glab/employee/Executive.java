@@ -4,20 +4,20 @@ public final class Executive extends Manager {
 
 	
 	
-	private double dStockValue;
+	private double mStockValue;
 
 	public Executive(String name, double salary, int nYear, int nMonth,
 			int nDay, double bonus, double stockValue) {
 		super(name, salary, nYear, nMonth, nDay, bonus);
-		dStockValue = stockValue;
+		mStockValue = stockValue;
 	}
 
 	public double getStockValue() {
-		return dStockValue;
+		return mStockValue;
 	}
 
 	public void setStockValue(double stockValue) {
-		dStockValue = stockValue;
+		mStockValue = stockValue;
 	}
 	
 	@Override

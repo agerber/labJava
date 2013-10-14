@@ -5,22 +5,22 @@ public abstract class Person {
     //cntrl-H to see object hierachy
     //ctrl-alt-shift-u to see class UML diagram
 	
-	private String strName;
+	private String mName;
 
 	public Person(String name) {
 		super();
-		strName = name;
+		mName = name;
 	}
 
 	public abstract String getDescription();
 	
 	
 	public String getName() {
-		return strName;
+		return mName;
 	}
 
 	public void setName(String name) {
-		strName = name;
+		mName = name;
 	}
 	
 	
