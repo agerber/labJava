@@ -1,8 +1,8 @@
-package lec02.glab;
+package lec03.glab;
 
 import java.awt.*;
 
-public class StringManipulation {
+public class MoreStringManipulation {
 
 	/**
 	 * @param args
