@@ -20,40 +20,103 @@ public class ControlStructures {
 		System.out.println(loopsWhile(stoPeeps));
 		nestedLoops();
 
+        switchChar('B');
+        switchNumber(4);
+        switchString("B");
+
+        controlTernary(true);
+
+
 	}
 	
 	
-	private static void switchGradeComments(char cGrade){
+	private static void switchChar(char cGrade){
 		
 		switch (cGrade) {
 		
-	    case 'A' : System.out.print("Excellent"); 
-	    break;  
-	    
-	    case 'B' : System.out.print("Good"); 
-	    break;  
-	    
-	    case 'C' : System.out.print("Fair"); 
-	    break;  
-	    
-	    case 'D' : System.out.print("Poor"); 
-	    break;  
-	    
-	    case 'F' : System.out.print("Fail"); 
-	    break;  
-	    
-	    default  : System.out.print("Incomplete");  
+            case 'A' : System.out.print("Excellent");
+            break;
+
+            case 'B' : System.out.print("Good");
+            break;
+
+            case 'C' : System.out.print("Fair");
+            break;
+
+            case 'D' : System.out.print("Poor");
+            break;
+
+            case 'F' : System.out.print("Fail");
+            break;
+
+            default  : System.out.print("Incomplete");
 	        
 
 		
 		}//end switch
 		
 	}
+
+
+    private static void switchNumber(int nGrade){
+
+        switch (nGrade) {
+
+            case 5 : System.out.print("Excellent");
+                break;
+
+            case 4 : System.out.print("Good");
+                break;
+
+            case 3 : System.out.print("Fair");
+                break;
+
+            case 2 : System.out.print("Poor");
+                break;
+
+            case 1 : System.out.print("Fail");
+                break;
+
+            default  : System.out.print("Incomplete");
+
+
+
+        }//end switch
+    }
+
+
+    //Java7 only
+    private static void switchString(String strGrade){
+
+        switch (strGrade) {
+
+            case "A" : System.out.print("Excellent");
+                break;
+
+            case "B" : System.out.print("Good");
+                break;
+
+            case "C" : System.out.print("Fair");
+                break;
+
+            case "D" : System.out.print("Poor");
+                break;
+
+            case "E" : System.out.print("Fail");
+                break;
+
+            default  : System.out.print("Incomplete");
+
+
+
+        }//end switch
+    }
+
 	
 	private static String controlIfExample(String strFirstName){
 		
 		if(strFirstName.equals("Adam"))
-			return  "Hello" + strFirstName + "Great first name!";
+			return  "Hello" + strFirstName + ", Great first name!";
 		else
 			return "Hello" + strFirstName;
 			
@@ -75,7 +138,7 @@ public class ControlStructures {
 	
 	private static String controlTernary(boolean bFanOfThaiFood){
 		
-		return (bFanOfThaiFood ? "Love the spread": "yuck");
+		return (bFanOfThaiFood ? "Love the spread" : "yuck");
 	}
 	
 	
@@ -102,8 +165,6 @@ public class ControlStructures {
 	    while(stoStudents.hasMoreTokens()){
             strNext = stoStudents.nextToken();
 			if (strNext.compareTo(strLast) >= 0)
-				
-				
 				strLast = strNext;
 
 		}
@@ -118,7 +179,6 @@ public class ControlStructures {
 		//infinite loop
 		  while(true) {
 		      nCount++;
-
 		      if(nCount == 510)
 		    	  break; // Out of loop
 		      if(nCount % 10 != 0) 

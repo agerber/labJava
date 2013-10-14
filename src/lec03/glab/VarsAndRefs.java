@@ -13,6 +13,7 @@ public class VarsAndRefs {
 		intDivision();
 		refNotInitialized();
 		ternaryOperator();
+        deMorgans();
 
 	}
 	
@@ -49,7 +50,7 @@ public class VarsAndRefs {
 		//Rectangle recRec1
 		Rectangle recRec1 = null;
 		
-		//compiler will complain
+
 		System.out.println(recRec1);
 	}
 	
@@ -93,6 +94,20 @@ public class VarsAndRefs {
 
 		
 	}
+
+
+    private static void deMorgans(){
+
+        //when you see an boolean expression and you want to flip it, you can
+        //1/ distribute the ! sign
+        //2/ flip the && to || or vice versa
+
+        //control
+        System.out.println((true && false || false && true)  == (true && false || false && true));
+
+        //deMorgans
+        System.out.println(!(true && false || false && true)  == (!true || !false && !false || !true));
+    }
 	
 	//order of precedence
 	//http://download.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
