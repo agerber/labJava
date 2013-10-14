@@ -2,6 +2,7 @@ package lec03.glab;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 
@@ -49,7 +50,10 @@ public class CalendarTest {
                 .getShortWeekdays();
         final String[] MONTH_NAMES = new DateFormatSymbols().getMonths();
 
-        GregorianCalendar greToday = new GregorianCalendar();
+        //GregorianCalendar greHire = new GregorianCalendar(nYear, nMonth -1, nDay);
+
+        //the month in a GregCalendar is from 0-11, so October is 9
+        GregorianCalendar greToday = new GregorianCalendar(2013, 9, 14);
 
         final int CURRENT_YEAR = greToday.get(Calendar.YEAR);
 
@@ -97,8 +101,7 @@ public class CalendarTest {
 
             // mark today day with asterix, otherwise just space
 
-            if (greCount.get(Calendar.YEAR) == CURRENT_YEAR && greCount.get(Calendar.DAY_OF_YEAR) == greToday
-                    .get(Calendar.DAY_OF_YEAR)) {
+            if (greCount.compareTo(greToday)==0)     {
                 System.out.print("*");
             }
              else {

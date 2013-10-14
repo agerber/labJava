@@ -52,7 +52,7 @@ public class EmployeeTestSimple {
 		
 	
         
-		perChicagos.add(new Student("Adam Student", "CompSci"));
+		perChicagos.add(new Student("Joe Student", "CompSci"));
 		
 		
 		System.out.println("#############################");
@@ -64,22 +64,34 @@ public class EmployeeTestSimple {
 		
 
 		
-		//cast down
-		//Employee[] empPeeps = (Employee[])perChicagos;
-		
-		
-		
-		//examples of casting down
-		
-		//cast down again
+		//promoting cast (automatic).  This is cool!
+		//Object[] objPeeps = (Object[]) empChicagos;
+		Object[] objPeeps =  empChicagos;
 
-		
-		
-		
-		
-		
-		
+        System.out.println("#############################");
 
-	}
+
+        for (Object obj : objPeeps) {
+            System.out.println(obj);
+        }
+
+
+
+        //Runtime error (will throw unchecked exception ClassCastException)
+        Executive[] excPeeps = (Executive[])empChicagos;
+
+        System.out.println("#############################");
+        for (Executive exc : excPeeps) {
+            System.out.println(exc.getStockValue());
+        }
+
+
+
+
+
+
+
+
+    }
 
 }

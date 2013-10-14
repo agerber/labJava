@@ -23,7 +23,7 @@ public final class Executive extends Manager {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return String.format("an exec with a salary of" +  getSalary()+ " and a bonus of " + getBonus() + " and a stock comp of " + getStockValue());
+		return String.format("an exec with a salary of " +  getSalary()+ " and a bonus of " + getBonus() + " and a stock comp of " + getStockValue());
 	}
 	
 }

@@ -21,7 +21,7 @@ public class Manager extends Employee {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return String.format("a Manager with a salary of" +  getSalary()+ " and a bonus of " + getBonus() );
+		return String.format("a Manager with a salary of " +  getSalary()+ " and a bonus of " + getBonus() );
 	}
 	
 	
