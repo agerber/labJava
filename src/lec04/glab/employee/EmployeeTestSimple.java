@@ -1,10 +1,7 @@
 package lec04.glab.employee;
 
-import lec03.glab.employee.*;
-import lec03.glab.employee.Employee;
-import lec03.glab.employee.Executive;
-import lec03.glab.employee.Person;
-import lec03.glab.employee.Student;
+
+
 
 import java.util.ArrayList;
 
@@ -26,18 +23,18 @@ public class EmployeeTestSimple {
 		
 		
 		//what happens when we do not override the getDescription method
-		lec03.glab.employee.Employee[] empChicagos = {
+		Employee[] empChicagos = {
 				
-			new lec03.glab.employee.Employee("Joe Smith", 45000, 2011, 10, 15 ),
-			new lec03.glab.employee.Employee("Herman Brown", 56000, 2011, 10, 15 ),
-			new lec03.glab.employee.Manager("Harry Cracker", 82000, 2011, 10, 15, 8000 ),
-			new lec03.glab.employee.Executive("Ryan Exavier", 120000, 2011, 10, 15, 18000, 9190000 )
+			new Employee("Joe Smith", 45000, 2011, 10, 15 ),
+			new Employee("Herman Brown", 56000, 2011, 10, 15 ),
+			new Manager("Harry Cracker", 82000, 2011, 10, 15, 8000 ),
+			new Executive("Ryan Exavier", 120000, 2011, 10, 15, 18000, 9190000 )
 			//new Student("Adam Student", "CompSci")
 				
 		};
 		
 		
-		for (lec03.glab.employee.Employee emp : empChicagos) {
+		for (Employee emp : empChicagos) {
 			System.out.println(emp.getDescription());
 		}
 		
@@ -50,7 +47,7 @@ public class EmployeeTestSimple {
 		
 		
 		System.out.println("#############################");
-		ArrayList<lec03.glab.employee.Person> perChicagos = new ArrayList<lec03.glab.employee.Person>();
+		ArrayList<Person> perChicagos = new ArrayList<Person>();
 		
 		for (int nC = 0; nC < empChicagos.length; nC++) {
 			perChicagos.add(empChicagos[nC]);
@@ -84,7 +81,7 @@ public class EmployeeTestSimple {
 
 
         //Runtime error (will throw unchecked exception ClassCastException)
-        lec03.glab.employee.Executive[] excPeeps = (lec03.glab.employee.Executive[])empChicagos;
+        Executive[] excPeeps = (Executive[])empChicagos;
 
         System.out.println("#############################");
         for (Executive exc : excPeeps) {

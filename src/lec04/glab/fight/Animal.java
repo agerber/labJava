@@ -1,4 +1,4 @@
-package lec04.glab.boxing;
+package lec04.glab.fight;
 
 import lec03.glab.ascii.Asciify;
 

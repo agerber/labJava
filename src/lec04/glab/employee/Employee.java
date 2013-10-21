@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 
-public class Employee extends lec03.glab.employee.Person {
+public class Employee extends Person {
 
 	
 	private double mSalary;

@@ -1,46 +1,53 @@
-package lec04.glab.boxing;
+package lec04.glab.fight;
 
-import lec03.glab.boxing.*;
+import lec03.glab.boxing.Animal;
 import lec03.glab.boxing.Boxable;
 import lec03.glab.race.Raceable;
 
 
-public class Kangaroo extends lec03.glab.boxing.Animal implements Raceable, lec03.glab.boxing.Boxable {
+public class Human extends Animal implements Raceable, Boxable {
 
 	
 	//instance fields for racing
 	private int nDistance;
 	
-
-	
 	//instance fields for boxing
-
+	private String strInterview;
 	private int nHealthPoints;
 	private int nAccuracy;
 	private int nPower;
 	
 	
+
+	
 	
 	//constructor for racing
-	public Kangaroo(String strUrlAscii, int nDim) {
+	public Human(String strUrlAscii, int nDim) {
 		super(strUrlAscii, nDim);
 	
 		nDistance = 0;
 	}
 	
 	
+	
 	//constructor for boxing
-	public Kangaroo(String strUrlAscii, int nDim, 
+	public Human(String strUrlAscii, int nDim, String interview,
 			int healthPoints, int accuracy, int power) {
 		super(strUrlAscii, nDim);
-		//strInterview = interview;
+		strInterview = interview;
 		nHealthPoints = healthPoints;
 		nAccuracy = accuracy;
 		 nPower = power;
 	}
 	
-	
-	
+
+
+	public String getInterview() {
+		return strInterview;
+	}
+	public void setInterview(String interview) {
+		strInterview = interview;
+	}
 	public int getHealthPoints() {
 		return nHealthPoints;
 	}
@@ -54,19 +61,6 @@ public class Kangaroo extends lec03.glab.boxing.Animal implements Raceable, lec0
 		nAccuracy = accuracy;
 	}
 	
-	
-
-
-	public int getPower() {
-		return this.nPower;
-	}
-
-
-	public void setPower(int power) {
-		this.nPower = power;
-	}
-
-
 	public int getDistance() {
 		return nDistance;
 	}
@@ -77,46 +71,17 @@ public class Kangaroo extends lec03.glab.boxing.Animal implements Raceable, lec0
 	}
 
 
-
-	//this method signature satisfies the raceable interface
-	//overridden and overloaded
-	@Override
-	public String display(int nIndent) {
-		// TODO Auto-generated method stub
-		return super.display(nIndent);
-		
-	}
 	
-
-
-	@Override
-	public void stride() {
-		
-		//increment the distance by pace - variablity
-		
-		setDistance(getDistance() + Raceable.PACE_KANGAROO - Raceable.RAN.nextInt( Raceable.VAR_KANGAROO));
-		
-		
-		
+	public int getPower() {
+		return nPower;
 	}
 
 
 
-	@Override
-	public String vocalize() {
-	
-		return "kangaroo sound !";
-		
+	public void setPower(int power) {
+		nPower = power;
 	}
 
-
-
-	
-	@Override
-	public String display() {
-		// TODO Auto-generated method stub
-		return super.display(0);
-	}
 
 
 	@Override
@@ -148,6 +113,48 @@ public class Kangaroo extends lec03.glab.boxing.Animal implements Raceable, lec0
 		
 		return getHealthPoints();
 	}
+
+
+	//this method signature satisfies the raceable interface
+	//overridden and overloaded
+	@Override
+	public String display(int nIndent) {
+		// TODO Auto-generated method stub
+		return super.display(nIndent);
+		
+	}
+	
+	//this method signature satisfies the boxable interface
+	//overridden and overloaded
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		return super.display(0);
+	}
+
+
+
+	@Override
+	public void stride() {
+		
+		//increment the distance by pace - variablity
+		
+		setDistance(getDistance() + Raceable.PACE_HUMAN - Raceable.RAN.nextInt(Raceable.VAR_HUMAN));
+		
+		
+		
+	}
+
+
+
+	@Override
+	public String vocalize() {
+	
+		return "Yes, I win!";
+		
+	}
+
+
 
 	
 	

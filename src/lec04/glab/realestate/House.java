@@ -88,21 +88,21 @@ public class House implements Cloneable {
 	}
 
 	//
-	public void dispaly(){
+	public void display(){
 		
 		
 		System.out.println(getLine(""));
 		System.out.println(getLine(getDatInstantiated() + " : " + getDatInstantiated().getTime() + " : " + getAddress() + " : $" + getMarketValue() + (bForeclosed ? " >FORECLOSED" : "")));
 		System.out.println(getLine(""));
-		
+
+        //array of arrays (see figure on board)
 		for (int nRow = 0; nRow < cAsciis.length; nRow++) {
 			for (int nCol = 0; nCol < cAsciis[nRow].length; nCol++){ 
 				System.out.print(cAsciis[nRow][nCol]);
 			}
 			System.out.println();
 		}
-		
-	
+
 	}
 	
 	

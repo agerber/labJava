@@ -1,7 +1,6 @@
-package lec04.glab.boxing;
+package lec04.glab.fight;
 
 
-import lec03.glab.boxing.*;
 import lec03.glab.boxing.Boxable;
 import lec03.glab.boxing.Human;
 

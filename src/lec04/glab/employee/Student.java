@@ -1,8 +1,8 @@
 package lec04.glab.employee;
 
-import lec03.glab.employee.*;
 
-public class Student extends lec03.glab.employee.Person {
+
+public class Student extends Person {
 
 	
 	private String mMajor;

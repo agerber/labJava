@@ -1,6 +1,6 @@
 package lec04.glab.employee;
 
-import lec03.glab.employee.Employee;
+
 
 public class Manager extends Employee {
 	

@@ -2,7 +2,7 @@ package lec04.glab.employee;
 
 import lec03.glab.employee.*;
 
-public final class Executive extends lec03.glab.employee.Manager {
+public final class Executive extends Manager {
 
 	
 	
