@@ -2,7 +2,7 @@ package lec04.glab.statics;
 
 import java.util.Scanner;
 
-public class MetricConverter {
+public class MetricDriver {
 
 	/**
 	 * @param args

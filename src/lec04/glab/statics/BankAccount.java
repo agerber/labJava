@@ -6,7 +6,7 @@ public class BankAccount {
 	// ==STATIC FIELDS
 	// ===============================================
 	
-	 private static int nLastAssignedNumber = 1000; 
+	 private static int sLastNumberAssigned = 1000;
 	 public static final double OVERDRAFT_FEE = 5.0;
 	 
 	 
@@ -15,12 +15,9 @@ public class BankAccount {
 	// ==NON-STATIC FIELDS
 	// ===============================================
 	
-    private double dBalance;   
-    private int nAccountNumber;
-    
-    
-    
-    
+    private double mBalance;
+    private int mAccountNumber;
+
     // ===============================================
 	// ==CONSTRUCTORS
 	// ===============================================
@@ -28,21 +25,21 @@ public class BankAccount {
     
 	public BankAccount(double balance) {
 		//super();
-		this.dBalance = balance;
-		this.nAccountNumber = nLastAssignedNumber++;
+		this.mBalance = balance;
+		this.mAccountNumber = sLastNumberAssigned++;
 	}    
     
     @Override
     public String toString(){
     	
     	return this.getClass().getName() + " : " 
-    	+ nAccountNumber + "; balance: " + dBalance;
+    	+ mAccountNumber + "; balance: " + mBalance;
     	
     }
     
     
     public void overdraft(double dParam){
-    	dBalance -= dParam;
+    	mBalance -= dParam;
     }
     
     

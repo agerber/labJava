@@ -1,6 +1,6 @@
 package lec04.glab.statics;
 
-public class BankTester {
+public class BankDriver {
 
 	/**
 	 * @param args

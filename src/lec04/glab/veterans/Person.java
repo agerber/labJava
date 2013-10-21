@@ -1,4 +1,4 @@
-package lec04.glab.person;
+package lec04.glab.veterans;
 
 import java.util.ArrayList;
 

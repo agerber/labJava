@@ -7,7 +7,8 @@ package lec04.glab.statics;
 	// ==EVERYTHING IN THIS CLASS IS STATIC: FIELDS AND METHODS
 	// ===============================================
 	
-	
+
+     //make sure you can NOT instantite me
 	private Metric(){};
 	
 	// ===============================================
@@ -68,7 +69,7 @@ package lec04.glab.statics;
 	}
 	
 	
-	//let's inspec the Math class
+	//let's inspect the Math class
 	//double dResult = Math.pow(2,8);
 	
 	
