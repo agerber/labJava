@@ -17,10 +17,14 @@ public class Robot implements Boxable {
 	//instance fields for boxing
 	//private String strInterview;
 	private int nHealthPoints;
-	private int nAccuracy;
-	private int nPower;
-	
-	// #################################################
+	//private int nAccuracy;
+	//private int nPower;
+
+
+    public static final int ACC_ROBOT = 95;
+    public static final int POW_ROBOT = 15;
+
+    // #################################################
 	// ##### CONSTRUCTORS
 	// #################################################
 
@@ -40,13 +44,13 @@ public class Robot implements Boxable {
 	
 	
 	
-	public Robot(String strUrlAscii, int nDim, int healthPoints, int accuracy, int power) {
+	public Robot(String strUrlAscii, int nDim, int healthPoints) {
 		//super();
 		cAsciis = Asciify.getAsciiChars(strUrlAscii, nDim, nDim);
 		//this.cAsciis = asciis;
 		this.nHealthPoints = healthPoints;
-		this.nAccuracy = accuracy;
-		this.nPower = power;
+		//this.nAccuracy = accuracy;
+		//this.nPower = power;
 	}
 
 
@@ -79,23 +83,17 @@ public class Robot implements Boxable {
 
 
 	public int getAccuracy() {
-		return this.nAccuracy;
+		return ACC_ROBOT;
 	}
 
 
-	public void setAccuracy(int accuracy) {
-		this.nAccuracy = accuracy;
-	}
 
 
 	public int getPower() {
-		return this.nPower;
+		return POW_ROBOT;
 	}
 
 
-	public void setPower(int power) {
-		this.nPower = power;
-	}
 
 
 	public void setAsciis(char[][] asciis) {

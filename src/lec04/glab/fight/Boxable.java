@@ -10,13 +10,9 @@ public interface Boxable {
 	// ##### CONSTANTS
 	// #################################################
 
-	public static final int ACC_HUMAN = 50;  //percent accuracy each swing
-	public static final int ACC_KANGAROO = 24; 
-	public static final int ACC_ROBOT = 95; 
-	
-	public static final int POW_HUMAN = 30;  //power per punch in hit-points
-	public static final int POW_KANGAROO = 60; 
-	public static final int POW_ROBOT = 15; 
+
+
+
 	
 	public static final String[] SOUNDS = {
 			

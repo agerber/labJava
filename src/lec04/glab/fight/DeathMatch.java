@@ -14,23 +14,19 @@ public class DeathMatch {
 		
 
 		
-		Boxable boxPuncher   =  new Human(
+		Boxable boxPuncher = new Human(
 
-				"//src//lec03//glab//resources//box_human.jpg",
+				"//src//lec04//glab//resources//box_human.jpg",
 			60, 	
 			"I'm the greatest, float like a butterfly, sting like a bee!", 
-			1000,
-			Boxable.ACC_HUMAN,
-			Boxable.POW_HUMAN
+			1000
 				);
 		
 		
 		Boxable boxPunchee = new Kangaroo(
-                "//src//lec03//glab//resources//box_roo.gif",
+                "//src//lec04//glab//resources//box_roo.gif",
 				60, 	
-				1000,
-				Boxable.ACC_KANGAROO,
-				Boxable.POW_KANGAROO
+				1000
 					);
 		
 //		
@@ -60,7 +56,7 @@ public class DeathMatch {
 		
 	
 
-		do {
+		while(true) {
 			
 			//used to calculate the severity of the potential blow
 			int nOrigHealth = boxPunchee.healthStatus();
@@ -96,7 +92,7 @@ public class DeathMatch {
 			
 			
 			
-		} while (true); //infi
+		}
 			
 		
 		

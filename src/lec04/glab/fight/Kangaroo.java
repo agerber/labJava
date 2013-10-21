@@ -14,9 +14,11 @@ public class Kangaroo extends Animal implements Raceable, Boxable {
 	//instance fields for boxing
 
 	private int nHealthPoints;
-	private int nAccuracy;
-	private int nPower;
-	
+	//private int nAccuracy;
+	//private int nPower;
+
+    public static final int ACC_KANGAROO = 24;
+    public static final int POW_KANGAROO = 60;
 	
 	
 	//constructor for racing
@@ -29,12 +31,12 @@ public class Kangaroo extends Animal implements Raceable, Boxable {
 	
 	//constructor for boxing
 	public Kangaroo(String strUrlAscii, int nDim, 
-			int healthPoints, int accuracy, int power) {
+			int healthPoints) {
 		super(strUrlAscii, nDim);
 		//strInterview = interview;
 		nHealthPoints = healthPoints;
-		nAccuracy = accuracy;
-		 nPower = power;
+		//nAccuracy = accuracy;
+		// nPower = power;
 	}
 	
 	
@@ -46,23 +48,17 @@ public class Kangaroo extends Animal implements Raceable, Boxable {
 		nHealthPoints = healthPoints;
 	}
 	public int getAccuracy() {
-		return nAccuracy;
+		return ACC_KANGAROO;
 	}
-	public void setAccuracy(int accuracy) {
-		nAccuracy = accuracy;
-	}
+
 	
 	
 
 
 	public int getPower() {
-		return this.nPower;
+		return POW_KANGAROO;
 	}
 
-
-	public void setPower(int power) {
-		this.nPower = power;
-	}
 
 
 	public int getDistance() {

@@ -12,11 +12,13 @@ public class Human extends Animal implements Raceable, Boxable {
 	//instance fields for boxing
 	private String strInterview;
 	private int nHealthPoints;
-	private int nAccuracy;
-	private int nPower;
-	
-	
+	//private int nAccuracy;
+	//private int nPower;
 
+
+
+    public static final int ACC_HUMAN = 50;  //percent accuracy each swing
+    public static final int POW_HUMAN = 30;  //power per punch in hit-points
 	
 	
 	//constructor for racing
@@ -30,12 +32,12 @@ public class Human extends Animal implements Raceable, Boxable {
 	
 	//constructor for boxing
 	public Human(String strUrlAscii, int nDim, String interview,
-			int healthPoints, int accuracy, int power) {
+			int healthPoints) {
 		super(strUrlAscii, nDim);
 		strInterview = interview;
 		nHealthPoints = healthPoints;
-		nAccuracy = accuracy;
-		 nPower = power;
+		//nAccuracy = accuracy;
+		 //nPower = power;
 	}
 	
 
@@ -52,12 +54,7 @@ public class Human extends Animal implements Raceable, Boxable {
 	public void setHealthPoints(int healthPoints) {
 		nHealthPoints = healthPoints;
 	}
-	public int getAccuracy() {
-		return nAccuracy;
-	}
-	public void setAccuracy(int accuracy) {
-		nAccuracy = accuracy;
-	}
+
 	
 	public int getDistance() {
 		return nDistance;
@@ -69,16 +66,6 @@ public class Human extends Animal implements Raceable, Boxable {
 	}
 
 
-	
-	public int getPower() {
-		return nPower;
-	}
-
-
-
-	public void setPower(int power) {
-		nPower = power;
-	}
 
 
 
@@ -89,8 +76,8 @@ public class Human extends Animal implements Raceable, Boxable {
 		//if swing meets mark
 			//extract some health from opponent
 		int nSwing = Raceable.RAN.nextInt(100);
-		if (nSwing < getAccuracy()){
-			boxOpponent.ouch(getPower());
+		if (nSwing < ACC_HUMAN){
+			boxOpponent.ouch(POW_HUMAN);
 			return true;
 		}
 		return false;
