@@ -159,8 +159,6 @@ public class Asciify {
 
 	}
 
-
-
 	public static void writeToClipboard(String writeMe) {
 		// get the system clipboard
 		Clipboard clpBoard = Toolkit.getDefaultToolkit()

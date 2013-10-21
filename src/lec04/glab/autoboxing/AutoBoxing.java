@@ -18,9 +18,9 @@ public class AutoBoxing {
 			System.out.println("Integer values are NOT the same: " + intNum1 + " != " +  intNum2);
 
 		
-		int nNum1 = 0;
+		int nNum1 = -126;
 		//nNum1 = intNum1; //auto-unboxing
-		int nNum2 = new Integer(5); // auto-unboxing; released in Java5
+		int nNum2 = new Integer(81); // auto-unboxing; released in Java5
 		
 		if(nNum1 == nNum2)
 			System.out.println("int values are the same: " + nNum1 + " == " +  nNum2);

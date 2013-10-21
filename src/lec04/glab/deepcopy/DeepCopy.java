@@ -12,43 +12,43 @@ public class DeepCopy {
 
 
 
-		House houOne = new House(
+		House houOrig = new House(
 				"5519 Dorchester Ave.",
 				101.25,
 				Asciify.getAsciiChars(
-						"http://www.bradfitzpatrick.com/stock_illustration/images/cartoon_house_001.gif",
+						"http://us.123rf.com/400wm/400/400/sannare/sannare1012/sannare101200032/8466121-model-of-three-dimensions-family-house.jpg",
 						100), false);
 
-		House houSame = houOne;
-		System.out.println("houOne and houSame point the same instantiated object in memory space? " + (houOne == houSame));
-		houSame.setMarketValue(21.00);
+		House houAssigned = houOrig;
+		System.out.println("houOrig and houCloned point the same instantiated object in memory space? " + (houOrig == houAssigned));
+		houAssigned.setMarketValue(21.00);
 		
-		System.out.println(houOne.getMarketValue());
-		System.out.println(houSame.getMarketValue());
+		System.out.println(houOrig.getMarketValue());
+		System.out.println(houAssigned.getMarketValue());
 		
 		System.out.println("##############################");
 		
 
 		
-		House houTwo = null;
+		House houCloned = null;
 		try {
-			houTwo = houOne.clone();
+			houCloned = houOrig.clone();
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		System.out.println("houOne and houTwo point the same instantiated object in memory space? " + (houOne == houTwo));
+		System.out.println("houOrig and houCloned point the same instantiated object in memory space? " + (houOrig == houCloned));
 		
-		houTwo.setMarketValue(57.00);
+		houCloned.setMarketValue(57.00);
 	
 		
-		System.out.println("market value: " + houOne.getMarketValue() + " : time stamp " +  houOne.getDatInstantiated().getTime());
-		System.out.println("market value: " + houTwo.getMarketValue()  + " : time stamp " +  houTwo.getDatInstantiated().getTime());
+		System.out.println("market value: " + houOrig.getMarketValue() + " : time stamp " +  houOrig.getDatInstantiated().getTime());
+		System.out.println("market value: " + houCloned.getMarketValue()  + " : time stamp " +  houCloned.getDatInstantiated().getTime());
 		
 		
 		//deep copy or not; depends if House deep copies the mutable fields of House or not. 
-		System.out.println("houOne.getDatInstantiated() and houTwo.getDatInstantiated() point the same instantiated object in memory space? " + (houOne.getDatInstantiated() == houTwo.getDatInstantiated()));
+		System.out.println("houOrig.getDatInstantiated() and houCloned.getDatInstantiated() point the same instantiated object in memory space? " + (houOrig.getDatInstantiated() == houCloned.getDatInstantiated()));
 		
 
 
