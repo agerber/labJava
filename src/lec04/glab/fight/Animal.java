@@ -3,39 +3,17 @@ package lec04.glab.fight;
 import lec03.glab.ascii.Asciify;
 
 
+//this class is set as abstract as it doesn't contain enough useful information
+//to be concrete
 public abstract class Animal {
-	
 
-	
-	// #################################################
-	// ##### INSTANCE FIELDS
-	// #################################################
-
-	
 	private char[][] cAsciis;
-	
-	
-	
-	// #################################################
-	// ##### CONSTRUCTORS
-	// #################################################
 
-
-	
 	public Animal(String strUrlAscii, int nDim) {
-		
-		
+
 		cAsciis = Asciify.getAsciiChars(strUrlAscii, nDim, nDim);
-		//the distanced is automatically set to zero
 		
 	}
-
-	
-	// #################################################
-	// ##### GETTERS/SETTERS
-	// #################################################
-
-
 	public char[][] getAsciis() {
 		return cAsciis;
 	}
@@ -43,19 +21,6 @@ public abstract class Animal {
 	public void setAsciis(char[][] asciis) {
 		cAsciis = asciis;
 	}
-	
-	
-
-
-
-	
-	// #################################################
-	// ##### METHODS
-	// #################################################
-
-	
-
-
 	public String display(int nIndent) {
 		
 		StringBuilder stb = new StringBuilder();

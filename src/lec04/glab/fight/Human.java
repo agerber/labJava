@@ -7,62 +7,55 @@ public class Human extends Animal implements Raceable, Boxable {
 
 	
 	//instance fields for racing
-	private int nDistance;
+	private int mDistance;
 	
 	//instance fields for boxing
-	private String strInterview;
-	private int nHealthPoints;
-	//private int nAccuracy;
-	//private int nPower;
-
-
+	private String mInterview;
+	private int mHealthPoint;
 
     public static final int ACC_HUMAN = 50;  //percent accuracy each swing
     public static final int POW_HUMAN = 30;  //power per punch in hit-points
 	
 	
-	//constructor for racing
+	//constructor used for racing
 	public Human(String strUrlAscii, int nDim) {
 		super(strUrlAscii, nDim);
 	
-		nDistance = 0;
+		mDistance = 0;
 	}
-	
-	
-	
-	//constructor for boxing
+
+	//constructor used for boxing
 	public Human(String strUrlAscii, int nDim, String interview,
 			int healthPoints) {
 		super(strUrlAscii, nDim);
-		strInterview = interview;
-		nHealthPoints = healthPoints;
-		//nAccuracy = accuracy;
-		 //nPower = power;
+		mInterview = interview;
+		mHealthPoint = healthPoints;
+
 	}
 	
 
 
 	public String getInterview() {
-		return strInterview;
+		return mInterview;
 	}
 	public void setInterview(String interview) {
-		strInterview = interview;
+		mInterview = interview;
 	}
 	public int getHealthPoints() {
-		return nHealthPoints;
+		return mHealthPoint;
 	}
 	public void setHealthPoints(int healthPoints) {
-		nHealthPoints = healthPoints;
+		mHealthPoint = healthPoints;
 	}
 
 	
 	public int getDistance() {
-		return nDistance;
+		return mDistance;
 	}
 
 
 	public void setDistance(int distance) {
-		nDistance = distance;
+		mDistance = distance;
 	}
 
 

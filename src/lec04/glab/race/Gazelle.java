@@ -1,7 +1,7 @@
 package lec04.glab.race;
 
-import lec03.glab.boxing.Animal;
-import lec03.glab.race.Raceable;
+import lec04.glab.fight.Animal;
+import lec04.glab.race.Raceable;
 
 public class Gazelle extends Animal implements Raceable {
 
