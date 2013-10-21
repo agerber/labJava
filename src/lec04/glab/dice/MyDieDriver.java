@@ -1,6 +1,6 @@
 package lec04.glab.dice;
 
-import lec03.glab.dice.*;
+
 
 public class MyDieDriver {
 
@@ -9,10 +9,10 @@ public class MyDieDriver {
 	 */
 	public static void main(String[] args) {
 		
-		lec03.glab.dice.MyDie die1 = new lec03.glab.dice.MyDie(5.0, 5.0, 5.0, new String[]
+		MyDie die1 = new MyDie(5.0, 5.0, 5.0, new String[]
 				{"one","two", "three", "four", "five", "six"} );
 		
-		lec03.glab.dice.MyDie die2 = new lec03.glab.dice.MyDie(2.0, 2.0, 2.0, new String[]
+		MyDie die2 = new MyDie(2.0, 2.0, 2.0, new String[]
 				{"spades", "hearts","diamonds", "clubs"} );
 		
 		

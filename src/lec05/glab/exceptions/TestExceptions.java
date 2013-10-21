@@ -1,4 +1,4 @@
-package lec04.glab.exceptions;
+package lec05.glab.exceptions;
 
 import java.awt.*;
 

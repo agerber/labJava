@@ -1,10 +1,9 @@
 package lec04.glab.fight;
 
-import lec03.glab.boxing.Boxable;
-import lec03.glab.race.Raceable;
 
+import lec04.glab.race.Raceable;
 
-public class Kangaroo extends lec03.glab.boxing.Animal implements Raceable, lec03.glab.boxing.Boxable {
+public class Kangaroo extends Animal implements Raceable, Boxable {
 
 	
 	//instance fields for racing

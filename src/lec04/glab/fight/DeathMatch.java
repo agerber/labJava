@@ -1,8 +1,7 @@
 package lec04.glab.fight;
 
 
-import lec03.glab.boxing.Boxable;
-import lec03.glab.boxing.Human;
+
 
 public class DeathMatch {
 
@@ -15,23 +14,23 @@ public class DeathMatch {
 		
 
 		
-		lec03.glab.boxing.Boxable boxPuncher   = new lec03.glab.boxing.Human(
+		Boxable boxPuncher   =  new Human(
 
 				"//src//lec03//glab//resources//box_human.jpg",
 			60, 	
 			"I'm the greatest, float like a butterfly, sting like a bee!", 
 			1000,
-			lec03.glab.boxing.Boxable.ACC_HUMAN,
-			lec03.glab.boxing.Boxable.POW_HUMAN
+			Boxable.ACC_HUMAN,
+			Boxable.POW_HUMAN
 				);
 		
 		
-		lec03.glab.boxing.Boxable boxPunchee = new lec03.glab.boxing.Kangaroo(
+		Boxable boxPunchee = new Kangaroo(
                 "//src//lec03//glab//resources//box_roo.gif",
 				60, 	
 				1000,
-				lec03.glab.boxing.Boxable.ACC_KANGAROO,
-				lec03.glab.boxing.Boxable.POW_KANGAROO
+				Boxable.ACC_KANGAROO,
+				Boxable.POW_KANGAROO
 					);
 		
 //		
@@ -71,7 +70,7 @@ public class DeathMatch {
 			   
 			    //some sounds for max effect
 			    System.out.println(
-			    		lec03.glab.boxing.Boxable.SOUNDS[lec03.glab.boxing.Boxable.RAN.nextInt(lec03.glab.boxing.Boxable.SOUNDS.length)]);
+			    		Boxable.SOUNDS[Boxable.RAN.nextInt(Boxable.SOUNDS.length)]);
 			
 			    if (boxPunchee.healthStatus() <= 0){
 			    	System.out.println(boxPuncher.getClass().getName() + " knocks out " + boxPunchee.getClass().getName() );
@@ -101,7 +100,7 @@ public class DeathMatch {
 			
 		
 		
-		if (boxPuncher instanceof lec03.glab.boxing.Human)
+		if (boxPuncher instanceof Human)
 			System.out.println(((Human) boxPuncher).getInterview());
 			
 		
