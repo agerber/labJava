@@ -1,4 +1,5 @@
 package lec04.glab.realestate;
+import java.text.DecimalFormat;
 import java.util.Date;
 
 
@@ -14,6 +15,11 @@ public class House implements Cloneable {
 	
 	//this gets added later 
 	private Date datInstantiated;
+
+    private static DecimalFormat sFormatter;
+    static {
+        sFormatter = new DecimalFormat("$#,###.00");
+    }
 	
 	
 	// ===============================================
@@ -33,10 +39,6 @@ public class House implements Cloneable {
 	// ===============================================
 	// ==GETTERS AND SETTERS
 	// ===============================================
-	
-	
-	
-
 
 	public String getAddress() {
 		return this.strAddress;
@@ -92,7 +94,7 @@ public class House implements Cloneable {
 		
 		
 		System.out.println(getLine(""));
-		System.out.println(getLine(getDatInstantiated() + " : " + getDatInstantiated().getTime() + " : " + getAddress() + " : $" + getMarketValue() + (bForeclosed ? " >FORECLOSED" : "")));
+		System.out.println(getLine(getDatInstantiated() + " : " + getDatInstantiated().getTime() + " : " + getAddress() + " : " + sFormatter.format(getMarketValue()) + (bForeclosed ? " >FORECLOSED" : "")));
 		System.out.println(getLine(""));
 
         //array of arrays (see figure on board)
@@ -136,7 +138,7 @@ public class House implements Cloneable {
 		     //no need to clone string because it is immutable
 		     
 		    // comment out below line and see if clone works. 
-		     houClone.setDatInstantiated((Date)getDatInstantiated().clone());
+		    houClone.setDatInstantiated((Date)getDatInstantiated().clone());
 		     houClone.setAsciis((char[][])getAsciis().clone());
 		     
 		     

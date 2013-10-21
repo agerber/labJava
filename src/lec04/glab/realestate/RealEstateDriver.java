@@ -3,7 +3,7 @@ package lec04.glab.realestate;
 
 import java.util.ArrayList;
 
-public class RealEstate {
+public class RealEstateDriver {
 
 	/**
 	 * @param args
@@ -67,19 +67,7 @@ public class RealEstate {
 		houMostExpensive.display();
 
 
-        //when you clone, you copy over the values stored in the fields
-        //if those fields are primitives, no problem
-        //if those fields are Objects, then you're just copying the memory address (see figure on board)
-        //so you need to make a deep-copy, by overriding the clone() mehtod and deep-copy the objects!
-        House houTemp = null;
-        try {
-            houTemp  = houMostExpensive.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
 
-        System.out.println("clone below ->");
-        houTemp.display();
 
 
     }
