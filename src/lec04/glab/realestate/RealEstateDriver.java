@@ -11,41 +11,31 @@ public class RealEstateDriver {
 	public static void main(String[] args) {
 
 
-		ArrayList<House> houHydeParks = new ArrayList<House>();
+		ArrayList<House> houParks = new ArrayList<House>();
 		
-		houHydeParks.add(new House("5519 Dorchester Ave.", 
-									151123.13, 
-		                            Asciify.getAsciiChars("http://us.123rf.com/400wm/400/400/sannare/sannare1012/sannare101200032/8466121-model-of-three-dimensions-family-house.jpg", 20),
-		                            false));
-		
-		houHydeParks.add(new House("5914 Ellis Ave.", 
-				800150.35, 
-                Asciify.getAsciiChars("http://www.princegeorgeva.org/Modules/ShowImage.aspx?imageid=314", 20),
-                true));
-		
-
-		
-		houHydeParks.add(new House("1513 53rd Street", 
-				520300.85, 
-                Asciify.getAsciiChars("http://image.shutterstock.com/display_pic_with_logo/525955/525955,1264001517,30/stock-vector-cartoon-vector-illustration-house-44906851.jpg", 20),
+		houParks.add(new House("5519 Dorchester Ave.",
+                151_123.13,
                 false));
 		
-		
-		
-		
+		houParks.add(new House("5914 Ellis Ave.",
+                800_150.35,
+                true));
+
+		houParks.add(new House("1513 53rd Street",
+                520_300.85,
+                false));
 		
 
         //subprime-crash!
-		for (House hou : houHydeParks) {
+		for (House hou : houParks) {
 			hou.setMarketValue(hou.getMarketValue() * 0.75);
 			
 		}
 		
 		
 		
-		for (House hou : houHydeParks) {
-			hou.display();
-			System.out.println();
+		for (House hou : houParks) {
+			System.out.println(hou);
 			
 		}
 		
@@ -53,10 +43,10 @@ public class RealEstateDriver {
 		House houMostExpensive;
 		House houTest;
 		
-	    houMostExpensive = houHydeParks.get(0);
+	    houMostExpensive = houParks.get(0);
 		
-		for (int nC = 1; nC < houHydeParks.size(); nC++) {
-			houTest = houHydeParks.get(nC);
+		for (int nC = 1; nC < houParks.size(); nC++) {
+			houTest = houParks.get(nC);
 			if(houTest.getMarketValue() > houMostExpensive.getMarketValue()) {
 				houMostExpensive = houTest;
             }
@@ -64,7 +54,7 @@ public class RealEstateDriver {
 			
 		System.out.println();
 		System.out.println("The most expensive house in Hyde Park: ");
-		houMostExpensive.display();
+        System.out.println(houMostExpensive);
 
 
 
