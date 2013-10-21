@@ -51,7 +51,7 @@ public class EmployeeDriver {
         //create a new arrayList of persons
 		//ArrayList<Person> perChicagos = new ArrayList<Person>();
 
-        Person[] perChicagos  = new Person[empChicagos.length + 1];
+        Person[] perChicagos  = new Person[empChicagos.length + 2];
 
 
         //add all the employees from Chicago
@@ -60,7 +60,9 @@ public class EmployeeDriver {
 		}
 
         //add a new student
-		perChicagos[empChicagos.length] =new Student("Joe Student", "CompSci");
+        perChicagos[empChicagos.length] =new Student("Adam Gerber");
+		perChicagos[empChicagos.length+1] =new Student("Joe Student", "CompSci");
+
 		
 		
 		System.out.println("#############################");

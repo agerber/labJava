@@ -19,7 +19,7 @@ public final class Executive extends Manager {
 	}
 
 	public void setStockValue(double stockValue) {
-		mStockValue = stockValue;
+		this.mStockValue = stockValue;
 	}
 	
 	@Override

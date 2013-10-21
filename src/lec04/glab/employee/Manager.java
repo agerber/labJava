@@ -25,6 +25,12 @@ public class Manager extends Employee {
 		// TODO Auto-generated method stub
 		return String.format("a Manager with a salary of " +  getSalary()+ " and a bonus of " + getBonus() );
 	}
+
+
+    @Override
+    public String toString(){
+        return "MANAGER> " + super.toString();
+    }
 	
 	
 	

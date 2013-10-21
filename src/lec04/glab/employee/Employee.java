@@ -47,4 +47,9 @@ public class Employee extends Person {
 		return String.format("an Employee with a salary of $%.2f", mSalary);
 	}
 
+    @Override
+    public String toString(){
+        return this.getClass().getSimpleName() + " " + super.toString();
+    }
+
 }
