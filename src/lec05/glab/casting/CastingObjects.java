@@ -43,7 +43,7 @@ public class CastingObjects {
 		// ==cast down to Integer
 		// ===============================================
 		
-		Integer intSome = (Integer) numSome;
+		Integer intSome = (Integer) numSome;  //this could store a Double or Long or Float, so you must explicitly cast it.
 		System.out.print("cast down; now an Integer object stored in an Integer reference: ");
 		System.out.print(intSome);
 		System.out.print(" : numSome == intSome " + (numSome == intSome) );
@@ -52,9 +52,7 @@ public class CastingObjects {
 	    clsSome = intSome.getClass();
 		System.out.println(" and the class is " + clsSome.getName());
 		
-		
-		
-	
+
 		
 		//"casting up" the class hierarchy is not required, just assign
 		System.out.println("'Cast-up' examples: casting up is not required, just assign");
