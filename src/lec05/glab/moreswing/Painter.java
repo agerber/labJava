@@ -2,6 +2,8 @@ package lec05.glab.moreswing;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
@@ -19,35 +21,41 @@ public class Painter {
     private JSlider mSlider;
     private JRadioButton mRoundRadioButton;
     private JRadioButton mSquareRadioButton;
+    private JButton mColorButton;
+    private JButton mClearScreenButton;
 
     private ButtonGroup mButtonGroup;
+    private Color mColor;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Painter");
         frame.setContentPane(new Painter().mPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setSize(600,900);
         frame.setVisible(true);
     }
 
     public Painter() {
         mButtonGroup = new ButtonGroup();
-       mButtonGroup.add(mRoundRadioButton);
-       mButtonGroup.add(mSquareRadioButton);
-       mRoundRadioButton.setSelected(true);
+        mButtonGroup.add(mRoundRadioButton);
+        mButtonGroup.add(mSquareRadioButton);
+        mRoundRadioButton.setSelected(true);
+        mColor = Color.BLACK;
+        mColorButton.setBackground(mColor);
 
 
         mPanel.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
 
-              Graphics grpGraphic =  mPanelNorth.getGraphics();
-             grpGraphic.setColor(new Color(35,156,79));
+                Graphics grp = mPanelNorth.getGraphics();
+                grp.setColor(mColor);
 
-                if(!mSquareRadioButton.isSelected()){
-                 grpGraphic.fillOval(e.getX(), e.getY(), mSlider.getValue(), mSlider.getValue());
+                if (!mSquareRadioButton.isSelected()) {
+                    grp.fillOval(e.getX(), e.getY(), mSlider.getValue(), mSlider.getValue());
                 } else {
-                 grpGraphic.fillRect(e.getX(), e.getY(), mSlider.getValue(), mSlider.getValue());
+                    grp.fillRect(e.getX(), e.getY(), mSlider.getValue(), mSlider.getValue());
 
                 }
 
@@ -55,5 +63,23 @@ public class Painter {
         });
 
 
+        mColorButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mColor = JColorChooser.showDialog(mPanelSouth, "Select a Background Color", Color.BLACK);
+                if (mColor != null) {
+                    mColorButton.setBackground(mColor);
+                }
+            }
+        });
+        mClearScreenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Graphics grp = mPanelNorth.getGraphics();
+                grp.setColor(Color.LIGHT_GRAY);
+                grp.fillRect(0,0,mPanelNorth.getWidth(), mPanelNorth.getHeight());
+               mPanelNorth.setBackground(Color.GRAY);
+            }
+        });
     }
 }
