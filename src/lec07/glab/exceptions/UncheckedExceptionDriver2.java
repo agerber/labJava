@@ -11,9 +11,7 @@ public class UncheckedExceptionDriver2 {
 		System.out.println(getHighValue("Bears", "Vikings", "Browns", "Dophins"));
 		System.out.println(getHighValue2());
 	}
-	
-	
-	
+
 	private static String getHighValue(String... strParams){
 		
 		

@@ -68,7 +68,7 @@ public class BinaryToDigital {
 
 	}
 	
-	private static long convertToNumeric(String sParam){
+	public static long convertToNumeric(String sParam){
 		
 
 		//processString()
