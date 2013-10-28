@@ -18,26 +18,7 @@ public class TimeTestAnon {
 
 		// ActionListener lis1 = new ActionListener();  //can't instantiate, EXCEPT anonymously like above
 
-		Timer tim = new Timer(1000,
 
-		new ActionListener() {
-
-			public void actionPerformed(ActionEvent evn) {
-				Date datNow = new Date();
-				System.out.println("type-anonymous and reference-anonymous > At the tone, the time is "
-						+ datNow);
-				Toolkit.getDefaultToolkit().beep();
-                //Reflector.printClass(this.getClass());
-			}
-		}
-
-		);
-
-
-		tim.start();
-
-		JOptionPane.showMessageDialog(null, "Quit?");
-		System.exit(0);
 
 	}
 
