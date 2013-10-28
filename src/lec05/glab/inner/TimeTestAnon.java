@@ -1,5 +1,7 @@
 package lec05.glab.inner;
 
+import lec05.glab.reflection.Reflector;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -25,10 +27,13 @@ public class TimeTestAnon {
 				System.out.println("type-anonymous and reference-anonymous > At the tone, the time is "
 						+ datNow);
 				Toolkit.getDefaultToolkit().beep();
+                //Reflector.printClass(this.getClass());
 			}
 		}
 
 		);
+
+
 		tim.start();
 
 		JOptionPane.showMessageDialog(null, "Quit?");

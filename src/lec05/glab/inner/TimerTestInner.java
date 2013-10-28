@@ -1,5 +1,7 @@
 package lec05.glab.inner;
 
+import lec05.glab.reflection.Reflector;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,10 +18,8 @@ public class TimerTestInner {
 
 		
 		ActionListener lis = new TimePrintInner();
-		
-		Class cls = lis.getClass();
-		System.out.println(cls.getName());
-		
+        //Reflector.printClass(lis.getClass());
+
 		Timer tim = new Timer(1000, lis);
 		tim.start();
 		
@@ -33,10 +33,6 @@ public class TimerTestInner {
 
 }//end TimerTest class
 
-//===============================================
-//==INNER CLASS DEFINED WITHIN THE SAME JAVA FILE
-//==ONLY THE ENCLOSING CLASS NEED KNOW ABOUT IT
-//===============================================
 class TimePrintInner implements ActionListener {
 	
 	public void actionPerformed(ActionEvent evn){

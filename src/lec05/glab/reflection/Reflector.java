@@ -8,10 +8,10 @@ import java.util.Scanner;
 import java.util.Stack;
 
 
-//originally found here: http://www.hackchina.com/en/r/18861/ReflectionTest.java__html  and grossly modified
-//using ReflectionTest and Horstmann as search params
+//originally found here: http://www.hackchina.com/en/r/18861/Reflector.java__html  and grossly modified
+//using Reflector and Horstmann as search params
 
-public class ReflectionTest {
+public class Reflector {
     public static void main(String[] args) {
         // read class name from command line args or user input
         String strClass = "";
@@ -24,32 +24,8 @@ public class ReflectionTest {
                 if (strClass.equalsIgnoreCase("exit")){
                     System.exit(0);
                 }
-                //the following line could throw an exception
-                cls = Class.forName(strClass);
+                printClass(strClass);
 
-                //create a stack and push the original class onto it
-                Stack<Class> clsStacks = new Stack<>();
-                clsStacks.push(cls);
-
-                //keep pushing its superclass until superclass is null (I've reached grand-daddy Object)
-                while (clsStacks.peek().getSuperclass() != null) {
-                    clsStacks.push(clsStacks.peek().getSuperclass());
-                }
-
-                while (!clsStacks.empty()) {
-                    cls = clsStacks.pop();
-                    System.out.println("###############CLASS###############\n" +cls.toString() + "\n###############CLASS###############\n");
-                    System.out.println("//FIELDS");
-                    printFields(cls);
-                    System.out.println();
-                    System.out.println("//CONSTRUCTORS");
-                    printConstructors(cls);
-                    System.out.println();
-                    System.out.println("//METHODS");
-                    printMethods(cls);
-                    System.out.println();
-
-                }
 
             } catch (ClassNotFoundException e) {
                // e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -59,6 +35,43 @@ public class ReflectionTest {
         }
 
     }
+
+    public static void printClass(Class cls)  {
+        //create a stack and push the original class onto it
+        Stack<Class> clsStacks = new Stack<>();
+        clsStacks.push(cls);
+
+        //keep pushing its superclass until superclass is null (I've reached grand-daddy Object)
+        while (clsStacks.peek().getSuperclass() != null) {
+            clsStacks.push(clsStacks.peek().getSuperclass());
+        }
+
+        while (!clsStacks.empty()) {
+            cls = clsStacks.pop();
+            System.out.println("###############CLASS###############\n" +cls.toString() + "\n###############CLASS###############\n");
+            System.out.println("//INTERFACES");
+            printInterfaces(cls);
+            System.out.println("//FIELDS");
+            printFields(cls);
+            System.out.println();
+            System.out.println("//CONSTRUCTORS");
+            printConstructors(cls);
+            System.out.println();
+            System.out.println("//METHODS");
+            printMethods(cls);
+            System.out.println();
+
+        }
+    }
+
+    public static void printClass(String strClass) throws ClassNotFoundException {
+        Class cls;//the following line could throw an exception
+        cls = Class.forName(strClass);
+        printClass(cls);
+
+    }
+
+
 
     public static void printConstructors(Class cl) {
         Constructor[] constructors = cl.getDeclaredConstructors();
@@ -77,6 +90,21 @@ public class ReflectionTest {
             System.out.println("); //no-arg constructor");
         }
     }
+
+
+    public static void printInterfaces(Class cl) {
+        System.out.print("   ");
+        Class[] interfaces = cl.getInterfaces();
+        for (int nC = 0; nC < interfaces.length; nC++) {
+                if (nC > 0) System.out.print(", ");
+                System.out.print(interfaces[nC].getName());
+            }
+        System.out.println();
+        System.out.println();
+    }
+
+
+
 
 
     public static void printMethods(Class cl) {
