@@ -14,6 +14,10 @@ import java.util.Stack;
 public class Reflector {
     public static void main(String[] args) {
         // read class name from command line args or user input
+
+//        printClass(java.util.Date.class);
+//        return;
+
         String strClass = "";
         Scanner scan = new Scanner(System.in);
         Class cls = null;
@@ -46,6 +50,8 @@ public class Reflector {
             clsStacks.push(clsStacks.peek().getSuperclass());
         }
 
+
+
         while (!clsStacks.empty()) {
             cls = clsStacks.pop();
             System.out.println("###############CLASS###############\n" +cls.toString() + "\n###############CLASS###############\n");
@@ -64,6 +70,7 @@ public class Reflector {
         }
     }
 
+    //overlaoded to take string
     public static void printClass(String strClass) throws ClassNotFoundException {
         Class cls;//the following line could throw an exception
         cls = Class.forName(strClass);
