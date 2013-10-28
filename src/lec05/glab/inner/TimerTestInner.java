@@ -17,7 +17,14 @@ public class TimerTestInner {
 	public static void main(String[] args) {
 
 		
+		ActionListener lis = new EventListenerInner();
+        //Reflector.printClass(lis.getClass());
 
+		Timer tim = new Timer(1000, lis);
+		tim.start();
+		
+		JOptionPane.showMessageDialog(null, "Quit?");
+		System.exit(0);
 		
 
 	}
@@ -26,8 +33,14 @@ public class TimerTestInner {
 
 }//end TimerTest class
 
-
-
+class EventListenerInner implements ActionListener {
+	
+	public void actionPerformed(ActionEvent evn){
+		Date datNow = new Date();
+		System.out.println("At the tone, the time is " + datNow);
+		Toolkit.getDefaultToolkit().beep();
+	}
+}
 
 
 
