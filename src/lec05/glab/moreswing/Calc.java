@@ -37,9 +37,9 @@ public class Calc {
 
    //my members
     private ActionListener mActionListener;
-    private String mPrevOperator;
 
-    private LinkedList<Operation> mOperations;
+
+
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calc");
@@ -52,7 +52,7 @@ public class Calc {
 
     public Calc() {
         //do any initialization
-        mOperations = new LinkedList<Operation>();
+
 
 
         //create and add any listeners
@@ -65,46 +65,8 @@ public class Calc {
                     mTextField.setText(mTextField.getText() + String.valueOf(nVal));
                 } catch (NumberFormatException e1) {
 
-                    if(strButtonText.equalsIgnoreCase("=")){
-
-                        long lReturn = 0;
-                        Operation opr;
-                        while(!mOperations.isEmpty()) {
-                            opr = mOperations.removeFirst();
-                            long lOperand = opr.getOperand();
-                            String strOperator = opr.getOperator();
-                            switch(strOperator) {
-                                case "*":
-                                    lReturn *= lOperand;
-                                break;
-                                case "/":
-                                    lReturn /= lOperand;
-                                break;
-                                case "-":
-                                    lReturn -= lOperand;
-                                break;
-                                case "+":
-                                    lReturn += lOperand;
-                                break;
-                                case "^":
-                                    lReturn = lOperand;
-                                 break;
-                            }
-
-                        }
-                        mTextField.setText(String.valueOf(lReturn));
-
-                    } else {
-                        if(mOperations.size() == 0) {
-                            mOperations.addLast(new Operation("^", Long.valueOf(mTextField.getText())));
-                        } else {
-                            mOperations.addLast(new Operation(mPrevOperator, Long.valueOf(mTextField.getText())));
-                            mPrevOperator = strButtonText;
-                        }
-
-                        mTextField.setText("");
-
-                    }
+                    //just set to nothing for now
+                    mTextField.setText("");
 
                 }
             }
@@ -131,29 +93,5 @@ public class Calc {
 
     }
 
-    private class Operation {
-        private String mOperator;
-        private long mOperand;
 
-        private Operation(String operator, long operand) {
-            mOperator = operator;
-            mOperand = operand;
-        }
-
-        private String getOperator() {
-            return mOperator;
-        }
-
-        private void setOperator(String operator) {
-            mOperator = operator;
-        }
-
-        private long getOperand() {
-            return mOperand;
-        }
-
-        private void setOperand(long operand) {
-            mOperand = operand;
-        }
-    }
 }
