@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 
-public class TimePrintOuter implements ActionListener {
+public class EventListenerOuter implements ActionListener {
 		
 		public void actionPerformed(ActionEvent evn){
 			Date datNow = new Date();

@@ -17,7 +17,7 @@ public class TimerTestInner {
 	public static void main(String[] args) {
 
 		
-		ActionListener lis = new TimePrintInner();
+		ActionListener lis = new EventListenerInner();
         //Reflector.printClass(lis.getClass());
 
 		Timer tim = new Timer(1000, lis);
@@ -33,7 +33,7 @@ public class TimerTestInner {
 
 }//end TimerTest class
 
-class TimePrintInner implements ActionListener {
+class EventListenerInner implements ActionListener {
 	
 	public void actionPerformed(ActionEvent evn){
 		Date datNow = new Date();
