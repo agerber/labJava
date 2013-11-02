@@ -13,7 +13,7 @@ import java.util.LinkedList;
  * Time: 3:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Floor {
+public class Floor implements  Drawable {
 
     //a floor stores a zero-based integer determinng which store it is
     private int mLevel; //0-4
@@ -49,4 +49,8 @@ public class Floor {
     }
 
 
+    @Override
+    public void drawMe(Graphics graphics) {
+
+    }
 }

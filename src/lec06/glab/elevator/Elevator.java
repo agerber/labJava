@@ -1,5 +1,6 @@
 package lec06.glab.elevator;
 
+import java.awt.*;
 import java.util.LinkedList;
 
 /**
@@ -9,7 +10,7 @@ import java.util.LinkedList;
  * Time: 3:28 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Elevator {
+public class Elevator implements Drawable {
 
     private LinkedList<Rider> mRiders;
     private int mFloor;
@@ -21,6 +22,8 @@ public class Elevator {
     }
 
 
-
-
+    @Override
+    public void drawMe(Graphics graphics) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
 }

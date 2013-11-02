@@ -13,8 +13,11 @@ public class Building implements  Drawable {
     //a building has an array of floors and an elevator
     private Elevator mElevator;
     private Floor[] mFloors;
-    public static final int NUM_FLOOR =5;
     public Dimension mDimension;
+
+    //static members
+    public static final int NUM_FLOOR =5;
+    private static final Color sColor = Color.GRAY;
 
     public Building(Dimension dimension) {
         mElevator = new Elevator();
@@ -31,8 +34,20 @@ public class Building implements  Drawable {
         mDimension = dimension;
     }
 
+
     @Override
-    public void drawMe(Graphics graphics) {
+    public void drawMe(Graphics g) {
+
+        g.setColor(sColor);
+        g.fillRect(0,0,(int)mDimension.getWidth(),(int)mDimension.getHeight());
+
+        //use iter as keyboard shortcut
+        //draw the floors next
+        for (Floor floor : mFloors) {
+            floor.drawMe(g);
+        }
+
+        mElevator.drawMe(g);
 
     }
 }

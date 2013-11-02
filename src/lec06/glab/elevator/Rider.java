@@ -19,7 +19,7 @@ public class Rider {
     private int mFloor; //0-4
     //for rendering our rider
     private Point mPoint;
-    private double mRadix;
+    private double mRadiux;
 
     //a rider must come into existence outside the building (unless is were a hospital with a maternity ward)
     public Rider() {
@@ -35,12 +35,12 @@ public class Rider {
         mPoint = point;
     }
 
-    public double getRadix() {
-        return mRadix;
+    public double getRadiux() {
+        return mRadiux;
     }
 
-    public void setRadix(double radix) {
-        mRadix = radix;
+    public void setRadiux(double radiux) {
+        mRadiux = radiux;
     }
 
     public State getState() {
