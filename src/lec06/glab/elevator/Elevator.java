@@ -14,8 +14,10 @@ public class Elevator implements Drawable {
 
     private LinkedList<Rider> mRiders;
     private int mFloor;
+    private Dimension mDimension;
 
-    public Elevator() {
+    public Elevator(Dimension dimension) {
+        mDimension = dimension;
         mRiders = new LinkedList<>();
         mFloor = 0; //optional - zero is the default value anyway, even if I hadn't assigned it
 

@@ -21,8 +21,22 @@ public class Building implements  Drawable {
 
     public Building(Dimension dimension) {
         mElevator = new Elevator();
-        mFloors = new Floor[NUM_FLOOR];
         mDimension = dimension;
+        mFloors = new Floor[NUM_FLOOR];
+
+        for (int nC = 0; nC <mFloors.length; nC++) {
+            mFloors[nC].setDimension(new Dimension((int)dimension.getWidth(), (int)(dimension.getHeight() / NUM_FLOOR)));
+            mFloors[nC].setLevel(nC);
+        }
+
+
+
+
+
+
+
+
+
     }
 
 
