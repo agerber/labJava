@@ -15,6 +15,12 @@ public class Rider {
     private State mState;
     private int mFloor; //0-4
 
+    //a rider must come into existence outside the building (unless is were a hospital with a maternity ward)
+    public Rider() {
+        mState = State.AWAY;
+        mFloor = 0;
+    }
+
     public State getState() {
         return mState;
     }
