@@ -1,5 +1,7 @@
 package lec06.glab.elevator;
 
+import java.awt.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ag
@@ -7,7 +9,20 @@ package lec06.glab.elevator;
  * Time: 3:27 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Building {
+public class Building implements  Drawable {
     //a building has an array of floors and an elevator
+    private Elevator mElevator;
+    private Floor[] mFloors;
+    public static final int NUM_FLOOR =5;
 
+    public Building() {
+        mElevator = new Elevator();
+        mFloors = new Floor[NUM_FLOOR];
+    }
+
+
+    @Override
+    public void drawMe(Graphics graphics) {
+
+    }
 }

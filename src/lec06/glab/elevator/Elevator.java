@@ -14,4 +14,13 @@ public class Elevator {
     private LinkedList<Rider> mRiders;
     private int mFloor;
 
+    public Elevator() {
+        mRiders = new LinkedList<>();
+        mFloor = 0; //optional - zero is the default value anyway, even if I hadn't assigned it
+
+    }
+
+
+
+
 }
