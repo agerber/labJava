@@ -14,12 +14,22 @@ public class Building implements  Drawable {
     private Elevator mElevator;
     private Floor[] mFloors;
     public static final int NUM_FLOOR =5;
+    public Dimension mDimension;
 
-    public Building() {
+    public Building(Dimension dimension) {
         mElevator = new Elevator();
         mFloors = new Floor[NUM_FLOOR];
+        mDimension = dimension;
     }
 
+
+    public Dimension getDimension() {
+        return mDimension;
+    }
+
+    public void setDimension(Dimension dimension) {
+        mDimension = dimension;
+    }
 
     @Override
     public void drawMe(Graphics graphics) {
