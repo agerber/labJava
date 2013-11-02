@@ -15,5 +15,19 @@ public class Rider {
     private State mState;
     private int mFloor; //0-4
 
+    public State getState() {
+        return mState;
+    }
 
+    public void setState(State state) {
+        mState = state;
+    }
+
+    public int getFloor() {
+        return mFloor;
+    }
+
+    public void setFloor(int floor) {
+        mFloor = floor;
+    }
 }
