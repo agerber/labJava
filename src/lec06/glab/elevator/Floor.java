@@ -2,6 +2,7 @@ package lec06.glab.elevator;
 
 import lec09.glab.structs.Queue;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -18,6 +19,22 @@ public class Floor {
     private int mLevel; //0-4
     private LinkedList<Rider> mWorkingRiders;
     private LinkedList<Rider> mWaitingRiders;
+    private Dimension mDimension;
+
+    public Floor(Dimension dimension, int level) {
+        mDimension = dimension;
+        mLevel = level;
+        mWorkingRiders = new LinkedList<>();
+        mWaitingRiders = new LinkedList<>();
+    }
+
+    public Dimension getDimension() {
+        return mDimension;
+    }
+
+    public void setDimension(Dimension dimension) {
+        mDimension = dimension;
+    }
 
     public Floor(int level) {
         mLevel = level;
