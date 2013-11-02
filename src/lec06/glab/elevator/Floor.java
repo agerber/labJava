@@ -19,6 +19,9 @@ public class Floor {
     private LinkedList<Rider> mWorkingRiders;
     private LinkedList<Rider> mWaitingRiders;
 
+    public Floor(int level) {
+        mLevel = level;
+    }
 
     public int getLevel() {
         return mLevel;
