@@ -15,6 +15,7 @@ public class Elevator implements Drawable {
     private LinkedList<Rider> mRiders;
     private int mFloor;
     private Dimension mDimension;
+    public static final Color COLOR = Color.BLUE;
 
     public Elevator(Dimension dimension) {
         mDimension = dimension;
@@ -25,7 +26,10 @@ public class Elevator implements Drawable {
 
 
     @Override
-    public void drawMe(Graphics graphics) {
+    public void drawMe(Graphics g) {
         //To change body of implemented methods use File | Settings | File Templates.
+
+        g.setColor(COLOR);
+        g.fillRect();
     }
 }
