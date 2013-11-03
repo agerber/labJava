@@ -20,7 +20,9 @@ public class Building implements  Drawable {
     private static final Color sColor = Color.GRAY;
 
     public Building(Dimension dimension) {
-        mElevator = new Elevator();
+        //an elevator has 1/3 -10 pixels the width and 1/num_floors height - 10
+
+        mElevator = new Elevator(new Dimension((int)(dimension.getWidth()/3 -10),(int)(dimension.getHeight()/NUM_FLOOR -10)));
         mDimension = dimension;
         mFloors = new Floor[NUM_FLOOR];
 
@@ -28,12 +30,6 @@ public class Building implements  Drawable {
             mFloors[nC].setDimension(new Dimension((int)dimension.getWidth(), (int)(dimension.getHeight() / NUM_FLOOR)));
             mFloors[nC].setLevel(nC);
         }
-
-
-
-
-
-
 
 
 
