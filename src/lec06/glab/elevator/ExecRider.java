@@ -1,5 +1,7 @@
 package lec06.glab.elevator;
 
+import java.awt.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ag
@@ -7,8 +9,14 @@ package lec06.glab.elevator;
  * Time: 3:08 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ExecRider extends Rider {
+public class ExecRider extends Rider  {
     private boolean mSuiteAccess;
+
+
+    public ExecRider(Dimension dimension) {
+       super(dimension);
+        mSuiteAccess = (Math.random() * 10 < 5 ? true : false);
+    }
 
     public boolean isSuiteAccess() {
         return mSuiteAccess;
@@ -17,4 +25,6 @@ public class ExecRider extends Rider {
     public void setSuiteAccess(boolean suiteAccess) {
         mSuiteAccess = suiteAccess;
     }
+
+
 }

@@ -13,7 +13,7 @@ public class Building implements  Drawable {
     //a building has an array of floors and an elevator
     private Elevator mElevator;
     private Floor[] mFloors;
-    public Dimension mDimension;
+    private Dimension mDimension;
 
     //static members
     public static final int NUM_FLOOR =5;
@@ -30,9 +30,6 @@ public class Building implements  Drawable {
             mFloors[nC].setDimension(new Dimension((int)dimension.getWidth(), (int)(dimension.getHeight() / NUM_FLOOR)));
             mFloors[nC].setLevel(nC);
         }
-
-
-
     }
 
 

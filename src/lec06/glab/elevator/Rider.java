@@ -11,20 +11,24 @@ import java.awt.*;
  * To change this template use File | Settings | File Templates.
  */
 
-public class Rider {
+public class Rider implements Drawable {
+
+
 
     //Rider can be waiting, riding, or indisposed  (must we make this static?)
     public static enum State {RIDING, WAITING, IN_BUILDING, AWAY}
     private State mState;
     private int mFloor; //0-4
-    //for rendering our rider
+    private Dimension mDimension;
     private Point mPoint;
-    private double mRadiux;
+
+
 
     //a rider must come into existence outside the building (unless is were a hospital with a maternity ward)
-    public Rider() {
+    public Rider(Dimension dimension) {
         mState = State.AWAY;
         mFloor = 0;
+        mDimension = dimension;
     }
 
     public Point getPoint() {
@@ -35,12 +39,18 @@ public class Rider {
         mPoint = point;
     }
 
-    public double getRadiux() {
-        return mRadiux;
+    @Override
+    public void drawMe(Graphics g) {
+
+
     }
 
-    public void setRadiux(double radiux) {
-        mRadiux = radiux;
+    public Dimension getDimension() {
+        return mDimension;
+    }
+
+    public void setDimension(Dimension dimension) {
+        mDimension = dimension;
     }
 
     public State getState() {
