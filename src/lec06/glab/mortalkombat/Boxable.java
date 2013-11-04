@@ -37,7 +37,7 @@ public interface Boxable {
 	public boolean punch(Boxable boxOpponent);
 	public void ouch(int nPoints);
 	public int healthStatus();
-	public String vocalize();
+
 	
 	
 	

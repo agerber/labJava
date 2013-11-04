@@ -237,7 +237,7 @@ public class MortalKombat {
 
 			private void playStrikeSound() {
 				Mortal mor = (Mortal)boxPuncher;
-                MakeSound.playSound(mor.getSoundPath());
+                SoundImageUtils.playSound(mor.getSoundPath());
 				//mor.playSound(mor.getSoundPath());
 			}
 		}

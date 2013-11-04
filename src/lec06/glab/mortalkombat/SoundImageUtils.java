@@ -1,8 +1,11 @@
 package lec06.glab.mortalkombat;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -11,7 +14,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 
 //http://stackoverflow.com/questions/2416935/how-to-play-wav-files-with-java/2417088#2417088
-public class MakeSound {
+public class SoundImageUtils {
 
     private static final int BUFFER_SIZE = 128000;
     private static File soundFile;
@@ -76,4 +79,40 @@ public class MakeSound {
         sourceLine.drain();
         sourceLine.close();
     }
+
+
+    public static BufferedImage genBuffImage(String strRelativeFilePath){
+        String strPathImg= System.getProperty("user.dir")+ strRelativeFilePath;
+        File filImg = new File(strPathImg);
+
+        BufferedImage bufferedImage = null;
+        try {
+            bufferedImage = ImageIO.read(filImg);
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+       return scaleImage(bufferedImage, MortalKombat.WIDTH, MortalKombat.HEIGHT);
+    }
+
+
+    //method found on stackoverflow.com, re-implemented here
+    private static BufferedImage scaleImage(BufferedImage img, int nWidth, int nHeight) {
+
+        BufferedImage newImage = new BufferedImage(nWidth, nHeight,
+                BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = newImage.createGraphics();
+        try {
+            g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+                    RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+            g.setBackground(new Color(0,0,0));
+            g.clearRect(0, 0, nWidth, nHeight);
+            g.drawImage(img, 0, 0, nWidth, nHeight, null);
+        } finally {
+            g.dispose();
+        }
+        return newImage;
+    }
+
+
 }

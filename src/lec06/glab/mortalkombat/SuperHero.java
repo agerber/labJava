@@ -117,14 +117,6 @@ public class SuperHero extends Mortal implements Boxable {
 
 
 
-	@Override
-	public String vocalize() {
-	
-		return "Yes, I win!";
-		
-	}
-
-
 
 	
 	
