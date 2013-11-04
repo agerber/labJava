@@ -3,8 +3,12 @@ package lec06.glab.latin;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,13 +22,13 @@ public class LatinDictionary {
     private JButton mButtonNew;
     private JButton mButtonSearch;
     private JList mList;
-    private Map<String,String> mMap;
+    private DefaultListModel<String> mModel;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("LatinDictionary");
         frame.setContentPane(new LatinDictionary().mValue);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600,600);
+        frame.setSize(800, 800);
         frame.pack();
         frame.setVisible(true);
     }
@@ -32,7 +36,7 @@ public class LatinDictionary {
     public LatinDictionary() {
 
         //init
-        mMap = new HashMap<>();
+        mModel = new DefaultListModel<>();
 
         //event listeners
         mButtonNew.addActionListener(new ActionListener() {
@@ -47,47 +51,39 @@ public class LatinDictionary {
             }
         });
 
+        mList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // super.mouseClicked(e);    //To change body of overridden methods use File | Settings | File Templates.
+
+                JList list = (JList) e.getSource();
+                if (e.getClickCount() == 2) {
+                    int nIndexSelected = list.getSelectedIndex();
+                    int nReply = JOptionPane.showConfirmDialog(null, "are you sure you want to delete this item?", "confirm delete", JOptionPane.YES_NO_OPTION);
+                    if (nReply == JOptionPane.YES_OPTION) {
+                        mModel.remove(nIndexSelected);
+                    }
+
+                }
+            }
+        });
+
     }
 
-    public void setList(Map map){
-        mMap.putAll(map);
+    public void setList(Map map) {
         String strBuild = "";
-        for (Object obj : mMap.keySet()) {
-            strBuild += ((String)obj);
+        for (Object obj : map.keySet()) {
+            strBuild += ((String) obj);
             strBuild += " : ";
-            strBuild += ((String)mMap.get(obj)).toString();
-            strBuild += "\n";
-            mList.setListData(new String[] {strBuild});
+            strBuild += ((String) map.get(obj)).toString();
+            mModel.addElement(strBuild);
         }
 
+        mList.setModel(mModel);
+        mList.setSelectedIndex(mModel.getSize() - 1);
         mList.updateUI();
 
     }
 
-    //used to set values
-    public class Tuple {
-        private String mLatin;
-        private String mEnglish;
 
-        public Tuple(String english, String latin) {
-            mEnglish = english;
-            mLatin = latin;
-        }
-
-        public String getEnglish() {
-            return mEnglish;
-        }
-
-        public void setEnglish(String english) {
-            mEnglish = english;
-        }
-
-        public String getLatin() {
-            return mLatin;
-        }
-
-        public void setLatin(String latin) {
-            mLatin = latin;
-        }
-    }
 }
