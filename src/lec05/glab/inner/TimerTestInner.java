@@ -28,19 +28,19 @@ public class TimerTestInner {
 		
 
 	}
-	
 
+    static class EventListenerInner implements ActionListener {
+
+        public void actionPerformed(ActionEvent evn){
+            Date datNow = new Date();
+            System.out.println("At the tone, the time is " + datNow);
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }
 
 }//end TimerTest class
 
-class EventListenerInner implements ActionListener {
-	
-	public void actionPerformed(ActionEvent evn){
-		Date datNow = new Date();
-		System.out.println("At the tone, the time is " + datNow);
-		Toolkit.getDefaultToolkit().beep();
-	}
-}
+
 
 
 
