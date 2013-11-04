@@ -128,6 +128,7 @@ public class GoodNotepad {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     ClipboardAndFileUtil.copy(mTextArea.getSelectedText());
+
                 }
             });
 
@@ -137,6 +138,7 @@ public class GoodNotepad {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                    mTextArea.insert(ClipboardAndFileUtil.paste(), mTextArea.getSelectionStart());
+
 
                 }
             });
@@ -195,6 +197,8 @@ public class GoodNotepad {
 
 
     }
+
+
 
 
 
