@@ -23,7 +23,7 @@ public class QuickUnCheckedDriver {
                 break;
             }
             try {
-                System.out.println("Echo: "  + Integer.parseInt(strValue));
+                System.out.println("Echo: "  + getUserInteger(strValue));
             } catch (Exception e) {
                 System.out.println("That's not valid input, try again");
                 continue;
@@ -35,6 +35,20 @@ public class QuickUnCheckedDriver {
 
 
     }
+
+    public static int getUserInteger(String str) throws  BadUserDataException {
+        int nReturn = -1;
+        try {
+            nReturn = Integer.parseInt(str);
+        } catch (Exception e) {
+            throw new BadUserDataException(e);
+        }
+
+        return nReturn;
+
+    }
+
+
 
 
 
