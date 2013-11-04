@@ -54,18 +54,28 @@ public class LatinDictionary {
         mList.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                // super.mouseClicked(e);    //To change body of overridden methods use File | Settings | File Templates.
-
                 JList list = (JList) e.getSource();
                 if (e.getClickCount() == 2) {
                     int nIndexSelected = list.getSelectedIndex();
                     int nReply = JOptionPane.showConfirmDialog(null, "are you sure you want to delete this item?", "confirm delete", JOptionPane.YES_NO_OPTION);
                     if (nReply == JOptionPane.YES_OPTION) {
                         mModel.remove(nIndexSelected);
+
                     }
 
                 }
             }
+        });
+
+        mButtonSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                //search here
+
+            }
+
+
         });
 
     }
