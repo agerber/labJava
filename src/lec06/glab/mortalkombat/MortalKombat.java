@@ -19,7 +19,8 @@ public class MortalKombat {
 	//the dimension of the image panel
 	public static final int WIDTH = 525; 
 	public static final int HEIGHT = 392;
-	
+
+    //TODO refactor these fields
 	private JFrame frm;
 	private JPanel pan;
 	private JTextPane txtStatus;

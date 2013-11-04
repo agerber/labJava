@@ -14,10 +14,10 @@ public class IterativeDriver {
 		//sept 26 2011
 		
 		//first day of class
-		MyDate mdt = new MyDate(26,8,2011);
+		MyDate mdt = new MyDate(26,8,2013);
 		//begin and end quarter
-		MyDate mdtBeginQrt = new MyDate(26,8,2011);
-		MyDate mdtEndQtr = new MyDate(10,11,2011);
+		MyDate mdtBeginQrt = new MyDate(26,8,2013);
+		MyDate mdtEndQtr = new MyDate(10,11,2013);
 		
 		//begin and end read-week
 		MyDate mdtBeginReadWeek = mdtBeginQrt.clone();

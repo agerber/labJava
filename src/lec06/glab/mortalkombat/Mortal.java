@@ -7,7 +7,6 @@ import java.util.Random;
 public abstract class Mortal  {
 
 
-    //private String strMortal;
 	private String mSoundPath;
     private BufferedImage mBufferedImage;
 
