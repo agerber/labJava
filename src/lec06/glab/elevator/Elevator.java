@@ -30,6 +30,7 @@ public class Elevator implements Drawable {
         //To change body of implemented methods use File | Settings | File Templates.
 
         g.setColor(COLOR);
-        g.fillRect();
+
+       // g.fillRect();
     }
 }

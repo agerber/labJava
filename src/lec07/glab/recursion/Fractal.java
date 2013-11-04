@@ -1,4 +1,4 @@
-package lec06.glab.recursion;
+package lec07.glab.recursion;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;

@@ -1,4 +1,4 @@
-package lec07.glab.exceptions;
+package lec06.glab.exceptions;
 
 import java.net.MalformedURLException;
 

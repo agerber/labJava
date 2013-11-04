@@ -21,7 +21,7 @@ public class Rider implements Drawable {
     private int mFloor; //0-4
     private Dimension mDimension;
     private Point mPoint;
-    private Building mBuilding;
+
 
 
 
@@ -30,14 +30,6 @@ public class Rider implements Drawable {
         mState = State.AWAY;
         mFloor = 0;
         mDimension = dimension;
-    }
-
-    public Building getBuilding() {
-        return mBuilding;
-    }
-
-    public void setBuilding(Building building) {
-        mBuilding = building;
     }
 
     public Point getPoint() {

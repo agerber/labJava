@@ -1,4 +1,4 @@
-package lec06.glab.recursion;
+package lec07.glab.recursion;
 
 import java.awt.Graphics;
 import java.awt.Color;

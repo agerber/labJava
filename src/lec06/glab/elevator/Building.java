@@ -1,5 +1,6 @@
 package lec06.glab.elevator;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
@@ -10,36 +11,49 @@ import java.util.LinkedList;
  * Time: 3:27 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Building implements  Drawable {
+public class Building   {
     //a building has an array of floors and an elevator
     private Elevator mElevator;
-    private Floor[] mFloors;
+   // private Floor[] mFloors;
     private Dimension mDimension;
-    private LinkedList<Rider> mRequestors;
+    private int mCurrentFloor;
+    private LinkedList<Rider> mWorkingRiders;
+    private LinkedList<Rider> mWaitingRiders;
+    private Graphics mGraphics;
+
+
+
+
 
     //static members
     public static final int NUM_FLOOR =5;
     public static final Color COLOR = Color.GRAY;
 
-    public Building(Dimension dimension) {
+
+
+    public Building() {
         //an elevator has 1/3 -10 pixels the width and 1/num_floors height - 10
+        mWorkingRiders = new LinkedList<>();
+        mWaitingRiders = new LinkedList<>();
 
-        mRequestors = new LinkedList<>();
-        mElevator = new Elevator(new Dimension((int)(dimension.getWidth()/3 -10),(int)(dimension.getHeight()/NUM_FLOOR -10)));
-        mDimension = dimension;
-        mFloors = new Floor[NUM_FLOOR];
+       // mElevator = new Elevator();
 
-        for (int nC = 0; nC <mFloors.length; nC++) {
-            mFloors[nC].setDimension(new Dimension((int)dimension.getWidth(), (int)(dimension.getHeight() / NUM_FLOOR)));
-            mFloors[nC].setLevel(nC);
-        }
+
+
     }
 
     public void requestFloor(Rider rider){
 
-        mRequestors.addLast(rider);
+
     }
 
+    public int getCurrentFloor() {
+        return mCurrentFloor;
+    }
+
+    public void setCurrentFloor(int currentFloor) {
+        mCurrentFloor = currentFloor;
+    }
 
     public Dimension getDimension() {
         return mDimension;
@@ -50,19 +64,4 @@ public class Building implements  Drawable {
     }
 
 
-    @Override
-    public void drawMe(Graphics g) {
-
-        g.setColor(COLOR);
-        g.fillRect(0,0,(int)mDimension.getWidth(),(int)mDimension.getHeight());
-
-        //use iter as keyboard shortcut
-        //draw the floors next
-        for (Floor floor : mFloors) {
-            floor.drawMe(g);
-        }
-
-        mElevator.drawMe(g);
-
-    }
 }
