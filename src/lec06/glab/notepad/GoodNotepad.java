@@ -183,9 +183,9 @@ public class GoodNotepad {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                        mTextArea.insert(new GregorianCalendar().getTime().toString().substring(11),  mTextArea.getSelectionStart());
+                        mTextArea.insert(new GregorianCalendar().getTime().toString().substring(11), mTextArea.getSelectionStart());
                     }
-                 });
+                });
 
 
 
@@ -195,6 +195,12 @@ public class GoodNotepad {
 
             mMenuItemAbout = new JMenuItem("About");
             mMenuHelp.add(mMenuItemAbout);
+            mMenuItemAbout.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JOptionPane.showMessageDialog(null, "<html>Good Notepad<br/>University of Chicago<br/>Copyright 2013<br/>Version 0.0.1</html>" );
+                }
+            });
 
 
         //set eventListeners
