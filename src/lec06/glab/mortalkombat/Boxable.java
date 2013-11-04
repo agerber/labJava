@@ -18,17 +18,7 @@ public interface Boxable {
 	public static final int POW_SCORP = 45; 
 	
 	
-	public static final String[] SOUNDS = {
-			
-		"BaAAm!",
-		"bIfff!@#",
-		"cRACk#%*!",
-		"smAAAAck^",
-		"pop"
-			
-	};
-	
-	public static final Random RAN = new Random(); //a random to use
+
 	
 	// #################################################
 	// ##### CONTRACTED METHODS OF INTERFACE

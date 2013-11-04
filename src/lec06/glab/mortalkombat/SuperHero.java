@@ -15,7 +15,6 @@ public class SuperHero extends Mortal implements Boxable {
 	private String strName;
 	
 
-	
 	//constructor for boxing
 	public SuperHero(String strFile, String strWav, String interview,
 			int healthPoints, int accuracy, int power, String strName) {
@@ -59,21 +58,14 @@ public class SuperHero extends Mortal implements Boxable {
 	public void setAccuracy(int accuracy) {
 		nAccuracy = accuracy;
 	}
-	
 
-
-	
 	public int getPower() {
 		return nPower;
 	}
 
-
-
 	public void setPower(int power) {
 		nPower = power;
 	}
-
-
 
 	@Override
 	public boolean punch(Boxable boxOpponent) {
@@ -97,21 +89,11 @@ public class SuperHero extends Mortal implements Boxable {
 	}
 
 
-
-
 	@Override
 	public int healthStatus() {
 		
 		return getHealthPoints();
 	}
-
-
-	//this method signature satisfies the raceable interface
-	//overridden and overloaded
-
-	
-	//this method signature satisfies the boxable interface
-	//overridden and overloaded
 
 
 

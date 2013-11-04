@@ -11,20 +11,8 @@ import java.awt.EventQueue;
 import java.awt.Graphics;
 
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.image.BufferedImage;
-
-import javax.swing.JTextField;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.Timer;
-
-
-
-import javax.swing.SwingConstants;
-
 
 
 public class MortalKombat {
@@ -34,7 +22,7 @@ public class MortalKombat {
 	
 	private JFrame frm;
 	private JPanel pan;
-	private JTextField txtStatus;
+	private JTextPane txtStatus;
 	private JMenuBar mbr;
 	private JMenu menPlay;
 	private JMenuItem mniExit;
@@ -48,12 +36,7 @@ public class MortalKombat {
 	private int nAlpha;
 	private int nTime;
 	private Timer tim;
-	
 
-
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -67,19 +50,9 @@ public class MortalKombat {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public MortalKombat() {
 		initialize();
 	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	
-
-
 	//method found on stackoverflow.com, re-implemented here
 	private  BufferedImage getTranslucentImage(BufferedImage bufParam, int nAlpha) {
 		BufferedImage bufRet = new BufferedImage(bufParam.getWidth(), bufParam.getHeight(), BufferedImage.TYPE_INT_ARGB);
@@ -87,8 +60,7 @@ public class MortalKombat {
 		Color col;
 		for(int nX = 0; nX < bufParam.getWidth(); nX++){
 			for(int nY = 0; nY < bufParam.getHeight(); nY++){
-		
-				
+
 					  //bit mask
 				      nClr = bufParam.getRGB(nX, nY);
 				      nRed = (nClr & 0x00ff0000) >> 16;
@@ -97,10 +69,8 @@ public class MortalKombat {
 				
 				   //for each pixel, set the alpha-channel
 				   col = new Color(nRed, nGreen, nBlue, nAlpha );   
-				   
 				   bufRet.setRGB(nX, nY, col.getRGB());
-				      
-				      
+
 			}
 		}
 		
@@ -115,8 +85,8 @@ public class MortalKombat {
 		nAlpha = 0;
 		nTime = 0;
 	
-		boxPuncher = new SuperHero("/src/lec06/glab/mortalkombat/imgs/mortal.jpg","/src/lec06/glab/mortalkombat/sounds/sco.wav", "Get over here!", 600, Boxable.ACC_SCORP, Boxable.POW_SCORP, "Scorpion");
-		boxPunchee = new SuperHero("/src/lec06/glab/mortalkombat/imgs/freez.jpg", "/src/lec06/glab/mortalkombat/sounds/sub.wav", "Better than a Frigidaire!", 600, Boxable.ACC_FREEZ, Boxable.POW_FREEZ, "SubZero");
+		boxPuncher = new SuperHero("/src/lec06/glab/mortalkombat/imgs/mortal.jpg","/src/lec06/glab/mortalkombat/sounds/sco.wav", "Get over here!", 600, Boxable.ACC_SCORP, Boxable.POW_SCORP, "Scorpion:");
+		boxPunchee = new SuperHero("/src/lec06/glab/mortalkombat/imgs/freez.jpg", "/src/lec06/glab/mortalkombat/sounds/sub.wav", "Better than a Frigidaire!", 600, Boxable.ACC_FREEZ, Boxable.POW_FREEZ, "SubZero::");
 		frm.setTitle("MortalKombat");
 		frm.setBounds(100, 100, 553, 545);
 		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -125,13 +95,11 @@ public class MortalKombat {
 		//this object is now type-anonymous. It extends JPanel and we've 
 		//defined some constants and overrode it's paintComponent() method
 		pan = new JPanel(){
-		
 
-			
 			@Override
 			 public void paintComponent(Graphics g) {
 
-				 bufImg =  ((SuperHero)boxPuncher).getBimMortal();
+				 bufImg =  ((SuperHero)boxPuncher).getBufferedImage();
 				// bufImg =  scaleImage(bufImg, WIDTH, HEIGHT, new Color(0,0,0));
 				 bufImg = getTranslucentImage(bufImg, nAlpha);
 				 
@@ -139,25 +107,20 @@ public class MortalKombat {
 
 		     }
 		};
-		
-		//this class is now type anonymous. and we use reflection to test this. 
-       // System.out.println( pan.getClass().getName());
-		
+
 		
 		pan.setBounds(10, 11, 525, 392);
 		pan.repaint();
-		
-
-		
 		frm.getContentPane().add(pan);
 		
-		txtStatus = new JTextField();
+		txtStatus = new JTextPane();
 		txtStatus.setFont(new Font("Impact", Font.PLAIN, 26));
-		txtStatus.setHorizontalAlignment(SwingConstants.LEFT);
+        txtStatus.setContentType("text/html");
+		//txtStatus.setHorizontalAlignment(SwingConstants.LEFT);
 		txtStatus.setEditable(false);
 		txtStatus.setBounds(10, 414, 525, 72);
 		frm.getContentPane().add(txtStatus);
-		txtStatus.setColumns(10);
+		//txtStatus.setColumns(10);
 		
 		mbr = new JMenuBar();
 		frm.setJMenuBar(mbr);
@@ -175,12 +138,14 @@ public class MortalKombat {
 		menPlay.add(mniExit);
 		
 		
-	    //every three milliseconds
+
 		tim = new Timer(40,
 
 		new ActionListener() {
 
 			public void actionPerformed(ActionEvent evn) {
+
+                StringBuilder stringBuilder = new StringBuilder();
 				
 			
 				//transition the alpha channel -- enemy approaching
@@ -215,11 +180,26 @@ public class MortalKombat {
 					    else {
 					    
 					    	playStrikeSound();
-					    	 txtStatus.setText(Boxable.SOUNDS[Boxable.RAN.nextInt(Boxable.SOUNDS.length)] + " " + ((SuperHero)boxPuncher).getName() + " " + boxPuncher.healthStatus() + " versus "  + 
-					    			 ((SuperHero)boxPunchee).getName() + " " + boxPunchee.healthStatus()); 	
+                            stringBuilder.append("<html>");
+                            //make Scorpion first always
+                            if(((SuperHero)boxPuncher).getName().equalsIgnoreCase("scorpion:")){
+
+                                stringBuilder.append(((SuperHero)boxPuncher).getName() + " " + healthMeter(boxPuncher.healthStatus()));
+                                stringBuilder.append("<br />");
+                                stringBuilder.append(((SuperHero)boxPunchee).getName() + " " + healthMeter(boxPunchee.healthStatus()));
+                                stringBuilder.append("</html>");
+                            } else {
+
+                                stringBuilder.append(((SuperHero)boxPunchee).getName() + " " + healthMeter(boxPunchee.healthStatus()));
+                                stringBuilder.append("<br />");
+                                stringBuilder.append(((SuperHero)boxPuncher).getName() + " " + healthMeter(boxPuncher.healthStatus()));
+                                stringBuilder.append("</html>");
+
+                            }
+
+					    	 txtStatus.setText(stringBuilder.toString());
 					    }
-					    
-					
+
 					}
 					//swap
 					Boxable boxTemp = boxPuncher;
@@ -235,11 +215,20 @@ public class MortalKombat {
 				
 			}
 
+            //methods of my anonymous inner class
 			private void playStrikeSound() {
 				Mortal mor = (Mortal)boxPuncher;
                 SoundImageUtils.playSound(mor.getSoundPath());
-				//mor.playSound(mor.getSoundPath());
 			}
+
+            private String healthMeter(int nPoint){
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(" " + nPoint + " ");
+                for (int nC = 0; nC <nPoint/10 ; nC++) {
+                   stringBuilder.append("#");
+                }
+                return stringBuilder.toString();
+            }
 		}
 
 		);
@@ -249,6 +238,9 @@ public class MortalKombat {
 		
 
 	}
+
+
+
 	
 	
 
