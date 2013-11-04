@@ -30,23 +30,23 @@ public class TimerTestInner {
 		
 
 	}
-	
-
-
-}//end TimerTest class
-
 //===============================================
 //==INNER CLASS DEFINED WITHIN THE SAME JAVA FILE
 //==ONLY THE ENCLOSING CLASS NEED KNOW ABOUT IT
 //===============================================
-class TimePrintInner implements ActionListener {
-	
-	public void actionPerformed(ActionEvent evn){
-		Date datNow = new Date();
-		System.out.println("At the tone, the time is " + datNow);
-		Toolkit.getDefaultToolkit().beep();
-	}
-}
+    static class TimePrintInner implements ActionListener {
+
+        public void actionPerformed(ActionEvent evn){
+            Date datNow = new Date();
+            System.out.println("At the tone, the time is " + datNow);
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }
+
+
+}//end TimerTest class
+
+
 
 
 
