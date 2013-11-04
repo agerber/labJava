@@ -81,7 +81,8 @@ public abstract class Mortal  {
 			File filImg = new File(strPathImg);
 			
 			//sound
-			strSoundPath = URLMORTAL.getPath().substring(1, URLMORTAL.getPath().length())  + "sounds/" + strSound; 
+			//strSoundPath = URLMORTAL.getPath().substring(1, URLMORTAL.getPath().length())  + "sounds/" + strSound;
+            strSoundPath= strSound;
 			
 			
 			bimMortal = ImageIO.read(filImg);
