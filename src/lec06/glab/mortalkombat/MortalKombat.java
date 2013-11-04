@@ -33,6 +33,8 @@ public class MortalKombat {
 	private Boxable boxPuncher;
 	private Boxable  boxPunchee;
 
+    private Boxable boxDrawsFirstBlood;
+
 	
 	private int nAlpha;
 	private int nTime;
@@ -92,18 +94,17 @@ public class MortalKombat {
 		frm.setBounds(100, 100, 553, 545);
 		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frm.getContentPane().setLayout(null);
+        boxDrawsFirstBlood = boxPuncher;
 		
-		//this object is now type-anonymous. It extends JPanel and we've 
-		//defined some constants and overrode it's paintComponent() method
+
+
 		pan = new JPanel(){
 
 			@Override
 			 public void paintComponent(Graphics g) {
 
 				 bufImg =  ((SuperHero)boxPuncher).getBufferedImage();
-				// bufImg =  scaleImage(bufImg, WIDTH, HEIGHT, new Color(0,0,0));
 				 bufImg = getTranslucentImage(bufImg, nAlpha);
-				 
 				 g.drawImage(bufImg, 0, 0, null);
 
 		     }
@@ -117,7 +118,6 @@ public class MortalKombat {
 		txtStatus = new JTextPane();
 		txtStatus.setFont(new Font("Impact", Font.PLAIN, 26));
         txtStatus.setContentType("text/html");
-		//txtStatus.setHorizontalAlignment(SwingConstants.LEFT);
 		txtStatus.setEditable(false);
 		txtStatus.setBounds(10, 414, 525, 72);
 		frm.getContentPane().add(txtStatus);
@@ -183,7 +183,7 @@ public class MortalKombat {
 					    	playStrikeSound();
                             stringBuilder.append("<html>");
                             //make Scorpion first always
-                            if(((SuperHero)boxPuncher).getName().equalsIgnoreCase("scorpion:")){
+                            if(boxDrawsFirstBlood == boxPuncher){
 
                                 stringBuilder.append(((SuperHero)boxPuncher).getName() + " " + healthMeter(boxPuncher.healthStatus()));
                                 stringBuilder.append("<br />");

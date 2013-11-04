@@ -28,7 +28,7 @@ public class LatinDictionary {
         JFrame frame = new JFrame("LatinDictionary");
         frame.setContentPane(new LatinDictionary().mValue);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 800);
+        frame.setSize(600, 400);
         frame.pack();
         frame.setVisible(true);
     }
@@ -57,7 +57,7 @@ public class LatinDictionary {
                 JList list = (JList) e.getSource();
                 if (e.getClickCount() == 2) {
                     int nIndexSelected = list.getSelectedIndex();
-                    int nReply = JOptionPane.showConfirmDialog(null, "are you sure you want to delete this item?", "confirm delete", JOptionPane.YES_NO_OPTION);
+                    int nReply = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this item?", "confirm delete", JOptionPane.YES_NO_OPTION);
                     if (nReply == JOptionPane.YES_OPTION) {
                         mModel.remove(nIndexSelected);
 

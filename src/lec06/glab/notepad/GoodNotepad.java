@@ -46,22 +46,6 @@ public class GoodNotepad {
     }
 
 
-
-    //implement submenus insert date/time
-
-    //implement cut/copy/paste
-    //select-all
-    //insert date/time
-
-    //implement new
-    //open
-    //save as
-    //save
-    //exit
-
-    //about
-
-
     public GoodNotepad() {
 
         //init
@@ -71,6 +55,8 @@ public class GoodNotepad {
         mTextArea.setEditable(false);
 
         mMenuBar = new JMenuBar();
+        //we will need access to the frame as a member so that we can ad the menu-bar
+        //refactor/extract/field
         sFrame.setJMenuBar(mMenuBar);
 
         //File menu
