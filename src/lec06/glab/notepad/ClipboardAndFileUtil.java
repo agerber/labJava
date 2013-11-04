@@ -10,13 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ag
- * Date: 11/3/13
- * Time: 8:16 PM
- * To change this template use File | Settings | File Templates.
- */
+
 public class ClipboardAndFileUtil {
 
     private static Clipboard clp = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -112,7 +106,6 @@ public class ClipboardAndFileUtil {
                 	  while((lineFromFile = reader.readLine()) != null){
                           stringBuilder.append(lineFromFile);
                    	  }
-
                 	}catch(IOException exception){
                 	  System.out.println("Error while reading file");
                 	}

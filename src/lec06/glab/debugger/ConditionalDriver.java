@@ -17,12 +17,12 @@ public class ConditionalDriver {
 	private static void printTeams(String[] strParams){
 		
 		//conditional breakpoints
+        System.out.println("goodbye");
 
 		for (int nC = 0; nC < strParams.length; nC++) {
 			System.out.println(strParams[nC]);
 		}
 		
-
 		System.out.println("goodbye");
 		
 		

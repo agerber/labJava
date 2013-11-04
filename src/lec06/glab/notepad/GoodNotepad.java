@@ -96,6 +96,12 @@ public class GoodNotepad {
 
             mMenuItemOpen = new JMenuItem("Open");
             mMenuFile.add(mMenuItemOpen);
+            mMenuItemOpen.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                   mTextArea.setText(ClipboardAndFileUtil.open());
+                }
+            });
 
             mMenuItemSave = new JMenuItem("Save");
             mMenuFile.add(mMenuItemSave);
