@@ -125,7 +125,6 @@ public class CheckedExceptionDriver1 {
         //generate constructor from superclass
 
 
-
     }
 
 }//end class

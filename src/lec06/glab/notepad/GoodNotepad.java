@@ -26,15 +26,10 @@ public class GoodNotepad {
     private JMenuItem mMenuItemNew;
     private JMenuItem mMenuItemOpen;
     private JMenuItem mMenuItemSave;
-    private JMenuItem mMenuItemSaveAs;
-    private JMenuItem mMenuItemPrint;
     private JMenuItem mMenuItemExit;
-    private JMenuItem mMenuItemUndo;
-    private JMenuItem mMenuItemRedo;
     private JMenuItem mMenuItemCut;
     private JMenuItem mMenuItemCopy;
     private JMenuItem mMenuItemPaste;
-    private JMenuItem mMenuItemFind;
     private JMenuItem mMenuItemSelectAll;
     private JMenuItem mMenuItemTime;
     private JMenuItem mMenuItemDate;
@@ -112,25 +107,24 @@ public class GoodNotepad {
                 }
             });
 
-            mMenuItemSaveAs = new JMenuItem("Save As...");
-            mMenuFile.add(mMenuItemSaveAs);
 
-            mMenuItemPrint = new JMenuItem("Print");
-            mMenuFile.add(mMenuItemPrint);
 
             mMenuItemExit = new JMenuItem("Exit");
             mMenuFile.add(mMenuItemExit);
+            mMenuItemExit.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.exit(0);
+                }
+            });
+
 
 
        //Edit menu
         mMenuEdit = new JMenu("Edit");
         mMenuBar.add(mMenuEdit);
 
-            mMenuItemUndo = new JMenuItem("Undo");
-            mMenuEdit.add(mMenuItemUndo);
 
-            mMenuItemRedo = new JMenuItem("Redo");
-            mMenuEdit.add(mMenuItemRedo);
 
             mMenuItemCut = new JMenuItem("Cut");
             mMenuEdit.add(mMenuItemCut);
@@ -156,13 +150,10 @@ public class GoodNotepad {
             mMenuItemPaste.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                   mTextArea.insert(ClipboardAndFileUtil.patse(), mTextArea.getSelectionStart());
+                   mTextArea.insert(ClipboardAndFileUtil.paste(), mTextArea.getSelectionStart());
 
                 }
             });
-
-            mMenuItemFind = new JMenuItem("Find");
-            mMenuEdit.add(mMenuItemFind);
 
             mMenuItemSelectAll = new JMenuItem("Select All");
             mMenuEdit.add(mMenuItemSelectAll);

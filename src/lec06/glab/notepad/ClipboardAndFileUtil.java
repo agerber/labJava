@@ -21,7 +21,7 @@ public class ClipboardAndFileUtil {
     }
 
     //http://www.javapractices.com/topic/TopicAction.do?Id=82
-    public static String patse() {
+    public static String paste() {
         String result = "";
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         //odd: the Object param of getContents is not currently used
@@ -58,7 +58,7 @@ public class ClipboardAndFileUtil {
             }
             @Override
             public String getDescription() {
-                return null;  //To change body of implemented methods use File | Settings | File Templates.
+                return "*.txt";
             }
         });
         //chooser.setCurrentDirectory(new File("/home/me/Documents"));
