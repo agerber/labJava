@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeListener;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created with IntelliJ IDEA.
@@ -154,6 +156,12 @@ public class GoodNotepad {
 
             mMenuItemSelectAll = new JMenuItem("Select All");
             mMenuEdit.add(mMenuItemSelectAll);
+            mMenuItemSelectAll.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    mTextArea.selectAll();
+                }
+            });
 
                //submenu of insert
                 mMenuInsert = new JMenu("Insert");
@@ -161,9 +169,23 @@ public class GoodNotepad {
 
                 mMenuItemDate = new JMenuItem("Date");
                 mMenuInsert.add(mMenuItemDate);
+                mMenuItemDate.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                       mTextArea.insert(new GregorianCalendar().getTime().toString().substring(0,10),  mTextArea.getSelectionStart());
+                    }
+                });
 
                 mMenuItemTime = new JMenuItem("Time");
                 mMenuInsert.add(mMenuItemTime);
+                mMenuItemTime.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                        mTextArea.insert(new GregorianCalendar().getTime().toString().substring(11),  mTextArea.getSelectionStart());
+                    }
+                 });
 
 
 
