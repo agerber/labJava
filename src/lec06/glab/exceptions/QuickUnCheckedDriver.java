@@ -24,8 +24,8 @@ public class QuickUnCheckedDriver {
             }
             try {
                 System.out.println("Echo: "  + getUserInteger(strValue));
-            } catch (Exception e) {
-                System.out.println("That's not valid input, try again");
+            } catch (BadUserDataException e) {
+                System.out.println(e.getMessage() + " That's not valid input, try again");
                 continue;
             }
             System.out.println("Thank you, let's try again.");
@@ -36,6 +36,13 @@ public class QuickUnCheckedDriver {
 
     }
 
+    /**
+     *
+     * @param str
+     * @return
+     * @throws BadUserDataException
+     * @pre str must be a valid integer representation
+     */
     public static int getUserInteger(String str) throws  BadUserDataException {
         int nReturn = -1;
         try {

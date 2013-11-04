@@ -1,4 +1,4 @@
-package lec07.glab.junit;
+package lec06.glab.junit;
 
 public class RecursionDriver {
 
@@ -24,6 +24,13 @@ public class RecursionDriver {
 	// ===============================================
 	// ==a factorial function using recursion
 	// ===============================================
+
+    /**
+     *
+     * @param nVal
+     * @return
+     * @should return some factorial recrusively
+     */
 	public static int myFactorialRec(int nVal) {
 		//base-case
 		if (nVal == 1)
@@ -37,7 +44,13 @@ public class RecursionDriver {
 	// ===============================================
 	// ==a factorial function using iteration
 	// ===============================================
-	
+
+    /**
+     *
+     * @param nVal
+     * @return
+     * @should return some factorial iteratively
+     */
 	public static int myFactorialIter(int nVal){
 		
 		int nResult = 1;
@@ -51,6 +64,15 @@ public class RecursionDriver {
 	// ===============================================
 	// ==a char replace function using recursion
 	// ===============================================
+
+    /**
+     *
+     * @param str
+     * @param cOld
+     * @param cNew
+     * @return
+     * @should replace a char in a string recursively
+     */
 	public static String replaceRec(String str, char cOld, char cNew) {
 		if (str.length() == 0)
 			return "";
@@ -63,6 +85,15 @@ public class RecursionDriver {
 	// ===============================================
 	// ==a char replace function using iteration
 	// ===============================================
+
+    /**
+     *
+     * @param str
+     * @param cOld
+     * @param cNew
+     * @return
+     * @should replace some char in a string iteratively
+     */
 	public static String replaceIter(String str, char cOld, char cNew) {
 		
 		String strReturn = "";
@@ -95,6 +126,13 @@ public class RecursionDriver {
 	// ===============================================
 	// ==a char reverse function using recursion
 	// ===============================================
+
+    /**
+     *
+     * @param str
+     * @return
+     * @should reverse the chars
+     */
 	public static String reverseCharsRec(String str) {
 		//base case
 		if ((null == str) || (str.length() <= 1)) {
@@ -108,6 +146,12 @@ public class RecursionDriver {
 	// ===============================================
 	// ==a char reverse function using iteration
 	// ===============================================
+    /**
+     *
+     * @param str
+     * @return
+     * @should reverse the chars iteratively
+     */
 	public static String reverseCharsIter(String str) {
 		String strRet = "";
 		//iterate over string backwards building return string
@@ -118,8 +162,15 @@ public class RecursionDriver {
 		}
 		return strRet;
 	}
-	
-	
+
+
+    /**
+     *
+     * @param strBase
+     * @param cEnd
+     * @return
+     * @should append a char to the end
+     */
 	private static String appendChar(String strBase, char cEnd){
 		
 		return strBase + String.valueOf(cEnd);

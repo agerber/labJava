@@ -1,6 +1,5 @@
-package lec06.glab.elevator;
+package lec07.glab.elevator;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 

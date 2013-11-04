@@ -57,16 +57,16 @@ public class MortalKombat {
 	//method found on stackoverflow.com, re-implemented here
 	private  BufferedImage getTranslucentImage(BufferedImage bufParam, int nAlpha) {
 		BufferedImage bufRet = new BufferedImage(bufParam.getWidth(), bufParam.getHeight(), BufferedImage.TYPE_INT_ARGB);
-		int  nRed, nGreen, nBlue, nClr;
+		int  nRed, nGreen, nBlue, nColor;
 		Color col;
 		for(int nX = 0; nX < bufParam.getWidth(); nX++){
 			for(int nY = 0; nY < bufParam.getHeight(); nY++){
 
 					  //bit mask
-				      nClr = bufParam.getRGB(nX, nY);
-				      nRed = (nClr & 0x00ff0000) >> 16;
-				      nGreen = (nClr & 0x0000ff00) >> 8;
-				      nBlue = nClr & 0x000000ff;
+				      nColor = bufParam.getRGB(nX, nY);
+				      nRed = (nColor & 0x00ff0000) >> 16;   //shift it over 16 bits (or 4 hex decimals)
+				      nGreen = (nColor & 0x0000ff00) >> 8;  //shift it over 8 bits (or 2 hex decimals)
+				      nBlue = nColor & 0x000000ff;
 				
 				   //for each pixel, set the alpha-channel
 				   col = new Color(nRed, nGreen, nBlue, nAlpha );   

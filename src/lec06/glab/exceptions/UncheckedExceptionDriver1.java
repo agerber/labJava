@@ -24,9 +24,9 @@ public class UncheckedExceptionDriver1 {
 
         //this does not really buy us much.
         //Let the JVM throw the unchecked exceptions
-        if(intParam == null){
-            throw new PreconditionNotMet("intParam was null in method getValue in" + UncheckedExceptionDriver1.class.toString());
-        }
+//        if(intParam == null){
+//            throw new PreconditionNotMet("intParam was null in method getValue in" + UncheckedExceptionDriver1.class.toString());
+//        }
 
         //if you get uchecked (RuntimeExceptions) then, typically, it's your fault.
         //If you are getting data from a user and that data is erronous, throw a checkedException so that you can deal with it early.
