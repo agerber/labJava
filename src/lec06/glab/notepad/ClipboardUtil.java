@@ -21,7 +21,7 @@ public class ClipboardUtil {
    }
 
     //http://www.javapractices.com/topic/TopicAction.do?Id=82
-    public String patse() {
+    public static String patse() {
         String result = "";
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         //odd: the Object param of getContents is not currently used
@@ -48,4 +48,3 @@ public class ClipboardUtil {
 
 
 
-}

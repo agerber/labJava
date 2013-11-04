@@ -122,6 +122,13 @@ public class GoodNotepad {
 
             mMenuItemCut = new JMenuItem("Cut");
             mMenuEdit.add(mMenuItemCut);
+            mMenuItemCut.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    ClipboardUtil.copy(mTextArea.getSelectedText());
+                    mTextArea.replaceSelection("");
+                }
+            });
 
             mMenuItemCopy = new JMenuItem("Copy");
             mMenuEdit.add(mMenuItemCopy);
@@ -132,9 +139,15 @@ public class GoodNotepad {
                 }
             });
 
-
             mMenuItemPaste = new JMenuItem("Paste");
             mMenuEdit.add(mMenuItemPaste);
+            mMenuItemPaste.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                   mTextArea.insert(ClipboardUtil.patse(), mTextArea.getSelectionStart());
+
+                }
+            });
 
             mMenuItemFind = new JMenuItem("Find");
             mMenuEdit.add(mMenuItemFind);
