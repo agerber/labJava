@@ -115,8 +115,8 @@ public class MortalKombat {
 		nAlpha = 0;
 		nTime = 0;
 	
-		boxPuncher = new SuperHero("mortal.jpg","/src/lec06/glab/mortalkombat/sounds/sco.wav", "Get over here!", 600, Boxable.ACC_SCORP, Boxable.POW_SCORP, "Scorpion");
-		boxPunchee = new SuperHero("freez.jpg", "/src/lec06/glab/mortalkombat/sounds/sub.wav", "Better than a Frigidaire!", 600, Boxable.ACC_FREEZ, Boxable.POW_FREEZ, "SubZero");
+		boxPuncher = new SuperHero("/src/lec06/glab/mortalkombat/imgs/mortal.jpg","/src/lec06/glab/mortalkombat/sounds/sco.wav", "Get over here!", 600, Boxable.ACC_SCORP, Boxable.POW_SCORP, "Scorpion");
+		boxPunchee = new SuperHero("/src/lec06/glab/mortalkombat/imgs/freez.jpg", "/src/lec06/glab/mortalkombat/sounds/sub.wav", "Better than a Frigidaire!", 600, Boxable.ACC_FREEZ, Boxable.POW_FREEZ, "SubZero");
 		frm.setTitle("MortalKombat");
 		frm.setBounds(100, 100, 553, 545);
 		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

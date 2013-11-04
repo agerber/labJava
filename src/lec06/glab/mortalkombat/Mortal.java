@@ -77,7 +77,8 @@ public abstract class Mortal  {
 		
 		try {
 			//image
-			String strPathImg = URLMORTAL.getPath().substring(1, URLMORTAL.getPath().length())  + "imgs/" + strImage;
+			//String strPathImg = URLMORTAL.getPath().substring(1, URLMORTAL.getPath().length())  + "imgs/" + strImage;
+            String strPathImg= System.getProperty("user.dir")+ strImage;
 			File filImg = new File(strPathImg);
 			
 			//sound
