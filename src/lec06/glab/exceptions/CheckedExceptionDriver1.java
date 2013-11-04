@@ -108,31 +108,26 @@ public class CheckedExceptionDriver1 {
 		
 		System.out.println("Step 10");
 	}
-	
-	
-	
+
+
+    static class InappropriateURLException extends MalformedURLException {
+
+        public InappropriateURLException() {
+            super("This site is inappropriate.");
+            // TODO Auto-generated constructor stub
+        }
+
+        public InappropriateURLException(String msg) {
+            super("This site is inappropriate." + msg);
+            // TODO Auto-generated constructor stub
+        }
+
+        //generate constructor from superclass
+
+
+
+    }
 
 }//end class
 
 
-//===============================================
-//== inner class
-//===============================================
-
-class InappropriateURLException extends MalformedURLException {
-
-	public InappropriateURLException() {
-		super("This site is inappropriate.");
-		// TODO Auto-generated constructor stub
-	}
-
-	public InappropriateURLException(String msg) {
-		super("This site is inappropriate." + msg);
-		// TODO Auto-generated constructor stub
-	}
-
-	//generate constructor from superclass
-
-
-
-}
