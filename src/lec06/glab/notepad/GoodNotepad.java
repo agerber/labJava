@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
@@ -101,6 +99,12 @@ public class GoodNotepad {
 
             mMenuItemSave = new JMenuItem("Save");
             mMenuFile.add(mMenuItemSave);
+            mMenuItemSave.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                   ClipboardAndFileUtil.save(mTextArea.getText());
+                }
+            });
 
             mMenuItemSaveAs = new JMenuItem("Save As...");
             mMenuFile.add(mMenuItemSaveAs);
@@ -127,7 +131,7 @@ public class GoodNotepad {
             mMenuItemCut.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    ClipboardUtil.copy(mTextArea.getSelectedText());
+                    ClipboardAndFileUtil.copy(mTextArea.getSelectedText());
                     mTextArea.replaceSelection("");
                 }
             });
@@ -137,7 +141,7 @@ public class GoodNotepad {
             mMenuItemCopy.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    ClipboardUtil.copy(mTextArea.getSelectedText());
+                    ClipboardAndFileUtil.copy(mTextArea.getSelectedText());
                 }
             });
 
@@ -146,7 +150,7 @@ public class GoodNotepad {
             mMenuItemPaste.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                   mTextArea.insert(ClipboardUtil.patse(), mTextArea.getSelectionStart());
+                   mTextArea.insert(ClipboardAndFileUtil.patse(), mTextArea.getSelectionStart());
 
                 }
             });
