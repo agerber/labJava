@@ -5,6 +5,9 @@ import javax.swing.filechooser.*;
 import java.awt.*;
 import java.awt.datatransfer.*;
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 /**
@@ -79,26 +82,44 @@ public class ClipboardAndFileUtil {
     }
 
 
-//    public static void open() {
-//
-//
-//        JFileChooser chooser = new JFileChooser();
-//
-//
-//
-//        //chooser.setCurrentDirectory(new File("/home/me/Documents"));
-//        int nUserFeedback = chooser.showSaveDialog(null);
-//        //BufferedWriter out
-//        if (nUserFeedback == JFileChooser.APPROVE_OPTION) {
-//            //try with resources Java7
-//            try (FileWriter fstream = new FileWriter(chooser.getSelectedFile() + ".txt");
-//                 BufferedWriter out = new BufferedWriter(fstream)) {
-//                out.write(strContent);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+    public static String open() {
+        StringBuilder stringBuilder = new StringBuilder();
+        JFileChooser chooser = new JFileChooser();
+        //http://stackoverflow.com/questions/15954770/starting-a-jfilechooser-at-a-specified-directory-and-only-showing-files-of-a-spe
+        chooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
+            @Override
+            public boolean accept(File f) {
+                if (f.isFile()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            @Override
+            public String getDescription() {
+                return "*.txt";
+            }
+        });
+
+        int nUserFeedback = chooser.showOpenDialog(null);
+        if (nUserFeedback == JFileChooser.APPROVE_OPTION) {
+            //try with resources Java7
+           File file = chooser.getSelectedFile();
+
+            try(BufferedReader reader  = new BufferedReader(new FileReader(file)))
+             {
+               	  String lineFromFile = "";
+                	  while((lineFromFile = reader.readLine()) != null){
+                          stringBuilder.append(lineFromFile);
+                   	  }
+
+                	}catch(IOException exception){
+                	  System.out.println("Error while reading file");
+                	}
+             }
+          return stringBuilder.toString();
+
+    }
 }
 
 
