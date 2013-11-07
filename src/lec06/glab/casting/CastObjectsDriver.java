@@ -34,7 +34,7 @@ public class CastObjectsDriver {
         //long as it adheres to the rules of polymorphism which state that you may store an object in
         //(1) a superlcass reference, or (2) an implementing interface reference
 
-        //let apply the first rule of polymorphism and cast this Double object to a Number
+        //lets apply the first rule of polymorphism and cast this Double object to a Number
         //When we apply the cast, we are NOT changing the object at all, rather, all we are doing is changing the filter (the reference type)
         //With reflection, we can see that we are NOT changing the object's type, it's still a double, only now it's
         //being stored in a superlcass reference which restricts the of methods we can call on the reference
@@ -54,7 +54,7 @@ public class CastObjectsDriver {
         System.out.println("The same Double object stored in Comparable<Double> reference:");
         System.out.println(comMe.getClass().toString());
         //Let's call the compareTo method()
-        System.out.println("Our Double value (implicit parameter) is less than that of the explicit parameter " + (comMe.compareTo(new Double(88.84)) < 0));
+        System.out.println("Our Double value (implicit parameter) is less than that of the explicit parameter: " + (comMe.compareTo(new Double(88.84)) < 0));
         System.out.println("comMe and dubMe both point to the same object in memory space: " + (comMe == dubMe));
         System.out.println("comMe and numMe both point to the same object in memory space: " + (comMe == numMe));
         System.out.println("numMe and dubMe both point to the same object in memory space: " + (numMe == dubMe));
@@ -95,7 +95,7 @@ public class CastObjectsDriver {
         //however, if we try to cast comMe to a Rectangle (Rectangle implements Comparable) the compiler will NOT complain, but of course, we will still throw ClassCastException
         //because the underlying object stored in comMe is of type Double, and Rectangle is not in Double's class hiearchy.
         //toggle uncomment/comment this code below to throw a ClassCastException
-       // Rectangle recMeAgain = (Rectangle) comMe;
+        // Rectangle recMeAgain = (Rectangle) comMe;
 
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         //Let's go full circle. Casting-down is trivial.

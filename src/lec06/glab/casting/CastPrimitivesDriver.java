@@ -11,9 +11,9 @@ public class CastPrimitivesDriver {
 
 
     public static void main(String[] args) {
-        //A: WHEN YOU CAST A PRIMITIVE, THE OBJECT RETURNED IS OVER A DIFFERENT TYPE
+        //A: WHEN YOU CAST A PRIMITIVE, THE OBJECT RETURNED IS OF A DIFFERENT TYPE
 
-        //Let's take some exmaples
+        //Let's take some examples
         //a short is a 16bit signed integer ranging from -32,768  to   32,767.
 
         //in binary, the left-most bit is the sign-bit, so in binary 151 as a short looks like this:
@@ -28,7 +28,7 @@ public class CastPrimitivesDriver {
 
         //Let's promote this to an int which is a 32-bit signed integer ranging from   -2^31 to 2^31 - 1
         int nMe = (int)sMe;
-        //no problem, we don't really need all the precision, but memory is cheap and the value stays the same.
+        //no problem, we don't really need all the precision, but memory is cheap, and the value stays the same.
         //when we copy the bits, we just put those bits into an 32-bit int like so ->
                                                 //0 0 0 0   0 0 0 0   1 0 0 1   0 1 1 1
         //0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   1 0 0 1   0 1 1 1
@@ -40,7 +40,7 @@ public class CastPrimitivesDriver {
 
 
         //Let's demote this to an byte which is an 8-bit signed integer ranging from  -128 to 127
-        //notice that 7352 is out of this range, so when you copy the bits over, you will get erroneous results.
+        //notice that 151 is out of this range, so when you copy the bits over, you will get erroneous results.
         byte yMe = (byte) sMe;
         System.out.println(Byte.valueOf(yMe));
 
@@ -58,7 +58,7 @@ public class CastPrimitivesDriver {
         double dYou = 123.987654;
 
         //if we demote this to a float, which is a 32bit floating point value, no problem, a float is sufficiently large
-        //engough to hold 123.987654 without losing precision.
+        //enough to hold 123.987654 without losing precision.
         float fYou = (float) dYou;   //Yes, I realize fYou is a funny variable name :)
         System.out.println(Float.valueOf(fYou));
 
