@@ -13,7 +13,7 @@ public class CastObjectsDriver {
     public static void main(String[] args) {
 
         //A: A REFERENCE IS A FILTER
-        //A reference type is like a filter. See filter.jpg in same package.
+        //A reference type is like a filter. See filter.bmp in same package.
         //When you observe your object, you're doing so through the filter of the reference type.
         //Keep in mind that both the object has a type AND the reference has a type.
         //when you apply the filter you are restricting (sometimes severely) the range of methods you may
