@@ -38,6 +38,7 @@ public class CastObjectsDriver {
         //When we apply the cast, we are NOT changing the object at all, rather, all we are doing is changing the filter (the reference type)
         //With reflection, we can see that we are NOT changing the object's type, it's still a double, only now it's
         //being stored in a superlcass reference which restricts the of methods we can call on the reference
+        //This is an automatic promotion, so the cast here is redundant
         Number numMe = (Number) dubMe;
         System.out.println("A Number reference pointing to same Double object:");
         System.out.println(numMe.getClass().toString());
@@ -53,7 +54,7 @@ public class CastObjectsDriver {
         System.out.println("The same Double object stored in Comparable<Double> reference:");
         System.out.println(comMe.getClass().toString());
         //Let's call the compareTo method()
-        System.out.println("Our Double value (implicit parameter) is less that that of the explicit parameter " + (comMe.compareTo(new Double(88.84)) < 0));
+        System.out.println("Our Double value (implicit parameter) is less than that of the explicit parameter " + (comMe.compareTo(new Double(88.84)) < 0));
         System.out.println("comMe and dubMe both point to the same object in memory space: " + (comMe == dubMe));
         System.out.println("comMe and numMe both point to the same object in memory space: " + (comMe == numMe));
         System.out.println("numMe and dubMe both point to the same object in memory space: " + (numMe == dubMe));
@@ -61,6 +62,7 @@ public class CastObjectsDriver {
 
 
         //Now let's cast this to an Object
+        //This is an automatic promotion, so the cast here is redundant
         Object objMe = (Object) comMe;
         System.out.println("The same Double object stored in an Object reference:");
         System.out.println(objMe.getClass().toString());
