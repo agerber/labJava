@@ -2,8 +2,7 @@ package lec06.glab.debugger;
 
 public class IterativeDriver {
 
-<<<<<<< Updated upstream
-=======
+
 	/**
 	 * @param args
 	 */
@@ -57,7 +56,7 @@ public class IterativeDriver {
 		}
 	}
 	
->>>>>>> Stashed changes
+
 
 
 
