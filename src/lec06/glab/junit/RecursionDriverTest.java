@@ -1,54 +1,84 @@
 package lec06.glab.junit;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+/**
+ * Created with IntelliJ IDEA.
+ * User: ag
+ * Date: 11/4/13
+ * Time: 8:21 PM
+ * To change this template use File | Settings | File Templates.
+ */
 public class RecursionDriverTest {
+    /**
+     * @verifies return some factorial recrusively
+     * @see RecursionDriver#myFactorialRec(int)
+     */
+    @Test
+    public void myFactorialRec_shouldReturnSomeFactorialRecrusively() throws Exception {
+        //TODO auto-generated
+       // Assert.fail("Not yet implemented");
+    }
 
-	
-//	System.out.println(myFactorialRec(5));
-//	System.out.println(myFactorialIter(5));
-//
-//	System.out.println(replaceRec("Java", 'a', 'o'));
-//	System.out.println(replaceIter("Java", 'a', 'o'));
-//
-//	//http://www.cs.arizona.edu/icon/oddsends/palinsen.htm
-//	System.out.println( reverseCharsRec("Marge let a moody baby doom a telegram."));
-//	System.out.println( reverseCharsIter("Marge let a moody baby doom a telegram."));
-	
-	
-	@Test
-	public void testMyFactorialRec() {
-		assertEquals("Result", 120, RecursionDriver.myFactorialRec(5));
-	}
+    /**
+     * @verifies create factorial iteratively
+     * @see RecursionDriver#myFactorialIter(int)
+     */
+    @Test
+    public void myFactorialIter_shouldCreateFactorialIteratively() throws Exception {
+        //TODO auto-generated
+       // Assert.fail("Not yet implemented");
+    }
 
-	@Test
-	public void testMyFactorialIter() {
-		assertEquals("Result", 120, RecursionDriver.myFactorialIter(5));
-	}
+    /**
+     * @verifies replace a char in a string recursively
+     * @see RecursionDriver#replaceRec(String, char, char)
+     */
+    @Test
+    public void replaceRec_shouldReplaceACharInAStringRecursively() throws Exception {
+        //TODO auto-generated
+       // Assert.fail("Not yet implemented");
+    }
 
-	@Test
-	public void testReplaceRec() {
-		assertEquals("Result", "Jovo", RecursionDriver.replaceRec("Java", 'a', 'o'));
-	}
+    /**
+     * @verifies replace some char in a string iteratively
+     * @see RecursionDriver#replaceIter(String, char, char)
+     */
+    @Test
+    public void replaceIter_shouldReplaceSomeCharInAStringIteratively() throws Exception {
+        //TODO auto-generated
+       // Assert.fail("Not yet implemented");
+    }
 
-	@Test
-	public void testReplaceIter() {
-		assertEquals("Result", "Jovo", RecursionDriver.replaceIter("Java", 'a', 'o'));
-	}
+    /**
+     * @verifies reverse the chars
+     * @see RecursionDriver#reverseCharsRec(String)
+     */
+    @Test
+    public void reverseCharsRec_shouldReverseTheChars() throws Exception {
+        //TODO auto-generated
+       // Assert.fail("Not yet implemented");
+    }
 
-	@Test
-	public void testReverseCharsRec() {
-		assertEquals("Result", "sraeB", RecursionDriver.reverseCharsRec("Bears"));
-	}
+    /**
+     * @verifies reverse the chars iteratively
+     * @see RecursionDriver#reverseCharsIter(String)
+     */
+    @Test
+    public void reverseCharsIter_shouldReverseTheCharsIteratively() throws Exception {
+        assertEquals("Result", "sraeBasdf", RecursionDriver.reverseCharsIter("Bears"));
+    }
 
-	@Test
-	public void testReverseCharsIter() {
-		assertEquals("Result", "sraeB", RecursionDriver.reverseCharsIter("Bears"));
-	}
-
-
-
-
+    /**
+     * @verifies append a char to the end
+     * @see RecursionDriver#appendChar(String, char)
+     */
+    @Test
+    public void appendChar_shouldAppendACharToTheEnd() throws Exception {
+        //TODO auto-generated
+       // Assert.fail("Not yet implemented");
+    }
 }
