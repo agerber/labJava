@@ -108,16 +108,29 @@ public class CastObjectsDriver {
         System.out.println("dubMeDown and dubMe both point to the same object in memory space: " + (dubMeDown == dubMe));
 
 
-        //Now let's try to do something similar as above. The difference here is that the underlying object that we instantiate is of type Object
-        //The compiler won't complain at compile-time because objYou would very well point to a Double (as it does above)
+        //Now let's try to do something similar to what we did above. The difference here is that the underlying object that we instantiate is of type Object
+        //The compiler won't complain at compile-time because objYou could very well point to a Double (as it does above)
         //but after we compile, it will choke at runtime, even though Double and Object are on the same class hierarchy.
         //Going back to the filter metaphor, you're trying to apply a filter that is way too wide, so the light will just stream through.
-        //How do we know Double is "wider" than Object? Because class hierarchies are like pyramids, they get wider (more complex) as you go down
-        //What should the Double value be after the cast anyway?
-        //This will cause a ClassCastException
+        //How do we know Double is "wider" than Object? Because class hierarchies are like pyramids-- they get wider (more complex) as you go down
+        //Ask yourself this? What should the Double value be after the cast anyway?  It can't have a value.
+        //This will cause a ClassCastException at runtime
         Object objYou = new Object();
         //toggle uncomment/comment this code below to throw a ClassCastException
         //Double dubYouDown = (Double) objYou;
+
+
+
+        //It seems like a game of hide-and-seek! If the reference type is is just a filter, then the filter is obscuring the underlying object type, right?
+        //Yes, that's correct. However, this hiding/abstracting is what allows for polymorphism which is the most powerful feature of OO languages.
+
+        //There is a way to check the underlying object type using the instanceof keyword. instanceof is not a method,
+        //rather it is a binary operator (takes two operands, one of right side of the expression, and one on the left)  in Java.
+        //Here, the cast will only take place if the underlying object is of type Double, which it isn't
+        if (objYou instanceof Double){
+            Double dubYouDown = (Double)objYou;
+        }
+
 
 
 
