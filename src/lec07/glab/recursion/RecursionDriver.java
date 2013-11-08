@@ -14,7 +14,7 @@ public class RecursionDriver {
 	//	System.out.println(replaceIter("Java", 'a', 'o'));
 
 		//http://www.cs.arizona.edu/icon/oddsends/palinsen.htm
-		//System.out.println( reverseCharsRec("Marge let a moody baby doom a telegram."));
+		System.out.println( reverseCharsRec("Marge let a moody baby doom a telegram."));
 		System.out.println( reverseCharsIter("Marge let a moody baby doom a telegram."));
 		
 	

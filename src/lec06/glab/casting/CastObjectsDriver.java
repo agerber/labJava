@@ -112,6 +112,7 @@ public class CastObjectsDriver {
         //The compiler won't complain at compile-time because objYou would very well point to a Double (as it does above)
         //but after we compile, it will choke at runtime, even though Double and Object are on the same class hierarchy.
         //Going back to the filter metaphor, you're trying to apply a filter that is way too wide, so the light will just stream through.
+        //How do we know Double is "wider" than Object? Because class hierarchies are like pyramids, they get wider (more complex) as you go down
         //What should the Double value be after the cast anyway?
         //This will cause a ClassCastException
         Object objYou = new Object();
