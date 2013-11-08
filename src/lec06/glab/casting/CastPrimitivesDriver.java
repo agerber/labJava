@@ -11,7 +11,7 @@ public class CastPrimitivesDriver {
 
 
     public static void main(String[] args) {
-        //A: WHEN YOU CAST A PRIMITIVE, THE OBJECT RETURNED IS OF A DIFFERENT TYPE
+        //A: WHEN YOU CAST A PRIMITIVE, THE PRIMITIVE RETURNED IS OF A DIFFERENT TYPE, AND THE ORIGINAL STAYS THE SAME
 
         //Let's take some examples
         //a short is a 16bit signed integer ranging from -32,768  to   32,767.
@@ -22,7 +22,7 @@ public class CastPrimitivesDriver {
         //2^0 + 2^1 + 2^2 + 0 + 2^4 + 0 + 0 + 2^7 + 0 etc,  which == 151
 
         short sMe = 151;
-        //Rather than pass the primitive directly into println, I"m going to use the wrapper class .valueOf(), which enforces the type
+        //Rather than pass the primitive directly into println, I'm going to use the wrapper class .valueOf(), which enforces the type
         System.out.println(Short.valueOf(sMe));
 
 

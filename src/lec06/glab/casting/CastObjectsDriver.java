@@ -34,9 +34,9 @@ public class CastObjectsDriver {
         //long as it adheres to the rules of polymorphism which state that you may store an object in
         //(1) a superlcass reference, or (2) an implementing interface reference
 
-        //lets apply the first rule of polymorphism and cast this Double object to a Number
+        //Let's apply the first rule of polymorphism and cast this Double object to a Number
         //When we apply the cast, we are NOT changing the object at all, rather, all we are doing is changing the filter (the reference type)
-        //With reflection, we can see that we are NOT changing the object's type, it's still a double, only now it's
+        //With reflection, we can see that we are NOT changing the object's type, it's still a Double, only now it's
         //being stored in a superlcass reference which restricts the of methods we can call on the reference
         //This is an automatic promotion, so the cast here is redundant
         Number numMe = (Number) dubMe;
@@ -47,7 +47,7 @@ public class CastObjectsDriver {
         System.out.println("numMe and dubMe both point to the same object in memory space: " + (numMe == dubMe));
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 
-        //Let's cast again to a Comparagble reference
+        //Let's cast again to a Comparable reference
         //again, we are NOT changing the underlying object type
         //All we are doing is changing the filter (reference type) through which we can see this object
         Comparable<Double> comMe = (Comparable<Double>) numMe;
@@ -75,15 +75,16 @@ public class CastObjectsDriver {
         //"numMe == dubMe == comMe == objMe : TRUE - they all point to the same object in memory space
 
 
-        //lets try to cast the Double ojbect stored in numMe to an Integer
+        //lets try to cast the Double object stored in numMe to an Integer
         //since the object stored in numMe is a Double, trying to cast it to an Integer will choke the compiler
         //because Integer is not in the class hierarchy of Double
-        //however, the compiler will not complain a compile-time because numMe could very well point to an Integer object
+        //however, the compiler will not complain at compile-time because numMe could very well point to an Integer object
         //toggle uncomment/comment this code below to throw a ClassCastException
         //Integer intMe = (Integer)numMe;
 
-        //let's try to cast our underlying object(of type Double) to an interface that it does not implement
-        //again, the compiler will not complain at compile-time
+        //Let's try to cast our underlying object(of type Double) to an interface that it does not implement
+        //Again, the compiler will not complain at compile-time because an Object reference could very well
+        // point to an object which implements the Runnable interface
         //toggle uncomment/comment this code below to throw a ClassCastException
         //Runnable runMe = (Runnable) objMe;
 
@@ -92,15 +93,15 @@ public class CastObjectsDriver {
         //toggle uncomment/comment to show compile-time error
         //Rectangle recMe = (Rectangle) numMe;
 
-        //however, if we try to cast comMe to a Rectangle (Rectangle implements Comparable) the compiler will NOT complain, but of course, we will still throw ClassCastException
-        //because the underlying object stored in comMe is of type Double, and Rectangle is not in Double's class hiearchy.
+        //However, if we try to cast comMe to a Rectangle (Rectangle implements Comparable) the compiler will NOT complain, but of course, we will still throw ClassCastException
+        //because the underlying object stored in comMe is still of type Double, and Rectangle is not in Double's class hierarchy.
         //toggle uncomment/comment this code below to throw a ClassCastException
         // Rectangle recMeAgain = (Rectangle) comMe;
 
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         //Let's go full circle. Casting-down is trivial.
-        //The underlying object that objMe points to is of type Double.
-        //We are effectively widening the filter to see all the methods of the original object
+        //The underlying object that objMe points to is of type Double.  If it weren't of type Double, we would get a ClassCastException
+        //We are effectively widening the filter to see all the methods of the original Double object
         Double dubMeDown = (Double) objMe;
         System.out.println("Double reference pointing to a Double object");
         System.out.println(dubMeDown.getClass().toString());
