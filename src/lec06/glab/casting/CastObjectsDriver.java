@@ -76,7 +76,7 @@ public class CastObjectsDriver {
 
 
         //lets try to cast the Double object stored in numMe to an Integer
-        //since the object stored in numMe is a Double, trying to cast it to an Integer will choke the compiler
+        //since the object stored in numMe is a Double, trying to cast it to an Integer will choke at runtime
         //because Integer is not in the class hierarchy of Double
         //however, the compiler will not complain at compile-time because numMe could very well point to an Integer object
         //toggle uncomment/comment this code below to throw a ClassCastException
@@ -108,6 +108,15 @@ public class CastObjectsDriver {
         System.out.println("dubMeDown and dubMe both point to the same object in memory space: " + (dubMeDown == dubMe));
 
 
+        //Now let's try to do something similar as above. The difference here is that the underlying object that we instantiate is of type Object
+        //The compiler won't complain at compile-time because objYou would very well point to a Double (as it does above)
+        //but after we compile, it will choke at runtime, even though Double and Object are on the same class hierarchy.
+        //Going back to the filter metaphor, you're trying to apply a filter that is way too wide, so the light will just stream through.
+        //What should the Double value be after the cast anyway?
+        //This will cause a ClassCastException
+        Object objYou = new Object();
+        //toggle uncomment/comment this code below to throw a ClassCastException
+        //Double dubYouDown = (Double) objYou;
 
 
 
