@@ -7,8 +7,10 @@ public class RecursionDriver {
 	 */
 	public static void main(String[] args) {
 
-	//	System.out.println(myFactorialRec(5));
-	//	System.out.println(myFactorialIter(5));
+		System.out.println(myFactorialRec(5));
+		System.out.println(myFactorialIter(5));
+
+        testIsPalindrome("A man, a plan, a canal, Panama!");
 
 	//	System.out.println(replaceRec("Java", 'a', 'o'));
 	//	System.out.println(replaceIter("Java", 'a', 'o'));
@@ -20,6 +22,14 @@ public class RecursionDriver {
 	
 
 	}
+
+
+    //to create a recursive function, you must:
+    //1/ identify a base case
+    //2 identify any recursive cases
+    //3 make sure your are converging towards the base case when you recurse
+
+
 
 	// ===============================================
 	// ==a factorial function using recursion
@@ -103,9 +113,64 @@ public class RecursionDriver {
 		//recursive case(s)
 		return reverseCharsRec(str.substring(1)) + str.charAt(0);
 	}
-	
-	
-	// ===============================================
+
+
+    // ===============================================
+    // ==a char reverse function using recursion
+    // ===============================================
+    private static String reverseCharsAndRemoveRec(String str) {
+        //base case
+        if (str.length() == 1) {
+            if (!Character.isLetter(str.charAt(0))){
+                return "";
+            } else {
+                return String.valueOf(str.charAt(0));
+            }
+        }
+        //recursive case(s)
+        if (!Character.isLetter(str.charAt(0))){
+            return reverseCharsAndRemoveRec(str.substring(1));
+        } else {
+            return reverseCharsAndRemoveRec(str.substring(1)) + str.charAt(0);
+        }
+
+    }
+
+    private static String removeNotLetters(String str){
+        //base case
+        if (str.length() == 1) {
+
+            if (!Character.isLetter(str.charAt(0))){
+                return "";
+            } else {
+                return String.valueOf(str.charAt(0));
+            }
+        }
+        //recursive case(s)
+        if (!Character.isLetter(str.charAt(0))){
+            return removeNotLetters(str.substring(1));
+        } else {
+            return str.charAt(0) + removeNotLetters(str.substring(1));
+        }
+
+    }
+
+    private static void testIsPalindrome(String str){
+        String strForward = removeNotLetters(str);
+        String strBackward = reverseCharsAndRemoveRec(str);
+
+        if (strForward.equalsIgnoreCase(strBackward)){
+            System.out.println(strForward + " == " + strBackward + " : this is a palindrome.");
+
+        } else {
+            System.out.println(strForward + " != " + strBackward + " : this is NOT a palindrome.");
+
+        }
+    }
+
+
+
+    // ===============================================
 	// ==a char reverse function using iteration
 	// ===============================================
 	private static String reverseCharsIter(String str) {
