@@ -1,6 +1,4 @@
-package lec06.glab.casting;
-
-import java.awt.*;
+package lec07.glab.casting;
 
 /**
  * Created with IntelliJ IDEA.
@@ -121,7 +119,8 @@ public class CastObjectsDriver {
 
 
 
-        //It seems like a game of hide-and-seek! If the reference type is is just a filter, then the filter is obscuring the underlying object type, right?
+
+        //It seems like a game of hide-and-seek! If the reference type is just a filter, then the filter is obscuring the underlying object type, right?
         //Yes, that's correct. However, this hiding/abstracting is what allows for polymorphism which is the most powerful feature of OO languages.
 
         //There is a way to check the underlying object type using the instanceof keyword. instanceof is not a method,

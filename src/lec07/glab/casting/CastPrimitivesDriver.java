@@ -1,4 +1,4 @@
-package lec06.glab.casting;
+package lec07.glab.casting;
 
 /**
  * Created with IntelliJ IDEA.
