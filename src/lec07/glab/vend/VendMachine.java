@@ -215,6 +215,13 @@ public class VendMachine {
 
     }
 
+
+    public ArrayList<Coin> returnCoins(){
+        ArrayList<Coin> conTemps = mPurchaseMoneys;
+        mPurchaseMoneys = new ArrayList<>();
+        return conTemps;
+    }
+
     public ArrayList<Coin> cashOut(){
         ArrayList<Coin> conTemp = mBanks;
         //reset the bank
