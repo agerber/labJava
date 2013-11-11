@@ -20,12 +20,12 @@ public class Driver {
         prdProducts.add(new Product("Heath", 0.75));
         prdProducts.add(new Product("PayDay", 0.75));
         prdProducts.add(new Product("Reces", 0.75));
-        prdProducts.add(new Product("Pop Tart", 0.75));
+        prdProducts.add(new Product("Pop Tart", 1.25));
         prdProducts.add(new Product("Marathon", 0.75));
         prdProducts.add(new Product("Almond Joy", 0.75));
-        prdProducts.add(new Product("Toffee", 0.75));
         prdProducts.add(new Product("Hersheys", 0.75));
         prdProducts.add(new Product("Hersheys Dark", 0.75));
+        prdProducts.add(new Product("Twizzlers", 0.50));
         vndMachine.stockMe(prdProducts);
 
 
@@ -48,8 +48,9 @@ public class Driver {
                 ArrayList<Coin> conCashOuts = vndMachine.cashOut();
                 System.out.println("Jackpot!");
                 for (Coin conCashOut : conCashOuts) {
-                    System.out.println(conCashOut.getValue());
+                    System.out.println(conCashOut);
                 }
+                break;
             }
 
             Product prdProduct = vndMachine.vend(strSelection);
@@ -60,9 +61,7 @@ public class Driver {
             }
 
         }
-
-
-
+        System.out.println("Thank you for vending");
 
     }
 

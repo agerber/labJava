@@ -73,6 +73,18 @@ public class VendMachine {
 
     public void stockMe(ArrayList<Product> prdProducts){
 
+         //for each row
+           //for each col
+              //prdStocks = new Product[SLOTS];
+              //if nC < prdProducts.size()
+                  //Product prdItem = prdProducts.get(nC++);
+              //else
+                  //labelled break outer loop
+              //for each slot 0-9
+                 //prdStocks[slot] = prdItem;
+              //map.put(row+col, prdStocks ); //where row+col would resolve to something like "A1"
+
+
         mapProducts = new TreeMap<>();
 
 
@@ -98,17 +110,6 @@ public class VendMachine {
             }
 
         }
-        //for each row
-           //for each col
-              //prdStocks = new Product[SLOTS];
-              //if nC < prdProducts.size()
-                  //Product prdItem = prdProducts.get(nC++);
-              //else
-                  //labelled break outer loop
-              //for each slot 0-9
-                 //prdStocks[slot] = prdItem;
-              //map.put(row+col, prdStocks ); //where row+col would resolve to something like "A1"
-
 
 
 

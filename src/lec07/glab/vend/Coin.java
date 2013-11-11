@@ -1,5 +1,7 @@
 package lec07.glab.vend;
 
+import java.text.DecimalFormat;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ag
@@ -9,6 +11,8 @@ package lec07.glab.vend;
  */
 public class Coin {
     private double mValue;
+
+    private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
 
     public Coin(double value) {
         mValue = value;
@@ -44,5 +48,10 @@ public class Coin {
 
     public void setValue(double value) {
         mValue = value;
+    }
+
+    @Override
+    public String toString(){
+        return sDecimalFormat.format(getValue());
     }
 }
