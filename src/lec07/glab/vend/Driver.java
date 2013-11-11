@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Driver {
 
-    private static Scanner scan = new Scanner(System.in);
+    private static Scanner sScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         VendMachine vndMachine = new VendMachine();
@@ -35,7 +35,7 @@ public class Driver {
         while (true) {
 
             System.out.println("Type 'i' for insert coins or 's' for select product or type 'exit' to quit");
-            String strInitial = scan.nextLine();
+            String strInitial = sScanner.nextLine();
             strInitial = strInitial.toUpperCase();
             String strMoney, strSelect;
             switch (strInitial){
@@ -82,13 +82,13 @@ public class Driver {
     private static String addMoney(){
 
         System.out.println("Insert Coins like so: q q d d n");
-        return scan.nextLine().toUpperCase();
+        return sScanner.nextLine().toUpperCase();
 
     }
 
     private static String makeSelection(){
         System.out.println("Please choose a product such as 'A2'");
-        return scan.nextLine().toUpperCase();
+        return sScanner.nextLine().toUpperCase();
 
     }
 
