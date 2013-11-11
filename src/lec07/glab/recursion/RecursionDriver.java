@@ -11,9 +11,12 @@ public class RecursionDriver {
 		System.out.println(myFactorialIter(5));
 
         testIsPalindrome("A man, a plan, a canal, Panama!");
+        testIsPalindrome("Madam, I'm Adam");
+        testIsPalindrome("Whatever words you want!");
+        testIsPalindrome("Marge let a moody baby doom a telegram.");
 
-	//	System.out.println(replaceRec("Java", 'a', 'o'));
-	//	System.out.println(replaceIter("Java", 'a', 'o'));
+	    System.out.println(replaceRec("Java", 'a', 'o'));
+		System.out.println(replaceIter("Java", 'a', 'o'));
 
 		//http://www.cs.arizona.edu/icon/oddsends/palinsen.htm
 		System.out.println( reverseCharsRec("Marge let a moody baby doom a telegram."));
@@ -136,7 +139,7 @@ public class RecursionDriver {
 
     }
 
-    private static String removeNotLetters(String str){
+    private static String removeNotLettersRec(String str){
         //base case
         if (str.length() == 1) {
 
@@ -148,15 +151,15 @@ public class RecursionDriver {
         }
         //recursive case(s)
         if (!Character.isLetter(str.charAt(0))){
-            return removeNotLetters(str.substring(1));
+            return removeNotLettersRec(str.substring(1));
         } else {
-            return str.charAt(0) + removeNotLetters(str.substring(1));
+            return str.charAt(0) + removeNotLettersRec(str.substring(1));
         }
 
     }
 
     private static void testIsPalindrome(String str){
-        String strForward = removeNotLetters(str);
+        String strForward = removeNotLettersRec(str);
         String strBackward = reverseCharsAndRemoveRec(str);
 
         if (strForward.equalsIgnoreCase(strBackward)){

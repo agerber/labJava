@@ -142,23 +142,23 @@ class drawKoch extends JPanel {
 	public drawKoch() {
 	}
 
-	private koordinat mid(koordinat a, koordinat b) {
-		return new koordinat((a.x + b.x) / 2, (a.y + b.y) / 2);
+	private Koordinat mid(Koordinat a, Koordinat b) {
+		return new Koordinat((a.x + b.x) / 2, (a.y + b.y) / 2);
 	}
 
-	private koordinat third(koordinat a, koordinat b) {
-		return new koordinat((b.x - a.x) / 3 + a.x, (b.y - a.y) / 3 + a.y);
+	private Koordinat third(Koordinat a, Koordinat b) {
+		return new Koordinat((b.x - a.x) / 3 + a.x, (b.y - a.y) / 3 + a.y);
 	}
 
-	private double dist(koordinat a, koordinat b) {
+	private double dist(Koordinat a, Koordinat b) {
 		return Math.sqrt(Math.pow(b.x - a.x, 2) + Math.pow(b.y - a.y, 2));
 	}
 
-	private void drawKochSide(Graphics2D g2, koordinat a, koordinat b) {
+	private void drawKochSide(Graphics2D g2, Koordinat a, Koordinat b) {
 		if (dist(a, b) <= size) {
 			g2.drawLine((int) a.x, (int) a.y, (int) b.x, (int) b.y);
 		} else {
-			koordinat c = new koordinat(Math.cos(Math.PI / 3.0
+			Koordinat c = new Koordinat(Math.cos(Math.PI / 3.0
 					+ Math.atan2(b.y - a.y, b.x - a.x))
 					* (dist(a, b) / 3) + third(a, b).x, Math.sin(Math.PI / 3.0
 					+ Math.atan2(b.y - a.y, b.x - a.x))
@@ -190,20 +190,20 @@ class drawKoch extends JPanel {
 			w = (h * 3.0) / (2 * Math.sqrt(3.0));
 			ox = (getSize().getWidth() - 1 - w) / 2.0;
 		}
-		drawKochSide(g2, new koordinat(w / 2.0 + ox, oy), new koordinat(ox, h
+		drawKochSide(g2, new Koordinat(w / 2.0 + ox, oy), new Koordinat(ox, h
 				* 0.75 + oy));
-		drawKochSide(g2, new koordinat(w + ox, h * 0.75 + oy), new koordinat(w
+		drawKochSide(g2, new Koordinat(w + ox, h * 0.75 + oy), new Koordinat(w
 				/ 2.0 + ox, oy));
-		drawKochSide(g2, new koordinat(ox, h * 0.75 + oy), new koordinat(
+		drawKochSide(g2, new Koordinat(ox, h * 0.75 + oy), new Koordinat(
 				w + ox, h * 0.75 + oy));
 	}
 }
 
-class koordinat {
+class Koordinat {
 
 	public double x, y;
 
-	public koordinat(double x, double y) {
+	public Koordinat(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
