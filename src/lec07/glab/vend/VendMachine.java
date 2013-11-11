@@ -52,12 +52,12 @@ public class VendMachine {
     //show products available
     private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
 
-    //hold the money
+    //hold the vending machine's bank
     private ArrayList<Coin> mBanks;
     //hold user's money until vending
     private ArrayList<Coin> mPurchaseMoneys;
 
-    Map<String, Product[]> mapProducts;
+    private Map<String, Product[]> mapProducts;
 
     //arbitrary rows, cols, slots
     public static final int ROWS = 3;
@@ -123,7 +123,7 @@ public class VendMachine {
         for (String strKey : mapProducts.keySet()) {
             prdProducts =  mapProducts.get(strKey);
             stb.append(strKey + " : ");
-            boolean bOutStock = true;
+            boolean bOutStock = true; //assume it's out of stock
             for (Product prdProduct : prdProducts) {
                if (prdProduct != null){
                    bOutStock = false;
@@ -145,14 +145,10 @@ public class VendMachine {
     }
 
     public void insertCoins(ArrayList<Coin> conPassed){
-        if(mPurchaseMoneys == null) {
-            mPurchaseMoneys = conPassed;
-        }
-        else {
             for (Coin con : conPassed) {
                  mPurchaseMoneys.add(con);
             }
-        }
+
 
     }
 
@@ -189,8 +185,9 @@ public class VendMachine {
         Product prdReturn = null;
 
         Product[] prdProds = mapProducts.get(strKey);
-        if (prdProds == null)
+        if (prdProds == null){
             return prdReturn;
+        }
 
         for (int nC = 0; nC <prdProds.length ; nC++) {
             if(prdProds[nC] != null){
@@ -220,6 +217,7 @@ public class VendMachine {
 
     public ArrayList<Coin> cashOut(){
         ArrayList<Coin> conTemp = mBanks;
+        //reset the bank
         mBanks = new ArrayList<>();
         return conTemp;
     }
@@ -228,6 +226,7 @@ public class VendMachine {
         for (Coin conMoney : mPurchaseMoneys) {
             mBanks.add(conMoney);
         }
+        //reset the user's money and give NO change
         mPurchaseMoneys = new ArrayList<>();
     }
 
