@@ -313,6 +313,54 @@ public class Game implements Runnable, KeyListener {
 		}
 	}
 
+    private void checkTerrainCollisions(Falcon fal, TerrainBlock[] trbBlocks){
+
+        //http://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
+
+        for (TerrainBlock trbBlock : trbBlocks) {
+            if(falconAndRectangleIntersect(fal, trbBlock)){
+                if(!trbBlock.isLanding()){
+                    //kill falcon
+                    Sound.playSound("laser.wav");
+                }
+                else {
+                    if(fal.getOrientation() >260 && fal.getOrientation()<280){
+                        //almost landed successfully, will need to check the relative position of TerrainBlock and falcon
+                        Sound.playSound("pacman_eatghost.wav");
+                    }
+                }
+
+            }
+
+        }
+
+
+    }
+
+    //http://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
+    private boolean falconAndRectangleIntersect(Falcon fal, Rectangle rec){
+
+        Point pntCenter = fal.getCenter();
+        int nRadiux = fal.getRadius();
+        int nCirX  = Math.abs(pntCenter.x - rec.x);
+        int nCirY  = Math.abs(pntCenter.y - rec.y);
+
+        if (nCirX > (rec.width/2 + nRadiux)) { return false; }
+        if (nCirY > (rec.height/2 + nRadiux)) { return false; }
+
+        if (nCirX <= (rec.width/2)) { return true; }
+        if (nCirY <= (rec.height/2)) { return true; }
+
+        double dCirSqX = Math.pow(nCirX - rec.width/2.0,2);
+        double dCirSqY = Math.pow(nCirY - rec.height/2.0,2);
+
+        double dCirSquared =  dCirSqX +  dCirSqY;
+
+        return (dCirSquared <= Math.pow(nRadiux, 2));
+    }
+
+
+
 
 
 	
