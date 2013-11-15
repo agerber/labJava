@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Lecture-8 covers chapters 15-17 from Big Java: Late Objects
+Lecture-8 covers chapters 14-17 from Big Java: Late Objects
 
+Chapter 14: Sorting and Searching
 Chapter 15: Java Collections Framework
 Chapter 16: Basic Data Structures
 Chapter 17: Tree Structures
