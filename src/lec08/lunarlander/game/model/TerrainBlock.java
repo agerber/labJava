@@ -8,7 +8,7 @@ This terrain block  will be 50px wide  and from 10-100 px tal
 
 import java.awt.*;
 
-public class TBlock {
+public class TerrainBlock {
 
     //static members
     private static int sWidth = 50;
@@ -18,7 +18,7 @@ public class TBlock {
     private boolean mLanding;
 
 
-    public TBlock(Point origin,  boolean landing) {
+    public TerrainBlock(Point origin, boolean landing) {
         mOrigin = origin;
         mLanding = landing;
 
