@@ -6,17 +6,22 @@ This terrain block  will be 50px wide  and from 10-100 px tal
 
  */
 
+import java.awt.*;
+
 public class TBlock {
     private int mWidth;
     private int mHeight;
+    private Point pntOrigin;
     private boolean mLanding;
 
 
-    //constructor
-    public TBlock(int height, boolean landing, int width) {
-        mHeight = height;
-        mLanding = landing;
-        mWidth = width;
+
+
+
+    //we're going to need a draw method so that we can draw this block the the graphics context of the double-buffered
+    //image
+    public void draw(Graphics g){
+
     }
 
 
