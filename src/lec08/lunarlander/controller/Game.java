@@ -311,6 +311,9 @@ public class Game implements Runnable, KeyListener {
 			CommandCenter.movFoes.add(new Asteroid(0));
 		}
 	}
+
+
+
 	
 	
 	private boolean isLevelClear(){
@@ -335,7 +338,9 @@ public class Game implements Runnable, KeyListener {
 			if (CommandCenter.getFalcon() !=null)
 				CommandCenter.getFalcon().setProtected(true);
 			
-			spawnAsteroids(CommandCenter.getLevel() + 2);
+			//spawnAsteroids(CommandCenter.getLevel() + 2);
+            //spawnTerrain();
+
 			CommandCenter.setLevel(CommandCenter.getLevel() + 1);
 
 		}

@@ -6,39 +6,37 @@ This terrain block  will be 50px wide  and from 10-100 px tal
 
  */
 
+
+
 import java.awt.*;
 
-public class TerrainBlock implements  Movable{
+public class TerrainBlock extends Rectangle implements  Movable{
 
     //static members
-    private static int sWidth = 50;
+    public static int WIDTH = 50;
 
     //instance members
-    private Point mOrigin;
     private boolean mLanding;
 
 
-    public TerrainBlock(Point origin, boolean landing) {
-        mOrigin = origin;
+    public TerrainBlock(int nX, int nY, int nW, int nH, boolean landing) {
+        super(nX,nY,nW,nH);
         mLanding = landing;
 
     }
 
-    // we can use this for both collision detection and drawing.
-    public Rectangle getBounds(){
-        return new Rectangle(mOrigin, new Dimension((int)mOrigin.getY(), sWidth));
-    }
+
 
     //we're going to need a draw method so that we can draw this block the the graphics context of the double-buffered
     //image
+    @Override
     public void draw(Graphics g){
         if (isLanding()){
             g.setColor(Color.CYAN);
         } else {
             g.setColor(Color.RED);
         }
-        g.drawRect(mOrigin.x, mOrigin.y, getBounds().x, getBounds().y);
-
+        g.drawRect(x, y, width, height);
     }
 
     @Override
@@ -72,13 +70,6 @@ public class TerrainBlock implements  Movable{
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    public Point getOrigin() {
-        return mOrigin;
-    }
-
-    public void setOrigin(Point origin) {
-        mOrigin = origin;
-    }
 
 
     public boolean isLanding() {

@@ -2,8 +2,10 @@ package lec08.lunarlander.game.model;
 
 
 
+import lec08.lunarlander.controller.Game;
 import lec08.lunarlander.sounds.Sound;
 
+import java.awt.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 // I only want one Command Center and therefore this is a perfect candidate for static
@@ -34,7 +36,24 @@ public class CommandCenter {
 		setScore(0);
 		setNumFalcons(3);
 		spawnFalcon(true);
+        //spawnTerrain();
+
 	}
+
+//    private static void spawnTerrain() {
+//
+//        int nWidth = (int) Game.DIM.getWidth()- TerrainBlock.WIDTH;
+//        boolean bLanding;
+//        int nHeight;
+//        int nGameHeight = (int)Game.DIM.getHeight();
+//
+//        for (int nC = 0; nC < nWidth; nC = nC + TerrainBlock.WIDTH) {
+//            bLanding = (nC % 150 == 0);
+//            nHeight = Game.R.nextInt(90) + 10;
+//
+//            movFoes.add(new TerrainBlock(new Point(nC, nGameHeight -nHeight), bLanding));
+//        }
+//    }
 
 	// The parameter is true if this is for the beginning of the game, otherwise false
 	// When you spawn a new falcon, you need to decrement its number
