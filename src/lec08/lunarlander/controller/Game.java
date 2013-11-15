@@ -55,6 +55,7 @@ public class Game implements Runnable, KeyListener {
 	private Clip clpMusicBackground;
 
 	private static final int SPAWN_NEW_SHIP_FLOATER = 1200;
+    private static final int NEW_LEVEL = 3000;
 
 
 
@@ -333,20 +334,30 @@ public class Game implements Runnable, KeyListener {
 	}
 	
 	private void checkNewLevel(){
+
+        if(nTick == 0) {
+            CommandCenter.spawnTerrain();
+        }
+
+        if (nTick % (NEW_LEVEL - nLevel * 7) == 0) {
+            //CommandCenter.movFloaters.add(new NewShipFloater());
+            CommandCenter.spawnTerrain();
+            CommandCenter.setLevel(CommandCenter.getLevel() + 1);
+        }
 		
-		if (isLevelClear() ){
-			if (CommandCenter.getFalcon() !=null)
-				CommandCenter.getFalcon().setProtected(true);
-			
-			//spawnAsteroids(CommandCenter.getLevel() + 2);
-            //spawnTerrain();
-
-			CommandCenter.setLevel(CommandCenter.getLevel() + 1);
-
-		}
+//		if (isLevelClear() ){
+//			if (CommandCenter.getFalcon() !=null)
+//				CommandCenter.getFalcon().setProtected(true);
+//
+//			//spawnAsteroids(CommandCenter.getLevel() + 2);
+//            //spawnTerrain();
+//
+//			CommandCenter.setLevel(CommandCenter.getLevel() + 1);
+//
+//		}
 	}
-	
-	
+
+
 	
 
 	// Varargs for stopping looping-music-clips

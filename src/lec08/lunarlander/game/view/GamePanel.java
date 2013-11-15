@@ -6,6 +6,7 @@ import lec08.lunarlander.controller.Game;
 import lec08.lunarlander.game.model.CommandCenter;
 import lec08.lunarlander.game.model.Falcon;
 import lec08.lunarlander.game.model.Movable;
+import lec08.lunarlander.game.model.TerrainBlock;
 
 import java.awt.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -88,6 +89,8 @@ public class GamePanel extends Panel {
        //playing and not paused!
        else {
 
+           drawTerrain(CommandCenter.trbBlocks, grpOff);
+
            //draw them in decreasing level of importance
            //friends will be on top layer and debris on the bottom
            iterateMovables(grpOff,
@@ -123,6 +126,13 @@ public class GamePanel extends Panel {
        }
 
    }
+
+    private void drawTerrain(TerrainBlock[] terrainBlocks, Graphics g){
+        for (TerrainBlock terrainBlock : terrainBlocks) {
+            terrainBlock.draw(g);
+        }
+
+    }
 
 
    // Draw the number of falcons left on the bottom-right of the screen.
