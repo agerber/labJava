@@ -27,14 +27,14 @@ public class CommandCenter {
 	public static CopyOnWriteArrayList<Movable> movFoes = new CopyOnWriteArrayList<Movable>();
 	public static CopyOnWriteArrayList<Movable> movFloaters = new CopyOnWriteArrayList<Movable>();
 
-    public static TerrainBlock[] trbBlocks = new TerrainBlock[5];
+    public static TerrainBlock[] trbBlocks = new TerrainBlock[12];
 
 
 	// Constructor made private - static Utility class only
 	private CommandCenter() {}
 
 	public static void initGame(){
-        //spawnTerrain();
+
 		setLevel(1);
 		setScore(0);
 		setNumFalcons(3);
@@ -45,11 +45,15 @@ public class CommandCenter {
 
     public static void spawnTerrain() {
 
-        TerrainBlock terrainBlock = new TerrainBlock(150, Game.DIM.height - 300, 50, 300, true);
+
         int nMaxHeight =  200;
-        int nAdjHeight = Game.DIM.height-Game.R.nextInt(nMaxHeight);
+        int nAbsHeight;
+        boolean bLanding;
         for (int nC = 0; nC <trbBlocks.length ; nC++) {
-           trbBlocks[nC] = new TerrainBlock(nC*150, nAdjHeight, 50 , nMaxHeight, true);
+
+           bLanding = (nC % 4 == 0);
+            nAbsHeight =  Game.R.nextInt(nMaxHeight)+20;
+           trbBlocks[nC] = new TerrainBlock(nC*100, Game.DIM.height - nAbsHeight, 100 , nMaxHeight, bLanding);
         }
 
         //CommandCenter.movFoes.add(terrainBlock);

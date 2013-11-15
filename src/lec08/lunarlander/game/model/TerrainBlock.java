@@ -36,7 +36,7 @@ public class TerrainBlock extends Rectangle implements  Movable{
         } else {
             g.setColor(Color.RED);
         }
-        g.drawRect(x, y, width, height);
+        g.fillRect(x, y, width, height);
     }
 
     @Override
