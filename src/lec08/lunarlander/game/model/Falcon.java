@@ -118,7 +118,19 @@ public class Falcon extends Sprite {
 				setOrientation(0);
 			}
 			setOrientation(getOrientation() + DEGREE_STEP);
-		} 
+		}
+
+        //apply effects of gravity
+        //zero degree is right, so 90 degrees is down
+        double dAdjustXG = Math.cos(Math.toRadians(90))
+                * CommandCenter.GRAVITY;
+        double dAdjustYG = Math.sin(Math.toRadians(90))
+                * CommandCenter.GRAVITY;
+        setDeltaX(getDeltaX() + dAdjustXG);
+        setDeltaY(getDeltaY() + dAdjustYG);
+
+
+
 	} //end move
 
 	public void rotateLeft() {

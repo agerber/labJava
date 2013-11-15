@@ -17,6 +17,8 @@ public class CommandCenter {
 	private static boolean bPlaying;
 	private static boolean bPaused;
 
+    public static final double GRAVITY = .1;
+
 	// These ArrayLists are thread-safe
 	public static CopyOnWriteArrayList<Movable> movDebris = new CopyOnWriteArrayList<Movable>();
 	public static CopyOnWriteArrayList<Movable> movFriends = new CopyOnWriteArrayList<Movable>();
