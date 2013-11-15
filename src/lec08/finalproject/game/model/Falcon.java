@@ -53,16 +53,25 @@ public class Falcon extends Sprite {
 		pntCs.add(new Point(6, 9));
 		pntCs.add(new Point(9, 6));
 		pntCs.add(new Point(9, 0));
-		pntCs.add(new Point(-5, 5));
+		pntCs.add(new Point(5,-5));
 		pntCs.add(new Point(9, -13));
 		pntCs.add(new Point(11, -14));
 		pntCs.add(new Point(7, -14));
 		pntCs.add(new Point(4, -5));
+
+        //bottom center point
 		pntCs.add(new Point(0, -5));
 
-		//left points
+		//left points  (just apply negatives to the x coords)
+        pntCs.add(new Point(-6, 9));
+        pntCs.add(new Point(-9, 6));
+        pntCs.add(new Point(-9, 0));
+        pntCs.add(new Point(-5, 5));
+        pntCs.add(new Point(-9, -13));
+        pntCs.add(new Point(-11, -14));
+        pntCs.add(new Point(-7, -14));
+        pntCs.add(new Point(-4, -5));
 
-		
 
 		assignPolarPoints(pntCs);
 
