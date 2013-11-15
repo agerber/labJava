@@ -8,7 +8,7 @@ This terrain block  will be 50px wide  and from 10-100 px tal
 
 import java.awt.*;
 
-public class TerrainBlock {
+public class TerrainBlock implements  Movable{
 
     //static members
     private static int sWidth = 50;
@@ -39,6 +39,37 @@ public class TerrainBlock {
         }
         g.drawRect(mOrigin.x, mOrigin.y, getBounds().x, getBounds().y);
 
+    }
+
+    @Override
+    public void move() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+
+    @Override
+    public int points() {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public Point getCenter() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public int getRadius() {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void expire() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void fadeInOut() {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public Point getOrigin() {
