@@ -46,30 +46,22 @@ public class Falcon extends Sprite {
 
 		ArrayList<Point> pntCs = new ArrayList<Point>();
 		
-		// top of ship
-		pntCs.add(new Point(0, 18)); 
+		// top of lunar-lander
+		pntCs.add(new Point(0, 10));
 		
 		//right points
-		pntCs.add(new Point(3, 3)); 
-		pntCs.add(new Point(12, 0)); 
-		pntCs.add(new Point(13, -2)); 
-		pntCs.add(new Point(13, -4)); 
-		pntCs.add(new Point(11, -2)); 
-		pntCs.add(new Point(4, -3)); 
-		pntCs.add(new Point(2, -10)); 
-		pntCs.add(new Point(4, -12)); 
-		pntCs.add(new Point(2, -13)); 
+		pntCs.add(new Point(6, 9));
+		pntCs.add(new Point(9, 6));
+		pntCs.add(new Point(9, 0));
+		pntCs.add(new Point(-5, 5));
+		pntCs.add(new Point(9, -13));
+		pntCs.add(new Point(11, -14));
+		pntCs.add(new Point(7, -14));
+		pntCs.add(new Point(4, -5));
+		pntCs.add(new Point(0, -5));
 
 		//left points
-		pntCs.add(new Point(-2, -13)); 
-		pntCs.add(new Point(-4, -12));
-		pntCs.add(new Point(-2, -10)); 
-		pntCs.add(new Point(-4, -3)); 
-		pntCs.add(new Point(-11, -2));
-		pntCs.add(new Point(-13, -4));
-		pntCs.add(new Point(-13, -2)); 
-		pntCs.add(new Point(-12, 0)); 
-		pntCs.add(new Point(-3, 3)); 
+
 		
 
 		assignPolarPoints(pntCs);
