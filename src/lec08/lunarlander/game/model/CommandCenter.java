@@ -86,7 +86,7 @@ public class CommandCenter {
 			    setNumFalcons(getNumFalcons() - 1);
 		}
 
-		Sound.playSound("shipspawn.wav");
+		//Sound.playSound("shipspawn.wav");
 
 	}
 

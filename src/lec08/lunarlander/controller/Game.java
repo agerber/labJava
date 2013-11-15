@@ -120,10 +120,13 @@ public class Game implements Runnable, KeyListener {
 
 			//this might be a good place to check for collisions
 			checkCollisions();
+
 			//this might be a god place to check if the level is clear (no more foes)
 			//if the level is clear then spawn some big asteroids -- the number of asteroids 
 			//should increase with the level. 
 			checkNewLevel();
+            if(CommandCenter.isPlaying())
+                    checkTerrainCollisions(CommandCenter.getFalcon(), CommandCenter.trbBlocks);
 
 			try {
 				// The total amount of time is guaranteed to be at least ANI_DELAY long.  If processing (update) 
