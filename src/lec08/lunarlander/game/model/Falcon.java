@@ -63,7 +63,6 @@ public class Falcon extends Sprite {
         pntCs.add(new Point(0, -5));
 
         //left points  (just apply negatives to the x coords AND reverse the order)
-
         pntCs.add(new Point(-4, -5));
         pntCs.add(new Point(-7, -14));
         pntCs.add(new Point(-11, -14));
