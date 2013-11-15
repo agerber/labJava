@@ -86,11 +86,11 @@ public class Falcon extends Sprite {
 		//put falcon in the middle.
 		setCenter(new Point(Game.DIM.width / 2, Game.DIM.height / 2));
 		
-		//with random orientation
-		setOrientation(Game.R.nextInt(360));
+		//start facing up!
+		setOrientation(270);
 		
 		//this is the size of the falcon
-		setRadius(35);
+		setRadius(50);
 
 		//these are falcon specific
 		setProtected(true);
