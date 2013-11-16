@@ -344,21 +344,38 @@ public class Game implements Runnable, KeyListener {
     private boolean falconAndRectangleIntersect(Falcon fal, Rectangle rec){
 
         Point pntCenter = fal.getCenter();
-        int nRadiux = fal.getRadius();
+        int nRadiux = fal.getRadius() * 17/20 ;
         int nYDist  = Math.abs(pntCenter.y - rec.y);
+
         int nLeftPosFal = pntCenter.x - nRadiux;
         int nRightPosFal = pntCenter.x + nRadiux;
 
         int nLeftPosCol = rec.x;
         int nRightPosCol = rec.x + rec.width;
 
+       if( (nLeftPosFal < nRightPosCol && nLeftPosFal > nLeftPosCol)||
+               (nRightPosFal > nLeftPosCol && nRightPosFal < nRightPosCol)){
+           if (nYDist < nRadiux ){
+               return true;
+           }
+       }
 
-        if (nYDist < nRadiux && (nLeftPosFal < nRightPosCol || nRightPosFal > nLeftPosCol )) {
-            return true;
-        }
-        else {
             return false;
-        }
+
+
+
+
+//        if ((nLeftPosFal < nRightPosCol || nRightPosFal > nLeftPosCol ))
+//            if (nYDist < nRadiux ){
+//               return true;
+//            }
+//            else  {
+//                return false;
+//            }
+//
+//        else {
+//            return false;
+//        }
 
 
 
