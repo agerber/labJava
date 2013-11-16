@@ -2,9 +2,6 @@ package lec08.glab.blackjack;
 
 public class Dealer  {
 
-	//these fields hold references to objects already instantiated by BlackJack, but we need 
-	//to give the dealer access to these objects. Notice that the dealer does NOT instantiate
-	//any of these objects
 	private Shoe sho;
 	private Hand hanDealer;
 	private Hand hanPlayer;

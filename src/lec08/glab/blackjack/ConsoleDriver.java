@@ -27,11 +27,14 @@ public class ConsoleDriver {
                     break;
                 case "s":
                     blackJack.getDealer().autoHit();
-                    System.out.println(blackJack.showStatusAfterDealerAutoHit());
+                    System.out.println(blackJack.showStatusAfterDealerAutoHit(false));
                     blackJack.initHands();
                     break;
                 case "d":
-
+                    //one hit only and double the bet
+                    blackJack.getDealer().hitPlayer();
+                    blackJack.getDealer().autoHit();
+                    System.out.println(blackJack.showStatusAfterDealerAutoHit(true));
                     break;
                 case "x":
                     break outer;
@@ -39,6 +42,7 @@ public class ConsoleDriver {
 
         }
         System.out.println("Thank you for playing.");
+
 
     }
 

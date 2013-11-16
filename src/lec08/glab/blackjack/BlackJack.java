@@ -22,8 +22,7 @@ public class BlackJack {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		//frm = new JFrame();
-		//frm.setTitle("BlackJack");
+
 		ply = new Player(1000.00);
         sho = new Shoe();
         initHands();
@@ -59,17 +58,11 @@ public class BlackJack {
         return dlr;
     }
 
-
-
-
-
     public String showStatusAfterHit(){
-
 
         StringBuilder stringBuilder = new StringBuilder();
         boolean bAces = hanPlayer.isThereAces();
         int nBetter = hanPlayer.getBetterScore(hanPlayer.getSoftValue(), hanPlayer.getSemiSoftValue());
-
 
             if(bAces){
 
@@ -86,8 +79,6 @@ public class BlackJack {
                     initHands();
                     return showMoney(stringBuilder);
                 }
-//                else
-//                     stringBuilder.append("You have " + hanPlayer.getSoftValue() + " or " + hanPlayer.getSemiSoftValue());
 
             }
             //no aces
@@ -108,8 +99,6 @@ public class BlackJack {
                     return showMoney(stringBuilder);
 
                 }
-//                else
-//                    stringBuilder.append("You have " + hanPlayer.getHardValue());
 
             }
 
@@ -119,7 +108,12 @@ public class BlackJack {
     }
 
 
-    public String showStatusAfterDealerAutoHit(){
+    public String showStatusAfterDealerAutoHit(boolean bDoubleDown){
+
+       double dBet = BET;
+       if (bDoubleDown)
+           dBet *=2;
+
 
         boolean bAces = hanPlayer.isThereAces();
         int nBetter = hanPlayer.getBetterScore(hanPlayer.getSoftValue(), hanPlayer.getSemiSoftValue());
@@ -128,7 +122,7 @@ public class BlackJack {
         if (hanDealer.getHardValue() >21){
             stringBuilder.append("DEALER BUSTED :" + hanDealer.getHardValue() + " YOU WIN");
 
-            ply.setMoney(ply.getMoney() + BET );
+            ply.setMoney(ply.getMoney() + dBet );
             return showMoney(stringBuilder);
 
         }
@@ -140,13 +134,13 @@ public class BlackJack {
                         " " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
 
 
-                ply.setMoney(ply.getMoney() + BET );
+                ply.setMoney(ply.getMoney() + dBet );
             }
             else if (nBetter < hanDealer.getHardValue()){
                 stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
 
 
-                ply.setMoney(ply.getMoney() - BET );
+                ply.setMoney(ply.getMoney() - dBet );
             }
             else {
                 stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " PUSH");
@@ -161,13 +155,13 @@ public class BlackJack {
                 stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
 
 
-                ply.setMoney(ply.getMoney() + BET );
+                ply.setMoney(ply.getMoney() + dBet );
             }
             else if (hanPlayer.getHardValue() < hanDealer.getHardValue()){
                 stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
 
 
-                ply.setMoney(ply.getMoney() - BET );
+                ply.setMoney(ply.getMoney() - dBet );
             }
             else {
                 stringBuilder.append("You: " + hanPlayer.getHardValue() +" versus Dealer: " + hanDealer.getHardValue() + " PUSH");
