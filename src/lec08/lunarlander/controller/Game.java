@@ -353,8 +353,8 @@ public class Game implements Runnable, KeyListener {
         fal.setCenter(new Point(Game.DIM.width / 2, 30));
         fal.setDeltaX(0);
         fal.setDeltaY(0);
-        CommandCenter.setLevel(CommandCenter.getLevel()+1);
         CommandCenter.spawnTerrain(CommandCenter.getLevel());
+        CommandCenter.setScore(CommandCenter.getScore() - 100 * CommandCenter.getLevel());
     }
 
     private void falconHasLanded(Falcon fal) {
@@ -364,6 +364,7 @@ public class Game implements Runnable, KeyListener {
         fal.setDeltaY(0);
         CommandCenter.setLevel(CommandCenter.getLevel()+1);
         CommandCenter.spawnTerrain(CommandCenter.getLevel());
+        CommandCenter.setScore(CommandCenter.getScore() + 50 *CommandCenter.getLevel());
     }
 
 
