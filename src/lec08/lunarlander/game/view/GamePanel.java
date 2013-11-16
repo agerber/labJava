@@ -9,6 +9,7 @@ import lec08.lunarlander.game.model.Movable;
 import lec08.lunarlander.game.model.TerrainBlock;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
@@ -127,7 +128,7 @@ public class GamePanel extends Panel {
 
    }
 
-    private void drawTerrain(TerrainBlock[] terrainBlocks, Graphics g){
+    private void drawTerrain(ArrayList<TerrainBlock> terrainBlocks, Graphics g){
         for (TerrainBlock terrainBlock : terrainBlocks) {
             terrainBlock.draw(g);
         }

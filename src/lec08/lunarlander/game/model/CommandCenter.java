@@ -6,6 +6,7 @@ import lec08.lunarlander.controller.Game;
 import lec08.lunarlander.sounds.Sound;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 // I only want one Command Center and therefore this is a perfect candidate for static
@@ -27,7 +28,7 @@ public class CommandCenter {
 	public static CopyOnWriteArrayList<Movable> movFoes = new CopyOnWriteArrayList<Movable>();
 	public static CopyOnWriteArrayList<Movable> movFloaters = new CopyOnWriteArrayList<Movable>();
 
-    public static TerrainBlock[] trbBlocks = new TerrainBlock[12];
+    public static ArrayList<TerrainBlock> trbBlocks = new ArrayList<TerrainBlock>();
 
 
 	// Constructor made private - static Utility class only
@@ -39,21 +40,25 @@ public class CommandCenter {
 		setScore(0);
 		setNumFalcons(3);
 		spawnFalcon(true);
-        spawnTerrain();
+        spawnTerrain(getLevel());
 
 	}
 
-    public static void spawnTerrain() {
-
-
+    public static void spawnTerrain(int nLevel) {
+        trbBlocks = new ArrayList<>();
         int nMaxHeight =  200;
         int nAbsHeight;
         boolean bLanding;
-        for (int nC = 0; nC <trbBlocks.length ; nC++) {
+        int nWidthDim = 200 - (10*nLevel);
+        int nCounter = 0;
+        for (int nC = 0; nC < Game.DIM.width ; nC++) {
 
-           bLanding = (nC % 4 == 0);
+           bLanding = (nCounter % 4 == 0);
+           // bLanding = false;
             nAbsHeight =  Game.R.nextInt(nMaxHeight)+20;
-           trbBlocks[nC] = new TerrainBlock(nC*100, Game.DIM.height - nAbsHeight, 100 , nMaxHeight, bLanding);
+           trbBlocks.add(new TerrainBlock(nCounter* nWidthDim, Game.DIM.height - nAbsHeight, nWidthDim , nMaxHeight, bLanding));
+            nC = nC + nWidthDim;
+            nCounter++;
         }
 
         //CommandCenter.movFoes.add(terrainBlock);

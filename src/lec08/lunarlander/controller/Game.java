@@ -316,7 +316,7 @@ public class Game implements Runnable, KeyListener {
 		}
 	}
 
-    private void checkTerrainCollisions(Falcon fal, TerrainBlock[] trbBlocks){
+    private void checkTerrainCollisions(Falcon fal, ArrayList<TerrainBlock> trbBlocks){
 
         //http://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
 
@@ -327,9 +327,15 @@ public class Game implements Runnable, KeyListener {
                     killFalcon(fal);
                 }
                 else {
-                    if(fal.getOrientation() >260 && fal.getOrientation()<280){
+                    if(fal.getOrientation() >265 && fal.getOrientation()<275){
+                        if (fal.getDeltaY() < 5){
+                            falconHasLanded(fal);
+                        }  else   {
+                            killFalcon(fal);
+                        }
+
                         //almost landed successfully, will need to check the relative position of TerrainBlock and falcon
-                        falconHasLanded(fal);
+
                     } else {
                         killFalcon(fal);
                     }
@@ -347,6 +353,8 @@ public class Game implements Runnable, KeyListener {
         fal.setCenter(new Point(Game.DIM.width / 2, 30));
         fal.setDeltaX(0);
         fal.setDeltaY(0);
+        CommandCenter.setLevel(CommandCenter.getLevel()+1);
+        CommandCenter.spawnTerrain(CommandCenter.getLevel());
     }
 
     private void falconHasLanded(Falcon fal) {
@@ -354,6 +362,8 @@ public class Game implements Runnable, KeyListener {
         fal.setCenter(new Point(Game.DIM.width / 2, 30));
         fal.setDeltaX(0);
         fal.setDeltaY(0);
+        CommandCenter.setLevel(CommandCenter.getLevel()+1);
+        CommandCenter.spawnTerrain(CommandCenter.getLevel());
     }
 
 
@@ -406,12 +416,12 @@ public class Game implements Runnable, KeyListener {
 	private void checkNewLevel(){
 
         if(nTick == 0) {
-            CommandCenter.spawnTerrain();
+            CommandCenter.spawnTerrain(CommandCenter.getLevel());
         }
 
         if (nTick % (NEW_LEVEL - nLevel * 7) == 0) {
             //CommandCenter.movFloaters.add(new NewShipFloater());
-            CommandCenter.spawnTerrain();
+            CommandCenter.spawnTerrain(CommandCenter.getLevel());
             CommandCenter.setLevel(CommandCenter.getLevel() + 1);
         }
 		
