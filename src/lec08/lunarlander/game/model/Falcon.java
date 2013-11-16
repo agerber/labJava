@@ -83,8 +83,8 @@ public class Falcon extends Sprite {
 
 		setColor(Color.white);
 		
-		//put falcon in the middle.
-		setCenter(new Point(Game.DIM.width / 2, Game.DIM.height / 2));
+		//put lunar lander on top
+		setCenter(new Point(Game.DIM.width / 2, 30));
 		
 		//start facing up!
 		setOrientation(270);

@@ -324,12 +324,14 @@ public class Game implements Runnable, KeyListener {
             if(falconAndRectangleIntersect(fal, trbBlock)){
                 if(!trbBlock.isLanding()){
                     //kill falcon
-                    Sound.playSound("laser.wav");
+                    killFalcon(fal);
                 }
                 else {
                     if(fal.getOrientation() >260 && fal.getOrientation()<280){
                         //almost landed successfully, will need to check the relative position of TerrainBlock and falcon
-                        Sound.playSound("pacman_eatghost.wav");
+                        falconHasLanded(fal);
+                    } else {
+                        killFalcon(fal);
                     }
                 }
 
@@ -340,7 +342,21 @@ public class Game implements Runnable, KeyListener {
 
     }
 
-    //http://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
+    private void killFalcon(Falcon fal) {
+        Sound.playSound("laser.wav");
+        fal.setCenter(new Point(Game.DIM.width / 2, 30));
+        fal.setDeltaX(0);
+        fal.setDeltaY(0);
+    }
+
+    private void falconHasLanded(Falcon fal) {
+        Sound.playSound("pacman_eatghost.wav");
+        fal.setCenter(new Point(Game.DIM.width / 2, 30));
+        fal.setDeltaX(0);
+        fal.setDeltaY(0);
+    }
+
+
     private boolean falconAndRectangleIntersect(Falcon fal, Rectangle rec){
 
         Point pntCenter = fal.getCenter();
@@ -359,25 +375,7 @@ public class Game implements Runnable, KeyListener {
                return true;
            }
        }
-
-            return false;
-
-
-
-
-//        if ((nLeftPosFal < nRightPosCol || nRightPosFal > nLeftPosCol ))
-//            if (nYDist < nRadiux ){
-//               return true;
-//            }
-//            else  {
-//                return false;
-//            }
-//
-//        else {
-//            return false;
-//        }
-
-
+       return false;
 
     }
 
