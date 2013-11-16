@@ -346,12 +346,25 @@ public class Game implements Runnable, KeyListener {
         Point pntCenter = fal.getCenter();
         int nRadiux = fal.getRadius();
         int nYDist  = Math.abs(pntCenter.y - rec.y);
-        if (nYDist < nRadiux) {return true;}
-        else {return false;}
+        int nLeftPosFal = pntCenter.x - nRadiux;
+        int nRightPosFal = pntCenter.x + nRadiux;
+
+        int nLeftPosCol = rec.x;
+        int nRightPosCol = rec.x + rec.width;
+
+
+        if (nYDist < nRadiux && (nLeftPosFal < nRightPosCol || nRightPosFal > nLeftPosCol )) {
+            return true;
+        }
+        else {
+            return false;
+        }
 
 
 
     }
+
+
 
 
 
