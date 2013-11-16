@@ -12,6 +12,8 @@ public class BlackJack {
 	private Hand hanDealer;
 	private Hand hanPlayer;
 	private Shoe sho;
+
+
 	
 
 
@@ -30,24 +32,33 @@ public class BlackJack {
 		//frm.setTitle("BlackJack");
 		ply = new Player(1000.00);
         sho = new Shoe();
+        initHands();
+
+
+		
+	}
+
+    private void initHands() {
         hanPlayer = new Hand(false, true);
         hanDealer = new Hand(true, false);
         dlr = new Dealer(sho, hanDealer, hanPlayer);
         dlr.hitDealer();
         dlr.hitDealer();
-
         dlr.hitPlayer();
         dlr.hitPlayer();
-        setPlayerTurn(true);
+    }
 
-		
-	}
+
+    public void dealAgain(){
+        initHands();
+
+    }
 
 
 
     public String status(){
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Dealer has: "+ hanDealer);
+        stringBuilder.append("Dealer has:"+ hanDealer);
         stringBuilder.append("\n");
         stringBuilder.append("You have  :" + hanPlayer);
         return stringBuilder.toString();
@@ -182,7 +193,7 @@ public class BlackJack {
 
 
 
-    public String showPlayersTurn(){
+    public String showStatusAfterHit(){
 
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -195,14 +206,18 @@ public class BlackJack {
                 if (nBetter == 21){
                     stringBuilder.append("BLACKJACK: " + nBetter);
                     ply.setMoney(ply.getMoney() + BET * 1.5);
+                    initHands();
+                    return showMoney(stringBuilder);
 
                 }
                 else if (nBetter > 21){
                     stringBuilder.append("BUSTED: " + nBetter);
                     ply.setMoney(ply.getMoney() - BET );
+                    initHands();
+                    return showMoney(stringBuilder);
                 }
-                else
-                     stringBuilder.append("You have " + hanPlayer.getSoftValue() + " or " + hanPlayer.getSemiSoftValue());
+//                else
+//                     stringBuilder.append("You have " + hanPlayer.getSoftValue() + " or " + hanPlayer.getSemiSoftValue());
 
             }
             //no aces
@@ -211,15 +226,20 @@ public class BlackJack {
                 if (hanPlayer.getHardValue() == 21){
                     stringBuilder.append("BLACKJACK: " + hanPlayer.getHardValue());
                     ply.setMoney(ply.getMoney() + BET * 1.5);
+                    initHands();
+                    return showMoney(stringBuilder);
 
                 }
 
                 else if (hanPlayer.getHardValue() > 21){
                     stringBuilder.append("BUSTED: " + hanPlayer.getHardValue());
                     ply.setMoney(ply.getMoney() - BET);
+                    initHands();
+                    return showMoney(stringBuilder);
+
                 }
-                else
-                    stringBuilder.append("You have " + hanPlayer.getHardValue());
+//                else
+//                    stringBuilder.append("You have " + hanPlayer.getHardValue());
 
             }
 
@@ -229,7 +249,7 @@ public class BlackJack {
     }
 
 
-    public String showDealersTurn(){
+    public String showStatusAfterDealerAutoHit(){
 
         boolean bAces = hanPlayer.isThereAces();
         int nBetter = hanPlayer.getBetterScore(hanPlayer.getSoftValue(), hanPlayer.getSemiSoftValue());
@@ -239,7 +259,8 @@ public class BlackJack {
             stringBuilder.append("DEALER BUSTED :" + hanDealer.getHardValue() + " YOU WIN");
             setPlayerTurn(true);
             ply.setMoney(ply.getMoney() + BET );
-            return stringBuilder.toString();
+            return showMoney(stringBuilder);
+
         }
 
         if(bAces){
@@ -286,22 +307,20 @@ public class BlackJack {
             }
 
         }
-
-        return stringBuilder.toString();
+        return showMoney(stringBuilder);
 
     }
 
+    private String showMoney(StringBuilder stringBuilder) {
+        stringBuilder.append("\n##############################\n");
+        stringBuilder.append(ply.getStringMoney());
+        stringBuilder.append("\n##############################");
+        stringBuilder.append("\n\n");
+        return stringBuilder.toString();
+    }
 
 
-
-
-
-		
-
-	
-
-	
-	//if it's the player's turn, it's not the dealer's turn, and vice versa
+    //if it's the player's turn, it's not the dealer's turn, and vice versa
 	private void setPlayerTurn(boolean bTurn){
 		if(!bTurn){
 			hanPlayer.setMyTurn(false);

@@ -154,6 +154,7 @@ public class Hand {
       if(!bDealer) {
           stringBuilder.append(getBetterScore(getSoftValue(), getSemiSoftValue()));
       }  else {
+          //TODO need to change
           stringBuilder.append(getBetterScore(getSoftValue(), getSemiSoftValue()));
       }
 

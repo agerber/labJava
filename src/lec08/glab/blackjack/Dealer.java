@@ -20,6 +20,13 @@ public class Dealer  {
 	}
 
 
+    public void autoHit(){
+        while(hanDealer.getBetterScore(hanDealer.getSoftValue(), hanDealer.getSemiSoftValue()) <=17){
+               hanDealer.hit(sho.deal());
+        }
+    }
+
+
 	public void hitPlayer(){
 		hanPlayer.hit(sho.deal());
 	}

@@ -14,6 +14,7 @@ public class ConsoleDriver {
         BlackJack blackJack = new BlackJack();
         Scanner scan = new Scanner(System.in);
 
+
         outer:
         while (true){
             System.out.println(blackJack.status());
@@ -22,12 +23,12 @@ public class ConsoleDriver {
             switch (strResponse){
                 case "h":
                     blackJack.getDealer().hitPlayer();
-                    System.out.println(blackJack.showPlayersTurn());
+                    System.out.println(blackJack.showStatusAfterHit());
                     break;
                 case "s":
-                    blackJack.getDealer().hitDealer();
-                    System.out.println(blackJack.showPlayersTurn());
-
+                    blackJack.getDealer().autoHit();
+                    System.out.println(blackJack.showStatusAfterDealerAutoHit());
+                    blackJack.dealAgain();
                     break;
                 case "d":
 
