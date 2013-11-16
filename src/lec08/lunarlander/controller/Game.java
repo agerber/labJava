@@ -23,7 +23,7 @@ public class Game implements Runnable, KeyListener {
 	// FIELDS
 	// ===============================================
 
-	public static final Dimension DIM = new Dimension(1100, 900); //the dimension of the game.
+	public static final Dimension DIM = new Dimension(900, 800); //the dimension of the game.
 	private GamePanel gmpPanel;
 	public static Random R = new Random();
 	public final static int ANI_DELAY = 45; // milliseconds between screen
@@ -345,21 +345,12 @@ public class Game implements Runnable, KeyListener {
 
         Point pntCenter = fal.getCenter();
         int nRadiux = fal.getRadius();
-        int nCirX  = Math.abs(pntCenter.x - rec.x);
-        int nCirY  = Math.abs(pntCenter.y - rec.y);
+        int nYDist  = Math.abs(pntCenter.y - rec.y);
+        if (nYDist < nRadiux) {return true;}
+        else {return false;}
 
-        if (nCirX > (rec.width/2 + nRadiux)) { return false; }
-        if (nCirY > (rec.height/2 + nRadiux)) { return false; }
 
-        if (nCirX <= (rec.width/2)) { return true; }
-        if (nCirY <= (rec.height/2)) { return true; }
 
-        double dCirSqX = Math.pow(nCirX - rec.width/2.0,2);
-        double dCirSqY = Math.pow(nCirY - rec.height/2.0,2);
-
-        double dCirSquared =  dCirSqX +  dCirSqY;
-
-        return (dCirSquared <= Math.pow(nRadiux, 2));
     }
 
 

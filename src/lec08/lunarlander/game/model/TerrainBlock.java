@@ -33,10 +33,12 @@ public class TerrainBlock extends Rectangle implements  Movable{
     public void draw(Graphics g){
         if (isLanding()){
             g.setColor(Color.CYAN);
+            g.fillRect(x, y, width, height);
         } else {
             g.setColor(Color.RED);
+            g.drawRect(x, y, width, height);
         }
-        g.fillRect(x, y, width, height);
+
     }
 
     @Override
