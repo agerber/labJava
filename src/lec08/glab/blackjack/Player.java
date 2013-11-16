@@ -7,7 +7,7 @@ public class Player   {
     private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
 
 	private double dMoney;
-    private Hand mHand;
+
 
     public Player(double dMoney) {
         this.dMoney = dMoney;
