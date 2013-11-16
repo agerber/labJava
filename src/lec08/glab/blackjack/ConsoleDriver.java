@@ -22,8 +22,11 @@ public class ConsoleDriver {
             switch (strResponse){
                 case "h":
                     blackJack.getDealer().hitPlayer();
+                    System.out.println(blackJack.showPlayersTurn());
                     break;
                 case "s":
+                    blackJack.getDealer().hitDealer();
+                    System.out.println(blackJack.showPlayersTurn());
 
                     break;
                 case "d":
