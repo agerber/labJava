@@ -14,12 +14,6 @@ public class BlackJack {
 	private Shoe sho;
 
 
-	
-
-
-
-
-
 	public BlackJack() {
 		initialize();
 	}
@@ -38,9 +32,9 @@ public class BlackJack {
 		
 	}
 
-    private void initHands() {
-        hanPlayer = new Hand(false, true);
-        hanDealer = new Hand(true, false);
+    public void initHands() {
+        hanPlayer = new Hand(false);
+        hanDealer = new Hand(true);
         dlr = new Dealer(sho, hanDealer, hanPlayer);
         dlr.hitDealer();
         dlr.hitDealer();
@@ -49,10 +43,6 @@ public class BlackJack {
     }
 
 
-    public void dealAgain(){
-        initHands();
-
-    }
 
 
 
@@ -70,126 +60,6 @@ public class BlackJack {
     }
 
 
-    //	//eval and display score
-//	public String showStatusAsString(){
-//
-//        StringBuilder stb = new StringBuilder();
-//
-//		boolean bAces = hanPlayer.isThereAces();
-//		int nBetter = hanPlayer.getBetterScore(hanPlayer.getSoftValue(), hanPlayer.getSemiSoftValue());
-//
-//		//the player has the choice to hit, hold
-//		if(hanPlayer.isMyTurn()){
-//
-//			if(bAces){
-//
-//
-//				if (nBetter == 21){
-//					 //lblScore.setText("BLACKJACK: " + nBetter);
-//
-//					 ply.setMoney(ply.getMoney() + BET * 1.5);
-//
-//				}
-//				else if (nBetter > 21){
-//					 //lblScore.setText("BUSTED: " + nBetter);
-//
-//					 ply.setMoney(ply.getMoney() - BET );
-//				}
-//				else
-//                    System.out.println("soething");
-//                //lblScore.setText(hanPlayer.getSoftValue() + " or " + hanPlayer.getSemiSoftValue());
-//			}
-//			//no aces
-//			else{
-//
-//				if (hanPlayer.getHardValue() == 21){
-//					 //lblScore.setText("BLACKJACK: " + hanPlayer.getHardValue());
-//
-//					 ply.setMoney(ply.getMoney() + BET * 1.5);
-//
-//				}
-//
-//				else if (hanPlayer.getHardValue() > 21){
-//					//lblScore.setText("BUSTED: " + String.valueOf(hanPlayer.getHardValue()));
-//
-//					 ply.setMoney(ply.getMoney() - BET);
-//				}
-//				else
-//				    //lblScore.setText(String.valueOf(hanPlayer.getHardValue()));
-//                    System.out.println("afadf");
-//            }
-//
-//
-//		}
-//		//not hte players turn
-//		else {
-//
-//			if (hanDealer.getHardValue() >21){
-//				//evalDisplayScore("DEALER BUSTED :" + hanDealer.getHardValue() + " YOU WIN");
-//
-//				 setPlayerTurn(true);
-//				 ply.setMoney(ply.getMoney() + BET );
-//
-//				// lblMoney.setText(NumberFormat.getCurrencyInstance().format(ply.getMoney()));
-//				 //sidPlayer.repaint();
-//				// sidDealer.repaint();
-//				 return;
-//			}
-//
-//			if(bAces){
-//
-//				if (nBetter > hanDealer.getHardValue()){
-//					evalDisplayScore("You:" +
-//							" " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
-//					 //setButtonsHandOver();
-//					 setPlayerTurn(true);
-//					 ply.setMoney(ply.getMoney() + BET );
-//				}
-//				else if (nBetter < hanDealer.getHardValue()){
-//					evalDisplayScore("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
-//					// setButtonsHandOver();
-//					 setPlayerTurn(true);
-//					 ply.setMoney(ply.getMoney() - BET );
-//				}
-//				else {
-//					evalDisplayScore("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " PUSH");
-//					// setButtonsHandOver();
-//					 setPlayerTurn(true);
-//
-//				}
-//			}
-//			else {
-//
-//				if (hanPlayer.getHardValue() > hanDealer.getHardValue()){
-//					evalDisplayScore("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
-//					// setButtonsHandOver();
-//					 setPlayerTurn(true);
-//					 ply.setMoney(ply.getMoney() + BET );
-//				}
-//				else if (hanPlayer.getHardValue() < hanDealer.getHardValue()){
-//					evalDisplayScore("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
-//					// setButtonsHandOver();
-//					 setPlayerTurn(true);
-//					 ply.setMoney(ply.getMoney() - BET );
-//				}
-//				else {
-//					evalDisplayScore("You: " + hanPlayer.getHardValue() +" versus Dealer: " + hanDealer.getHardValue() + " PUSH");
-//					// setButtonsHandOver();
-//					 setPlayerTurn(true);
-//
-//				}
-//
-//			}
-//
-//		}
-//		//lblMoney.setText(NumberFormat.getCurrencyInstance().format(ply.getMoney()));
-//		//sidPlayer.repaint();
-//		//sidDealer.repaint();
-//
-//
-//
-//
-//	}//end meth
 
 
 
@@ -257,7 +127,7 @@ public class BlackJack {
         StringBuilder stringBuilder = new StringBuilder();
         if (hanDealer.getHardValue() >21){
             stringBuilder.append("DEALER BUSTED :" + hanDealer.getHardValue() + " YOU WIN");
-            setPlayerTurn(true);
+
             ply.setMoney(ply.getMoney() + BET );
             return showMoney(stringBuilder);
 
@@ -268,20 +138,20 @@ public class BlackJack {
             if (nBetter > hanDealer.getHardValue()){
                 stringBuilder.append("You:" +
                         " " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
-                //setButtonsHandOver();
-                setPlayerTurn(true);
+
+
                 ply.setMoney(ply.getMoney() + BET );
             }
             else if (nBetter < hanDealer.getHardValue()){
                 stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
-                // setButtonsHandOver();
-                setPlayerTurn(true);
+
+
                 ply.setMoney(ply.getMoney() - BET );
             }
             else {
                 stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " PUSH");
-                // setButtonsHandOver();
-                setPlayerTurn(true);
+
+
 
             }
         }
@@ -289,20 +159,20 @@ public class BlackJack {
 
             if (hanPlayer.getHardValue() > hanDealer.getHardValue()){
                 stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
-                // setButtonsHandOver();
-                setPlayerTurn(true);
+
+
                 ply.setMoney(ply.getMoney() + BET );
             }
             else if (hanPlayer.getHardValue() < hanDealer.getHardValue()){
                 stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
-                // setButtonsHandOver();
-                setPlayerTurn(true);
+
+
                 ply.setMoney(ply.getMoney() - BET );
             }
             else {
                 stringBuilder.append("You: " + hanPlayer.getHardValue() +" versus Dealer: " + hanDealer.getHardValue() + " PUSH");
-                // setButtonsHandOver();
-                setPlayerTurn(true);
+
+
 
             }
 
@@ -320,16 +190,5 @@ public class BlackJack {
     }
 
 
-    //if it's the player's turn, it's not the dealer's turn, and vice versa
-	private void setPlayerTurn(boolean bTurn){
-		if(!bTurn){
-			hanPlayer.setMyTurn(false);
-			hanDealer.setMyTurn(true);
-		}
-		else 
-		{
-			hanPlayer.setMyTurn(true);
-			hanDealer.setMyTurn(false);
-		}
-	}
+
 }

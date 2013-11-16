@@ -28,7 +28,7 @@ public class ConsoleDriver {
                 case "s":
                     blackJack.getDealer().autoHit();
                     System.out.println(blackJack.showStatusAfterDealerAutoHit());
-                    blackJack.dealAgain();
+                    blackJack.initHands();
                     break;
                 case "d":
 

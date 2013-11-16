@@ -5,39 +5,16 @@ import java.util.ArrayList;
 public class Hand {
 
 	private ArrayList<Card> carHandCards;
-	private boolean bDealer;
-	private boolean bMyTurn;
-    private boolean mOpen;
+    private boolean bDealer;
 
 	
 
-	public Hand(boolean bDealer, boolean bMyTurn) {
+	public Hand(boolean bDealer) {
 		this.bDealer = bDealer;
 		carHandCards = new ArrayList<Card>();
-		this.bMyTurn = bMyTurn;
-        if(bDealer)
-            setOpen(false);
-	}
-	
 
-	public boolean isMyTurn() {
-		return this.bMyTurn;
 	}
 
-
-	public void setMyTurn(boolean bMyTurn) {
-		this.bMyTurn = bMyTurn;
-	}
-
-
-	public boolean isDealer() {
-		return this.bDealer;
-	}
-
-	public void setDealer(boolean dealer) {
-		this.bDealer = dealer;
-	}
-	
 	
 	public void hit(Card carHit){
 		carHandCards.add(carHit);
@@ -147,16 +124,16 @@ public class Hand {
     public String toString(){
 
         StringBuilder stringBuilder = new StringBuilder();
+        int nC = 0;
         for (Card carHandCard : carHandCards) {
-            stringBuilder.append(carHandCard.toString() + " ");
+            if (nC++ == 0 && bDealer)
+                  stringBuilder.append("@@" + " ");
+            else
+                  stringBuilder.append(carHandCard.toString() + " ");
         }
 
-      if(!bDealer) {
-          stringBuilder.append(getBetterScore(getSoftValue(), getSemiSoftValue()));
-      }  else {
-          //TODO need to change
-          stringBuilder.append(getBetterScore(getSoftValue(), getSemiSoftValue()));
-      }
+        if(!bDealer)
+            stringBuilder.append(getBetterScore(getSoftValue(), getSemiSoftValue()));
 
         return stringBuilder.toString();
 
@@ -203,11 +180,4 @@ public class Hand {
 	}
 
 
-    public boolean isOpen() {
-        return mOpen;
-    }
-
-    public void setOpen(boolean open) {
-        mOpen = open;
-    }
 }
