@@ -18,7 +18,7 @@ public class ConsoleDriver {
         outer:
         while (true){
             System.out.println(blackJack.status());
-            System.out.println("hit (h) stick (s) or double down (d) or (x) to exit:");
+            System.out.println("hit (h) stick (s) double down (d) or (x) to exit:");
             String strResponse = scan.nextLine();
             switch (strResponse){
                 case "h":
@@ -35,6 +35,7 @@ public class ConsoleDriver {
                     blackJack.getDealer().hitPlayer();
                     blackJack.getDealer().autoHit();
                     System.out.println(blackJack.showStatusAfterDealerAutoHit(true));
+                    blackJack.initHands();
                     break;
                 case "x":
                     break outer;

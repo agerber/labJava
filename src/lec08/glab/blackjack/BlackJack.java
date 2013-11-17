@@ -7,34 +7,33 @@ ConsoleDriver is the driver class
  */
 public class BlackJack {
 
-	// ===============================================
-	// ==constants
-	// ===============================================
-	private static final double BET = 100.00; 
+    // ===============================================
+    // ==constants
+    // ===============================================
+    private static final double BET = 100.00;
 
-	private Dealer dlr;
-	private Player ply;
-	private Hand hanDealer;
-	private Hand hanPlayer;
-	private Shoe sho;
+    private Dealer dlr;
+    private Player ply;
+    private Hand hanDealer;
+    private Hand hanPlayer;
+    private Shoe sho;
 
 
-	public BlackJack() {
-		initialize();
-	}
+    public BlackJack() {
+        initialize();
+    }
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
+    /**
+     * Initialize the contents of the frame.
+     */
+    private void initialize() {
 
-		ply = new Player(1000.00);
+        ply = new Player(1000.00);
         sho = new Shoe();
         initHands();
 
 
-		
-	}
+    }
 
     public void initHands() {
         hanPlayer = new Hand(false);
@@ -47,12 +46,9 @@ public class BlackJack {
     }
 
 
-
-
-
-    public String status(){
+    public String status() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Dealer has:"+ hanDealer);
+        stringBuilder.append("Dealer has:" + hanDealer);
         stringBuilder.append("\n");
         stringBuilder.append("You have  :" + hanPlayer);
         return stringBuilder.toString();
@@ -63,49 +59,46 @@ public class BlackJack {
         return dlr;
     }
 
-    public String showStatusAfterHit(){
+    public String showStatusAfterHit() {
 
         StringBuilder stringBuilder = new StringBuilder();
         boolean bAces = hanPlayer.isThereAces();
         int nBetter = hanPlayer.getBetterScore(hanPlayer.getSoftValue(), hanPlayer.getSemiSoftValue());
 
-            if(bAces){
+        if (bAces) {
 
-                if (nBetter == 21){
-                    stringBuilder.append("BLACKJACK: " + nBetter);
-                    ply.setMoney(ply.getMoney() + BET * 1.5);
-                    initHands();
-                    return showMoney(stringBuilder);
+            if (nBetter == 21) {
+                stringBuilder.append("BLACKJACK: " + nBetter);
+                ply.setMoney(ply.getMoney() + BET * 1.5);
+                initHands();
+                return showMoney(stringBuilder);
 
-                }
-                else if (nBetter > 21){
-                    stringBuilder.append("BUSTED: " + nBetter);
-                    ply.setMoney(ply.getMoney() - BET );
-                    initHands();
-                    return showMoney(stringBuilder);
-                }
+            } else if (nBetter > 21) {
+                stringBuilder.append("BUSTED: " + nBetter);
+                ply.setMoney(ply.getMoney() - BET);
+                initHands();
+                return showMoney(stringBuilder);
+            }
+
+        }
+        //no aces
+        else {
+
+            if (hanPlayer.getHardValue() == 21) {
+                stringBuilder.append("BLACKJACK: " + hanPlayer.getHardValue());
+                ply.setMoney(ply.getMoney() + BET * 1.5);
+                initHands();
+                return showMoney(stringBuilder);
+
+            } else if (hanPlayer.getHardValue() > 21) {
+                stringBuilder.append("BUSTED: " + hanPlayer.getHardValue());
+                ply.setMoney(ply.getMoney() - BET);
+                initHands();
+                return showMoney(stringBuilder);
 
             }
-            //no aces
-            else{
 
-                if (hanPlayer.getHardValue() == 21){
-                    stringBuilder.append("BLACKJACK: " + hanPlayer.getHardValue());
-                    ply.setMoney(ply.getMoney() + BET * 1.5);
-                    initHands();
-                    return showMoney(stringBuilder);
-
-                }
-
-                else if (hanPlayer.getHardValue() > 21){
-                    stringBuilder.append("BUSTED: " + hanPlayer.getHardValue());
-                    ply.setMoney(ply.getMoney() - BET);
-                    initHands();
-                    return showMoney(stringBuilder);
-
-                }
-
-            }
+        }
 
         return stringBuilder.toString();
 
@@ -113,64 +106,57 @@ public class BlackJack {
     }
 
 
-    public String showStatusAfterDealerAutoHit(boolean bDoubleDown){
+    public String showStatusAfterDealerAutoHit(boolean bDoubleDown) {
 
-       double dBet = BET;
-       if (bDoubleDown)
-           dBet *=2;
+        double dBet = BET;
+        if (bDoubleDown)
+            dBet *= 2;
 
 
         boolean bAces = hanPlayer.isThereAces();
         int nBetter = hanPlayer.getBetterScore(hanPlayer.getSoftValue(), hanPlayer.getSemiSoftValue());
 
         StringBuilder stringBuilder = new StringBuilder();
-        if (hanDealer.getHardValue() >21){
+        if (hanDealer.getHardValue() > 21) {
             stringBuilder.append("DEALER BUSTED :" + hanDealer.getHardValue() + " YOU WIN");
 
-            ply.setMoney(ply.getMoney() + dBet );
+            ply.setMoney(ply.getMoney() + dBet);
             return showMoney(stringBuilder);
 
         }
 
-        if(bAces){
+        if (bAces) {
 
-            if (nBetter > hanDealer.getHardValue()){
+            if (nBetter > hanDealer.getHardValue()) {
                 stringBuilder.append("You:" +
-                        " " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
+                        " " + nBetter + " versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
 
 
-                ply.setMoney(ply.getMoney() + dBet );
-            }
-            else if (nBetter < hanDealer.getHardValue()){
-                stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
+                ply.setMoney(ply.getMoney() + dBet);
+            } else if (nBetter < hanDealer.getHardValue()) {
+                stringBuilder.append("You: " + nBetter + " versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
 
 
-                ply.setMoney(ply.getMoney() - dBet );
-            }
-            else {
-                stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " PUSH");
-
+                ply.setMoney(ply.getMoney() - dBet);
+            } else {
+                stringBuilder.append("You: " + nBetter + " versus Dealer: " + hanDealer.getHardValue() + " PUSH");
 
 
             }
-        }
-        else {
+        } else {
 
-            if (hanPlayer.getHardValue() > hanDealer.getHardValue()){
-                stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
-
-
-                ply.setMoney(ply.getMoney() + dBet );
-            }
-            else if (hanPlayer.getHardValue() < hanDealer.getHardValue()){
-                stringBuilder.append("You: " + nBetter +" versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
+            if (hanPlayer.getHardValue() > hanDealer.getHardValue()) {
+                stringBuilder.append("You: " + nBetter + " versus Dealer: " + hanDealer.getHardValue() + " YOU WIN");
 
 
-                ply.setMoney(ply.getMoney() - dBet );
-            }
-            else {
-                stringBuilder.append("You: " + hanPlayer.getHardValue() +" versus Dealer: " + hanDealer.getHardValue() + " PUSH");
+                ply.setMoney(ply.getMoney() + dBet);
+            } else if (hanPlayer.getHardValue() < hanDealer.getHardValue()) {
+                stringBuilder.append("You: " + nBetter + " versus Dealer: " + hanDealer.getHardValue() + " YOU LOSE");
 
+
+                ply.setMoney(ply.getMoney() - dBet);
+            } else {
+                stringBuilder.append("You: " + hanPlayer.getHardValue() + " versus Dealer: " + hanDealer.getHardValue() + " PUSH");
 
 
             }
@@ -181,13 +167,20 @@ public class BlackJack {
     }
 
     private String showMoney(StringBuilder stringBuilder) {
-        stringBuilder.append("\n##############################\n");
+
+        stringBuilder.append("\n########HAND OVER##########\n");
+
+        stringBuilder.append(hanDealer.showEndState());
+        stringBuilder.append("\n");
+
+        stringBuilder.append(hanPlayer.showEndState());
+        stringBuilder.append("\n");
         stringBuilder.append(ply.getStringMoney());
-        stringBuilder.append("\n##############################");
-        stringBuilder.append("\n\n");
+        stringBuilder.append("\n########HAND OVER##########\n");
+
+        stringBuilder.append("\n");
         return stringBuilder.toString();
     }
-
 
 
 }

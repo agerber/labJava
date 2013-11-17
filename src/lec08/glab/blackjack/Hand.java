@@ -121,20 +121,33 @@ public class Hand {
 
 
     @Override
-    public String toString(){
+         public String toString(){
 
         StringBuilder stringBuilder = new StringBuilder();
         int nC = 0;
         for (Card carHandCard : carHandCards) {
             if (nC++ == 0 && bDealer)
-                  stringBuilder.append("@@" + " ");
+                stringBuilder.append("##" + " ");
             else
-                  stringBuilder.append(carHandCard.toString() + " ");
+                stringBuilder.append(carHandCard.toString() + " ");
         }
 
         if(!bDealer)
             stringBuilder.append(getBetterScore(getSoftValue(), getSemiSoftValue()));
 
+        return stringBuilder.toString();
+
+    }
+
+
+
+    public String showEndState(){
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Card carHandCard : carHandCards) {
+                stringBuilder.append(carHandCard.toString() + " ");
+        }
+        stringBuilder.append(getBetterScore(getSoftValue(), getSemiSoftValue()));
         return stringBuilder.toString();
 
     }
