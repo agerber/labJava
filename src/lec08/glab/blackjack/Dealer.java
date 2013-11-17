@@ -10,7 +10,7 @@ public class Dealer  {
 	
 	
 	public Dealer(Shoe sho, Hand hanDealer, Hand hanPlayer) {
-		super();
+
 		this.sho = sho;
 		this.hanDealer = hanDealer;
 		this.hanPlayer = hanPlayer;
