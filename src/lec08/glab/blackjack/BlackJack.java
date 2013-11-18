@@ -4,6 +4,8 @@ package lec08.glab.blackjack;
 This model is completely decoupled from the controller/view. Implementing the gui would be relatively easy.
 ConsoleDriver is the driver class
 
+The black-jack logic is erroneous.
+
  */
 public class BlackJack {
 
