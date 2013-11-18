@@ -94,7 +94,7 @@ public class Reflector {
                 if (j > 0) System.out.print(", ");
                 System.out.print(paramTypes[j].getName());
             }
-            System.out.println("); //no-arg constructor");
+            System.out.println();//"); //no-arg constructor");
         }
     }
 

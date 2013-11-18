@@ -1,4 +1,4 @@
-package lec06.glab.notepad;
+package lec08.glab.notepad;
 
 import javax.swing.*;
 import java.awt.*;

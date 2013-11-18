@@ -1,14 +1,9 @@
-package lec06.glab.notepad;
+package lec08.glab.notepad;
 
 import javax.swing.*;
-import javax.swing.filechooser.*;
 import java.awt.*;
 import java.awt.datatransfer.*;
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Scanner;
 
 
 public class ClipboardAndFileUtil {
