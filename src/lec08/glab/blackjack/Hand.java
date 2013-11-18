@@ -54,16 +54,6 @@ public class Hand {
     public int getSemiSoftValue() {
 
 
-        //if the softValue <= 10 && there is at least one ace
-        //sort the cards in the hand in descending order (aces first)
-        //for each card in hand
-        //promote the first ace to hard 11 and add it
-        //add the softvalues for any other aces
-        //add the other values
-
-        //else
-        //get the hard value
-
 
         int nRet = 0;
 
@@ -85,14 +75,10 @@ public class Hand {
                 } else {
                     nRet += carHandCards.get(nC).getValue();
                 }
-
-
             }
 
         } else {
-
             nRet = getHardValue();
-
         }
 
         return nRet;

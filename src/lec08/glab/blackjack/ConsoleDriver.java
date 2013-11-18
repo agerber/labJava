@@ -17,24 +17,24 @@ public class ConsoleDriver {
 
         outer:
         while (true){
-            System.out.println(blackJack.status());
-            System.out.println("hit (h) stick (s) double down (d) or (x) to exit:");
+            View.reportln(blackJack.status());
+            View.reportln("hit (h) stick (s) double down (d) or (x) to exit:");
             String strResponse = scan.nextLine();
             switch (strResponse){
                 case "h":
                     blackJack.getDealer().hitPlayer();
-                    System.out.println(blackJack.showStatusAfterHit());
+                    View.reportln(blackJack.showStatusAfterHit());
                     break;
                 case "s":
                     blackJack.getDealer().autoHit();
-                    System.out.println(blackJack.showStatusAfterDealerAutoHit(false));
+                    View.reportln(blackJack.showStatusAfterDealerAutoHit(false));
                     blackJack.initHands();
                     break;
                 case "d":
                     //one hit only and double the bet
                     blackJack.getDealer().hitPlayer();
                     blackJack.getDealer().autoHit();
-                    System.out.println(blackJack.showStatusAfterDealerAutoHit(true));
+                    View.reportln(blackJack.showStatusAfterDealerAutoHit(true));
                     blackJack.initHands();
                     break;
                 case "x":
@@ -42,7 +42,7 @@ public class ConsoleDriver {
             }
 
         }
-        System.out.println("Thank you for playing.");
+        View.reportln("Thank you for playing.");
 
 
     }
