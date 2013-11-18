@@ -61,15 +61,13 @@ public class Card {
     //instance members
     private Face mFace;
     private Suit mSuit;
-    private int mValue;
-
 
 
     //constructor
     public Card(Face face, Suit suit) {
         mFace = face;
         mSuit = suit;
-        mValue = getRank(face);
+
     }
 
 
@@ -133,10 +131,8 @@ public class Card {
     }
 
     public int getValue() {
-        return mValue;
+        return getRank(getFace());
     }
 
-    public void setValue(int value) {
-        mValue = value;
-    }
+
 }

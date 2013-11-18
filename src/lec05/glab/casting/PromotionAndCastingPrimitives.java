@@ -20,6 +20,9 @@ public class PromotionAndCastingPrimitives {
 		//in this case, the result of integer division is 2.66666 trucated to 2, then the result is assigned as (2.0)
 		float fResult = nOperand2 / 3;
 
+        //notice that this will complain because you are losing precision
+       // float fResult2 = nOperand2 / 3.0;
+
 		//you concatenate a string with a primitive, the primitive is promoted to a string
 		String strResult = "Hello" + dOperand1;
 		
