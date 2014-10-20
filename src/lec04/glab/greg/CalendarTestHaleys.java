@@ -48,21 +48,21 @@ public class CalendarTestHaleys {
 
 		final int SUNDAY = 1;
 		final int SATURDAY = 7;
-		final String[] SHORT_NAMES = new DateFormatSymbols().getShortWeekdays();
-		final String[] MONTH_NAMES = new DateFormatSymbols().getMonths();
+		final String[] SHORT_NAMES = new DateFormatSymbols().getShortWeekdays();  //MON TUE WED, etc
+		final String[] MONTH_NAMES = new DateFormatSymbols().getMonths();  //January February etc.
 
 		//create a data structure to hold greg dates and add them manually
-		ArrayList<GregorianCalendar> greHaleyAppears = new ArrayList<GregorianCalendar>();
-		greHaleyAppears.add(new GregorianCalendar(1617, 5, 3));
-		greHaleyAppears.add(new GregorianCalendar(1852, 1, 2));
-		greHaleyAppears.add(new GregorianCalendar(1987, 11, 21));
-		greHaleyAppears.add(new GregorianCalendar(2061, 6, 18));
+		ArrayList<GregorianCalendar> greAppears = new ArrayList<GregorianCalendar>();
+		greAppears.add(new GregorianCalendar(1617, 5, 3));
+		greAppears.add(new GregorianCalendar(1852, 1, 2));
+		greAppears.add(new GregorianCalendar(1987, 11, 21));
+		greAppears.add(new GregorianCalendar(2061, 6, 18));
 
 
 
 		GregorianCalendar greCount;
 
-		for (GregorianCalendar greAppear : greHaleyAppears) {
+		for (GregorianCalendar greAppear : greAppears) {
 
 			greCount = new GregorianCalendar(greAppear.get(Calendar.YEAR), greAppear.get(Calendar.MONTH), 1);
 
@@ -79,7 +79,7 @@ public class CalendarTestHaleys {
 					System.out.println();
 					System.out.println();
 
-					// print out Year + Month
+					// print out Year + Month  : "1617 June" + println
 					System.out.println(" " + greCount.get(Calendar.YEAR) + "  "
 							+ MONTH_NAMES[greCount.get(Calendar.MONTH)]);
 
