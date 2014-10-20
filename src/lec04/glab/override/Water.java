@@ -3,6 +3,8 @@ package lec04.glab.override;
 /**
  * Created by ag on 10/20/2014.
  */
+
+//this shows example 1 from exaplanation. We are overriding the toString method of Object because we want to.
 public class Water {
 
     //no point storing this state in each instance, it can be calculated based on temp.
