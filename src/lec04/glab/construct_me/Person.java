@@ -7,18 +7,23 @@ public class Person {
 
     //fields
     private String mName;
+    private double mWeight;
 
 
     //constructors
     public Person() {
         //funnel constuction to the one-arg constructor
-        this("Adam");
+        this("Adam", 100.0);
     }
 
     public Person(String name) {
-        mName = name;
+        this(name, 100.0);
     }
 
+    public Person(String name, double weight) {
+        mName = name;
+        mWeight = weight;
+    }
 
     //getters and setters
 
@@ -31,18 +36,28 @@ public class Person {
     }
 
 
-    @Override
-    public String toString() {
-        return super.toString() + ": Person{" +
-                "mName='" + mName + '\'' +
-                '}';
+    public double getWeight() {
+        return mWeight;
+    }
+
+    public void setWeight(double weight) {
+        mWeight = weight;
     }
 
 
     @Override
+    public String toString() {
+        return super.toString() +  ": Person{" +
+                "mName='" + mName + '\'' +
+                ", mWeight=" + mWeight +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object obj) {
 
-       return this.getName().equals(((Person) obj).getName());
+          return this.getName().equals(((Person) obj).getName()) &&
+                  this.getWeight() == ((Person) obj).getWeight();
 
     }
 }
