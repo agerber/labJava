@@ -30,8 +30,19 @@ public class Person {
         mName = name;
     }
 
-    //there is a default contuctor here (the no-arg consturctor)
+
+    @Override
+    public String toString() {
+        return super.toString() + ": Person{" +
+                "mName='" + mName + '\'' +
+                '}';
+    }
 
 
+    @Override
+    public boolean equals(Object obj) {
 
+       return this.getName().equals(((Person) obj).getName());
+
+    }
 }
