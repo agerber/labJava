@@ -18,7 +18,7 @@ public class InterfaceDriver {
 
 
         for (Drawable draVehicle : draVehicles) {
-            System.out.println(((Vehicle)draVehicle).getModel() + " : " + ((Vehicle)draVehicle).reportNumWheels() + "\n");
+            System.out.println(draVehicle.getClass().getName() + " : " + ((Vehicle)draVehicle).getModel() + " : " + ((Vehicle)draVehicle).reportNumWheels() + "\n");
             draVehicle.draw();
         }
     }
