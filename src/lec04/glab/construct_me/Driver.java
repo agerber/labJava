@@ -15,7 +15,7 @@ public class Driver {
         ArrayList<Person> perPeeps = new ArrayList<>();
         perPeeps.add(new Person("Dan"));
         perPeeps.add(new Person("Jason"));
-        perPeeps.add(new Person("Liz"));
+        perPeeps.add(PersonFactory.getInstance("Liz"));
         perPeeps.add(new Person("Charlie"));
         perPeeps.add(new Person("Charlie", 150));
         perPeeps.add(new Person("Charlie", 160));
