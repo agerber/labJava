@@ -1,0 +1,8 @@
+Overriding facilitates polymorphism. it allows you to express subclasses in different ways. For example, let's say we have a game with
+a Sprite class. Each subclass of sprite has a draw method that expresses itself itself differently.
+
+Here are the conditions for potentially overriding a method
+1/ you want to override
+2/ you must override. What do you mean, you must override? What are the conditions in which you must override?
+    A/ abstract classes
+    B/ interfaces.
