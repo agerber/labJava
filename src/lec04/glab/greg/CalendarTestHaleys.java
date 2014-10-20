@@ -10,7 +10,7 @@ import java.util.GregorianCalendar;
   
  		        // instantiate a date with today's date called datToday
 				// create a datCount set at some earlier date
-				// while datCount.year < some arbitrary end year,  loop and increment datCount by one day
+				// datCount = datHaleys (year, month, 1) loop and increment datCount by one day
 					  //if dayOfMonth == 1  
 						//print out year plus month
 						//print out the days of the week Sun Mon Tue etc. 
@@ -64,10 +64,12 @@ public class CalendarTestHaleys {
 
 		for (GregorianCalendar greAppear : greHaleyAppears) {
 
-			greCount = new GregorianCalendar(greAppear.get(Calendar.YEAR), 0, 1);
+			greCount = new GregorianCalendar(greAppear.get(Calendar.YEAR), greAppear.get(Calendar.MONTH), 1);
 
 			//while 
 			do {
+
+
 
 				// day 1-31 etc.
 				int nDay = greCount.get(Calendar.DAY_OF_MONTH);
@@ -117,8 +119,7 @@ public class CalendarTestHaleys {
 				//add one day
 				greCount.add(Calendar.DAY_OF_MONTH, 1);
 
-			} while (greCount.get(Calendar.YEAR) == greAppear
-					.get(Calendar.YEAR));
+			} while (greCount.get(Calendar.MONTH) == greAppear.get(Calendar.MONTH) );
 
 		}//end foreach
 	}//end main
