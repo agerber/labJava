@@ -25,7 +25,7 @@ public class ReferenceAnonDriver {
         //try pressing Cntrl-Alt-V to extract variable here to give or reference a name
         System.out.println(new Date());
 
-        
+
 
 
 
