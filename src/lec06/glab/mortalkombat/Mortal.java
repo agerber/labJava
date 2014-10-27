@@ -81,7 +81,13 @@ public abstract class Mortal  {
 			File filImg = new File(strPathImg);
 			
 			//sound
-			strSoundPath = URLMORTAL.getPath().substring(1, URLMORTAL.getPath().length())  + "sounds/" + strSound; 
+
+
+            String strUserDir =  System.getProperty("user.dir");
+            strUserDir += "\\src\\lec06\\glab\\mortalkombat\\sounds\\";
+            strSoundPath = strUserDir + strSound;
+
+			//strSoundPath = URLMORTAL.getPath().substring(1, URLMORTAL.getPath().length())  + "sounds/" + strSound;
 			
 			
 			bimMortal = ImageIO.read(filImg);

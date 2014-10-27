@@ -204,7 +204,7 @@ public class MortalKombat {
 
 						//kill
 					    if (boxPunchee.healthStatus() <= 0){
-					    	playStrikeSound();
+					    //	playStrikeSound();
 					    	//get the timer from the event
 					    	 ((Timer)evn.getSource()).stop();
 					    	 System.gc();
@@ -214,10 +214,14 @@ public class MortalKombat {
 					    //keep fighting
 					    else {
 					    
-					    	playStrikeSound();
-					    	 txtStatus.setText(Boxable.SOUNDS[Boxable.RAN.nextInt(Boxable.SOUNDS.length)] + " " + ((SuperHero)boxPuncher).getName() + " " + boxPuncher.healthStatus() + " versus "  + 
-					    			 ((SuperHero)boxPunchee).getName() + " " + boxPunchee.healthStatus()); 	
-					    }
+					    //	playStrikeSound();
+//					    	 txtStatus.setText(Boxable.SOUNDS[Boxable.RAN.nextInt(Boxable.SOUNDS.length)] + " " + ((SuperHero)boxPuncher).getName() + " " + boxPuncher.healthStatus() + " versus "  +
+//					    			 ((SuperHero)boxPunchee).getName() + " " + boxPunchee.healthStatus());
+
+
+                            System.out.println(Boxable.SOUNDS[Boxable.RAN.nextInt(Boxable.SOUNDS.length)] + " " + ((SuperHero)boxPuncher).getName() + " " + boxPuncher.healthStatus() + " versus "  +
+				    			 ((SuperHero)boxPunchee).getName() + " " + boxPunchee.healthStatus());
+                        }
 					    
 					
 					}
