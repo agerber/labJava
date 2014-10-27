@@ -7,28 +7,33 @@ import java.util.GregorianCalendar;
 
 
 /**
-  
- 		        // instantiate a date with today's date called datToday
-				// create a datCount set at some earlier date
-				// while datCount.year < some arbitrary end year,  loop and increment datCount by one day
-					  //if dayOfMonth == 1  
-						//print out year plus month
-						//print out the days of the week Sun Mon Tue etc. 
-						//determine the ordinal day of the week 1 through 7  Sun through Sat
-						//init counter to ordinalDay and for each day greater than 1
-							//build a string for an indent
-							//decrement ordinalDay
-						//print out the indent -- no line break
-					
-						
-					  //print out the day of the month e.g. 18
-					  //if startDate == today
-					     //add an asterix
-					  //else
-						 //just add another space
-					  //if the day of week is saturday
-						 //print line break
-					  //add one day to the startDate
+
+
+
+    //declare some constants for short_day_names and month_names
+    //create an arrayList of Greg dates with appearances of Haley's comet
+    //create a counter and set it each date
+    //do while greCount.month == greItem.month
+        //set greCount to the year and month of the greItem
+                         //if dayOfMonth == 1
+                            //print out year & month
+                            //print out the days of the week Sun Mon Tue etc.
+                            //determine the ordinal day of the week 1 through 7  Sun through Sat
+                            //init counter to ordinalDay and for each day greater than 1
+                                //build a string for an indent
+                                //decrement ordinalDay
+                            //print out the indent -- no line break
+
+                          //print out the day of the month e.g. 18
+                          //if greCount.day == greItem.day
+                             //add an asterix
+                          //else
+                             //just add another space
+
+                          //if the day of week is saturday
+                             //print line break
+
+                          //add one day to the startDate
 	
 */		
 
@@ -48,13 +53,15 @@ public class CalendarTestHaleys {
 
 		final int SUNDAY = 1;
 		final int SATURDAY = 7;
-		final String[] SHORT_NAMES = new DateFormatSymbols().getShortWeekdays();
-		final String[] MONTH_NAMES = new DateFormatSymbols().getMonths();
+		final String[] SHORT_NAMES = new DateFormatSymbols().getShortWeekdays(); //Mon Tues Wed
+		final String[] MONTH_NAMES = new DateFormatSymbols().getMonths(); //January February March
 
 		//create a data structure to hold greg dates and add them manually
-		ArrayList<GregorianCalendar> greHaleyAppears = new ArrayList<GregorianCalendar>();
+		ArrayList<GregorianCalendar> greHaleyAppears = new ArrayList<>();
 		greHaleyAppears.add(new GregorianCalendar(1617, 5, 3));
-		greHaleyAppears.add(new GregorianCalendar(1852, 1, 2));
+        greHaleyAppears.add(new GregorianCalendar(1852, 1, 2));
+        //purposefully introduce a null-pointer
+        //greHaleyAppears.add(null);
 		greHaleyAppears.add(new GregorianCalendar(1987, 11, 21));
 		greHaleyAppears.add(new GregorianCalendar(2061, 6, 18));
 
@@ -64,7 +71,8 @@ public class CalendarTestHaleys {
 
 		for (GregorianCalendar greAppear : greHaleyAppears) {
 
-			greCount = new GregorianCalendar(greAppear.get(Calendar.YEAR), 0, 1);
+
+			greCount = new GregorianCalendar(greAppear.get(Calendar.YEAR), greAppear.get(Calendar.MONTH), 1);
 
 			//while 
 			do {
@@ -118,8 +126,8 @@ public class CalendarTestHaleys {
 				//add one day
 				greCount.add(Calendar.DAY_OF_MONTH, 1);
 
-			} while (greCount.get(Calendar.YEAR) == greAppear
-					.get(Calendar.YEAR));
+			} while (greCount.get(Calendar.MONTH) == greAppear
+					.get(Calendar.MONTH));
 
 		}//end foreach
 	}//end main
