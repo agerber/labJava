@@ -106,7 +106,8 @@ public class CalendarTestHaleys {
 				// mark today day with asterix, otherwise just space
 				if (greCount.get(Calendar.DAY_OF_YEAR) == greAppear
 						.get(Calendar.DAY_OF_YEAR))
-					System.out.print("*");
+                    System.out.print("*");
+
 				else
 					System.out.print(" ");
 
