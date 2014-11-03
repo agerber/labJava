@@ -2,6 +2,14 @@ package lec06.glab.junit;
 
 public class RecursionDriver {
 
+
+    //press Ctrl+Shift+T to generate a Test case.
+    //http://junit.sourceforge.net/javadoc/org/junit/Assert.html
+
+    //make sure to install
+    //JUnitGenerator V2.0
+    //then use the alt-insert
+
 	/**
 	 * @param args
 	 */
