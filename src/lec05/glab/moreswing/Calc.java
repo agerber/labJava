@@ -40,6 +40,8 @@ public class Calc {
    //my members
     private ActionListener mActionListener;
     private List<String> mVals;
+    private double mTemp, mTotal;
+    private String mOp;
 
 
 
@@ -64,10 +66,45 @@ public class Calc {
                String strButtonText =  ((JButton)e.getSource()).getText();
                 //equals sign
                 if (strButtonText.equalsIgnoreCase("=")){
+
+                    mVals.add(mTextField.getText());
+                  //  mVals.add(strButtonText);
                     mTextField.setText("");
+
+
                     while (!mVals.isEmpty()){
-                        System.out.println(mVals.remove(0));
+
+                        String strVal = mVals.remove(0);
+                        if (isNumeric(strVal)){
+                            mTemp = Double.parseDouble(strVal);
+                            if (mOp == null) {
+                                mTotal = mTemp;
+                                continue;
+                            }
+
+                            switch (mOp){
+                                case "+":
+                                    mTotal += mTemp;
+                                    break;
+                                case "-":
+                                    mTotal -= mTemp;
+                                    break;
+                                case "*":
+                                    mTotal *= mTemp;
+                                    break;
+                                case "/":
+                                    mTotal /= mTemp;
+                                    break;
+                            }
+
+
+                        } else {
+                            //assign the previous operation
+                            mOp = strVal;
+                        }
+
                     }
+                    mTextField.setText(String.valueOf(mTotal));
                 }
 
                 else {
