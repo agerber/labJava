@@ -16,6 +16,7 @@ public class MouseClickerStubs {
         frame.setContentPane(new MouseClickerStubs().mPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setSize(600,400);
         frame.setVisible(true);
     }
 
