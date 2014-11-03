@@ -12,7 +12,7 @@ public class AbstractDriver {
         MyAbstractDate myAbstractDate = new MyAbstractDate() {
             @Override
             public String getMayanArmegeddon() {
-                return "May 3, 2012 : " + this.getClass().getName();
+                return "May 3, 2012. Hello from myAbstractDate, my type is: " + this.getClass().getName();
             }
         };
 
@@ -22,6 +22,25 @@ public class AbstractDriver {
 }
 
 abstract class MyAbstractDate extends Date {
+
+    private int mNum;
+    private String mMyString;
+
+    public int getNum() {
+        return mNum;
+    }
+
+    public void setNum(int num) {
+        mNum = num;
+    }
+
+    public String getMyString() {
+        return mMyString;
+    }
+
+    public void setMyString(String string) {
+        mMyString = string;
+    }
 
     public abstract String getMayanArmegeddon();
 
