@@ -35,9 +35,10 @@ public class Calc {
     private JButton mButtonMult;
     private JButton mButtonDiv;
     private JPanel mPanel;
+    private JButton mButtonClear;
 
 
-   //my members
+    //my members
     private ActionListener mActionListener;
     private List<String> mVals;
     private double mTemp, mTotal;
@@ -64,6 +65,16 @@ public class Calc {
             @Override
             public void actionPerformed(ActionEvent e) {
                String strButtonText =  ((JButton)e.getSource()).getText();
+
+                if (strButtonText.equalsIgnoreCase("C")){
+                    mTextField.setText("");
+                    mVals.clear();
+                    mOp = null;
+                    mTemp = 0;
+                    mTotal = 0;
+                    return;
+                }
+
                 //equals sign
                 if (strButtonText.equalsIgnoreCase("=")){
 
@@ -105,9 +116,14 @@ public class Calc {
 
                     }
                     mTextField.setText(String.valueOf(mTotal));
+                    mOp = null;
+                    mTemp = 0;
+                    mTotal = 0;
                 }
 
                 else {
+
+
 
                     //numeric entry or .
                     if (isNumeric(strButtonText)){
@@ -154,6 +170,7 @@ public class Calc {
         mButtonDiff.addActionListener(mActionListener);
         mButtonMult.addActionListener(mActionListener);
         mButtonDiv.addActionListener(mActionListener);
+        mButtonClear.addActionListener(mActionListener);
 
 
 
