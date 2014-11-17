@@ -129,6 +129,7 @@ public class Hand {
     }
 
     //gets the better score of player's hand for soft Aces
+    //soft is one ace
     public int getBetterScore(int nSoft, int nSemi) {
 
         if (nSoft <= 21 && nSemi <= 21) {
