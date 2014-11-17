@@ -33,7 +33,7 @@ public class PbarsMain extends Application {
 
         //stage
             //scene
-                 //root
+                 //root (Group or Region)
 
         Group root = new Group();
         Scene scene = new Scene(root, 300, 150);

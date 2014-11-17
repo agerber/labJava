@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -36,6 +37,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+
+
+
         Group root = new Group();
 
         GridPane gridpane = new GridPane();
@@ -70,7 +75,12 @@ public class App extends Application {
             }
         });
 
-
+        imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println(event.getSceneX() + ":"+ event.getScreenY());
+            }
+        });
 
         final HBox pictureRegion = new HBox();
 
