@@ -75,6 +75,8 @@ public class App extends Application {
             }
         });
 
+
+
         imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
