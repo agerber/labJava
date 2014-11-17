@@ -3,8 +3,9 @@ package lec08.glab.blackjack;
 public class Shoe {
 
 	public static final int DECKS = 6;
-	//the higher the slug value, the easier it is to count cards
-	public static final int SLUG = 5;
+	//the lower the slug value, the easier it is to count cards.
+    //0.75 will place the slug 75% way down the shoe
+	public static final double SLUG = 0.75;
 	
 	private Card[] carCards; //312 cards
 	private int nCount;
@@ -57,7 +58,7 @@ public class Shoe {
 	
 	//to avoid card-counting, a shoe is reshuffled by the dealer 
 	public Card deal(){
-		if (nCount > (int)(carCards.length / (DECKS/SLUG))){
+		if (nCount > (int)(carCards.length * SLUG)){
 			shuffle();
 			nCount = 0;
 		}
