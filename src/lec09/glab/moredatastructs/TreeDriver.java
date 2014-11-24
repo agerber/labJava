@@ -17,6 +17,8 @@ public class TreeDriver {
     	comTeams.insert("Cowboys");
     	comTeams.insert("Patriots");
     	comTeams.insert("Dolphins");
+
+
     	
     	//try to comment this out
     	//comTeams.insert("Browns");
