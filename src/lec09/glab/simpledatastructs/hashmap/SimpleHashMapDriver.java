@@ -8,7 +8,7 @@ public class SimpleHashMapDriver {
 	public static void main(String[] args) {
 
 		//try small numbers like 2, or 11
-		SimpleHashMap<Integer,String> strCities = new SimpleHashMap<Integer,String>(7);
+		SimpleHashMap<Integer,String> strCities = new SimpleHashMap<Integer,String>(15);
 		
 		//will not allow dups
 		strCities.add(60001,"Chicago");

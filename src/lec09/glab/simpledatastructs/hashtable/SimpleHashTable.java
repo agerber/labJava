@@ -13,6 +13,7 @@ public class SimpleHashTable<T> {
 	// ==CONSTRUCTOR
 	// ===============================================
 	public SimpleHashTable() {
+        //the size should be approx twice the expected number of elements and prime
 		nodHashes = new Node[1999];
 		nSize = 0;
 
