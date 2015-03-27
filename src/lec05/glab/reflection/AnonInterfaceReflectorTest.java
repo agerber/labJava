@@ -11,21 +11,5 @@ public class AnonInterfaceReflectorTest {
     public static void main(String[] args) {
 
 
-        //there are two kinds of anonymity, referende anonymous. This happens all the time when we use the new keyword
-           //without a reference when passing objects into constructors for example, or into data-structures.
-
-
-        //what is the difference between an reference-anonymous and type-anonymous
-
-
-        //try selecting the anon inteface and selecting Refactor || Extract || Variable
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Reflector.printClass(this.getClass());
-            }
-        });
-        thread.start();
-
     }
 }
