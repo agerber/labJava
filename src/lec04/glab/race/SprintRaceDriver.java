@@ -28,7 +28,35 @@ public class SprintRaceDriver {
 				Raceable.DIM);
 
 
+		//make a lane marker
+			StringBuilder stbLane = new StringBuilder();
+			for (int nC = 0; nC < 120; nC++){
+				 stbLane.append("#");
+            }
+		
 
+            //declare a ref to the farthest one
+			//Raceable racFarthest;
+
+
+            //use a labeled break to break out of a nested loop
+            outer:
+			while (true) {
+				for (Raceable rac : racRacers) {
+					rac.stride();
+                    if(rac.getDistance() >= 100){
+                        System.out.print(rac.vocalize());
+                        System.out.println(" " + rac.getClass().toString() + " wins.");
+                        break outer;
+                    }
+
+					System.out.print(rac.display(rac.getDistance()));
+					System.out.println(stbLane.toString());
+
+					
+				}
+
+			}//end while
 			
 
 	}//end main

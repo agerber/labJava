@@ -11,7 +11,13 @@ public class AbstractDriver {
 
 
     public static void main(String[] args) {
+        ArrayList<Vehicle> vehVehicles = new ArrayList<>();
+        vehVehicles.add(new Mazarati("Mazarati 5400 LS"));
+        vehVehicles.add(new Trike("Green Machine"));
 
+        for (Vehicle vehVehicle : vehVehicles) {
+            System.out.println(vehVehicle.getModel() + " : " + vehVehicle.reportNumWheels());
+        }
     }
 
 

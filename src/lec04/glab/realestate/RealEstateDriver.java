@@ -26,6 +26,35 @@ public class RealEstateDriver {
                 false));
 		
 
+        //subprime-crash!
+		for (House hou : houParks) {
+			hou.setMarketValue(hou.getMarketValue() * 0.75);
+			
+		}
+		
+		
+		
+		for (House hou : houParks) {
+			System.out.println(hou);
+			
+		}
+		
+
+		House houMostExpensive;
+		House houTest;
+		
+	    houMostExpensive = houParks.get(0);
+		
+		for (int nC = 1; nC < houParks.size(); nC++) {
+			houTest = houParks.get(nC);
+			if(houTest.getMarketValue() > houMostExpensive.getMarketValue()) {
+				houMostExpensive = houTest;
+            }
+		}
+			
+		System.out.println();
+		System.out.println("The most expensive house in Hyde Park: ");
+        System.out.println(houMostExpensive);
 
 
 

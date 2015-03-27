@@ -40,6 +40,66 @@ public class Leap {
 	//NOT A COMMAND-LINE; SYSTEM.IN ONLY
 	public static void main(String[] args) {
 
+		int nCount = 0;
+		Scanner scn = new Scanner(System.in);
+		System.out.println("What are your dates in forat mm/dd//yyyy mm/dd/yyyy:");
+		
+		StringTokenizer stoDates = new StringTokenizer(scn.nextLine());
+		
+		if (stoDates.countTokens() !=2)
+			return;
+		
+		
+		MyDate[] mdtDates = new MyDate[stoDates.countTokens()]; 
+		
+		try{
+		
+		StringTokenizer stoNums;
+		int nC = 0;
+		while(stoDates.hasMoreTokens()){
+			
+			stoNums = new StringTokenizer(stoDates.nextToken(), "/");
+			String strM = stoNums.nextToken();
+			String strD = stoNums.nextToken();
+			String strY = stoNums.nextToken();
+			
+			int nM = Integer.parseInt(strM);
+			int nD = Integer.parseInt(strD);
+			int nY = Integer.parseInt(strY);
+			
+			nM--;
+			
+			mdtDates[nC] = new MyDate(nD, nM, nY);
+			
+			nC++;
+			
+		}
+	
+		} catch(NumberFormatException nfe){
+			System.out.println("nfe");
+			return;
+		}
+		
+		MyDate mdtBegin = mdtDates[0];
+		MyDate mdtEnd = mdtDates[1];
+		
+		String strDateBegin = mdtBegin.toString();
+		
+		if(mdtBegin.compareTo(mdtEnd) >= 0){
+			System.out.println("end smaller than begin");
+			return;
+		}
+		
+		
+		
+		while(mdtBegin.compareTo(mdtEnd) <0){
+			mdtBegin.addDay();
+			nCount++;
+		}
+		
+
+		System.out.println("Days between " + strDateBegin + " and " + mdtEnd + " are " + nCount);
+		
 
 	}
 	

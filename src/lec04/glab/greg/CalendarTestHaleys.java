@@ -60,6 +60,68 @@ public class CalendarTestHaleys {
 
 
 
+		GregorianCalendar greCount;
+
+		for (GregorianCalendar greAppear : greAppears) {
+
+			greCount = new GregorianCalendar(greAppear.get(Calendar.YEAR), greAppear.get(Calendar.MONTH), 1);
+
+			//while 
+			do {
+
+
+
+				// day 1-31 etc.
+				int nDay = greCount.get(Calendar.DAY_OF_MONTH);
+
+				if (nDay == 1) {
+
+					System.out.println();
+					System.out.println();
+
+					// print out Year + Month  : "1617 June" + println
+					System.out.println(" " + greCount.get(Calendar.YEAR) + "  "
+							+ MONTH_NAMES[greCount.get(Calendar.MONTH)]);
+
+					// print out the days of the week Sun, Mon, etc.
+					for (String strDay : SHORT_NAMES)
+						System.out.print(strDay + " ");
+					System.out.println();
+
+					// determine the weekday of first day of the month; a number from 1 to 7 where 1 is sunday and 7 is saturday
+					int nWeekdayOfFirstDay = greCount.get(Calendar.DAY_OF_WEEK);
+
+					//build the an indent string for first row of month matrix
+					StringBuilder stb = new StringBuilder();
+					while (nWeekdayOfFirstDay > SUNDAY) {
+						stb.append("    ");
+						nWeekdayOfFirstDay--;
+					}
+					//print indent no line-break
+					System.out.print(stb.toString());
+
+				}
+
+				//print out the day occupying three spaces
+				System.out.printf("%3d", nDay);
+
+				// mark today day with asterix, otherwise just space
+				if (greCount.get(Calendar.DAY_OF_YEAR) == greAppear
+						.get(Calendar.DAY_OF_YEAR))
+					System.out.print("*");
+				else
+					System.out.print(" ");
+
+				//print new line if saturday
+				if (greCount.get(Calendar.DAY_OF_WEEK) == SATURDAY)
+					System.out.println();
+
+				//add one day
+				greCount.add(Calendar.DAY_OF_MONTH, 1);
+
+			} while (greCount.get(Calendar.MONTH) == greAppear.get(Calendar.MONTH) );
+
+		}//end foreach
 	}//end main
 
 }//end class

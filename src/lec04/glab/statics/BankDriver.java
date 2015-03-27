@@ -14,7 +14,17 @@ public class BankDriver {
 		BankAccount banTwo = new BankAccount(814.36);
 		
 		
-
+		System.out.println(banOne);
+		System.out.println(banTwo);
+		
+		System.out.println("#####################################");
+		banOne.overdraft(BankAccount.OVERDRAFT_FEE);
+		
+		
+		
+		System.out.println(banOne);
+		System.out.println(banTwo);
+		
 
 		
 		//everytime you load this program into the VM  of this program will reset to 1000
