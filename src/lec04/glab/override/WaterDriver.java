@@ -6,9 +6,6 @@ package lec04.glab.override;
 public class WaterDriver {
 
     public static void main(String[] args) {
-        Water water = new Water(55.88);
-        System.out.println(water);
 
-        System.out.println(water.getState() == Water.State.solid ? "ice" : "not ice");
     }
 }
