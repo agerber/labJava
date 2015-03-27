@@ -18,7 +18,32 @@ public class AnonAbstractReflectorTest {
 
         // ActionListener lis1 = new ActionListener();  //can't instantiate an abstract class, EXCEPT anonymously like above
 
+        //try selecting the anon abstract class and selecting Refactor || Extract || Variable
+        Timer tim = new Timer(1000,
 
+                new ActionListener() {
+
+                    public void actionPerformed(ActionEvent evn) {
+                        Date datNow = new Date();
+                        System.out.println();
+                        System.out.println("type-anonymous and reference-anonymous > At the tone, the time is "
+                                + datNow);
+                        Reflector.printClass(this.getClass());
+                        Toolkit.getDefaultToolkit().beep();
+
+                    }
+                }
+
+        );
+
+
+
+
+
+        tim.start();
+
+        JOptionPane.showMessageDialog(null, "Quit?");
+        System.exit(0);
 
     }
 }
