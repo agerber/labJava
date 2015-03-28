@@ -1,0 +1,1 @@
+recreate the datastructs from scratch using a singly-linked-list or a binary tree or hash table. 
