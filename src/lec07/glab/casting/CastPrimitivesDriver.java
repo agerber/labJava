@@ -21,34 +21,45 @@ public class CastPrimitivesDriver {
         //if we read the above from right-to-left, we get
         //2^0 + 2^1 + 2^2 + 0 + 2^4 + 0 + 0 + 2^7 + 0 etc,  which == 151
 
-        short sMe = 151;
+        short sMe = 407;
+       // short sMe = 151;
         //Rather than pass the primitive directly into println, I'm going to use the wrapper class .valueOf(), which enforces the type
-        System.out.println(Short.valueOf(sMe));
+        System.out.println("Short value of sMe : " + Short.valueOf(sMe));
 
 
         //Let's promote this to an int which is a 32-bit signed integer ranging from   -2^31 to 2^31 - 1
         int nMe = (int)sMe;
         //no problem, we don't really need all the precision, but memory is cheap, and the value stays the same.
         //when we copy the bits, we just put those bits into an 32-bit int like so ->
-                                                //0 0 0 0   0 0 0 0   1 0 0 1   0 1 1 1
-        //0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   1 0 0 1   0 1 1 1
+        //upcasting is automatic (no cast required) and looses no precision
 
-        System.out.println(Integer.valueOf(nMe));
+        //0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 1   1 0 0 1   0 1 1 1
+                                                //0 0 0 0   0 0 0 1   1 0 0 1   0 1 1 1
+
+        System.out.println("After upcasting, int value of sMe : " + Integer.valueOf(nMe));
 
         //and the original value stored in sMe is unchanged.
-        System.out.println(Short.valueOf(sMe));
+        System.out.println("Short value of sMe : " + Short.valueOf(sMe));
 
 
         //Let's demote this to an byte which is an 8-bit signed integer ranging from  -128 to 127
-        //notice that 151 is out of this range, so when you copy the bits over, you will get erroneous results.
+        //notice that 407 is out of this range, so when you copy the bits over, you will get erroneous results.
+        //downcasting requires a cast and you loose precision and potentially erroneous results.
+        //you flipped the sign-bit, so now, the result is -128 + 1 + 2 + 4 + 16, == -105. This is obviously erroenous.
+
+
+        //0 0 0 0   0 0 0 1   1 0 0 1   0 1 1 1
+        //                    1 0 0 1   0 1 1 1
+
+
         byte yMe = (byte) sMe;
-        System.out.println(Byte.valueOf(yMe));
+        System.out.println("After downcasting, byte value of sMe : " + Byte.valueOf(yMe));
 
 
         //If we cast to a double (64-bit floating point value), we lose no precision. The number just becomes 151.0
         double dMe = (double) sMe;
         //when we use the == operator on primitives, we are not checking for memory addresses, but rather values
-        System.out.println("These numbers, 151 and 151.0 are numerically equivalent : " + (sMe == dMe));
+        System.out.println("These numbers, 407 and 407.0 are numerically equivalent : " + (sMe == dMe));
 
 
         System.out.println("#################################################################################");
