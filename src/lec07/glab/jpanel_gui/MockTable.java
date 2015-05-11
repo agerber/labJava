@@ -36,12 +36,12 @@ public class MockTable {
     protected void drawCards(Graphics g) {
         BufferedImage bufferedImage;
         //use this counter to position the cards horizontally
-        int nC = 10;
+        int nXPos = 10;
         for (Card card : crdHands) {
             bufferedImage = SoundImageUtils.genBuffImage("/src/lec07/glab/jpanel_gui/imgs/" + card + ".png");
             //nc = x-pos, 100 = y-pos
-            g.drawImage(bufferedImage, nC, 100, null);
-            nC = nC +25;
+            g.drawImage(bufferedImage, nXPos, 100, null);
+            nXPos = nXPos +25;
         }
 
     }
