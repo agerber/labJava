@@ -39,7 +39,7 @@ public class CastObjectsDriver {
         //With reflection, we can see that we are NOT changing the object's type, it's still a Double, only now it's
         //being stored in a superlcass reference which restricts the of methods we can call on the reference
         //This is an automatic promotion, so the cast here is redundant
-        Number numMe = (Number) dubMe;
+        Number numMe =  dubMe;
         System.out.println("A Number reference pointing to same Double object:");
         System.out.println(numMe.getClass().toString());
         //one of the methods we can call from the Number reference
@@ -60,7 +60,7 @@ public class CastObjectsDriver {
         System.out.println("numMe and dubMe both point to the same object in memory space: " + (numMe == dubMe));
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 
-
+        System.out.println(Double.valueOf((Double) comMe));
         //Now let's cast this to an Object
         //This is an automatic promotion, so the cast here is redundant
         Object objMe = (Object) comMe;

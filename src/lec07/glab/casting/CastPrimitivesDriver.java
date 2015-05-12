@@ -28,7 +28,7 @@ public class CastPrimitivesDriver {
 
 
         //Let's promote this to an int which is a 32-bit signed integer ranging from   -2^31 to 2^31 - 1
-        int nMe = (int)sMe;
+        int nMe = sMe;
         //no problem, we don't really need all the precision, but memory is cheap, and the value stays the same.
         //when we copy the bits, we just put those bits into an 32-bit int like so ->
         //upcasting is automatic (no cast required) and looses no precision
