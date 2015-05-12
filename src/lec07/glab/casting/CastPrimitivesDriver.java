@@ -28,7 +28,7 @@ public class CastPrimitivesDriver {
 
 
         //Let's promote this to an int which is a 32-bit signed integer ranging from   -2^31 to 2^31 - 1
-        int nMe = (int)sMe;
+        int nMe = sMe;
         //no problem, we don't really need all the precision, but memory is cheap, and the value stays the same.
         //when we copy the bits, we just put those bits into an 32-bit int like so ->
         //upcasting is automatic (no cast required) and looses no precision
@@ -36,7 +36,9 @@ public class CastPrimitivesDriver {
         //0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 1   1 0 0 1   0 1 1 1
                                                 //0 0 0 0   0 0 0 1   1 0 0 1   0 1 1 1
 
-        System.out.println("Integer value of sMe : " + Integer.valueOf(nMe));
+
+        System.out.println("After upcasting, int value of sMe : " + Integer.valueOf(nMe));
+
 
         //and the original value stored in sMe is unchanged.
         System.out.println("Short value of sMe : " + Short.valueOf(sMe));
@@ -53,13 +55,15 @@ public class CastPrimitivesDriver {
 
 
         byte yMe = (byte) sMe;
-        System.out.println("Byte value of sMe : " + Byte.valueOf(yMe));
+
+        System.out.println("After downcasting, byte value of sMe : " + Byte.valueOf(yMe));
+
 
 
         //If we cast to a double (64-bit floating point value), we lose no precision. The number just becomes 151.0
         double dMe = (double) sMe;
         //when we use the == operator on primitives, we are not checking for memory addresses, but rather values
-        System.out.println("These numbers, 151 and 151.0 are numerically equivalent : " + (sMe == dMe));
+        System.out.println("These numbers, 407 and 407.0 are numerically equivalent : " + (sMe == dMe));
 
 
         System.out.println("#################################################################################");

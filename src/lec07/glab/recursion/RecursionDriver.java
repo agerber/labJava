@@ -8,6 +8,10 @@ public class RecursionDriver {
 	public static void main(String[] args) {
 
 
+		System.out.println(myFactorialRec(12));
+		System.out.println(myFactorialIter(5));
+
+
 		
 	
 
