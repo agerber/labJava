@@ -16,13 +16,13 @@ import java.util.List;
  * <P>
  * <TABLE>
  * <th> operation      <th> worst case       <th> average case    <tr>
- * <td> add            <td> O(1)             <td> O(1)            <tr>
+ * <td> put            <td> O(1)             <td> O(1)            <tr>
  * <td> peekMin        <td> O(n)             <td> O(n)            <tr>
  * <td> removeMin      <td> O(n)             <td> O(n)            <tr>
  * </TABLE>
  * <P> 
  * The underlying storage is <code>java.util.ArrayList</code> which
- * supports constant time add (to end), but which requires linear
+ * supports constant time put (to end), but which requires linear
  * search to find the smallest element.
  * <P>
  * This implementation is provided

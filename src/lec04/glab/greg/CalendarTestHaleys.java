@@ -23,12 +23,12 @@ import java.util.GregorianCalendar;
 						
 					  //print out the day of the month e.g. 18
 					  //if startDate == today
-					     //add an asterix
+					     //put an asterix
 					  //else
-						 //just add another space
+						 //just put another space
 					  //if the day of week is saturday
 						 //print line break
-					  //add one day to the startDate
+					  //put one day to the startDate
 	
 */		
 
@@ -51,7 +51,7 @@ public class CalendarTestHaleys {
 		final String[] SHORT_NAMES = new DateFormatSymbols().getShortWeekdays();
 		final String[] MONTH_NAMES = new DateFormatSymbols().getMonths();
 
-		//create a data structure to hold greg dates and add them manually
+		//create a data structure to hold greg dates and put them manually
 		ArrayList<GregorianCalendar> greHaleyAppears = new ArrayList<GregorianCalendar>();
 		greHaleyAppears.add(new GregorianCalendar(1617, 5, 3));
 		greHaleyAppears.add(new GregorianCalendar(1852, 1, 2));
@@ -114,7 +114,7 @@ public class CalendarTestHaleys {
 				if (greCount.get(Calendar.DAY_OF_WEEK) == SATURDAY)
 					System.out.println();
 
-				//add one day
+				//put one day
 				greCount.add(Calendar.DAY_OF_MONTH, 1);
 
 			} while (greCount.get(Calendar.YEAR) == greAppear

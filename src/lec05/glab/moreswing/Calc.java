@@ -55,7 +55,7 @@ public class Calc {
 
 
 
-        //create and add any listeners
+        //create and put any listeners
         mActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

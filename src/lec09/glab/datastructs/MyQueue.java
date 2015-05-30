@@ -173,7 +173,7 @@ public class MyQueue<T> extends AbstractQueue<T> {
 		}
 
 	}
-	//this is like add but safer. 
+	//this is like put but safer.
 	@Override
 	public boolean offer(Object obj) {
 		// TODO Auto-generated method stub

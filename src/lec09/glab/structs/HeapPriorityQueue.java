@@ -17,7 +17,7 @@ import java.util.List;
  * <th align="center" width=40%> operation
  * <th align="center" width=40%> worst case
  * <th align="center"> average case    <tr>
- * <td> add            <td> O(log n)         <td> O(1)            <tr>
+ * <td> put            <td> O(log n)         <td> O(1)            <tr>
  * <td> peekMin        <td> O(1)             <td> O(1)            <tr>
  * <td> removeMin      <td> O(log n)         <td> O(log n)        <tr>
  * </TABLE>
@@ -39,7 +39,7 @@ public class HeapPriorityQueue implements PriorityQueue
     public HeapPriorityQueue()
     {
         items = new ArrayList();
-        items.add(null);            // first add should go at index 1
+        items.add(null);            // first put should go at index 1
         mySize = 0;
     } 
 
@@ -100,7 +100,7 @@ public class HeapPriorityQueue implements PriorityQueue
                 child++;
             }
 
-            // if item to be added <= child, stop and add the item
+            // if item to be added <= child, stop and put the item
             
             if (last.compareTo(items.get(child)) <= 0) {
                 break;

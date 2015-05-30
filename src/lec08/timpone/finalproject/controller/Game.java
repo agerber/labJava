@@ -308,7 +308,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 			tup.removeMovable();
 		}
 		
-		//add these objects to their appropriate ArrayLists; this happens after the above iterations are done
+		//put these objects to their appropriate ArrayLists; this happens after the above iterations are done
 		for (Tuple tup : tupMarkForAdds) 
 			tup.addMovable();
 
@@ -698,7 +698,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
  *  This inner class remains unchanged from the original game base
  *  
  *  A tuple takes a reference to an ArrayList and a reference to a Movable.  This class is used in the collision detection 
- *  method, to avoid mutating the array list while we are iterating.  It has two public methods that either remove or add the 
+ *  method, to avoid mutating the array list while we are iterating.  It has two public methods that either remove or put the
  *  movable from the appropriate ArrayList  
  */
 

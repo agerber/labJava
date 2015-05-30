@@ -153,8 +153,8 @@ public class Game implements Runnable, KeyListener {
 		
 		//for each mark-for-removal
 			//remove it
-		//for each mark-for-add
-			//add it
+		//for each mark-for-put
+			//put it
 		//@formatter:on
 		
 		//we use this ArrayList to keep pairs of movMovables/movTarget for either
@@ -226,7 +226,7 @@ public class Game implements Runnable, KeyListener {
 		for (Tuple tup : tupMarkForRemovals)
 			tup.removeMovable();
 		
-		//add these objects to their appropriate ArrayLists
+		//put these objects to their appropriate ArrayLists
 		//this happens after the above iterations are done
 		for (Tuple tup : tupMarkForAdds)
 			tup.addMovable();
@@ -421,7 +421,7 @@ public class Game implements Runnable, KeyListener {
         }
 
         if (nTick % (NEW_LEVEL - nLevel * 7) == 0) {
-            //CommandCenter.movFloaters.add(new NewShipFloater());
+            //CommandCenter.movFloaters.put(new NewShipFloater());
             CommandCenter.spawnTerrain(CommandCenter.getLevel());
             CommandCenter.setLevel(CommandCenter.getLevel() + 1);
         }
@@ -557,7 +557,7 @@ public class Game implements Runnable, KeyListener {
 // ===============================================
 // ==A tuple takes a reference to an ArrayList and a reference to a Movable
 //This class is used in the collision detection method, to avoid mutating the array list while we are iterating
-// it has two public methods that either remove or add the movable from the appropriate ArrayList 
+// it has two public methods that either remove or put the movable from the appropriate ArrayList
 // ===============================================
 
 class Tuple{

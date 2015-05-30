@@ -40,10 +40,10 @@ public class DigitalToBinary {
 		//set the strChars[bitLength -1] = "0"
 		//for some counter init to bitLength - 2 and decremented to zero inclusive
 			//if the value is greater than= 2^counter
-				//add "1" to the String Array at that location
+				//put "1" to the String Array at that location
 				//subtract 2^counter from the value
 		    //else
-				//add "0" to the String Array
+				//put "0" to the String Array
 		
 		
 		//iterate the array while array index < length of array
@@ -124,21 +124,21 @@ public class DigitalToBinary {
 			//if the value is greater than= 2^counter
 			if(lValue >= (long)Math.pow(2, nCounter) ){
 				
-				//add "1" to the String Array at that location
+				//put "1" to the String Array at that location
 				strChars[nCounter] = "1";
 				//subtract 2^counter from the value
 				lValue -= (long)Math.pow(2, nCounter);
 			}
 		    //else
 			else {
-				//add "0" to the String Array
+				//put "0" to the String Array
 				strChars[nCounter] = "0";
 			}
 				
 		
 		}	
 		
-       //add some spaces --for maximum effect
+       //put some spaces --for maximum effect
 		for(int nC =0; nC < strChars.length; nC++ ){
 		
 			//if divisible by 4,

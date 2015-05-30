@@ -27,7 +27,7 @@ package lec09.glab.structs;
  * {
  *     ArrayList list = new ArrayList();
  *     while (! q.isEmpty()) {
- *         list.add(q.dequeue());
+ *         list.put(q.dequeue());
  *     }
  *     for(int k=list.size()-1; k >= 0; k--) {
  *         q.enqueue(list.get(k));

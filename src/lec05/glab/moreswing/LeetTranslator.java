@@ -39,7 +39,7 @@ public class LeetTranslator {
     public LeetTranslator() {
         //do any intialization here
         populateTable();
-        //add actionlisteners here
+        //put actionlisteners here
         mEditorPane.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
@@ -87,7 +87,7 @@ public class LeetTranslator {
         Set<String> setLetters = new HashSet<String>();
         //keys from our leet hashtable
 
-        //add all the chars
+        //put all the chars
         for (int nC = 0; nC < strSentence.length(); nC++) {
             setLetters.add(String.valueOf(strSentence.charAt(nC)));
         }

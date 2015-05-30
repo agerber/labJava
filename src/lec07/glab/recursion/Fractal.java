@@ -48,7 +48,7 @@ public class Fractal extends JFrame {
 				} //  end  anonymous  inner  class
 				); //  end  addActionListener
 
-		//  set  up  decrease  level  button  to  add  to  control  panel  and
+		//  set  up  decrease  level  button  to  put  to  control  panel  and
 		//  register  listener
 		decreaseLevelJButton = new JButton("Decrease  Level");
 
@@ -72,7 +72,7 @@ public class Fractal extends JFrame {
 				} //  end  anonymous  inner  class
 				); //  end  addActionListener
 
-		//  set  up  increase  level  button  to  add  to  control  panel
+		//  set  up  increase  level  button  to  put  to  control  panel
 		//  and  register  listener
 		increaseLevelJButton = new JButton("Increase  Level");
 		controlJPanel.add(increaseLevelJButton);
@@ -96,7 +96,7 @@ public class Fractal extends JFrame {
 				} //  end  anonymous  inner  class
 				); //  end  addActionListener
 
-		//  set  up  levelJLabel  to  add  to  controlJPanel
+		//  set  up  levelJLabel  to  put  to  controlJPanel
 		levelJLabel = new JLabel("Level:  0");
 		controlJPanel.add(levelJLabel);
 
@@ -107,7 +107,7 @@ public class Fractal extends JFrame {
 		mainJPanel.add(controlJPanel);
 		mainJPanel.add(drawSpace);
 
-		add(mainJPanel); //  add  JPanel  to  JFrame
+		add(mainJPanel); //  put  JPanel  to  JFrame
 
 		setSize(WIDTH, HEIGHT); //  set  size  of  JFrame
 		setVisible(true); //  display  JFrame

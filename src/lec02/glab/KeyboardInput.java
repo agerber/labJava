@@ -16,7 +16,7 @@ public class KeyboardInput {
 		//just import from java.util and pass in System.in
 		Scanner scnIn = new Scanner(System.in);
 
-		//let's add our sentences to an arraylist
+		//let's put our sentences to an arraylist
 		ArrayList<String> strSentences = new ArrayList<String>();
 
 		System.out.println("--------------------------");

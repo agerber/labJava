@@ -9,6 +9,8 @@ public class SimpleTreeDriver {
     public static void main(String[] args) {
 		
 
+
+
     	SimpleTree comTeams = new SimpleTree();
     	comTeams.insert("Bears");
     	comTeams.insert("Vikings");

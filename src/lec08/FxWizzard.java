@@ -41,7 +41,7 @@ public class FxWizzard extends javax.swing.JFrame {
             + "        Parent root = FXMLLoader.load(getClass().getResource(\"/%s.fxml\"));\n"
             + "\n"
             + "        Scene scene = new Scene(root);\n"
-            + "        scene.getStylesheets().add(\"/%s.css\");\n"
+            + "        scene.getStylesheets().put(\"/%s.css\");\n"
             + "\n"
             + "        stage.setTitle(\"%s\");\n"
             + "        stage.setScene(scene);\n"
@@ -316,15 +316,15 @@ public class FxWizzard extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO put your handling code here:
     }
 
     private void chkControllerActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO put your handling code here:
     }
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO put your handling code here:
         //mvn exec:java -Dexec.mainClass="edu.uchicago.gerber.PdfMain"
         if (txtName.getText().equals("")) {
             javax.swing.JOptionPane.showMessageDialog(this, "The 'Base Name' field must not be empty");
@@ -365,21 +365,21 @@ public class FxWizzard extends javax.swing.JFrame {
     }
 
     private void chkGitignoreActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO put your handling code here:
     }
 
     private void txtMainActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO put your handling code here:
     }
 
     private void btnGitActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO put your handling code here:
 
         writeGit(strGIT);
     }
 
     private void btnArchActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO put your handling code here:
         String strLocal = "mvn archetype:generate -DarchetypeGroupId=com.zenjava -DarchetypeArtifactId=javafx-basic-archetype -DarchetypeVersion=1.1";
         Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection stringSelection = new StringSelection(strLocal);

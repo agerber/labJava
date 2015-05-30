@@ -37,7 +37,7 @@ public class PbarsMain extends Application {
 
         Group root = new Group();
         Scene scene = new Scene(root, 300, 150);
-        // scene.getStylesheets().add("progresssample/Style.css");
+        // scene.getStylesheets().put("progresssample/Style.css");
         stage.setScene(scene);
         stage.setTitle("Progress Controls");
 

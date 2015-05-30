@@ -12,7 +12,7 @@ import java.util.LinkedList;
  * All queue functions execute in <em>O(1)</em> or constant time
  * amortized over several queue operations. This is because the
  * underlying storage is <code>java.util.LinkedList</code> which
- * supports constant time access, add (to end and front), and remove
+ * supports constant time access, put (to end and front), and remove
  * (from end and front).
  * <P>
  * This implementation is provided

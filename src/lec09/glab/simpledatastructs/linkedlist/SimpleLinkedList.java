@@ -1,10 +1,11 @@
 package lec09.glab.simpledatastructs.linkedlist;
 
 import java.util.Iterator;
+import java.util.List;
 
 
 //this class is generic
-public class SimpleLinkedList<T> {
+public class SimpleLinkedList<T>  {
 
 	private Node<T> nodFirst;
 	private Node<T> nodLast;
@@ -327,6 +328,7 @@ public class SimpleLinkedList<T> {
 	}
 
 
+	//no setters, just getters
 	
 	public int size() {
 		return nSize;

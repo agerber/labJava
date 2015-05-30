@@ -27,7 +27,7 @@ public class BTree
     {
       addNode(nodRoot, nodNew);
     }
-  } //end add
+  } //end put
 
   private void addNode(BNode nodCur, BNode nodNew)
   {

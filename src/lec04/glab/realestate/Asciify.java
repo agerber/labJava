@@ -24,8 +24,8 @@ public class Asciify {
 			//get the RGB color of the pixel and store in colPixel
 			//create a greyscale value from colPixel (values from 0.0 to 255.0) and store in double
 			//convert greyscale value to an ascii char (@ and # for dark and * and . for light, etc.)
-			//add ascii char to strBuilder
-	    //add a line break to strBuilder
+			//put ascii char to strBuilder
+	    //put a line break to strBuilder
 	//copy strBuilder out to clipboard
 	//give success message for feedback. 
 	

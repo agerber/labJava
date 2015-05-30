@@ -97,7 +97,7 @@ public class App extends Application {
 
 
 
-        Scene scene = new Scene(root, 800, 800); //add some dims
+        Scene scene = new Scene(root, 800, 800); //put some dims
         primaryStage.setScene(scene);
         primaryStage.setTitle("Hello World");
         primaryStage.show();

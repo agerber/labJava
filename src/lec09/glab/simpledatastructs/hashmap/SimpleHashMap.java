@@ -1,9 +1,10 @@
 package lec09.glab.simpledatastructs.hashmap;
 
 
+import java.util.Map;
 
 // this class is generic
-public class SimpleHashMap<K,V> {
+public class SimpleHashMap<K,V>   {
 
 	private MapNode<K,V>[] nodHashes;
 
@@ -38,7 +39,7 @@ public class SimpleHashMap<K,V> {
 	// ==ADD
 	// ===============================================
 	//O(1) very fast
-	public void add(K typKey, V typValue) {
+	public void put(K typKey, V typValue) {
 
 		int nHash = typKey.hashCode();
 		nHash = Math.abs(nHash);
@@ -78,7 +79,7 @@ public class SimpleHashMap<K,V> {
 	public String contains(K typKey) {
 
 		String strR = "";
-		int nCount = 0;
+		int nCount = 0; //just used to show how many times we had to iterate in the event of collission
 
 		int nHash = typKey.hashCode();
 		nHash = Math.abs(nHash);
@@ -86,7 +87,7 @@ public class SimpleHashMap<K,V> {
 
 		MapNode<K,V> nodCurrent = nodHashes[nHash];
 		while (nodCurrent != null) {
-			nCount++;
+			nCount++; //collission counter only
 			if (nodCurrent.getKey().equals(typKey)) {
 				strR += nodCurrent.getValue() + " found at index " + nHash + " : ";
 				break;

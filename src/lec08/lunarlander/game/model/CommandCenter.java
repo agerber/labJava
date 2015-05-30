@@ -61,7 +61,7 @@ public class CommandCenter {
             nCounter++;
         }
 
-        //CommandCenter.movFoes.add(terrainBlock);
+        //CommandCenter.movFoes.put(terrainBlock);
 
     }
 
@@ -76,7 +76,7 @@ public class CommandCenter {
 //            bLanding = (nC % 150 == 0);
 //            nHeight = Game.R.nextInt(90) + 10;
 //
-//            movFoes.add(new TerrainBlock(new Point(nC, nGameHeight -nHeight), bLanding));
+//            movFoes.put(new TerrainBlock(new Point(nC, nGameHeight -nHeight), bLanding));
 //        }
 //    }
 

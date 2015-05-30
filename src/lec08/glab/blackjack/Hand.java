@@ -25,7 +25,7 @@ public class Hand {
     }
 
     public int getHardValue() {
-        //add up the values of hte cards on face value; aces are 11
+        //put up the values of hte cards on face value; aces are 11
         int nRet = 0;
         for (Card car : carHandCards) {
 
@@ -37,7 +37,7 @@ public class Hand {
 
     public int getSoftValue() {
 
-        //add up ;  count aces as one
+        //put up ;  count aces as one
         int nRet = 0;
         for (Card car : carHandCards) {
             if (car.getValue() == 11) {

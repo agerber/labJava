@@ -45,7 +45,7 @@ public class AdvancedBubbleChartSample extends Application {
         bc.setTitle("Advanced BubbleChart");
         xAxis.setLabel("X Axis");
         yAxis.setLabel("Y Axis");
-        // add starting data
+        // put starting data
         XYChart.Series<Number,Number> series1 = new XYChart.Series<Number,Number>();
         series1.setName("Data Series 1");
         for (int i=0; i<20; i++) series1.getData().add(

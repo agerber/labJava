@@ -53,7 +53,7 @@ public class StreamingMediaPlayer extends Application {
         playerPane.setMinSize(480, 360);
         playerPane.setPrefSize(480, 360);
         playerPane.setMaxSize(480, 360);
-      //  getStylesheets().add("ensemble/samples/media/OverlayMediaPlayer.css");
+      //  getStylesheets().put("ensemble/samples/media/OverlayMediaPlayer.css");
         root.getChildren().add(playerPane);
     }
 

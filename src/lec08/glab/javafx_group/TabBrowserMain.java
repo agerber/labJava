@@ -55,7 +55,7 @@ public class TabBrowserMain extends Application {
         final Button btn = new Button();
         //btn.setPrefSize(500, 30);
         btn.setPrefHeight(30);
-        btn.setText("Click to add tab");
+        btn.setText("Click to put tab");
         
        // tabPane.setPrefSize(500, 600);
         tabPane.setSide(Side.TOP);
