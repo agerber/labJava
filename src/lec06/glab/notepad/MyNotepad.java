@@ -6,11 +6,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-public class MyNotepad {
+public class MyNotepad implements ActionListener {
 
 	private JFrame frame;
 	private JTextArea textArea;
@@ -114,12 +116,15 @@ public class MyNotepad {
 
 		menuItem_8 = new JMenuItem("Cut");
 		menu_1.add(menuItem_8);
+		menuItem_8.addActionListener(this);
 
 		menuItem_9 = new JMenuItem("Copy");
 		menu_1.add(menuItem_9);
+		menuItem_9.addActionListener(this);
 
 		menuItem_10 = new JMenuItem("Paste");
 		menu_1.add(menuItem_10);
+		menuItem_10.addActionListener(this);
 
 		menuItem_11 = new JMenuItem("Find");
 		menu_1.add(menuItem_11);
@@ -150,4 +155,27 @@ public class MyNotepad {
 
 	}
 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		JMenuItem menuItem = (JMenuItem) e.getSource();
+		String action = menuItem.getText();
+		switch (action.toUpperCase()){
+
+			case "CUT":
+				textArea.cut();
+				break;
+
+			case "COPY":
+				textArea.copy();
+				break;
+
+			case "PASTE":
+				textArea.paste();
+				break;
+		}
+
+
+
+	}
 }
