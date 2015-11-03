@@ -28,7 +28,7 @@ public class Painter {
     private Color mColor;
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Painter");
+        JFrame frame = new JFrame("Leeet");
         frame.setContentPane(new Painter().mPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
