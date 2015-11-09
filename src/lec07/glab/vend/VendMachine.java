@@ -51,7 +51,7 @@ public class VendMachine {
     //cash-out
     //vend
     //show products available
-    private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
+    public static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
 
     //hold the vending machine's bank
     private List<Coin> mBanks;

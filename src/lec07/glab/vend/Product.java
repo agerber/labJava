@@ -13,7 +13,7 @@ public class Product {
     private String mDesc;
     private double mPrice;
 
-    private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
+   // private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
 
     public Product(String desc, double price) {
         mDesc = desc;
@@ -38,7 +38,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return  mDesc + " " + sDecimalFormat.format(mPrice);
+        return  mDesc + " " + VendMachine.sDecimalFormat.format(mPrice);
 
     }
 }
