@@ -72,7 +72,7 @@ public class VendMachine {
 
     }
 
-    public void stockMe(ArrayList<Product> prdProducts){
+    public void stockMe(List<Product> prdProducts){
 
          //for each row
            //for each col
@@ -145,7 +145,7 @@ public class VendMachine {
 
     }
 
-    public void insertCoins(ArrayList<Coin> conPassed){
+    public void insertCoins(List<Coin> conPassed){
             for (Coin con : conPassed) {
                  mPurchaseMoneys.add(con);
             }
@@ -154,7 +154,7 @@ public class VendMachine {
     }
 
     public void insertCoins(String strCoinValue){
-        ArrayList<Coin> conCoins = new ArrayList<>();
+        List<Coin> conCoins = new ArrayList<>();
 
         String[] strCoins = strCoinValue.split(" ");
         for (String strCoin : strCoins) {
