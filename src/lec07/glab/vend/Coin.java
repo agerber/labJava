@@ -12,7 +12,6 @@ import java.text.DecimalFormat;
 public class Coin {
     private double mValue;
 
-    private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
 
     public Coin(double value) {
         mValue = value;
@@ -52,6 +51,6 @@ public class Coin {
 
     @Override
     public String toString(){
-        return sDecimalFormat.format(getValue());
+        return VendMachine.sDecimalFormat.format(getValue());
     }
 }
