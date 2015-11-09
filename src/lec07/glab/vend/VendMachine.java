@@ -2,6 +2,7 @@ package lec07.glab.vend;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -53,9 +54,9 @@ public class VendMachine {
     private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
 
     //hold the vending machine's bank
-    private ArrayList<Coin> mBanks;
+    private List<Coin> mBanks;
     //hold user's money until vending
-    private ArrayList<Coin> mPurchaseMoneys;
+    private List<Coin> mPurchaseMoneys;
 
     private Map<String, Product[]> mapProducts;
 
@@ -216,14 +217,14 @@ public class VendMachine {
     }
 
 
-    public ArrayList<Coin> returnCoins(){
-        ArrayList<Coin> conTemps = mPurchaseMoneys;
+    public List<Coin> returnCoins(){
+        List<Coin> conTemps = mPurchaseMoneys;
         mPurchaseMoneys = new ArrayList<>();
         return conTemps;
     }
 
-    public ArrayList<Coin> cashOut(){
-        ArrayList<Coin> conTemp = mBanks;
+    public List<Coin> cashOut(){
+        List<Coin> conTemp = mBanks;
         //reset the bank
         mBanks = new ArrayList<>();
         return conTemp;
