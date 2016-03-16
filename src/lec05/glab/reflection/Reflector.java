@@ -32,7 +32,7 @@ public class Reflector {
 
 
             } catch (ClassNotFoundException e) {
-               // e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                // e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 System.out.println("That's now a valid class name, try again.");
                 continue;
             }
@@ -103,9 +103,9 @@ public class Reflector {
         System.out.print("   ");
         Class[] interfaces = cl.getInterfaces();
         for (int nC = 0; nC < interfaces.length; nC++) {
-                if (nC > 0) System.out.print(", ");
-                System.out.print(interfaces[nC].getName());
-            }
+            if (nC > 0) System.out.print(", ");
+            System.out.print(interfaces[nC].getName());
+        }
         System.out.println();
         System.out.println();
     }
