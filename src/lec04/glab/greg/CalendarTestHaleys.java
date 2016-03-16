@@ -10,7 +10,7 @@ import java.util.GregorianCalendar;
   
  		        // instantiate a date with today's date called datToday
 				// create a datCount set at some earlier date
-				// while datCount.year < some arbitrary end year,  loop and increment datCount by one day
+				// datCount = datHaleys (year, month, 1) loop and increment datCount by one day
 					  //if dayOfMonth == 1  
 						//print out year plus month
 						//print out the days of the week Sun Mon Tue etc. 
@@ -23,12 +23,12 @@ import java.util.GregorianCalendar;
 						
 					  //print out the day of the month e.g. 18
 					  //if startDate == today
-					     //put an asterix
+					     //add an asterix
 					  //else
-						 //just put another space
+						 //just add another space
 					  //if the day of week is saturday
 						 //print line break
-					  //put one day to the startDate
+					  //add one day to the startDate
 	
 */		
 
@@ -48,26 +48,28 @@ public class CalendarTestHaleys {
 
 		final int SUNDAY = 1;
 		final int SATURDAY = 7;
-		final String[] SHORT_NAMES = new DateFormatSymbols().getShortWeekdays();
-		final String[] MONTH_NAMES = new DateFormatSymbols().getMonths();
+		final String[] SHORT_NAMES = new DateFormatSymbols().getShortWeekdays();  //MON TUE WED, etc
+		final String[] MONTH_NAMES = new DateFormatSymbols().getMonths();  //January February etc.
 
-		//create a data structure to hold greg dates and put them manually
-		ArrayList<GregorianCalendar> greHaleyAppears = new ArrayList<GregorianCalendar>();
-		greHaleyAppears.add(new GregorianCalendar(1617, 5, 3));
-		greHaleyAppears.add(new GregorianCalendar(1852, 1, 2));
-		greHaleyAppears.add(new GregorianCalendar(1987, 11, 21));
-		greHaleyAppears.add(new GregorianCalendar(2061, 6, 18));
+		//create a data structure to hold greg dates and add them manually
+		ArrayList<GregorianCalendar> greAppears = new ArrayList<GregorianCalendar>();
+		greAppears.add(new GregorianCalendar(1617, 5, 3));
+		greAppears.add(new GregorianCalendar(1852, 1, 2));
+		greAppears.add(new GregorianCalendar(1987, 11, 21));
+		greAppears.add(new GregorianCalendar(2061, 6, 18));
 
 
 
 		GregorianCalendar greCount;
 
-		for (GregorianCalendar greAppear : greHaleyAppears) {
+		for (GregorianCalendar greAppear : greAppears) {
 
-			greCount = new GregorianCalendar(greAppear.get(Calendar.YEAR), 0, 1);
+			greCount = new GregorianCalendar(greAppear.get(Calendar.YEAR), greAppear.get(Calendar.MONTH), 1);
 
 			//while 
 			do {
+
+
 
 				// day 1-31 etc.
 				int nDay = greCount.get(Calendar.DAY_OF_MONTH);
@@ -77,7 +79,7 @@ public class CalendarTestHaleys {
 					System.out.println();
 					System.out.println();
 
-					// print out Year + Month
+					// print out Year + Month  : "1617 June" + println
 					System.out.println(" " + greCount.get(Calendar.YEAR) + "  "
 							+ MONTH_NAMES[greCount.get(Calendar.MONTH)]);
 
@@ -114,11 +116,10 @@ public class CalendarTestHaleys {
 				if (greCount.get(Calendar.DAY_OF_WEEK) == SATURDAY)
 					System.out.println();
 
-				//put one day
+				//add one day
 				greCount.add(Calendar.DAY_OF_MONTH, 1);
 
-			} while (greCount.get(Calendar.YEAR) == greAppear
-					.get(Calendar.YEAR));
+			} while (greCount.get(Calendar.MONTH) == greAppear.get(Calendar.MONTH) );
 
 		}//end foreach
 	}//end main
