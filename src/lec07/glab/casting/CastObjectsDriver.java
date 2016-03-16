@@ -1,5 +1,7 @@
 package lec07.glab.casting;
 
+import java.awt.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ag
@@ -37,7 +39,7 @@ public class CastObjectsDriver {
         //With reflection, we can see that we are NOT changing the object's type, it's still a Double, only now it's
         //being stored in a superlcass reference which restricts the of methods we can call on the reference
         //This is an automatic promotion, so the cast here is redundant
-        Number numMe = (Number) dubMe;
+        Number numMe =  dubMe;
         System.out.println("A Number reference pointing to same Double object:");
         System.out.println(numMe.getClass().toString());
         //one of the methods we can call from the Number reference
@@ -58,7 +60,7 @@ public class CastObjectsDriver {
         System.out.println("numMe and dubMe both point to the same object in memory space: " + (numMe == dubMe));
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 
-
+        System.out.println(Double.valueOf((Double) comMe));
         //Now let's cast this to an Object
         //This is an automatic promotion, so the cast here is redundant
         Object objMe = (Object) comMe;
@@ -91,13 +93,15 @@ public class CastObjectsDriver {
         //toggle uncomment/comment to show compile-time error
         //Rectangle recMe = (Rectangle) numMe;
 
+
+
         //However, if we try to cast comMe to a Rectangle (Rectangle implements Comparable) the compiler will NOT complain, but of course, we will still throw ClassCastException
         //because the underlying object stored in comMe is still of type Double, and Rectangle is not in Double's class hierarchy.
         //toggle uncomment/comment this code below to throw a ClassCastException
         // Rectangle recMeAgain = (Rectangle) comMe;
 
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-        //Let's go full circle. Casting-down is trivial.
+        //Let's go full circle. Casting-down is trivial. When you cast down, you are actually opening the aperture.
         //The underlying object that objMe points to is of type Double.  If it weren't of type Double, we would get a ClassCastException
         //We are effectively widening the filter to see all the methods of the original Double object
         Double dubMeDown = (Double) objMe;

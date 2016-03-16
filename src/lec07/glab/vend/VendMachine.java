@@ -2,6 +2,7 @@ package lec07.glab.vend;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -50,12 +51,12 @@ public class VendMachine {
     //cash-out
     //vend
     //show products available
-    private static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
+    public static DecimalFormat sDecimalFormat = new DecimalFormat("$0.00");
 
     //hold the vending machine's bank
-    private ArrayList<Coin> mBanks;
+    private List<Coin> mBanks;
     //hold user's money until vending
-    private ArrayList<Coin> mPurchaseMoneys;
+    private List<Coin> mPurchaseMoneys;
 
     private Map<String, Product[]> mapProducts;
 
@@ -71,7 +72,7 @@ public class VendMachine {
 
     }
 
-    public void stockMe(ArrayList<Product> prdProducts){
+    public void stockMe(List<Product> prdProducts){
 
          //for each row
            //for each col
@@ -144,7 +145,7 @@ public class VendMachine {
 
     }
 
-    public void insertCoins(ArrayList<Coin> conPassed){
+    public void insertCoins(List<Coin> conPassed){
             for (Coin con : conPassed) {
                  mPurchaseMoneys.add(con);
             }
@@ -153,7 +154,7 @@ public class VendMachine {
     }
 
     public void insertCoins(String strCoinValue){
-        ArrayList<Coin> conCoins = new ArrayList<>();
+        List<Coin> conCoins = new ArrayList<>();
 
         String[] strCoins = strCoinValue.split(" ");
         for (String strCoin : strCoins) {
@@ -216,14 +217,14 @@ public class VendMachine {
     }
 
 
-    public ArrayList<Coin> returnCoins(){
-        ArrayList<Coin> conTemps = mPurchaseMoneys;
+    public List<Coin> returnCoins(){
+        List<Coin> conTemps = mPurchaseMoneys;
         mPurchaseMoneys = new ArrayList<>();
         return conTemps;
     }
 
-    public ArrayList<Coin> cashOut(){
-        ArrayList<Coin> conTemp = mBanks;
+    public List<Coin> cashOut(){
+        List<Coin> conTemp = mBanks;
         //reset the bank
         mBanks = new ArrayList<>();
         return conTemp;

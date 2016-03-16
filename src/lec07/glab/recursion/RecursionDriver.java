@@ -7,7 +7,7 @@ public class RecursionDriver {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println(myFactorialRec(5));
+		System.out.println(myFactorialRec(12));
 		System.out.println(myFactorialIter(5));
 
         testIsPalindrome("A man, a plan, a canal, Panama!");

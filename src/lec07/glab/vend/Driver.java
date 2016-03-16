@@ -1,6 +1,7 @@
 package lec07.glab.vend;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,7 +19,7 @@ public class Driver {
         VendMachine vndMachine = new VendMachine();
 
 
-        ArrayList<Product> prdProducts = new ArrayList<>();
+        List<Product> prdProducts = new ArrayList<>();
         prdProducts.add(new Product("Heath", 0.75));
         prdProducts.add(new Product("PayDay", 0.75));
         prdProducts.add(new Product("Reces", 0.75));
@@ -48,7 +49,7 @@ public class Driver {
                     System.out.println(vndMachine.showSelection());
                     strSelect = makeSelection();
                     if (strSelect.equalsIgnoreCase("AABBCC")){
-                        ArrayList<Coin> conCashOuts = vndMachine.cashOut();
+                        List<Coin> conCashOuts = vndMachine.cashOut();
                         System.out.println("Jackpot!");
                         for (Coin conCashOut : conCashOuts) {
                             System.out.println(conCashOut);
@@ -60,7 +61,7 @@ public class Driver {
                         System.out.println("Thank you and Enjoy: " + prdProduct);
                     else {
                         System.out.print("You inserted " + vndMachine.howMuchInserted() + " : Insufficient coins or out of stock");
-                        ArrayList<Coin> conReturns = vndMachine.returnCoins();
+                        List<Coin> conReturns = vndMachine.returnCoins();
                         System.out.println(", here is your money back: ");
                         for (Coin conReturn : conReturns) {
                             System.out.println(conReturn);
