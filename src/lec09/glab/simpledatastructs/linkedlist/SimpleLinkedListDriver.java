@@ -1,6 +1,8 @@
 package lec09.glab.simpledatastructs.linkedlist;
 
 
+import java.util.Iterator;
+
 public class SimpleLinkedListDriver {
 
 public static void main(String[] args) {
@@ -32,19 +34,26 @@ public static void main(String[] args) {
 		
 		//removeAtIndex working
 		System.out.println(strNames.removeAtIndex(3)); //expect Thomas
-		System.out.println("####################");
-		
-		strNames.printIterate();
+
+
+
 		//getAtIndexWorking nSize working
-		System.out.println("####################");
+		System.out.println("########traverse the list using indices############");
+		System.out.println("########O(n^2)############");
+
 		for (int nC = 0; nC < strNames.size(); nC++) {
 			System.out.println(strNames.getAtIndex(nC));
 		}
-		
-		
-		
+        System.out.println("#########use iterator to traverse list###########");
+        System.out.println("#########O(n)###########");
+        Iterator itrIterator = strNames.iterator();
+        while( itrIterator.hasNext()){
+            System.out.println(itrIterator.next());
+        }
 
-	}
+
+
+}
 	
 
 }

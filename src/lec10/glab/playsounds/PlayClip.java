@@ -11,7 +11,7 @@ public static void main(String args[]) {
 
       //you need an au file to do it. 
       URL url = new URL(
-      "file://" +   System.getProperty("user.dir") +   "/src/edu/uchicago/cs/java/lec10/playsounds/snds/samisen.au");
+      "file://" +   System.getProperty("user.dir") +   "\\src\\lec10\\glab\\playsounds\\snds\\samisen.au");
       AudioClip clip = Applet.newAudioClip(url);
 
       clip.play();

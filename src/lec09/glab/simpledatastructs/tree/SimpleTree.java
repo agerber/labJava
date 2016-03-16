@@ -9,33 +9,7 @@ public class SimpleTree {
 		nodHead = null;
 	}
 
-	public TreeNode getHead() {
-		return nodHead;
-	}
-
-	public Comparable decideLeftRight(Comparable comA, Comparable comB) {
-		if (((Comparable) comA).compareTo(comB) >= 0) {
-			return comA;
-		} else {
-			return comB;
-		}
-	}
-
-	public Comparable find(TreeNode nod) {
-		if (nod.getLeft() == null && nod.getRight() == null) {
-			return nod.getValue();
-		} else if (nod.getLeft() == null) {
-			return decideLeftRight(nod.getValue(), find(nod.getRight()));
-		} else if (nod.getRight() == null) {
-			return decideLeftRight(nod.getValue(), find(nod.getLeft()));
-		} else {
-			return decideLeftRight(
-					decideLeftRight(nod.getValue(), find(nod.getLeft())),
-					find(nod.getRight()));
-		}
-	}
-
-	//one-arg 
+	//one-arg
 	public void insert(Comparable comVal) {
 
 		if (nodHead == null) {
@@ -76,7 +50,13 @@ public class SimpleTree {
 	}
 
 	public void printInOrder(TreeNode nod) {
-		if (nod != null) {
+
+        //base case
+        if (nod == null){
+            //do nothing -- terminate
+        }
+        //recusive case
+		else {
 			printInOrder(nod.getLeft());
 			System.out.println("  Traversed " + nod.getValue());
 			printInOrder(nod.getRight());
@@ -86,8 +66,8 @@ public class SimpleTree {
 	//inner class     
 	//package access
 	class TreeNode {
+        private TreeNode nodL;
 		private Comparable comV;
-		private TreeNode nodL;
 		private TreeNode nodR;
 
 		public TreeNode(Comparable comInitValue, TreeNode nodLeft,

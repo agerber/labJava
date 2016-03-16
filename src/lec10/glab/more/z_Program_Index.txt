@@ -1,0 +1,55 @@
+
+***********************************************
+*      JALABCONCURRENCY MSTRP BRANCH          *
+*            INDEX OF PROGRAMS                *
+***********************************************
+
+//All the classes in this package were created by Micheal Strupp for Advanced Java. They are used here with his permission.
+
+“AtomicMain.java” – This program shows two independent threads adding and subtracting values to a common "balance" variable. 
+It demonstrates the benefit of using atomic integers to ensure data integrity when two or more threads may alter a piece of common data. 
+This is a revision of SynchMain program (below).
+
+“CallableMain.java” – This program starts five independent threads which each return a random integer.  However, before the threads finish,
+the main program cancels one of the threads and once the remaining threads finish, retrieves the numbers they generated.  In effect, this
+program shows how to run, cancel and retrieve data from threads using the Executor class, Future objects and the Callable interface.
+
+“CollectionMain.java” – This program launches 25 independent threads, each of which attempt to add a random integer between 0 and 9 to a common
+list.  By using the CopyOnWriteArrayList and its "AddIfAbsent" method, this program demonstrates how Java's concurrent collection classes make it
+easy to manage list access across multiple threads.
+
+“ExchangerMain.java” – This is a very simple demonstration of swapping objects across threads using the Exchanger synchronization utility.
+In this program, two threads are created.  When they start, they sleep for a random amount of seconds (between 5 and 15), they then engage the Exchanger
+utility to swap out a text message with each other.  
+
+“ExecutorMain.java” – This is a simple program showing how to use a simple Executor to execute a runnable task.  
+
+“ForkJoinMain.java” – This program creates a data array of 100,000 random integers with a value between 0 and 99,999 and seeks to return the lowest
+value using recursive techniques. It does this by using the new fork/join thread framework, which allows a program to easily split and re-join
+threads in order to break down a larger task into smaller tasks, and then re-assemble them easily to arrive at a final answer.
+
+“LatchMain.java” – This is another demonstration of a Java thread synchronizer utility. In this program, a new "game" is started on a thread and
+the game "waits" until 10 players join the game before beginning the competition. Each player is, itself, a thread.  This program demonstrates 
+how to use Java's CountDownLatch mechanism to synchronize the initiation and joining of threads. 
+
+“LockMain.java” – This is a simple program showing how to use a Java Lock object to prevent multiple threads from accessing the same code at the
+same time.  See the program below called "TryLockMain.java" for an extension of this program.
+
+“SemaphoreMain.java” – This program demonstrates the use of semaphores to allow concurrent access to a shared resource.  In this program, we create
+a "queue" that 10 different threads are attempting to access.  The semaphore object only allows 2 threads to access the queue at the same time 
+(we could imagine that 2 is the limit that this queue permits).  In this way, a semaphore is like a lock but with greater flexibility.
+
+“SimpleThreadMain.java” –  In this program, we launch 1,000 threads consisting of objects that calculate the prime factorization of a number 
+between 500 million and a billion.  In effect, this program showcases the "old school" way in which Java launches multiple background threads 
+to complete a task.  You should contrast this with the "CallableMain.java" program and the "ExecutorMain.java" program to see how to accomplish
+similar tasks, with much more control, using the Executor framework.
+
+“SynchMain.java” – In this program, we create a "balance" object, along with "adder" and "subtractor" objects that seek to add and subtract 
+value from the balance using concurrent threads.  While this could potentially lead to problems, the use of the "synchronized" keyword provides
+one mechanism for ensuring that thread overlapping doesn't occur.  You should contrast this method with the "LocksMain.java", the "TryLocksMain.java"
+and the "AtomicMain.java" demonstration programs, which represent alternativ ways to solve the concurrent-access-to-data problem.
+
+“TryLockMain.java” – In this program, we launch three threads that simultaneously attempt to complete a job but must first acquire a lock to do 
+so.  By using the tryLock() method, threads can see whether the lock is available and, if not, do other work while waiting for the lock to be released.
+This program can be contrasted with the "SynchMain.java" program, in which the use of the "synchronized" keyword leads to thread blocking while
+a particular piece of code is being used by another thread.

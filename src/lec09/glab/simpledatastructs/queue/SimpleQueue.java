@@ -37,6 +37,7 @@ public class SimpleQueue<T> {
 		Node<T> nodNew = new Node<T>(typ, null);
 
 		//O(1)
+        //assume that both head and tail are null
 		if (nodHead == null) {
 			nodHead = nodNew;
 			nodTail = nodNew;

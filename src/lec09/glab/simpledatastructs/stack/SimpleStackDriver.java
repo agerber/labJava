@@ -6,7 +6,8 @@ public class SimpleStackDriver {
 public static void main(String[] args) {
 		
 		SimpleStack<String> strTeams = new SimpleStack<String>();
-	
+
+        System.out.println("First-In-Last-Out");
 		//addFirst and addLast are working
 		System.out.println("push Colts");
 		strTeams.push("Colts");
@@ -21,9 +22,8 @@ public static void main(String[] args) {
 
 		//iterate over it
 		strTeams.printIterate();
-		
-		
 		System.out.println("The size of this stack is " + strTeams.size());
+
 		System.out.println("####################");
 		int nSize = strTeams.size();
 		for (int nC = 0; nC < nSize; nC++) {
@@ -34,7 +34,7 @@ public static void main(String[] args) {
 		System.out.println("####################");
 		
 		
-		//strTeams.pop();
+
 		
 		
 

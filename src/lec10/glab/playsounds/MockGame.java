@@ -64,8 +64,12 @@ public class MockGame {
 		
 		button = new JButton("fire");
 		button.addActionListener(new ActionListener() {
+
+
+
 			public void actionPerformed(ActionEvent e) {
-				new Thread(new Mp3(System.getProperty("user.dir") + "/src/edu/uchicago/cs/java/lec10/playsounds/snds/gun_plasmafire.mp3")).start();
+                System.out.println( System.getProperty("user.dir"));
+                new Thread(new Mp3(System.getProperty("user.dir") + "\\src\\lec10\\glab\\playsounds\\snds\\gun_plasmafire.mp3")).start();
 				
 			}
 		});
@@ -74,7 +78,7 @@ public class MockGame {
 		button_1 = new JButton("big explosion");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Thread(new Mp3(System.getProperty("user.dir") + "/src/edu/uchicago/cs/java/lec10/playsounds/snds/explosion_enormous.mp3")).start();
+				new Thread(new Mp3(System.getProperty("user.dir") + "\\src\\lec10\\glab\\playsounds\\snds\\explosion_enormous.mp3")).start();
 
 			}
 		});
@@ -89,7 +93,7 @@ public class MockGame {
 				
 
 			// new Thread(new Mp3Loop(System.getProperty("user.dir")+  "/src/edu/uchicago/cs/java/lec10/playsounds/snds/loop5.mp3")).start();
-				new Thread(new Mp3Loop(System.getProperty("user.dir")+  "/src/edu/uchicago/cs/java/lec10/playsounds/snds/drums09.mp3")).start();
+				new Thread(new Mp3Loop(System.getProperty("user.dir")+  "\\src\\lec10\\glab\\playsounds\\snds\\drums09.mp3")).start();
 			 
 				
 			}
@@ -100,7 +104,7 @@ public class MockGame {
 		btnOld.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				new Thread(new ClipLoopOldSchool("file://" +   System.getProperty("user.dir") +   "/src/edu/uchicago/cs/java/lec10/playsounds/snds/samisen.au")).start();
+				new Thread(new ClipLoopOldSchool("file://" +   System.getProperty("user.dir") +   "\\src\\lec10\\glab\\playsounds\\snds\\samisen.au")).start();
 			}
 		});
 		frame.getContentPane().add(btnOld);

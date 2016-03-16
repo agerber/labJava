@@ -13,15 +13,16 @@ public class SimpleHashTable<T> {
 	// ==CONSTRUCTOR
 	// ===============================================
 	public SimpleHashTable() {
-        //the size should be approx twice the expected number of elements and prime
 		nodHashes = new Node[1999];
 		nSize = 0;
 
 	}
 
 	//overlaoded
+    //the load-factor of buckets should be around 75% full, which means there
+    // should be around 1.333 x the estimated number of elements for buckets
 	public SimpleHashTable(int nHashTableSize) {
-		nodHashes = new Node[nHashTableSize];
+		nodHashes = new Node[(int)(nHashTableSize * 1.333)];
 		nSize = 0;
 
 	}
@@ -34,6 +35,7 @@ public class SimpleHashTable<T> {
 		nSize = 0;
 
 	}
+
 
 	// ===============================================
 	// ==ADD
@@ -51,7 +53,7 @@ public class SimpleHashTable<T> {
 			nodHashes[nHash] = new Node<T>(typ, null);
 		} else {
 	
-		//put it to the beginning
+		//add it to the beginning
 			nodHashes[nHash] = new Node<T>(typ, nodHashes[nHash]);
 			
 	
@@ -111,7 +113,8 @@ public class SimpleHashTable<T> {
 			else {
 				Node<T> nodCurrent = nodHashes[nC];
 				while (nodCurrent != null){
-					System.out.print( " : " + nodCurrent.getValue());
+                    int nBucketIndex = Math.abs(nodCurrent.getValue().hashCode() % nodHashes.length);
+					System.out.print( " : " + nodCurrent.getValue() + " hash: " + nodCurrent.getValue().hashCode() + " % " + nodHashes.length + " = " + nBucketIndex );
 					nodCurrent = nodCurrent.getNext();
 				}
 				System.out.println();

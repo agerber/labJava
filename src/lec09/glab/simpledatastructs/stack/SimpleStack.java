@@ -76,9 +76,6 @@ public class SimpleStack<T> {
 	}
 
 	
-	
-	
-	
 	//used to print to screen
 	public void printIterate(){
 		Iterator<T> itr =  this.iterator();
@@ -104,10 +101,10 @@ public class SimpleStack<T> {
 //		return nodLast.getValue();
 //	}
 
-	public Node<T> getFirstNode() {
-
-		return nodTop;
-	}
+//	public Node<T> getFirstNode() {
+//
+//		return nodTop;
+//	}
 
 //	public Node<T> getLastNode() {
 //
@@ -177,6 +174,7 @@ public class SimpleStack<T> {
 
 		@Override
 		public void remove() {
+            throw new UnsupportedOperationException("Not supported");
 			//we already have remove methods. not implemented.  
 		}
 

@@ -4,6 +4,8 @@ package lec09.glab.simpledatastructs.queue;
 public class SimpleQueueDriver {
 
 public static void main(String[] args) {
+
+       System.out.println("First-In-First-Out");  //this is "fair"
 		
 		SimpleQueue<String> strTeams = new SimpleQueue<String>();
 	
@@ -28,13 +30,16 @@ public static void main(String[] args) {
 		int nSize = strTeams.size();
 		for (int nC = 0; nC < nSize; nC++) {
 			System.out.println("dequeue " + strTeams.dequeue());
+            System.out.println("$$$$$$$$$$$$$result$$$$$$$$$$$$$$$");
+            strTeams.printIterate();
+            System.out.println("$$$$$$$$$$$$$result$$$$$$$$$$$$$$$");
 		}
 		
 		System.out.println("The size of this queue is " + strTeams.size());
 		System.out.println("####################");
 		
 		
-		//strTeams.dequeue();
+
 		
 		
 

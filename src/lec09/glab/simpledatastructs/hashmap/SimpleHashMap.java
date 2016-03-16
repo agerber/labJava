@@ -1,12 +1,11 @@
 package lec09.glab.simpledatastructs.hashmap;
 
 
-import java.util.Map;
 
 // this class is generic
-public class SimpleHashMap<K,V>   {
+public class SimpleHashMap<K,V> {
 
-	private MapNode<K,V>[] nodHashes;
+	private HashMapNode<K,V>[] nodHashes;
 
 	private int nSize;
 
@@ -14,14 +13,14 @@ public class SimpleHashMap<K,V>   {
 	// ==CONSTRUCTOR
 	// ===============================================
 	public SimpleHashMap() {
-		nodHashes = new MapNode[1999];
+		nodHashes = new HashMapNode[1999];
 		nSize = 0;
 
 	}
 
 	//overlaoded
 	public SimpleHashMap(int nHashTableSize) {
-		nodHashes = new MapNode[nHashTableSize];
+		nodHashes = new HashMapNode[nHashTableSize];
 		nSize = 0;
 
 	}
@@ -39,16 +38,16 @@ public class SimpleHashMap<K,V>   {
 	// ==ADD
 	// ===============================================
 	//O(1) very fast
-	public void put(K typKey, V typValue) {
+	public void add(K typKey, V typValue) {
 
 		int nHash = typKey.hashCode();
 		nHash = Math.abs(nHash);
 		nHash = nHash % nodHashes.length;
 
-		MapNode<K,V> nodCurrent = nodHashes[nHash];
+		HashMapNode<K,V> nodCurrent = nodHashes[nHash];
 
 		if (nodCurrent == null) {
-			nodHashes[nHash] = new MapNode<K,V>(typKey,typValue, null);
+			nodHashes[nHash] = new HashMapNode<K,V>(typKey,typValue, null);
 			nSize++;
 		} else {
 
@@ -63,7 +62,7 @@ public class SimpleHashMap<K,V>   {
 				nodCurrent = nodCurrent.getNext();
 			}
 			if (!bFound){
-				nodHashes[nHash] = new MapNode<K,V>(typKey,typValue, nodHashes[nHash]);
+				nodHashes[nHash] = new HashMapNode<K,V>(typKey,typValue, nodHashes[nHash]);
 				nSize++;
 			}
 				
@@ -79,15 +78,15 @@ public class SimpleHashMap<K,V>   {
 	public String contains(K typKey) {
 
 		String strR = "";
-		int nCount = 0; //just used to show how many times we had to iterate in the event of collission
+		int nCount = 0;
 
 		int nHash = typKey.hashCode();
 		nHash = Math.abs(nHash);
 		nHash = nHash % nodHashes.length;
 
-		MapNode<K,V> nodCurrent = nodHashes[nHash];
+		HashMapNode<K,V> nodCurrent = nodHashes[nHash];
 		while (nodCurrent != null) {
-			nCount++; //collission counter only
+			nCount++;
 			if (nodCurrent.getKey().equals(typKey)) {
 				strR += nodCurrent.getValue() + " found at index " + nHash + " : ";
 				break;
@@ -120,7 +119,7 @@ public class SimpleHashMap<K,V>   {
 				System.out.println(" : NULL");
 			} 
 			else {
-				MapNode<K,V> nodCurrent = nodHashes[nC];
+				HashMapNode<K,V> nodCurrent = nodHashes[nC];
 				while (nodCurrent != null){
 					System.out.print( " : " + nodCurrent.getKey() + "-"+ nodCurrent.getValue());
 					nodCurrent = nodCurrent.getNext();
@@ -138,13 +137,13 @@ public class SimpleHashMap<K,V>   {
 	}
 
 	//inner class
-	class MapNode<K,V> {
+	class HashMapNode<K,V> {
 
 		private K typKey;
 		private V typValue;
-		private MapNode<K,V> nodNext;
+		private HashMapNode<K,V> nodNext;
 
-		MapNode(K typKey, V typValue, MapNode<K,V> nodNext) {
+		HashMapNode(K typKey, V typValue, HashMapNode<K,V> nodNext) {
 			this.typValue = typValue;
 			this.typKey = typKey;
 			this.nodNext = nodNext;
@@ -163,7 +162,7 @@ public class SimpleHashMap<K,V>   {
 			this.typKey = typKey;
 		}
 
-		MapNode<K,V> getNext() {
+		HashMapNode<K,V> getNext() {
 			return nodNext;
 		}
 
@@ -171,7 +170,7 @@ public class SimpleHashMap<K,V>   {
 			this.typValue = typValue;
 		}
 
-		void setNext(MapNode<K,V> nodNext) {
+		void setNext(HashMapNode<K,V> nodNext) {
 			this.nodNext = nodNext;
 		}
 

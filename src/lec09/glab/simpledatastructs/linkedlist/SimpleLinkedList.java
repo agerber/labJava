@@ -3,9 +3,12 @@ package lec09.glab.simpledatastructs.linkedlist;
 import java.util.Iterator;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.SortedSet;
 
 //this class is generic
 public class SimpleLinkedList<T>  {
+
 
 	private Node<T> nodFirst;
 	private Node<T> nodLast;
@@ -28,6 +31,8 @@ public class SimpleLinkedList<T>  {
 		nSize = 0;
 
 	}
+
+
 
 	
 	
@@ -140,6 +145,7 @@ public class SimpleLinkedList<T>  {
 		else {
 
 			Node<T> nodCurrent = nodFirst;
+            //we'll use zero-based when we iterate
 			for (int nC = 0; nC < nSize - 2; nC++) {
 				nodCurrent = nodCurrent.getNext();
 			}
@@ -212,8 +218,6 @@ public class SimpleLinkedList<T>  {
 	// =GET AT INDEX O(n)
 	// ===============================================
 	public T getAtIndex(int nIndex) {
-
-		//Node<T> nodNew = new Node<T>(typ, null);
 
 		if (nIndex > nSize-1 || nIndex < 0)
 			throw new IndexOutOfBoundsException(
@@ -328,7 +332,6 @@ public class SimpleLinkedList<T>  {
 	}
 
 
-	//no setters, just getters
 	
 	public int size() {
 		return nSize;
@@ -417,7 +420,7 @@ public class SimpleLinkedList<T>  {
 
 		@Override
 		public void remove() {
-			//we already have remove methods. not implemented.  
+            throw new UnsupportedOperationException("Not supported");
 		}
 
 	}//end iterator

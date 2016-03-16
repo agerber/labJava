@@ -31,7 +31,7 @@ public class QuickSortFrame extends JFrame
   boolean bWait = true;
   boolean bDone = false;
 
-  private javax.swing.Timer timT;
+  private Timer timT;
 
   private Comparable[] cA = new Integer[100];
 
@@ -77,7 +77,7 @@ public class QuickSortFrame extends JFrame
   {
     contentPane = ( JPanel )getContentPane();
     contentPane.setLayout( borderLayout1 );
-    setSize( new Dimension( 800, 250 ) );
+    setSize( new Dimension( 800, 600 ) );
     setTitle( "Quck Sort O(n log n)" );
     this.addWindowListener( new WindowAdapter()
     {
@@ -159,7 +159,7 @@ public class QuickSortFrame extends JFrame
     };
 
     //the first parameter controls the delay
-    timT = new javax.swing.Timer( invertSliderValue( sldSpeed.getValue() ),
+    timT = new Timer( invertSliderValue( sldSpeed.getValue() ),
                                   timerListener );
 
     // createUnsortedArray();

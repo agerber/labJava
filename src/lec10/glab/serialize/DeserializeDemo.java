@@ -6,13 +6,13 @@ import java.util.ArrayList;
    {
       public static void main(String [] args)
       {
-    	  ArrayList<String> strNames =  null;
+    	  ArrayList<Student> stuNames =  null;
          try
          {
             FileInputStream fis =
-                          new FileInputStream("strStudents.ser");
+                          new FileInputStream("stuNames.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
-            strNames = (ArrayList<String>) ois.readObject();
+            stuNames = (ArrayList<Student>) ois.readObject();
             ois.close();
             fis.close();
         }catch(IOException e)
@@ -26,8 +26,8 @@ import java.util.ArrayList;
             return;
         }
         
-        for (String str : strNames) {
-			System.out.println(str);
+        for (Student stu : stuNames) {
+			System.out.println(stu);
 		}
 
     }

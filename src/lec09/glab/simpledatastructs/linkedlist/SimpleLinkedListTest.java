@@ -31,7 +31,7 @@ public class SimpleLinkedListTest {
 		strNames.addFirst("Adam");
 		assertEquals(strNames.getFirstValue(),"Adam");
 		assertEquals(3,strNames.size());
-		//the data-structure is not mutated
+		
 	}
 
 	@Test
@@ -39,7 +39,7 @@ public class SimpleLinkedListTest {
 		strNames.addLast("Thomas");
 		assertEquals(strNames.getLastValue(),"Thomas");
 		assertEquals(3,strNames.size());
-		//the data-structure is not mutated
+		
 	}
 
 	@Test
@@ -48,7 +48,7 @@ public class SimpleLinkedListTest {
 		String strAdam = strNames.removeFirst();
 		assertEquals(2, strNames.size());
 		assertEquals(strAdam,"Adam");
-		//the data-structure is not mutated
+		
 	
 	}
 
@@ -59,7 +59,7 @@ public class SimpleLinkedListTest {
 		String strThomas = strNames.removeLast();
 		assertEquals(2,strNames.size());
 		assertEquals(strThomas,"Thomas");
-		//the data-structure is not mutated
+		
 
 	}
 	
@@ -68,7 +68,7 @@ public class SimpleLinkedListTest {
 		String strBob = strNames.getAtIndex(0); //expect Bob
 		assertEquals(strBob, "Bob");
 		assertEquals(2,strNames.size());
-		//the data-structure is not mutated
+		
 		
 	}
 	@Test
@@ -76,7 +76,7 @@ public class SimpleLinkedListTest {
 		String strBob = strNames.removeAtIndex(0); //expect Bob
 		assertEquals(strBob, "Bob");
 		assertEquals(1,strNames.size());
-		//the data-structure is not mutated
+		
 
 		
 	}
@@ -87,7 +87,7 @@ public class SimpleLinkedListTest {
 		strNames.addAtIndex("Aaron",0); 
 		assertEquals(strNames.getFirstValue(), "Aaron");
 		assertEquals(3,strNames.size());
-		//the data-structure is not mutated
+		
 	}
 
 }
