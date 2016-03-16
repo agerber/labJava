@@ -69,7 +69,7 @@ public class RecursionDriverTest {
      */
     @Test
     public void reverseCharsIter_shouldReverseTheCharsIteratively() throws Exception {
-        assertEquals("Result", "sraeBasdf", RecursionDriver.reverseCharsIter("Bears"));
+        assertEquals("Result", "sraeB", RecursionDriver.reverseCharsIter("Bears"));
     }
 
     /**

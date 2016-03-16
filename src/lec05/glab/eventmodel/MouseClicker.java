@@ -14,7 +14,7 @@ public class MouseClicker {
     private JPanel mPanel;
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("MouseClicker");
+        JFrame frame = new JFrame("Leeet");
         frame.setContentPane(new MouseClicker().mPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
