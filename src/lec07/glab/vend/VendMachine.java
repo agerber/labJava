@@ -18,9 +18,9 @@ ArrayList<Product> prdProducts;
 private void initStock() {
 
 prdProducts = new ArrayList<Product>();
-prdProducts.put(new Product("Heath", 1.25));
-prdProducts.put(new Product("PayDay", 1.25));
-prdProducts.put(new Product("Pop Tart", 1.75));
+prdProducts.add(new Product("Heath", 1.25));
+prdProducts.add(new Product("PayDay", 1.25));
+prdProducts.add(new Product("Pop Tart", 1.75));
 ...
 
 

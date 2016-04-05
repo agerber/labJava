@@ -83,13 +83,13 @@ public class Koch extends JFrame {
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
-		// TODO put your handling code here:
+		// TODO add your handling code here:
 		draw.size = 600;
 		draw.repaint();
 	}//GEN-LAST:event_resetBtnActionPerformed
 
 	private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
-		// TODO put your handling code here:
+		// TODO add your handling code here:
 		nxt++;
 		draw.size = s[nxt];
 		draw.repaint();
@@ -101,7 +101,7 @@ public class Koch extends JFrame {
 	}//GEN-LAST:event_nextBtnActionPerformed
 
 	private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-	// TODO put your handling code here:
+	// TODO add your handling code here:
 
 		nxt--;
 		draw.size = s[nxt];

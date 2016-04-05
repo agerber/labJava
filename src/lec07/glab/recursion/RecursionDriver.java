@@ -7,14 +7,8 @@ public class RecursionDriver {
 	 */
 	public static void main(String[] args) {
 
-
-
-
-
 		System.out.println(myFactorialRec(12));
 		System.out.println(myFactorialIter(5));
-
-
 
         testIsPalindrome("A man, a plan, a canal, Panama!");
         testIsPalindrome("Madam, I'm Adam");
@@ -27,7 +21,6 @@ public class RecursionDriver {
 		//http://www.cs.arizona.edu/icon/oddsends/palinsen.htm
 		System.out.println( reverseCharsRec("Marge let a moody baby doom a telegram."));
 		System.out.println( reverseCharsIter("Marge let a moody baby doom a telegram."));
-
 		
 	
 

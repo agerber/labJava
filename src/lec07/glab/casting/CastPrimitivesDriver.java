@@ -36,9 +36,7 @@ public class CastPrimitivesDriver {
         //0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 0   0 0 0 1   1 0 0 1   0 1 1 1
                                                 //0 0 0 0   0 0 0 1   1 0 0 1   0 1 1 1
 
-
         System.out.println("After upcasting, int value of sMe : " + Integer.valueOf(nMe));
-
 
         //and the original value stored in sMe is unchanged.
         System.out.println("Short value of sMe : " + Short.valueOf(sMe));
@@ -55,9 +53,7 @@ public class CastPrimitivesDriver {
 
 
         byte yMe = (byte) sMe;
-
         System.out.println("After downcasting, byte value of sMe : " + Byte.valueOf(yMe));
-
 
 
         //If we cast to a double (64-bit floating point value), we lose no precision. The number just becomes 151.0
