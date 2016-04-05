@@ -13,9 +13,59 @@ public class NewKeyword {
     public static void main(String[] args) {
 
 
+        Student stuOne = new Student("Alex", 2016);
+        Student stuTwo = new Student("Bart", 2017);
+
+        System.out.println("-----------original----------");
+        System.out.println("stuOne: " + stuOne);
+        System.out.println("stuTwo: " + stuTwo);
+
+        //swap
+        Student stuTemp = stuOne;
+        stuOne = stuTwo;
+        stuTwo = stuTemp;
+
+        System.out.println("-----------swaped----------");
+        System.out.println("stuOne: " + stuOne);
+        System.out.println("stuTwo: " + stuTwo);
+
+
+      //  System.out.println("---------this is a false swap------------");
+       // swap(stuOne, stuTwo);
+
+        System.out.println("stuOne: " + stuOne);
+        System.out.println("stuTwo: " + stuTwo);
+
+        System.out.println("-----------swaped and incremented-----------");
+
+        //swap
+        stuTemp = stuOne;
+        stuOne = stuTwo;
+        stuTwo = stuTemp;
+
+        //increment
+        increment(stuOne);
+        increment(stuTwo);
+
+
+        System.out.println("stuOne: " + stuOne);
+        System.out.println("stuTwo: " + stuTwo);
+
 
     }
 
+    public static void swap(Student stuFirst, Student stuSecond){
+
+        Student stuTemp = stuFirst;
+        stuFirst = stuSecond;
+        stuSecond = stuTemp;
+
+    }
+
+    public static void increment(Student stu){
+
+        stu.setGraduate(stu.getGraduate() + 10);
+    }
 
 
 

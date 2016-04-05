@@ -13,11 +13,31 @@ public class PassBy {
 
     public static void main(String[] args) {
 
+        int nNumber = 5;
+        multByFive(nNumber);
+        System.out.println("nNumber: " + nNumber);
 
+
+        Rectangle recSquare = new Rectangle(1,1,10,10);
+        doubleRec(recSquare);
+        System.out.println("recSquare: " + recSquare);
 
     }
 
 
+    //when you pass primitives into methods in Java, the are passed by value, in other words - they are copied.
+    private static void multByFive(int nParam){
+        nParam  = nParam * 5;
+
+    }
+
+
+    //when you pass an Object into a method, you are passing by reference, which means you're giving the method the
+    //memory address of the object
+    private static void doubleRec(Rectangle recParam){
+        recParam.setSize(recParam.width * 2, recParam.height * 2);
+
+    }
 
 
 }
