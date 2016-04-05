@@ -78,12 +78,12 @@ public class EmployeeTestSimple {
 
 
         //Runtime error (will throw unchecked exception ClassCastException)
-        Executive[] excPeeps = (Executive[])empChicagos;
-
-        System.out.println("#############################");
-        for (Executive exc : excPeeps) {
-            System.out.println(exc.getStockValue());
-        }
+		///UNCOMMENT THIS CODE
+//        Executive[] excPeeps = (Executive[])empChicagos;
+//        System.out.println("#############################");
+//        for (Executive exc : excPeeps) {
+//            System.out.println(exc.getStockValue());
+//        }
 
 
 
