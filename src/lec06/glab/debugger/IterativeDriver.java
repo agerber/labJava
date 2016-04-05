@@ -29,7 +29,7 @@ public class IterativeDriver {
      *
      * @param nAdd
      * @param mdt
-     * @should put days to MyDate
+     * @should add days to MyDate
      */
 	private static void addDays(int nAdd, MyDate mdt){
 		for (int nD = 0; nD < nAdd; nD++) {

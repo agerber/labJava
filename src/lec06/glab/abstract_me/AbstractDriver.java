@@ -9,7 +9,14 @@ public class AbstractDriver {
 
     public static void main(String[] args) {
 
+        MyAbstractDate myAbstractDate = new MyAbstractDate() {
+            @Override
+            public String getMayanArmegeddon() {
+                return "May 3, 2012. Hello from myAbstractDate, my type is: " + this.getClass().getName();
+            }
+        };
 
+        System.out.println(myAbstractDate.getMayanArmegeddon());
 
     }
 }
