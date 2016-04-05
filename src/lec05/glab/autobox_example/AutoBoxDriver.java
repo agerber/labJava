@@ -12,6 +12,24 @@ public class AutoBoxDriver {
 
     public static void main(String[] args) {
 
+        //Auto UnBoxing
+        int nNum = new Integer(12);
+
+
+        //Auto Boxing
+        Double dubNum = 56.87;
+
+        ArrayList<Character> chrChars = new ArrayList<>();
+        chrChars.add('a');
+        chrChars.add('d');
+        chrChars.add('a');
+        chrChars.add('m');
+
+        System.out.print("The number stored in nNum is " + nNum + " and the number stored in dubNum is " + dubNum + " and the Characters stored in chrChars are: ");
+
+        for (Character chrChar : chrChars) {
+            System.out.print(chrChar);
+        }
 
 
 

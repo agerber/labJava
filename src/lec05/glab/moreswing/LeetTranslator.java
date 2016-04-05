@@ -6,7 +6,6 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Set;
@@ -24,7 +23,7 @@ public class LeetTranslator {
     private JSlider mSlider;
 
     //my members
-    private HashMap htbLeet;
+    private Hashtable htbLeet;
 
 
     public static void main(String[] args) {
@@ -52,7 +51,7 @@ public class LeetTranslator {
     }
 
     private void populateTable(){
-        htbLeet =  new HashMap<String, String>();
+        htbLeet =  new Hashtable<String, String>();
         htbLeet.put("a", "@");
         htbLeet.put("b", "8");
         htbLeet.put("c", "(");
@@ -84,24 +83,29 @@ public class LeetTranslator {
     private void translate() {
         String strSentence = mEditorPane.getText();
 
-        StringBuilder stringBuilder = new StringBuilder();
-        String strCharLeet;
-        for (int nC = 0; nC < strSentence.length(); nC++) {
-            char cNormalChar = strSentence.charAt(nC);
-            strCharLeet = (String) htbLeet.get(String.valueOf(cNormalChar));
+        //letters of the sentence as a set
+        Set<String> setLetters = new HashSet<String>();
+        //keys from our leet hashtable
 
-            if ((strCharLeet != null)
+        //add all the chars
+        for (int nC = 0; nC < strSentence.length(); nC++) {
+            setLetters.add(String.valueOf(strSentence.charAt(nC)));
+        }
+
+        for (String str : setLetters) {
+
+            String strHashValue = (String) htbLeet.get(str);
+
+            if ((strHashValue != null)
                     && Math.random() * 100 < mSlider.getValue()) {
 
-               stringBuilder.append(strCharLeet);
-            } else {
-                stringBuilder.append(cNormalChar);
+                strSentence = strSentence.replace(str, strHashValue);
             }
 
         }
 
         Clipboard clp = Toolkit.getDefaultToolkit().getSystemClipboard();
-        StringSelection sel = new StringSelection(stringBuilder.toString());
+        StringSelection sel = new StringSelection(strSentence);
         clp.setContents(sel, null);
 
         mEditorPane.setText("");

@@ -159,7 +159,7 @@ public class LeetTranslator {
 		Set<String> setLetters = new HashSet<String>();
 		//keys from our leet hashtable
 
-		//put all the chars
+		//add all the chars
 		for (int nC = 0; nC < strSentence.length(); nC++) {
 			setLetters.add(String.valueOf(strSentence.charAt(nC)));
 		}

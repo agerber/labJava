@@ -15,6 +15,20 @@ public class UncheckedDriver {
         Object obj = new Point(2,13);
         Circle cir = null;
 
+        for (int nC = 0; nC < 10; nC++) {
+            nNums[nC] = nC * 2;
+        }
+
+
+        //this will throw an unchecked exception - this is the programmers fault! (ArrayIndexOutOfBoundsExcpetion)
+        System.out.println(nNums[10]);
+
+        //this will throw an unchekced exception - this is the programmers fault! (ClassCastException)
+        Rectangle rec = (Rectangle) obj;
+
+        //this will throw an unchekced exception - this is the programmers fault! (NullPointerException)
+        System.out.println(cir.getCenterX());
+
 
 
 

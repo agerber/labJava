@@ -5,9 +5,7 @@ import lec09.glab.structs.Queue;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Stack;
 
 /**
@@ -35,14 +33,11 @@ public class Calc {
     private JButton mButtonMult;
     private JButton mButtonDiv;
     private JPanel mPanel;
-    private JButton mButtonClear;
 
 
-    //my members
+   //my members
     private ActionListener mActionListener;
-    private List<String> mVals;
-    private double mTemp, mTotal;
-    private String mOp;
+
 
 
 
@@ -58,101 +53,24 @@ public class Calc {
     public Calc() {
         //do any initialization
 
-        mVals = new ArrayList<>();
 
-        //create and put any listeners
+
+        //create and add any listeners
         mActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                String strButtonText =  ((JButton)e.getSource()).getText();
+                try {
+                    int nVal = Integer.parseInt(strButtonText);
+                    mTextField.setText(mTextField.getText() + String.valueOf(nVal));
+                } catch (NumberFormatException e1) {
 
-                if (strButtonText.equalsIgnoreCase("C")){
-                    mTextField.setText("");
-                    mVals.clear();
-                    mOp = null;
-                    mTemp = 0;
-                    mTotal = 0;
-                    return;
-                }
-
-                //equals sign
-                if (strButtonText.equalsIgnoreCase("=")){
-
-                    mVals.add(mTextField.getText());
-                  //  mVals.add(strButtonText);
+                    //just set to nothing for now
                     mTextField.setText("");
 
-
-                    while (!mVals.isEmpty()){
-
-                        String strVal = mVals.remove(0);
-                        if (isNumeric(strVal)){
-                            mTemp = Double.parseDouble(strVal);
-                            if (mOp == null) {
-                                mTotal = mTemp;
-                                continue;
-                            }
-
-                            switch (mOp){
-                                case "+":
-                                    mTotal += mTemp;
-                                    break;
-                                case "-":
-                                    mTotal -= mTemp;
-                                    break;
-                                case "*":
-                                    mTotal *= mTemp;
-                                    break;
-                                case "/":
-                                    mTotal /= mTemp;
-                                    break;
-                            }
-
-
-                        } else {
-                            //assign the previous operation
-                            mOp = strVal;
-                        }
-
-                    }
-                    mTextField.setText(String.valueOf(mTotal));
-                    mOp = null;
-                    mTemp = 0;
-                    mTotal = 0;
                 }
-
-                else {
-
-
-
-                    //numeric entry or .
-                    if (isNumeric(strButtonText)){
-                        mTextField.setText(mTextField.getText() + strButtonText);
-                    }
-                    //operator
-                    else {
-                        mVals.add(mTextField.getText());
-                        mVals.add(strButtonText);
-                        mTextField.setText("");
-                    }
-
-
-                }
-
-
-
-//                try {
-//                    int nVal = Integer.parseInt(strButtonText);
-//                    mTextField.setText(mTextField.getText() + String.valueOf(nVal));
-//                } catch (NumberFormatException e1) {
-//
-//                    //just set to nothing for now
-//                    mTextField.setText("");
-//
-//                }
             }
         };
-
 
 
         m0Button.addActionListener(mActionListener);
@@ -170,24 +88,9 @@ public class Calc {
         mButtonDiff.addActionListener(mActionListener);
         mButtonMult.addActionListener(mActionListener);
         mButtonDiv.addActionListener(mActionListener);
-        mButtonClear.addActionListener(mActionListener);
 
 
 
-
-    }
-
-    //http://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-a-numeric-type-in-java
-    public  boolean isNumeric(String str)
-    {
-        for (char c : str.toCharArray())
-        {
-
-
-            if (!Character.isDigit(c) && c != '.')
-                return false;
-        }
-        return true;
     }
 
 
