@@ -26,13 +26,15 @@ public interface Boxable {
 	
 	public static final Random RAN = new Random(); //a random to use
 	
-
+	// #################################################
+	// ##### CONTRACTED METHODS OF INTERFACE
+	// #################################################
 	
 	public boolean punch(Boxable boxOpponent);
-    public void ouch(int nPoints);
-    public int healthStatus();
-    public String display();
-    public String vocalize();
+	public void ouch(int nPoints);
+	public int healthStatus();
+	public String display();
+	public String vocalize();
 	
 	
 	

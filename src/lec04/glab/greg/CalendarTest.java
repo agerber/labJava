@@ -22,12 +22,12 @@ import java.util.GregorianCalendar;
 						
 					  //print out the day of the month e.g. 18
 					  //if startDate == today
-					     //put an asterix
+					     //add an asterix
 					  //else
-						 //just put another space
+						 //just add another space
 					  //if the day of week is saturday
 						 //print line break
-					  //put one day to the startDate
+					  //add one day to the startDate
 	
 */				   
 	
@@ -111,7 +111,7 @@ public class CalendarTest {
 			if (greCount.get(Calendar.DAY_OF_WEEK) == SATURDAY)
 				System.out.println();
 
-			//put one day
+			//add one day
 			greCount.add(Calendar.DAY_OF_MONTH, 1);
 
 		} while (greCount.get(Calendar.YEAR) < CURRENT_YEAR + PROJECT_YEARS);

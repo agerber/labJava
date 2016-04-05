@@ -54,12 +54,12 @@ public class EmployeeDriver {
         Person[] perChicagos  = new Person[empChicagos.length + 2];
 
 
-        //put all the employees from Chicago
+        //add all the employees from Chicago
 		for (int nC = 0; nC < empChicagos.length; nC++) {
 			perChicagos[nC] = empChicagos[nC];
 		}
 
-        //put a new student
+        //add a new student
         perChicagos[empChicagos.length] =new Student("Adam Gerber");
 		perChicagos[empChicagos.length+1] =new Student("Joe Student", "CompSci");
 
