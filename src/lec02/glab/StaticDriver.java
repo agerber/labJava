@@ -37,11 +37,12 @@ public class StaticDriver {
         ArrayList<Student> stuStudents = new ArrayList<>();
         Student stu;
         for (int nC = 0; nC < 100 ; nC++) {
-            stu =  new Student(String.valueOf( Student.SCHOOL  + " name: " + nC), nC);
+            stu =  new Student(String.valueOf( Student.SCHOOL  + " name: " + nC), 2000+ nC);
             stuStudents.add(stu);
+            System.out.println(stu);
         }
 
-        System.out.println(Student.getInstanceNum());
+        System.out.println(Student.getNumStudent());
 
 
 

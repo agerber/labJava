@@ -11,13 +11,13 @@ class Student{
     private String mName;
     private int mGraduate;
 
-    private static int sInstanceNum;
+    private static int sNumStudent;
     public static final String SCHOOL = "UCHICAGO";
 
     Student(String name, int graduate) {
         mName = name;
         mGraduate = graduate;
-        sInstanceNum++;
+        sNumStudent++;
     }
 
 
@@ -37,15 +37,18 @@ class Student{
         mName = name;
     }
 
-    public static int getInstanceNum() {
-        return sInstanceNum;
+    public static int getNumStudent() {
+        return sNumStudent;
     }
 
     @Override
     public String toString() {
         return "Student{" +
                 "mName='" + mName + '\'' +
-                ", mGraduate=" + mGraduate +
+                ", mGraduate=" + mGraduate + " instanceNum: "+ getNumStudent() +
                 '}';
     }
+
+
+
 }
