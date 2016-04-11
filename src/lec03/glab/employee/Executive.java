@@ -26,11 +26,11 @@ public final class Executive extends Manager {
 		return String.format("an exec with a salary of " +  getSalary()+ " and a bonus of " + getBonus() +
 				" and a stock comp of " + getStockValue()) +
 
-				getAlphaOrder(this);
+				Executive.getAlphaOrder(this);
 	}
 
-	private static String getAlphaOrder(Executive executive){
-		return  "MMMMMMMMMMMM".compareTo(executive.getName()) > 1 ? "name greater than M" : "name less than M";
+	public static String getAlphaOrder(Executive executive){
+		return  "MMMMMMMMMMMM".compareTo(executive.getName()) < 1 ? executive.getName() + ": exec's name greater than M" : executive.getName() +  ": exec's name less than M";
 	}
 
 }

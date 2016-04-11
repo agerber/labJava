@@ -16,7 +16,7 @@ public class PosterMaker {
 				new PosterElement(
 				  "//src//lec03//glab//resources//pos_lennon.jpg");
 
-		System.out.println(posE.display());
+		System.out.println(posE.display(0));
 
 	}//end main
 

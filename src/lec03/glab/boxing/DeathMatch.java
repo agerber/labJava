@@ -23,22 +23,24 @@ public class DeathMatch {
 				);
 		
 		
-		Boxable boxPunchee = new Kangaroo(
-                "//src//lec03//glab//resources//box_roo.gif",
-				60, 	
-				1000,
-				Boxable.ACC_KANGAROO,
-				Boxable.POW_KANGAROO
-					);
-		
-//		
-//		Boxable	boxPunchee = new Robot("file:\\\\\\C:\\dev\\lec03\\src\\edu\\uchicago\\cs\\java\\lec03\\res\\box_robot.jpg",
+//		Boxable boxPunchee = new Kangaroo(
+//                "//src//lec03//glab//resources//box_roo.gif",
 //				60,
 //				1000,
-//				Boxable.ACC_ROBOT,
-//				Boxable.POW_ROBOT
-//				);
+//				Boxable.ACC_KANGAROO,
+//				Boxable.POW_KANGAROO
+//					);
+//
 //		
+		Boxable	boxPunchee = new Robot(
+
+				"//src//lec03//glab//resources//box_robot.jpg",
+				60,
+				1000,
+				Boxable.ACC_ROBOT,
+				Boxable.POW_ROBOT
+				);
+
 		
 		
 //		System.out.println(boxPuncher);
@@ -58,7 +60,7 @@ public class DeathMatch {
 		
 	
 
-		do {
+		while (true) {
 			
 			//used to calculate the severity of the potential blow
 			int nOrigHealth = boxPunchee.healthStatus();
@@ -94,7 +96,7 @@ public class DeathMatch {
 			
 			
 			
-		} while (true); //infi
+		}
 			
 		
 		
