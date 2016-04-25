@@ -1,6 +1,8 @@
 package lec04.glab.override;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by ag on 10/20/2014.
@@ -11,7 +13,7 @@ public class AbstractDriver {
 
 
     public static void main(String[] args) {
-        ArrayList<Vehicle> vehVehicles = new ArrayList<>();
+        List<Vehicle> vehVehicles = new LinkedList<>();
         vehVehicles.add(new Mazarati("Mazarati 5400 LS"));
         vehVehicles.add(new Trike("Green Machine"));
 

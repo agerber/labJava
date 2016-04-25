@@ -40,14 +40,14 @@ public class SprintRaceDriver {
 
 
             //use a labeled break to break out of a nested loop
-            outer:
+            myinfiniteloop:
 			while (true) {
 				for (Raceable rac : racRacers) {
 					rac.stride();
                     if(rac.getDistance() >= 100){
                         System.out.print(rac.vocalize());
                         System.out.println(" " + rac.getClass().toString() + " wins.");
-                        break outer;
+                        break myinfiniteloop;
                     }
 
 					System.out.print(rac.display(rac.getDistance()));

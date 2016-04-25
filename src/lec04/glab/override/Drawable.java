@@ -6,5 +6,6 @@ package lec04.glab.override;
 public interface Drawable {
 
     //by default this is public so the 'public' is optional
-    public void draw();
+     void draw();
+     void draw3D();
 }

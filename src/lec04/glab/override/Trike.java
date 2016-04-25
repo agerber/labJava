@@ -13,4 +13,9 @@ public class Trike extends Vehicle {
     public String reportNumWheels() {
         return " has three plastic wheels";
     }
+
+//    @Override
+//    public String reportNumWheels() {
+//        return " has three plastic wheels";
+//    }
 }

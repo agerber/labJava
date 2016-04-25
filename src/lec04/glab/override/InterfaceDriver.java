@@ -15,12 +15,16 @@ public class InterfaceDriver {
         draVehicles.add(new Corsair("Corsair 89000 Luxury"));
         draVehicles.add(new Bike("Swhinn magna"));
         draVehicles.add(new Ambulance("GM 1200"));
-
+        draVehicles.add(new MyClass());
 
         for (Drawable draVehicle : draVehicles) {
-            System.out.println(draVehicle.getClass().getName() + " : " + ((Vehicle)draVehicle).getModel() + " : " + ((Vehicle)draVehicle).reportNumWheels() + "\n");
             draVehicle.draw();
         }
+
+//        for (Drawable draVehicle : draVehicles) {
+//            System.out.println(draVehicle.getClass().getName() + " : " + ((Vehicle)draVehicle).getModel() + " : " + ((Vehicle)draVehicle).reportNumWheels() + "\n");
+//            draVehicle.draw();
+//        }
     }
 
 
