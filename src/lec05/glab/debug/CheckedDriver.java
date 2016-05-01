@@ -88,7 +88,9 @@ public class CheckedDriver {
             while (null != (strTemp = bufferedReader.readLine())){
                 stringBuilder.append(strTemp);
             }
-        } catch (IOException e) {
+        }
+
+        catch (IOException e) {
             e.printStackTrace();
         }
 

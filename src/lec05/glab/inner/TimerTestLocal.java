@@ -22,6 +22,7 @@ public class TimerTestLocal {
 					Date datNow = new Date();
 					System.out.println("type-anonymous > At the tone, the time is " + datNow);
 					Toolkit.getDefaultToolkit().beep();
+					//Reflector.printClass(this.getClass());
 				}
 		};
 

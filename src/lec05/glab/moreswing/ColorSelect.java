@@ -68,6 +68,9 @@ public class ColorSelect {
     }
 
     private void setColor() {
+
+        System.out.println("red" + mSliderRed.getValue() + "gree" + mSliderGreen.getValue() + "blue" +mSliderBlue.getValue() );
+
         mPanelCenter.setBackground(new Color(mSliderRed.getValue(), mSliderGreen.getValue(), mSliderBlue.getValue()));
     }
 

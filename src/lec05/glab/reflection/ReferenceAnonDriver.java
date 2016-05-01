@@ -1,5 +1,6 @@
 package lec05.glab.reflection;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,6 +25,8 @@ public class ReferenceAnonDriver {
         //here we are adding a reference anonymous Date to or println method
         //try pressing Cntrl-Alt-V to extract variable here to give or reference a name
         System.out.println(new Date());
+
+        new Rectangle(4,5,6,13);
 
 
 

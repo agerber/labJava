@@ -24,6 +24,8 @@ public class LatinDictionary {
     private JList mList;
     private DefaultListModel<String> mModel;
 
+
+    //step 1: create a main method
     public static void main(String[] args) {
         JFrame frame = new JFrame("LatinDictionary");
         frame.setContentPane(new LatinDictionary().mValue);

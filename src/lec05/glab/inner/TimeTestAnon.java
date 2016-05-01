@@ -27,7 +27,7 @@ public class TimeTestAnon {
 				System.out.println("type-anonymous and reference-anonymous > At the tone, the time is "
 						+ datNow);
 				Toolkit.getDefaultToolkit().beep();
-                //Reflector.printClass(this.getClass());
+                Reflector.printClass(this.getClass());
 			}
 		}
 

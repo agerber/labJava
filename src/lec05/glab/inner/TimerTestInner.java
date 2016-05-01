@@ -18,7 +18,7 @@ public class TimerTestInner {
 
 		
 		ActionListener lis = new EventListenerInner();
-        //Reflector.printClass(lis.getClass());
+        Reflector.printClass(lis.getClass());
 
 		Timer tim = new Timer(1000, lis);
 		tim.start();

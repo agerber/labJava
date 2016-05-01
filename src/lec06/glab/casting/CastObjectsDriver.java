@@ -12,11 +12,11 @@ import java.awt.*;
 public class CastObjectsDriver {
     public static void main(String[] args) {
 
-        //A: A REFERENCE IS A FILTER
-        //A reference type is like a filter. See filter.bmp in same package.
-        //When you observe your object, you're doing so through the filter of the reference type.
+        //A: A REFERENCE IS A Aperture
+
+        //When you observe your object, you're doing so through the aperature of the reference type.
         //Keep in mind that both the object has a type AND the reference has a type.
-        //when you apply the filter you are restricting (sometimes severely) the range of methods you may
+        //when you apply the aperture you are restricting (sometimes severely) the range of methods you may
         //call on that reference. That penalty of restriction is compensated by the power of polymorphism
 
         //B: WHEN YOU CAST AN OBJECT, YOU ARE NOT CHANGING THE OBJECT, JUST THE FILTER
@@ -29,13 +29,13 @@ public class CastObjectsDriver {
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 
 
-        //once instantiated, this object's type will not change
-        //however, the filter (the reference) through which you can look at this object can change so
+        //once instantiated, this object's type will NEVER change
+        //however, the aperture (the reference) through which you can look at this object can change so
         //long as it adheres to the rules of polymorphism which state that you may store an object in
         //(1) a superlcass reference, or (2) an implementing interface reference
 
         //Let's apply the first rule of polymorphism and cast this Double object to a Number
-        //When we apply the cast, we are NOT changing the object at all, rather, all we are doing is changing the filter (the reference type)
+        //When we apply the cast, we are NOT changing the object at all, rather, all we are doing is changing the aperture (the reference type)
         //With reflection, we can see that we are NOT changing the object's type, it's still a Double, only now it's
         //being stored in a superlcass reference which restricts the of methods we can call on the reference
         //This is an automatic promotion, so the cast here is redundant
@@ -54,7 +54,8 @@ public class CastObjectsDriver {
         System.out.println("The same Double object stored in Comparable<Double> reference:");
         System.out.println(comMe.getClass().toString());
         //Let's call the compareTo method()
-        System.out.println("Our Double value (implicit parameter) is less than that of the explicit parameter: " + (comMe.compareTo(new Double(88.84)) < 0));
+        System.out.println("Our Double value (implicit parameter) is less than that of the explicit parameter: "
+                + (comMe.compareTo(new Double(88.84)) < 0));
         System.out.println("comMe and dubMe both point to the same object in memory space: " + (comMe == dubMe));
         System.out.println("comMe and numMe both point to the same object in memory space: " + (comMe == numMe));
         System.out.println("numMe and dubMe both point to the same object in memory space: " + (numMe == dubMe));
@@ -86,17 +87,18 @@ public class CastObjectsDriver {
         //Again, the compiler will not complain at compile-time because an Object reference could very well
         // point to an object which implements the Runnable interface
         //toggle uncomment/comment this code below to throw a ClassCastException
-        //Runnable runMe = (Runnable) objMe;
+       // Runnable runMe = (Runnable) objMe;
 
         //let's try to cast our underlying object(of type Double) to an reference type that is not on its (Double's) class hierarchy
         //This time, the compiler will complain at compile-time since there is no way a Number reference could store a Rectangle object
         //toggle uncomment/comment to show compile-time error
-        //Rectangle recMe = (Rectangle) numMe;
+      //  Rectangle recMe = (Rectangle) numMe;
+
 
         //However, if we try to cast comMe to a Rectangle (Rectangle implements Comparable) the compiler will NOT complain, but of course, we will still throw ClassCastException
         //because the underlying object stored in comMe is still of type Double, and Rectangle is not in Double's class hierarchy.
         //toggle uncomment/comment this code below to throw a ClassCastException
-        // Rectangle recMeAgain = (Rectangle) comMe;
+        //Rectangle recMeAgain = (Rectangle) comMe;
 
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         //Let's go full circle. Casting-down is trivial.
@@ -117,7 +119,7 @@ public class CastObjectsDriver {
         //This will cause a ClassCastException at runtime
         Object objYou = new Object();
         //toggle uncomment/comment this code below to throw a ClassCastException
-        //Double dubYouDown = (Double) objYou;
+      // Double dubYouDown = (Double) objYou;
 
 
 
