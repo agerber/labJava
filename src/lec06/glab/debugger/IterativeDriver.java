@@ -1,5 +1,7 @@
 package lec06.glab.debugger;
 
+import java.util.Random;
+
 public class IterativeDriver {
 
 
@@ -15,9 +17,13 @@ public class IterativeDriver {
 		//last day of class June 6th
 		MyDate mdtEndQtr = new MyDate(6,5,2016);
 
+
+		int nCount = 1;
+
 		while(mdt.compareTo(mdtEndQtr) <= 0){
 
-            System.out.println(mdt);
+			//force step into this compound statement
+            System.out.println(mdt + " : " + ": week " + nCount++ + ":  hours of homework " + new Random().nextInt(100) );
 			advancedDays(7, mdt);
 
 		
