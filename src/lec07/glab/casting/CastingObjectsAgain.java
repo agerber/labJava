@@ -3,6 +3,7 @@ package lec07.glab.casting;
 import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.util.Date;
 
 /**
  * Created by Adam on 5/2/2016.
@@ -28,6 +29,8 @@ public class CastingObjectsAgain {
         System.out.println(shpMe.getBounds().getX());
 
        // DefaultCaret carMe = (DefaultCaret) shpMe;
+
+       // Date datMe = (Date) objMe;
 
 
 
