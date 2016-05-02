@@ -19,6 +19,9 @@ public class CastingObjectsAgain {
         Rectangle2D rec2dMe = (Rectangle2D) objMe;
         System.out.println(rec2dMe.getX());
 
+        System.out.println(rec2dMe.getClass());
+
+
         Rectangle recMeAgain = (Rectangle) rec2dMe;
         System.out.println(recMeAgain.getX());
 

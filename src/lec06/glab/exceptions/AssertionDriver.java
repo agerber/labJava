@@ -7,8 +7,8 @@ public class AssertionDriver {
 	 */
 	public static void main(String[] args) {
 		
-	//	printDoubleValue(null);
-		printDoubleValue(new Double(0));
+		printDoubleValue(null);
+		//printDoubleValue(new Double(0));
 
 	}
 	
