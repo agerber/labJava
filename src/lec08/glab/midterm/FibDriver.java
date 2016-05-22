@@ -11,15 +11,19 @@ public class FibDriver {
 
     public static void main(String[] args) {
         System.out.println(fib(4));
-        System.out.println(mystery(1,5));
+      //  System.out.println(mystery(1,5));
 
     }
 
    private static int fib(int n) {  // assumes n >= 0
-        if (n <= 1)
+        if (n <= 1) {
+            System.out.println("base");
             return n;
-        else
+        }
+        else {
+            System.out.println("rec");
             return (fib(n - 1) + fib(n - 2));
+        }
     }
 
     private static int mystery (int n, int m) {

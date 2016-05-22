@@ -28,7 +28,7 @@ public class SimpleTreeDriver {
         //tier3
         comTeams.insert("Bears");
         comTeams.insert("Vikings");
-        comTeams.insert("Browns");
+        comTeams.insert("Devils"); //ok not an NFL team, but makes a balanced tree anyway
         comTeams.insert("Jets");
 
 
