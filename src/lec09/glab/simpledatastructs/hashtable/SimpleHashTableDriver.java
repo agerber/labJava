@@ -21,6 +21,8 @@ public class SimpleHashTableDriver {
 		strCities.printIterate();
 		System.out.println();
 		System.out.println(strCities.contains("Shanghai"));
+
+		System.out.println(strCities.contains("Mumbai"));
 	
 		
 		

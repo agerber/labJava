@@ -87,6 +87,9 @@ public class SimpleHashTable<T> {
 			nodCurrent = nodCurrent.getNext();
 		}
 
+		if (nCount ==0){
+			strR += typ.toString() +" not found : " ;
+		}
 		strR += nCount + " iterations.";
 		return strR;
 
