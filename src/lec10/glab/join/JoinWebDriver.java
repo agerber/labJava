@@ -22,9 +22,9 @@ public class JoinWebDriver {
         WebRunner webRunner = new WebRunner("http://java-class.cs.uchicago.edu/");
         Thread thrWeb = new Thread(webRunner);
 
-        thrWeb.start();
 
 
+          thrWeb.start();
         //comment-out the following try-catch to see the difference in results.
 
         //this joins thread thrWeb to the main thread.
@@ -34,6 +34,8 @@ public class JoinWebDriver {
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+
+
 
         System.out.println(webRunner.getReturnValue());
 
