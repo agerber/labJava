@@ -82,14 +82,14 @@ class BankAccount {
     BankAccountExampleSynchronizedDriver example to see what will happen.
      */
 
-    public  void deposit(double dAmount) {
+    public synchronized void deposit(double dAmount) {
         System.out.print("Depositing " + dAmount);
         double dNewBal = getBalance() + dAmount;
         System.out.println(", the new balance is " + dNewBal);
         setBalance(dNewBal);
     }
 
-    public  void withdraw(double dAmount) {
+    public synchronized void withdraw(double dAmount) {
         System.out.print("Withdrawing " + dAmount);
         double dNewBal = getBalance() - dAmount;
         System.out.println(", the new balance is " + dNewBal);

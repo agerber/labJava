@@ -51,7 +51,8 @@ public class SimpleHashTable<T> {
 
 		if (nodCurrent == null) {
 			nodHashes[nHash] = new Node<T>(typ, null);
-		} else {
+		}
+		else {
 	
 		//add it to the beginning
 			nodHashes[nHash] = new Node<T>(typ, nodHashes[nHash]);

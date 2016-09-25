@@ -2,7 +2,7 @@ package lec10.glab.serialize;
 
 import java.io.*;
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 public class SerializeDemo
@@ -10,7 +10,7 @@ public class SerializeDemo
    public static void main(String [] args)
    {
 	   
-	  ArrayList<Student> stuNames =  new ArrayList<>();
+	  List<Student> stuNames =  new ArrayList<>();
        stuNames.add(new Student("David",2014));
        stuNames.add(new Student("Gyan",2014));
        stuNames.add(new Student("Melissa",2014));
@@ -20,13 +20,14 @@ public class SerializeDemo
 
 
        String strCurrentDir = System.getProperty("user.dir");
-
+       FileOutputStream fos = null;
+       ObjectOutputStream oos = null;
 
       try
       {
-         FileOutputStream fos =
+          fos =
          new FileOutputStream(strCurrentDir + "/stuNames.ser");
-         ObjectOutputStream oos =
+          oos =
                             new ObjectOutputStream(fos);
          oos.writeObject(stuNames);
          oos.close(); //flushes and closes
@@ -34,6 +35,13 @@ public class SerializeDemo
       }catch(IOException e)
       {
           e.printStackTrace();
+      } finally {
+          try {
+              oos.close(); //flushes and closes
+              fos.close();
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
       }
    }
 }

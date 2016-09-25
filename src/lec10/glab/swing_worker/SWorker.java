@@ -3,6 +3,7 @@ package lec10.glab.swing_worker;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -52,6 +53,9 @@ public class SWorker {
             * @since 1.6
     */
 
+
+
+
     //the first generic parameter is the return value, the second is the intermediate chunked value
     private class ProgressWorker extends SwingWorker<String, Integer> {
 
@@ -74,7 +78,7 @@ public class SWorker {
 
             //all we need is the first value of the chunks
             //this occurs because of time-slicing
-            mProgressBar.setValue(chunks.get(0));
+            mProgressBar.setValue(chunks.get(chunks.size() -1));
 
         }
 
@@ -83,7 +87,7 @@ public class SWorker {
         @Override
         protected void done() {
             try {
-                mProgressBar.setValue(100);
+              //  mProgressBar.setValue(100);
                 mGoButton.setText(get());
             } catch (InterruptedException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

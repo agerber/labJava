@@ -16,12 +16,12 @@ public class JoinDriver {
         thrTwo.start();
 
         //try commenting-out this try block
-        try {
-            thrOne.join();
-            thrTwo.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+//        try {
+//            thrOne.join();
+//            thrTwo.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//        }
 
         System.out.println("Main thread done");
     }

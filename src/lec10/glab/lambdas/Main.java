@@ -88,6 +88,7 @@ public class Main {
         System.out.println("FILTER+MAP+COUNTER");
 
         AtomicInteger atomicInteger = new AtomicInteger(0);
+     // final  int  nCount = 0;
         theseCircles
                 .stream()
                 .filter(c -> c.getName().contains("Anti"))
@@ -98,6 +99,7 @@ public class Main {
                      {
                          System.out.println(s);
                          atomicInteger.getAndIncrement();
+                       //  nCount++;
                      }
                 );
 
@@ -121,7 +123,7 @@ public class Main {
                 .filter(l -> isPrime(l))
 
                 //this will kill your parellelism
-               // .forEachOrdered(l -> System.out.println(l));
+                //.forEachOrdered(l -> System.out.println(l));
                 .forEach(l -> System.out.println(l));
 
 
