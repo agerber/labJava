@@ -67,6 +67,26 @@ public class PromotionAndCastingPrimitives {
 
 
 
+
+//		int to byte downcasting
+//		0000 0000 0000 0000 0000 0001 1000 1001
+//		                              1000 1001
+
+
+//				-119
+//
+//		http://www.binaryhexconverter.com/binary-to-decimal-converter
+//		(265 + 128 + 8 + 1) = 393
+//      -128 + 8 + 1 = -119
+//		to byte
+
+
+		int nNumber = 393;
+		byte yNumber = (byte) nNumber;
+		System.out.println(yNumber);
+
+
+
 	}
 
 }

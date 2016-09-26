@@ -5,7 +5,10 @@ import java.util.Scanner;
 
 public class AlternateEmphasis {
 
+
+
     /**
+     *
      Write a program that asks the user for a sentence and then splits the sentence into words, and then
      displays alternating words as UPPERCASE.
 
