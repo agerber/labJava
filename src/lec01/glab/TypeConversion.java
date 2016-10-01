@@ -1,11 +1,25 @@
 package lec01.glab;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TypeConversion {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
+
+//	List<String> strNames = new ArrayList<>();
+//		strNames.add("Adam");
+//		strNames.add("Bob");
+//		strNames.add("Charlie");
+//
+//		for (String strName : strNames) {
+//
+//		}
+
 		
 	int nNumber =	Integer.parseInt("5");
 	

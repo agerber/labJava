@@ -18,10 +18,10 @@ public class RandomHistogram {
     }
 
     private static void genTop(int nSpike) {
-        int nWidth = nSpike;
-        for (int nC = 0; nC < nWidth; nC++) {
+
+        for (int nC = 0; nC < nSpike; nC++) {
             genStars(nC);
-            genSpaces(nWidth - nC);
+            genSpaces(nSpike - nC);
             System.out.println();
         }
     }

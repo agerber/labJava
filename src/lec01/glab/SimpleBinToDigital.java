@@ -15,7 +15,7 @@ public class SimpleBinToDigital {
 
     public static void main(String[] args) {
 
-        String strBinary = "0001 0001";
+        String strBinary = "0111 1111";
 
         //strip out any spaces
         strBinary = strBinary.replace(" ", "");
@@ -28,7 +28,7 @@ public class SimpleBinToDigital {
             if (strBinary.charAt(nC) == '1') {
                 lResult += Math.pow(2, nPow);
             }
-            nPow = nPow + 1;
+           nPow++;
         }
         System.out.println(lResult);
 
