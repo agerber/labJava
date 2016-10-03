@@ -1,6 +1,6 @@
 package lec02.glab;
 
-public class MyDieHarness {
+public class MyDieDriver {
 
 	/**
 	 * @param args
@@ -11,7 +11,7 @@ public class MyDieHarness {
 				{"one","two", "three", "four", "five", "six"} );
 		
 		MyDie die2 = new MyDie(2.0, 2.0, 2.0, new String[] 
-				{"spades", "hearts","diamonds", "clubs"} );
+				{"spades", "hearts","diamonds", "clubs", "joker", "trump"} );
 		
 		
 		//what is happening here? 

@@ -65,6 +65,13 @@ public class StringManipulation {
         String strNoLake1 = new String("Nebraska");
 
 
+		String strMostCorruptState0 = new String("Nevada");
+		String strMostCorruptState1 = new String("Illinois");
+
+		System.out.println("Illinois == Illinois? " + (strBig0 == strMostCorruptState1));
+
+
+
         System.out.println(56.21 == 56.21);
 
         //the == sign is comparing memory address
