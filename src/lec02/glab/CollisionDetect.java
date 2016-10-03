@@ -32,21 +32,16 @@ public class CollisionDetect {
 
 
         try {
-            for (int nC = 0; nC <strSplits1.length ; nC++) {
                 cirOne = new Circle(
                         Integer.parseInt(strSplits1[0]),
                         Integer.parseInt(strSplits1[1]),
-                        Double.parseDouble(strSplits1[2])
-                );
-            }
+                        Double.parseDouble(strSplits1[2]));
 
-            for (int nC = 0; nC <strSplits2.length ; nC++) {
                 cirTwo = new Circle(
                         Integer.parseInt(strSplits2[0]),
                         Integer.parseInt(strSplits2[1]),
-                        Double.parseDouble(strSplits2[2])
-                );
-            }
+                        Double.parseDouble(strSplits2[2]));
+
         } catch (NumberFormatException e) {
             System.out.println("Invalid input " + e.getMessage());
             return;
