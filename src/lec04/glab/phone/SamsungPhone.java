@@ -7,4 +7,9 @@ public class SamsungPhone extends Phone {
     public SamsungPhone(String model) {
         super(model);
     }
+
+    @Override
+    public String charge() {
+        return "meltdown";
+    }
 }

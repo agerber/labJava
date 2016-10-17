@@ -24,4 +24,7 @@ public abstract  class Phone {
                 "model='" + model + '\'' +
                 '}';
     }
+
+
+    public abstract String charge();
 }

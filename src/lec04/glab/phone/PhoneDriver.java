@@ -9,14 +9,16 @@ import java.util.List;
 public class PhoneDriver {
     public static void main(String[] args) {
         Phone applePhone = new ApplePhone("iphone");
-        Phone samPhone = new ApplePhone("samsung phone");
+        Phone samPhone = new SamsungPhone("samsung phone");
+        Phone googPhone = new GooglePhone("goog phone");
 
         List<Phone> phoneList = new ArrayList<>();
         phoneList.add(applePhone);
         phoneList.add(samPhone);
+        phoneList.add(googPhone);
 
         for (Phone phone : phoneList) {
-            System.out.println(phone);
+            System.out.println(phone.charge());
         }
 
     }
