@@ -29,8 +29,5 @@ public class Ambulance extends Vehicle implements  Drawable {
         System.out.println(strOut);
     }
 
-    @Override
-    public void draw3D() {
 
-    }
 }

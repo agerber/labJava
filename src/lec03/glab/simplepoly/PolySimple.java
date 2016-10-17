@@ -1,5 +1,6 @@
 package lec03.glab.simplepoly;
 
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.awt.Rectangle;
 
@@ -31,7 +32,12 @@ public class PolySimple {
 		
 		for (Object obj : objObjects){
 			System.out.println(obj.getClass() + " : " + obj.toString());
+
+
         }
+
+		//O b rectangle = new Rectangle(4,5,7,8);
+
 				
 		System.out.println("-----------------------------------");
 		
@@ -74,13 +80,13 @@ public class PolySimple {
 	private static String getStateCel(double dTemp){
 		
 		if(dTemp <=0.0){
-			return "solid";
+			return "SOLID";
 		}
 		else if (dTemp <100.0){
-			return "liquid";
+			return "LIQUID";
 		}
 		else {
-			return "gas";
+			return "GAS";
 		}
 		
 	}
@@ -88,13 +94,13 @@ public class PolySimple {
 	private static String getStateFar(int nTemp){
 		
 		if(nTemp <=32){
-			return "solid";
+			return "SOLID";
 		}
 		else if (nTemp <212){
-			return "liquid";
+			return "LIQUID";
 		}
 		else {
-			return "gas";
+			return "GAS";
 		}
 		
 	}

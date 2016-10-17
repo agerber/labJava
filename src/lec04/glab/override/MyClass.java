@@ -10,9 +10,5 @@ public class MyClass implements  Drawable{
                 "  [-----+----\"=,* )");
     }
 
-    @Override
-    public void draw3D() {
-        System.out.println( "  [     | \"=, \"=,,\n" +
-         "  [-----+----\"=,* )");
-    }
+
 }

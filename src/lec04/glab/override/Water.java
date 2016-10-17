@@ -8,7 +8,9 @@ package lec04.glab.override;
 public class Water {
 
     //no point storing this state in each instance, it can be calculated based on temp.
-    public static enum State {solid, liquid, gas}
+    public static enum State {
+        SOLID, LIQUID, GAS
+    }
 
     private double mTemp;
 
@@ -32,11 +34,11 @@ public class Water {
     public State getState(){
 
         if (mTemp <= 0){
-            return State.solid;
+            return State.SOLID;
         } else if (mTemp > 0 && mTemp < 100){
-            return State.liquid;
+            return State.LIQUID;
         } else {
-            return State.gas;
+            return State.GAS;
         }
     }
 

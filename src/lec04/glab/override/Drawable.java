@@ -7,5 +7,5 @@ public interface Drawable {
 
     //by default this is public so the 'public' is optional
      void draw();
-     void draw3D();
+
 }

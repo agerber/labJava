@@ -13,7 +13,7 @@ import java.util.List;
  *
  * This class supports (n = # items stored in priority queue)
  * <P>
- * <TABLE style="border: 1pt solid black">
+ * <TABLE style="border: 1pt SOLID black">
  * <th align="center" width=40%> operation
  * <th align="center" width=40%> worst case
  * <th align="center"> average case    <tr>

@@ -9,6 +9,6 @@ public class WaterDriver {
         Water water = new Water(55.88);
         System.out.println(water);
 
-        System.out.println(water.getState() == Water.State.solid ? "ice" : "not ice");
+        System.out.println(water.getState() == Water.State.SOLID ? "ice" : "not ice");
     }
 }
