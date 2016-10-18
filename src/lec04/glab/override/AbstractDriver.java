@@ -13,13 +13,27 @@ public class AbstractDriver {
 
 
     public static void main(String[] args) {
-        List<Vehicle> vehVehicles = new LinkedList<>();
+
+        LinkedList<Vehicle> vehVehicles = new LinkedList<>();
         vehVehicles.add(new Mazarati("Mazarati 5400 LS"));
         vehVehicles.add(new Trike("Green Machine"));
 
         for (Vehicle vehVehicle : vehVehicles) {
-            System.out.println(vehVehicle.getModel() + " : " + vehVehicle.reportNumWheels());
+            System.out.println(vehVehicle.getModel() +
+                    " : " + vehVehicle.reportNumWheels());
         }
+
+
+//        Drawable drawable = new Drawable() {
+//            @Override
+//            public void draw() {
+//                System.out.println("adfasdf");
+//            }
+//        };
+
+      //  System.out.println(drawable.getClass());
+
+
     }
 
 

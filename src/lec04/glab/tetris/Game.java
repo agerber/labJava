@@ -22,7 +22,7 @@ public class Game extends Panel implements Runnable
   final static int PNT = 2400; //threashold for increasing speed (difficulty)
   final static int ANI_DELAY = 50; // Milliseconds between screen updates (animation)
 
-  //the variable speed of drops
+  //the variable     speed of drops
   static protected int nAutoDelay = 300; // Milliseconds between widget coming down automatically
 
   //some utility vars

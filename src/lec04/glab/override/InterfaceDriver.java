@@ -17,8 +17,16 @@ public class InterfaceDriver {
         draVehicles.add(new Ambulance("GM 1200"));
         draVehicles.add(new MyClass());
 
+      //  Drawable drawable = new Corsair("Corsair 87000 Luxur");
+
+
+
+
         for (Drawable draVehicle : draVehicles) {
+
+            System.out.println(draVehicle.getClass() );
             draVehicle.draw();
+
         }
 
 //        for (Drawable draVehicle : draVehicles) {

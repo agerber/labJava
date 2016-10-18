@@ -10,6 +10,7 @@ import java.util.GregorianCalendar;
   
  		        // instantiate a date with today's date called datToday
 				// create a datCount set at some earlier date
+
 				// datCount = datHaleys (year, month, 1) loop and increment datCount by one day
 					  //if dayOfMonth == 1  
 						//print out year plus month

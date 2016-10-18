@@ -12,6 +12,7 @@ public class TDPoint extends Point {
 
     //constructors
     public TDPoint(int z) {
+        super(0,0);
         this.z = z;
     }
 
