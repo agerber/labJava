@@ -118,6 +118,7 @@ public class VendMachine {
     }
 
 
+    //show the entire selection of products available
     public String showSelection(){
         StringBuilder stb = new StringBuilder();
         Product[] prdProducts;
@@ -219,6 +220,7 @@ public class VendMachine {
 
     public List<Coin> returnCoins(){
         List<Coin> conTemps = mPurchaseMoneys;
+        //reset the purchasee money to no elements.
         mPurchaseMoneys = new ArrayList<>();
         return conTemps;
     }
@@ -227,6 +229,7 @@ public class VendMachine {
         List<Coin> conTemp = mBanks;
         //reset the bank
         mBanks = new ArrayList<>();
+        //get the entire bank
         return conTemp;
     }
 
