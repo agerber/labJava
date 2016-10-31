@@ -35,7 +35,7 @@ public class ApptDriver {
                     String appointment = scanner.nextLine();
                     try {
                         appointments.add(convertStringToAppt(appointment));
-                        System.out.println("All Appointments:");
+
                         reportAllAppointments();
                     } catch (IOException e) {
                         System.out.println(e.getMessage() + ", try again!");
@@ -75,6 +75,7 @@ public class ApptDriver {
 
 
     private static void reportAllAppointments(){
+        System.out.println("All Appointments:");
         for (Appointment appointment : appointments) {
 
                 System.out.println(appointment);
