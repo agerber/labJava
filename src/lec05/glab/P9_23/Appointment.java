@@ -19,7 +19,7 @@ public abstract class Appointment {
 
     public boolean occursOn(int year, int month,
                             int day){
-        return false;
+       return this.getDate().compareTo(new GregorianCalendar(year,month,day)) == 0;
 
     }
 
