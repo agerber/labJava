@@ -10,10 +10,11 @@ import java.util.Scanner;
  * Created by Adam on 10/25/2016.
  */
 public class ApptDriver {
+   static List<Appointment> appointments = new ArrayList<>();
 
     public static void main(String[] args) {
 
-        List<Appointment> appointments = new ArrayList<>();
+
 
         appointments.add(new Daily("Wake up", new GregorianCalendar(1999, 11, 31)));
         appointments.add(new Onetime("Dentist", new GregorianCalendar(2016, 0, 29)));
@@ -34,6 +35,8 @@ public class ApptDriver {
                     String appointment = scanner.nextLine();
                     try {
                         appointments.add(convertStringToAppt(appointment));
+                        System.out.println("All Appointments:");
+                        reportAllAppointments();
                     } catch (IOException e) {
                         System.out.println(e.getMessage() + ", try again!");
                         continue;
@@ -46,8 +49,6 @@ public class ApptDriver {
                     System.out.println("sorry, I didn't understand. Try again.");
                     continue  outer;
             }
-
-
 
         }
 
@@ -70,6 +71,15 @@ public class ApptDriver {
             }
         }
 
+    }
+
+
+    private static void reportAllAppointments(){
+        for (Appointment appointment : appointments) {
+
+                System.out.println(appointment);
+
+        }
     }
 
     private static GregorianCalendar convertStringToGreg(String input) throws IOException{
