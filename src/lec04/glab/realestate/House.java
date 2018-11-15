@@ -1,6 +1,9 @@
 package lec04.glab.realestate;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 
 //cntrl-H  and cntrl-shift-alt-U
@@ -99,7 +102,10 @@ public class House implements Cloneable {
 		    // comment out below line and see if clone works.
 		     houClone.setDatInstantiated((Date)getDatInstantiated().clone());
 
-		     return houClone;
+
+
+
+		return houClone;
 
 		  }
 

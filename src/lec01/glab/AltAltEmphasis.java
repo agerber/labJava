@@ -26,8 +26,13 @@ public class AltAltEmphasis {
      */
 
 
-
     public static void main(String[] args) {
+
+
+
+
+
+
         Scanner in = new Scanner(System.in);
         System.out.println("Enter your sentence:");
         String strSentence = in.nextLine();

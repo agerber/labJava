@@ -3,6 +3,7 @@ package lec01.glab;
 /**
 Implement Rock, Paper, Scissors using switch(String) - with Java7 only.
  */
+import java.util.Date;
 import java.util.Scanner;
 
 public class RockPaperScissors3
@@ -14,6 +15,11 @@ public class RockPaperScissors3
         String strPlayer1 = scan.next().toLowerCase();
         System.out.println("Player 2: Choose rock, scissors, or paper:");
         String strPlayer2 = scan.next().toLowerCase();
+
+
+
+
+
 
 
         switch (strPlayer1){

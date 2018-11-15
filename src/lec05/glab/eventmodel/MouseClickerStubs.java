@@ -8,7 +8,7 @@ import java.awt.event.MouseMotionListener;
 /**
  * Created by ag on 11/3/2014.
  */
-public class MouseClickerStubs {
+public class MouseClickerStubs implements MouseListener, MouseMotionListener {
     private JPanel mPanel;
 
     public static void main(String[] args) {
@@ -22,45 +22,89 @@ public class MouseClickerStubs {
 
     public MouseClickerStubs() {
 
-        mPanel.addMouseListener(new MouseListener(){
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                JOptionPane.showMessageDialog(mPanel,
-                        "you clicked " + e.getSource() + " at point " + e.getPoint());
-            }
+        mPanel.addMouseListener(this
 
-            @Override
-            public void mousePressed(MouseEvent e) {
+//                new MouseListener(){
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                JOptionPane.showMessageDialog(mPanel,
+//                        "you clicked " + e.getSource() + " at point " + e.getPoint());
+//            }
+//
+//            @Override
+//            public void mousePressed(MouseEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void mouseReleased(MouseEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void mouseEntered(MouseEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void mouseExited(MouseEvent e) {
+//
+//            }
+//        }
 
-            }
+        );
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
+        mPanel.addMouseMotionListener(this
 
-            }
+//                new MouseMotionListener() {
+//            @Override
+//            public void mouseDragged(MouseEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void mouseMoved(MouseEvent e) {
+//                System.out.println(e.getPoint());
+//            }
+//        }
 
-            @Override
-            public void mouseEntered(MouseEvent e) {
 
-            }
+        );
 
-            @Override
-            public void mouseExited(MouseEvent e) {
+    }
 
-            }
-        });
+    @Override
+    public void mouseClicked(MouseEvent e) {
 
-        mPanel.addMouseMotionListener(new MouseMotionListener() {
-            @Override
-            public void mouseDragged(MouseEvent e) {
+    }
 
-            }
+    @Override
+    public void mousePressed(MouseEvent e) {
 
-            @Override
-            public void mouseMoved(MouseEvent e) {
-                System.out.println(e.getPoint());
-            }
-        });
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
 
     }
 }

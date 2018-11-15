@@ -37,6 +37,7 @@ public class PromotionAndCastingPrimitives {
 		//downcasting loses precsion
 		
 		int nAnswer1 = (int)56.9356974;
+
 		
 		//long lAnswer1 = Math.max(3.856, 98798798);
 		long lAnswer1 = Math.max((long)3654.856, 568211);
@@ -58,7 +59,7 @@ public class PromotionAndCastingPrimitives {
 
 
         //EXPLICIT CASTING (AKA DOWNCASTING) --will result in loss of precision
-        //int nVal =  51 / 24.89989;
+      //  int nVal =  51 / 24.89989;
 
         //long lNum = Math.max(3654.856, 568211);
 
@@ -81,9 +82,12 @@ public class PromotionAndCastingPrimitives {
 //		to byte
 
 
-		int nNumber = 393;
+		int nNumber = 127;
 		byte yNumber = (byte) nNumber;
 		System.out.println(yNumber);
+
+		System.out.println(Integer.toBinaryString(nNumber));
+
 
 
 

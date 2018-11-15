@@ -5,7 +5,19 @@ import java.lang.String;import java.lang.System;public class VarArgs {
 
 	public static void main(String[] args) {
 
+
+		int[] ints = { 8,2,5,7, 6, 8, 101, -9};
+		//int[] myints = new int[10];
+
 		sum("The sum of",8,2,5,7, 6, 8, 101, -9);
+		sumArray("The sum of",ints);
+
+	}
+
+
+	private static void sumArray(String strSum, int[] ints){
+
+		sum(strSum, ints[0], ints[1], ints[2]);
 
 	}
 	

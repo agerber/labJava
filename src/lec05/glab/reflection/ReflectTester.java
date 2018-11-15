@@ -19,18 +19,19 @@ public class ReflectTester {
 
         //store a concrete class in an abstract super-class reference
         Rectangle2D r2dRec = new Rectangle(1,2,3,4);
-        Reflector.printClass(r2dRec.getClass());
+        if (r2dRec instanceof Rectangle)
+            Reflector.printClass(r2dRec.getClass());
 
-        //store a concreate class object in an implemented interface reference
-        Map<String, String> map = new HashMap<>();
-        map.put("Jason", "CS");
-        map.put("Liz", "Econ");
-        map.put("Dan", "Physics");
-        Reflector.printClass(map.getClass());
-
-        //store a concrete class in an concrete super-class reference
-        Object obj = (Object) r2dRec;
-        Reflector.printClass(obj.getClass());
+//        //store a concreate class object in an implemented interface reference
+//        Map<String, String> map = new HashMap<>();
+//        map.put("Jason", "CS");
+//        map.put("Liz", "Econ");
+//        map.put("Dan", "Physics");
+//        Reflector.printClass(map.getClass());
+//
+//        //store a concrete class in an concrete super-class reference
+//        Object obj = (Object) r2dRec;
+//        Reflector.printClass(obj.getClass());
 
 
 

@@ -12,12 +12,15 @@ public class UncheckedDriver {
     public static void main(String[] args) {
 
         int[] nNums = new int[10];
-        Object obj = new Point(2,13);
-        Circle cir = null;
-
         for (int nC = 0; nC < 10; nC++) {
             nNums[nC] = nC * 2;
         }
+
+
+        Object obj = new Point(2,13);
+        Circle cir = null;
+
+
 
 
         //this will throw an unchecked exception - this is the programmers fault! (ArrayIndexOutOfBoundsExcpetion)

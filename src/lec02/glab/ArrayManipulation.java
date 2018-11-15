@@ -1,6 +1,7 @@
 package lec02.glab;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.Callable;
 
@@ -51,6 +52,9 @@ public class ArrayManipulation {
 		System.out.println("-----------------------");
 		//since Java 5; you can use foreach -- no counters
 		//this reads, foreach String element called str in strNames
+
+
+
 		for (String str : strNames){
 			    System.out.println(str);
         }
@@ -131,6 +135,8 @@ public class ArrayManipulation {
 				new boolean[8]
 
 		};
+
+
 		
 		
 		for (int nRow = 0; nRow < bAnswers.length; nRow++) {

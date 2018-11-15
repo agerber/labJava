@@ -29,11 +29,21 @@ public class Painter {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Painter");
-        frame.setContentPane(new Painter().mPanel);
+
+        frame.setContentPane(new Painter().getPanel());
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setSize(600,900);
         frame.setVisible(true);
+    }
+
+    public JPanel getPanel() {
+        return mPanel;
+    }
+
+    public void setPanel(JPanel mPanel) {
+        this.mPanel = mPanel;
     }
 
     public Painter() {
@@ -41,6 +51,7 @@ public class Painter {
         mButtonGroup.add(mRoundRadioButton);
         mButtonGroup.add(mSquareRadioButton);
         mRoundRadioButton.setSelected(true);
+
         mColor = Color.BLACK;
         mColorButton.setBackground(mColor);
 

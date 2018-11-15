@@ -20,8 +20,7 @@ public class DigitalToBinary {
 	public static void main(String[] args) {
 		
 		
-		
-		
+
 
 			
 		//do loop

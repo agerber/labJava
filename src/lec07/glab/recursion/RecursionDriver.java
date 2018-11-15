@@ -7,7 +7,7 @@ public class RecursionDriver {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println(myFactorialRec(12));
+		System.out.println(myFactorialRec(5));
 		System.out.println(myFactorialIter(5));
 
         testIsPalindrome("A man, a plan, a canal, Panama!");
@@ -18,9 +18,13 @@ public class RecursionDriver {
 	    System.out.println(replaceRec("Java", 'a', 'o'));
 		System.out.println(replaceIter("Java", 'a', 'o'));
 
+		System.out.println(replaceIter(replaceRec("adam", 'a', 'e'), 'm', 'n'));
+
 		//http://www.cs.arizona.edu/icon/oddsends/palinsen.htm
 		System.out.println( reverseCharsRec("Marge let a moody baby doom a telegram."));
 		System.out.println( reverseCharsIter("Marge let a moody baby doom a telegram."));
+
+
 		
 	
 
@@ -31,6 +35,9 @@ public class RecursionDriver {
     //1/ identify a base case
     //2 identify any recursive cases
     //3 make sure your are converging towards the base case when you recurse
+
+
+
 
 
 
@@ -118,6 +125,8 @@ public class RecursionDriver {
 	}
 
 
+
+
     // ===============================================
     // ==a char reverse function using recursion
     // ===============================================
@@ -161,6 +170,10 @@ public class RecursionDriver {
     private static void testIsPalindrome(String str){
         String strForward = removeNotLettersRec(str);
         String strBackward = reverseCharsAndRemoveRec(str);
+        int n = 7;
+        Integer intMe = new Integer(7);
+
+
 
         if (strForward.equalsIgnoreCase(strBackward)){
             System.out.println(strForward + " == " + strBackward + " : this is a palindrome.");

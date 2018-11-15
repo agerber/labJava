@@ -2,6 +2,8 @@ package lec04.glab.realestate;
 import lec04.glab.realestate.Asciify;
 import lec04.glab.realestate.House;
 
+import java.util.*;
+
 
 public class DeepCopyDriver {
 
@@ -9,6 +11,33 @@ public class DeepCopyDriver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
+
+		List<Double> dubs = new ArrayList<>();
+		dubs.add(212.13);
+		dubs.add(212.12);
+
+		dubs.add(212.14);
+
+		//Object[] array =  dubs.toArray();
+
+		//Arrays.sort(array);
+
+		Collections.sort(dubs, new Comparator<Double>() {
+			@Override
+			public int compare(Double o1, Double o2) {
+				if (o1.doubleValue() > o2.doubleValue()) return 1;
+				if (o1.doubleValue() < o2.doubleValue()) return -1;
+				return 0;
+			}
+		});
+
+		for (Double dub : dubs) {
+
+			System.out.println(dub);
+		}
+
+
 
 		House houOrig = new House(
 				"5519 Dorchester Ave.",

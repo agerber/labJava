@@ -14,6 +14,7 @@ public class NumberDemo
 {
     public static void main(String[] args)
     {
+
         int aInt = 23;
         byte aByte = +127;
         short aShort = 32767;

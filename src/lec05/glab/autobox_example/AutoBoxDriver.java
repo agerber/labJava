@@ -16,6 +16,7 @@ public class AutoBoxDriver {
         int nNum = new Integer(12);
 
 
+
         //Auto Boxing
         Double dubNum = 56.87;
 
@@ -24,6 +25,10 @@ public class AutoBoxDriver {
         chrChars.add('d');
         chrChars.add('a');
         chrChars.add('m');
+
+
+        char mVar = chrChars.get(3);
+
 
         System.out.print("The number stored in nNum is " + nNum + " and the number stored in dubNum is " + dubNum + " and the Characters stored in chrChars are: ");
 

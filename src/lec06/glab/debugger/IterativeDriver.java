@@ -23,7 +23,7 @@ public class IterativeDriver {
 		while(mdt.compareTo(mdtEndQtr) <= 0){
 
 			//force step into this compound statement
-            System.out.println(mdt + " : " + ": week " + nCount++ + ":  hours of homework " + new Random().nextInt(100) );
+            System.out.println(mdt + " : " + ": week " + nCount++ + ":  hours of homework " + Math.random() * 100 );
 			advancedDays(7, mdt);
 
 		

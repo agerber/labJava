@@ -10,7 +10,7 @@ import java.awt.event.*;
  * Time: 3:30 PM
  * To change this template use File | Settings | File Templates.
  */
-public class MouseClicker {
+public class MouseClicker  {
     private JPanel mPanel;
 
     public static void main(String[] args) {
@@ -23,13 +23,20 @@ public class MouseClicker {
     }
 
 
+//     JOptionPane.showMessageDialog(mPanel,
+//            "you clicked " + e.getSource() + " at point " + e.getPoint());
+
+    //System.out.println(e.getPoint());
+
     public MouseClicker() {
+
+//        mPanel.addMouseListener(this);
+//        mPanel.addMouseMotionListener(this);
 
         mPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                  JOptionPane.showMessageDialog(mPanel,
-                       "you clicked " + e.getSource() + " at point " + e.getPoint());
+
 
             }
 
@@ -40,10 +47,11 @@ public class MouseClicker {
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                System.out.println(e.getPoint());
+
             }
         });
 
 
     }
+
 }

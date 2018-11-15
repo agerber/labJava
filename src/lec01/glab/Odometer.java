@@ -14,15 +14,15 @@ public class Odometer {
 
 
 
-        for (int nC = 0; nC < 10; nC++) {
-            for (int nD = 0; nD < 10; nD++) {
-                for (int nE = 0; nE < 10; nE++) {
+        for (int nC = 0; nC < 10; nC++) //{
+            for (int nD = 0; nD < 10; nD++) //{
+                for (int nE = 0; nE < 10; nE++) //{
                     System.out.println(String.valueOf(nC) + String.valueOf(nD) + String.valueOf(nE));
-                }
-                System.out.println("flip ten");
-            }
-            System.out.println("flip 100");
-        }
+//                }
+//                System.out.println("flip ten");
+//            }
+//            System.out.println("flip 100");
+//        }
 
 
     }

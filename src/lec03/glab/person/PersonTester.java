@@ -32,7 +32,7 @@ public class PersonTester {
 		
 		perChilds = new ArrayList<Person>(); 
 		
-		perVets.add(new Person("Gregg", "Cadet", (byte)18, true, "898-17-1590", perChilds));
+		perVets.add(new Person("Gregg", "Cadet", (byte)18, true, "898-17-1590", null));
 		
 		
 		
