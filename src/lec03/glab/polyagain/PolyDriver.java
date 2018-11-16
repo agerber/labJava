@@ -1,6 +1,6 @@
 package lec03.glab.polyagain;
 
-import lec08.lunarlander.game.model.TerrainBlock;
+
 import lec10.glab.lambdas.Circle;
 
 import javax.lang.model.type.IntersectionType;
@@ -28,7 +28,7 @@ public class PolyDriver  {
 
 
 
-        TerrainBlock ter = (TerrainBlock) obj;
+
 
 
 
