@@ -1,0 +1,6 @@
+Consumers has an accept method - used for terminal operations on streams.
+Suppliers has a get method and just supplies whatever it it you need.
+Predicates has a test method - used for filtering of streams
+Functions have an apply method and defines the return type as last param.
+
+Operator

@@ -1,5 +1,5 @@
 package lec08.glab.stream.operations.filter;
-import lec08.glab.stream.ops.Employee;
+
 
 //w  w w  .ja v a 2 s .c o m
 public class Ex4 {

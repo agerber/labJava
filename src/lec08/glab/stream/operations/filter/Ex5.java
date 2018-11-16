@@ -1,6 +1,6 @@
 package lec08.glab.stream.operations.filter;
 
-import lec08.glab.stream.ops.Employee;
+
 
 public class Ex5 {
     public static void main(String[] args) {
