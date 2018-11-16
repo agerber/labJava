@@ -1,4 +1,4 @@
-package lec08.glab.lambda;
+package lec08.glab.lambda.intro;
 
 import javax.swing.Timer;
 import java.util.Arrays;
