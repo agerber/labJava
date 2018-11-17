@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uchicago.gerber.YelpController">
+    <stylesheets>
+        <URL value="@/styles/yelp.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="txtSearch" layoutX="151.0" layoutY="52.0" promptText="e.g. Mexican" />
+      <TextField fx:id="txtCity" layoutX="151.0" layoutY="102.0" promptText="e.g. Chicago" />
+      <Label layoutX="64.0" layoutY="56.0" text="Terms" />
+      <Label layoutX="64.0" layoutY="106.0" text="City" />
+      <Button fx:id="btnGo" layoutX="356.0" layoutY="52.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="103.0" text="Search" />
+      <ListView fx:id="lstView" layoutX="64.0" layoutY="147.0" prefHeight="324.0" prefWidth="462.0" />
+      <Label fx:id="lblStatus" layoutX="64.0" layoutY="483.0" prefHeight="17.0" prefWidth="462.0" text="Label" />
+      <ProgressIndicator fx:id="prg" layoutX="497.0" layoutY="72.0" progress="0.0" />
+      <Label fx:id="lblTitle" layoutX="50.0" layoutY="22.0" prefHeight="17.0" prefWidth="462.0" text="Find Restuarants:" />
+   </children>
+</AnchorPane>
