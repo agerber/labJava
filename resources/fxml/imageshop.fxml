@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="862.0" prefWidth="1328.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="horstjava8.chapter3.ImageShopController">
+<VBox prefHeight="862.0" prefWidth="1328.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lec10.glab.imageshop.ImageShopController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
