@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="611.0" prefWidth="595.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uchicago.gerber.PdfController">
+<AnchorPane id="AnchorPane" prefHeight="611.0" prefWidth="595.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lec08.glab.javafx.PdfController">
     <stylesheets>
         <URL value="@/styles/yelp.css" />
     </stylesheets>
