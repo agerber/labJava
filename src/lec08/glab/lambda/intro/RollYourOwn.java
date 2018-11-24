@@ -52,6 +52,9 @@ public class RollYourOwn {
 
         System.out.println("My Third Lambda : " + mt3.getMax(67, 123));
 
+        My4 my4 = () -> System.out.println("Howdy");
+        my4.nothing();
+
 
     }
 
@@ -73,4 +76,9 @@ interface MySecondLambda {
 @FunctionalInterface
 interface MyThirdLambda {
     int getMax(int x, int y);
+}
+
+@FunctionalInterface
+interface My4 {
+    void nothing();
 }

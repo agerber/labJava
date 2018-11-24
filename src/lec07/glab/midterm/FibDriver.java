@@ -1,4 +1,4 @@
-package lec08.glab.midterm;
+package lec07.glab.midterm;
 
 /**
  * Created with IntelliJ IDEA.

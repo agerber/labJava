@@ -1,4 +1,4 @@
-package lec10.glab.imageshop;
+package lec08.glab.imageshop;
 
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;

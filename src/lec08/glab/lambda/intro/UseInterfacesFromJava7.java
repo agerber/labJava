@@ -22,6 +22,7 @@ public class UseInterfacesFromJava7 {
       thread.start();
 
 
+      //this is the functionalInterface. Replace with lamda using IntelliJ
       Comparator<String> myStringComparatorReverse = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {

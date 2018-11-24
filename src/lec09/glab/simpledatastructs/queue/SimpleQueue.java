@@ -1,6 +1,7 @@
 package lec09.glab.simpledatastructs.queue;
 
 import java.util.Iterator;
+import java.util.Queue;
 
 
 //this class is generic

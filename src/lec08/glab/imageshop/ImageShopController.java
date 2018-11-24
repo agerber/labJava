@@ -1,4 +1,4 @@
-package lec10.glab.imageshop;
+package lec08.glab.imageshop;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

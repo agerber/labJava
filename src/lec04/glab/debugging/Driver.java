@@ -1,4 +1,4 @@
-package lec08.glab.debugging;
+package lec04.glab.debugging;
 
 /**
  * Created with IntelliJ IDEA.
