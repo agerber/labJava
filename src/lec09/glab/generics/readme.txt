@@ -1,0 +1,1 @@
+several examples here taken from java2s.com
