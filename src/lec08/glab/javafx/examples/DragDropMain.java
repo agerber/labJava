@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package lec08.glab.javafx;
+package lec08.glab.javafx.examples;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;

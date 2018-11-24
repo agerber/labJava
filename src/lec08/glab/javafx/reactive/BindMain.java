@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package lec08.glab.javafx;
+package lec08.glab.javafx.reactive;
 
 import java.util.Random;
 import java.util.logging.Level;

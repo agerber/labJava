@@ -1,13 +1,48 @@
-package lec08.glab.javafx;
+package lec08.glab.javafx.basics;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class CssExampleMain extends Application {
+
+
+    //dependency injection
+
+    @FXML // fx:id="lblName"
+    private Label lblName; // Value injected by FXMLLoader
+
+    @FXML // fx:id="lblResult"
+    private Label lblResult; // Value injected by FXMLLoader
+
+    @FXML // fx:id="txtHello"
+    private TextField txtHello; // Value injected by FXMLLoader
+
+    @FXML // fx:id="btnGo"
+    private Button btnGo; // Value injected by FXMLLoader
+
+    @FXML
+    void btnGoAction(ActionEvent event) {
+
+        lblResult.setText(
+                "Hello there :" +txtHello.getText());
+
+    }
+
+
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -37,5 +72,12 @@ public class CssExampleMain extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
+
+
+
+
+
 
 }

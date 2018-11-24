@@ -1,4 +1,4 @@
-package lec08.glab.imageshop;
+package lec08.glab.javafx.imageshop;
 
 /**
  * Sample Skeleton for 'saturation.fxml' Controller Class

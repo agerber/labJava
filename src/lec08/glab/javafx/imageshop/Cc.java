@@ -1,4 +1,4 @@
-package lec08.glab.imageshop;
+package lec08.glab.javafx.imageshop;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

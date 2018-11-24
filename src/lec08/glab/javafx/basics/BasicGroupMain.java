@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lec08.glab.javafx;
+package lec08.glab.javafx.basics;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
