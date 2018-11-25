@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lec08.glab.javafx;
+package lec08.glab.javafx.concurrency;
 
+import javafx.application.Application;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ChangeListener;
@@ -14,26 +15,45 @@ import javafx.concurrent.Task;
 import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-/**
- * FXML Controller class
- *
- * @author ag
- * 
- * Threads and bindings
- * 
- * 
- */
-public class ThreadsController implements Initializable {
+public class ThreadsMain extends Application implements Initializable{
 
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        //the order is reversed from hierarchy
+       // Parent root = FXMLLoader.load(getClass().getResource("/fxml/Threads.fxml"));
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Threads.fxml"));
+        Parent root = (Parent) loader.load();
+       // ThreadsController controller =  loader.getController();
+        setStage(primaryStage);
+        
+        
+        Scene scene = new Scene(root, 800, 600, Color.WHITE);
+        //scene.getStylesheets().add("/styles/yelp.css");
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    //controller
 
     @FXML
     private Button btnThCancel;
@@ -49,15 +69,15 @@ public class ThreadsController implements Initializable {
     private Button btnSvCancel;
 
     private Stage primaryStage;
-    
-   
-    
+
+
+
 
     public void setStage(Stage stage) {
         this.primaryStage = stage;
     }
 
-    
+
 
 
     private FirstLineService service = new FirstLineService();
@@ -68,7 +88,7 @@ public class ThreadsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        
+
         prgThread.progressProperty().bind(task.progressProperty());
         prgService.progressProperty().bind(service.progressProperty());
 
@@ -152,7 +172,7 @@ public class ThreadsController implements Initializable {
         service.restart();
 
         btnSvStart.setText("started");
-   
+
 
     }
 
@@ -175,7 +195,7 @@ public class ThreadsController implements Initializable {
         task.cancel(true);
     }
 
-     class FirstLineService extends Service<Date> {
+    class FirstLineService extends Service<Date> {
 
         private IntegerProperty counter = new SimpleIntegerProperty();
 
@@ -194,7 +214,7 @@ public class ThreadsController implements Initializable {
             return counter;
         }
 
-       @Override
+        @Override
         protected Task<Date> createTask() {
             return new Task<Date>() {
 
@@ -216,13 +236,13 @@ public class ThreadsController implements Initializable {
             };
         }
 
-       
+
 
     }
 
 
     //the parameterized value is the return which can be accessed using .get(). This is why this is future/callable.
-       private Task task = new Task<String>() {
+    private Task task = new Task<String>() {
         @Override
         protected String call() throws Exception {
             int nC = 0;
@@ -240,5 +260,6 @@ public class ThreadsController implements Initializable {
         }
 
     };
+
 
 }

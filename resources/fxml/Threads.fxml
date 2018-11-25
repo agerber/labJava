@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="edu.uchicago.gerber.ThreadsController">
+<AnchorPane id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="lec08.glab.javafx.concurrency.ThreadsMain">
    <children>
       <Button fx:id="btnThCancel" layoutX="154.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnThCancel_cancel" text="Task Cancel" />
       <Button fx:id="btnSvStart" layoutX="358.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSvStart_start" text="Service Start" />
