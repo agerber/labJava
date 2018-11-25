@@ -1,4 +1,4 @@
-package lec08.glab.javafx;
+package lec08.glab.javafx.examples;
 
 /**
  * Created by Adam on 7/28/2015.

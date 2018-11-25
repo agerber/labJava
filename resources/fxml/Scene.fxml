@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lec08.glab.javafx.BasicRegionMain">
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lec08.glab.javafx.examples.RsvpMain">
     <children>
         <Button fx:id="button" layoutX="22.0" layoutY="26.0" onAction="#handleButtonAction" text="start" />
         <Label fx:id="label" alignment="CENTER" layoutX="-2.0" layoutY="60.0" minHeight="16" minWidth="69" prefHeight="166.0" prefWidth="510.0" style="-fx-background-color: black;" text="Test" textAlignment="CENTER" textFill="#eb0404">

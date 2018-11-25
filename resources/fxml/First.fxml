@@ -14,7 +14,7 @@
         styleClass="mainFxmlClass"
         xmlns:fx="http://javafx.com/fxml/1"
         xmlns="http://javafx.com/javafx/8"
-        fx:controller="lec08.glab.javafx.FirstController">
+        fx:controller="lec08.glab.javafx.examples.FirstMain">
     <stylesheets>
         <URL value="@/styles/first.css" />
     </stylesheets>

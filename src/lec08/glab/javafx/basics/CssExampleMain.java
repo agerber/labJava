@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 public class CssExampleMain extends Application {
 
 
+    //controller code
     //dependency injection
 
     @FXML // fx:id="lblName"
@@ -43,6 +44,8 @@ public class CssExampleMain extends Application {
     }
 
 
+
+    //main
 
     @Override
     public void start(Stage stage) throws Exception {

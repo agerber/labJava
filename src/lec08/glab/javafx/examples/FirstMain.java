@@ -1,13 +1,18 @@
-package lec08.glab.javafx;
+package lec08.glab.javafx.examples;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class FirstMain extends Application {
+public class FirstMain extends Application  {
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -32,8 +37,38 @@ public class FirstMain extends Application {
      *
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        launch(args);
+//    public static void main(String[] args) {
+//        launch(args);
+//    }
+
+
+    //controller
+
+    @FXML
+    private Label lblFirst;
+    @FXML
+    private Label lblLast;
+    @FXML
+    private Label lblWelcome;
+    @FXML
+    private Label lblStatus;
+    @FXML
+    private TextField txtFirst;
+    @FXML
+    private TextField txtLast;
+    @FXML
+    private Button btnPress;
+
+    /**
+     * Initializes the controller class.
+     */
+
+
+    @FXML
+    private void btnPress_press(ActionEvent event) {
+
+        System.out.println(txtFirst.getText() + " " + txtLast.getText());
+
     }
 
 }
