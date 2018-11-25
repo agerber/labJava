@@ -1,7 +1,5 @@
 package lec05.glab.P9_23;
 
-import lec08.glab.javafx_group.App;
-
 import java.util.GregorianCalendar;
 
 /**

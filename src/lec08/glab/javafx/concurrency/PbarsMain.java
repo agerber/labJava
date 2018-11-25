@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lec08.glab.javafx_group;
+package lec08.glab.javafx.concurrency;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -33,14 +33,16 @@ public class PbarsMain extends Application {
 
         //stage
             //scene
-                 //root (Group or Region)
+                 //root
 
         Group root = new Group();
         Scene scene = new Scene(root, 300, 150);
-        // scene.getStylesheets().put("progresssample/Style.css");
+        // scene.getStylesheets().add("progresssample/Style.css");
         stage.setScene(scene);
         stage.setTitle("Progress Controls");
 
+
+        //Task implements the Woker interface. Service also implments the Worker interface.  Worker in turn implements the future/callable Interface.
         task = new Task<Void>() {
 
             @Override
@@ -78,6 +80,7 @@ public class PbarsMain extends Application {
             }
         };
 
+        //this lays out the bars
         for (int i = 0; i < values.length; i++) {
             final Label label = labels[i] = new Label();
             label.setText("progress:" + values[i]);

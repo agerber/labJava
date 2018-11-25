@@ -1,4 +1,4 @@
-package lec08.glab.javafx_group;
+package lec08.glab.javafx.basics;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -13,8 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
-import javax.swing.*;
 
 /**
 

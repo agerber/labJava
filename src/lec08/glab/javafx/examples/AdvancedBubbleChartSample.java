@@ -1,4 +1,4 @@
-package lec08.glab.javafx_group;
+package lec08.glab.javafx.examples;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
