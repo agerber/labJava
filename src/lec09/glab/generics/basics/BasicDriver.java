@@ -7,8 +7,16 @@ class GenericClass<T> {
         ob = o;
     }
 
-    T getob() {
+
+     T getOb() {
+       // T t = new T();  can not instantiate directly.
+         //T.getClass() doesn't work either
+
         return ob;
+    }
+
+     void setOb(T ob) {
+        this.ob = ob;
     }
 
     void showType() {
@@ -23,14 +31,14 @@ public class BasicDriver {
         iOb.showType();
 
         // no cast is needed.
-        int v = iOb.getob();
+        int v = iOb.getOb();
         System.out.println("value: " + v);
 
         // Create a Gen object for Strings.
         GenericClass<String> strOb = new GenericClass<String>("Generics Test");
         strOb.showType();
 
-        String str = strOb.getob();
+        String str = strOb.getOb();
         System.out.println("value: " + str);
     }
 }
