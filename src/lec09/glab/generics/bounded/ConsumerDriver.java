@@ -1,4 +1,4 @@
-package lec09.glab.generics.pecs;
+package lec09.glab.generics.bounded;
 
 import java.util.ArrayList;
 import java.util.List;

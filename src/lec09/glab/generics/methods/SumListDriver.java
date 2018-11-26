@@ -47,8 +47,11 @@ public class SumListDriver {
     }
 
     //consumer which puts the items into the list - notice the user of super
-    public static  ArrayList<Number> putAll(ArrayList<? super Number> list) {
+    public static  ArrayList<Number> putAll(ArrayList<? super Number> list, Number... nums) {
 
+        for (Object o : list) {
+            list.add(((Number)o));
+        }
 
         list.add(new Double(5.6));
         list.add(new Double(5.7));
@@ -75,8 +78,12 @@ public class SumListDriver {
     }
 
     //normal consumer
-    public static  ArrayList<Number> putAllNormal(ArrayList<Number> list) {
+    public static  ArrayList<Number> putAllNormal(ArrayList<Number> list, Number... nums) {
 
+
+        for (Number number : list) {
+            list.add(number);
+        }
 
         list.add(new Double(5.6));
         list.add(new Double(5.7));
