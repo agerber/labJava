@@ -8,7 +8,7 @@ public class SimpleHashTableDriver {
 	public static void main(String[] args) {
 
 		//try small numbers like 2, or 11, 50 and 51
-		SimpleHashTable<String> strCities = new SimpleHashTable<String>(111);
+		SimpleHashTable<String> strCities = new SimpleHashTable<String>(3);
 		
 		//will allow duplicates -- watch-out
 		strCities.add("Chicago");

@@ -44,7 +44,7 @@ public class ConsumerDriver
         //however as this is a consumer (we are putting objects into it) we must use Apple or one of its subclasses
         basket.add(new Apple());      //Successful
         basket.add(new AsianApple()); //Successful
-       // basket.add(new Fruit());      //Compile time error
+        //basket.add(new Fruit());      //Compile time error
        // Object object =   basket.get(1);
 
         for (Object o : basket) {

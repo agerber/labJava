@@ -1,6 +1,8 @@
 package lec09.glab.simpledatastructs.tree;
 
 
+import java.util.Date;
+
 public class SimpleTreeDriver {
 
 	/**
@@ -8,6 +10,14 @@ public class SimpleTreeDriver {
 	 */
     public static void main(String[] args) {
 		
+
+       int nHash1 =  "Adam".hashCode();
+       int nHash2 =   new Date("1/1/2018").hashCode();
+
+
+
+        System.out.println("has1 is " + nHash1);
+        System.out.println("hash2 is " + nHash2);
 
     	SimpleTree comTeams = new SimpleTree();
         //imbalanced
@@ -30,6 +40,8 @@ public class SimpleTreeDriver {
         comTeams.insert("Vikings");
         comTeams.insert("Devils"); //ok not an NFL team, but makes a balanced tree anyway
         comTeams.insert("Jets");
+
+
 
 
 

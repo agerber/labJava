@@ -9,7 +9,7 @@ public class ProducerDriver
     public static void main(String[] args)
     {
         //List of apples
-        List<Apple> apples = new ArrayList<Apple>();
+        List<Apple> apples = new ArrayList<>();
         apples.add(new Apple());
         apples.add(new AsianApple());
 

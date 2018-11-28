@@ -27,6 +27,7 @@ public class TypeSafetyDriver {
         strNames.add("Adam");
         strNames.add("Bobby");
         strNames.add("Charlie");
+
         // strNames.add(2018);  //compile time type checking - nope!
 
 
