@@ -7,18 +7,18 @@ public class FunctionExample {
         Function<Integer, String> converter = (i) -> Integer.toString(i);
 
 
-        System.out.println(converter.apply(3).length());
-        System.out.println(converter.apply(30).length());
+        System.out.println("The result is " + converter.apply(3));
+        System.out.println("The result is " + converter.apply(30));
 
 
-        String result = calc((a) -> "Result: " + (a * 2), 10);
+       // String result = calc((a) -> "Result: " + (a * 2), 10);
 
-        System.out.println(result);
+      //  System.out.println(result);
     }
 
-    public static String calc(Function<Integer, String> bi, Integer i) {
-        return bi.apply(i);
-    }
+//    public static String calc(Function<Integer, String> bi, Integer i) {
+//        return bi.apply(i);
+//    }
 
 
 }

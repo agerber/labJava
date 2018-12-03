@@ -39,12 +39,12 @@ public class UseInterfacesFromJava7 {
         }
         System.out.println("########################################");
 
-        myList.sort(Comparator.naturalOrder());
-
-        for (String s : myList) {
-            System.out.println(s);
-        }
-        System.out.println("########################################");
+//        myList.sort(Comparator.naturalOrder());
+//
+//        for (String s : myList) {
+//            System.out.println(s);
+//        }
+//        System.out.println("########################################");
 
 
         myList.sort((s1, s2) -> {

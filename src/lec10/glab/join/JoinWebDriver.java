@@ -19,7 +19,7 @@ public class JoinWebDriver {
       public static void main(String[] args) {
 
 
-        WebRunner webRunner = new WebRunner("http://java-class.cs.uchicago.edu/");
+        WebRunner webRunner = new WebRunner("http://gerber.cs.uchicago.edu/java");
         Thread thrWeb = new Thread(webRunner);
 
 
