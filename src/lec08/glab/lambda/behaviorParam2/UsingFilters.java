@@ -31,15 +31,15 @@ public class UsingFilters {
                 .forEach(s -> System.out.println(s));  //terminal
 
         myList.stream()
-                .filter(startsWithC) //intermediate
+                .filter(startsWithC.negate()) //intermediate
                 .forEach(s -> System.out.println(s));  //terminal
 
-//        myList.stream()
-//                .filter(startsWithC.negate()) //intermediate
-//                .map(s -> s.length())
-//                .filter(i -> lessThanFive.test(i))
-//                //.map(capMe) //intermediate
-//                .forEach(i -> consumeMeInt.accept(i)); //terminal
+        myList.stream()
+                .filter(startsWithC.negate()) //intermediate
+                .map(s -> s.length())
+                .forEach(i -> System.out.println(i)); //terminal
+                //.map(capMe) //intermediate
+              //  .forEach(i -> consumeMeInt.accept(i)); //terminal
 
 
 

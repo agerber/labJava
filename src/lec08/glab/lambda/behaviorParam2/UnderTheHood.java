@@ -50,7 +50,8 @@ public class UnderTheHood {
                     System.out.println(++idy[0] + ": map: " + s);
                     return s.toUpperCase();
                 })
-                .forEach(s -> System.out.println(++idy[0] + ": forEach: " + s));  //terminal opeeration
+
+             .forEach(s -> System.out.println(++idy[0] + ": forEach: " + s));  //terminal opeeration
     }
 
 

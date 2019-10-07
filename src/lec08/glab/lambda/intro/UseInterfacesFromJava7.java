@@ -23,12 +23,7 @@ public class UseInterfacesFromJava7 {
 
 
       //this is the functionalInterface. Replace with lamda using IntelliJ
-      Comparator<String> myStringComparatorReverse = new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-               return -1 * o1.compareTo(o2);
-            }
-        };
+      Comparator<String> myStringComparatorReverse = (o1, o2) -> -1 * o1.compareTo(o2);
 
 
         List<String> myList = Arrays.asList("Charlie", "Robby", "Betsie", "Danny", "Becky", "Sammy");

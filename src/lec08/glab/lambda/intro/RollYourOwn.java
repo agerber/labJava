@@ -19,7 +19,7 @@ public class RollYourOwn {
     public static void main(String[] args) {
 
 
-        MyFirstLambda my1 = (int x) -> x + 1;  //takes an int parameter and returns the parameter value incremented by 1.
+        MyFirstLambda my1 = (int u) -> u + 1;  //takes an int parameter and returns the parameter value incremented by 1.
         MyFirstLambda my2 = (x) -> x + 1;  //takes an int and returns an int.
         MyFirstLambda my3 = x -> ++x;  //takes an int and returns an int.
 

@@ -30,7 +30,10 @@ public class StreamForkerExample {
     }
 
     private static void processMenu() {
-        Stream<Dish> menuStream = menu.stream();
+        //Stream<Dish> menuStream = menu.stream();
+        Stream<Dish> menuStream = menu.parallelStream();
+
+
 
         StreamForker.Results results = new StreamForker<Dish>(menuStream)
                 .fork("shortMenu", s -> s.map(Dish::getName).collect(joining(", ")))
