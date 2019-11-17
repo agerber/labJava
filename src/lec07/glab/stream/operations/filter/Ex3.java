@@ -1,7 +1,7 @@
 package lec07.glab.stream.operations.filter;
 
 import java.util.List;
-//from  w  w  w  . j  ava  2 s .co  m
+
 public class Ex3 {
     public static void main(String[] args) {
         List<Employee> persons = Employee.persons();

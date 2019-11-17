@@ -1,7 +1,7 @@
 package lec07.glab.stream.operations.filter;
 
 import java.util.stream.Stream;
-//ww w  . j a v a 2  s  .co  m
+
 public class Ex1 {
     public static void main(String[] args) {
         int sum = Stream.of(1, 2, 3, 4, 5)
