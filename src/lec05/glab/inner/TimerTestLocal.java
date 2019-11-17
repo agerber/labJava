@@ -16,6 +16,9 @@ public class TimerTestLocal {
 		//uncomment and see what happens; you can't instantiate an interface
 		//UNLESS you implement all of its contracted methods inline
 	    // ActionListener lis2 = new ActionListener();
+
+
+
 		
 		ActionListener lis = new ActionListener() {
 				public void actionPerformed(ActionEvent evn){

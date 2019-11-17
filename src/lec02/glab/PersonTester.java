@@ -16,23 +16,23 @@ public class PersonTester {
 		
 		
 		
-		perChilds.add(new Person("Johny", "Ryan", (byte)2));
-		perChilds.add(new Person("Katyln", "Ryan", (byte)5));
-		
-		perVets.add(new Person("Joe", "Ryan", (byte)28, true, "323-89-2871", perChilds));
+//		perChilds.add(new Person("Johny", "Ryan", (byte)2));
+//		perChilds.add(new Person("Katyln", "Ryan", (byte)5));
+//
+		perVets.add(new Person("Joe", "Ryan", (byte)28, true, "323-89-2871", null));
 		
 		//assing perChilds to a new ArrayList altogether
-		perChilds = new ArrayList<Person>();
+//		perChilds = new ArrayList<Person>();
+//
+//		perChilds.add(new Person("Jack", "Schmidt", (byte)1));
+//		perChilds.add(new Person("Cindy", "Schmidt", (byte)4));
+//		perChilds.add(new Person("Nancy", "Schmidt", (byte)8));
+//
+		perVets.add(new Person("Bud", "Schmidt", (byte)31, true, "323-12-1199", null));
 		
-		perChilds.add(new Person("Jack", "Schmidt", (byte)1));
-		perChilds.add(new Person("Cindy", "Schmidt", (byte)4));
-		perChilds.add(new Person("Nancy", "Schmidt", (byte)8));
+	//	perChilds = new ArrayList<Person>();
 		
-		perVets.add(new Person("Bud", "Schmidt", (byte)31, true, "323-12-1199", perChilds));
-		
-		perChilds = new ArrayList<Person>(); 
-		
-		perVets.add(new Person("Gregg", "Cadet", (byte)18, true, "898-17-1590", perChilds));
+		perVets.add(new Person("Gregg", "Cadet", (byte)18, true, "898-17-1590", null));
 		
 		
 		

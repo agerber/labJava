@@ -8,7 +8,7 @@ public abstract class Dog {
 
     public Dog(String name) {
         this.name = name;
-        this.health = 10_000;
+        this.health = 10000;
     }
 
 

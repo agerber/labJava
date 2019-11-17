@@ -7,6 +7,7 @@ import java.util.Scanner;
 /**
 Given two circles in the 1st quad of a cartesian 2D plane, determine if they are colliding or not.
 This belongs in lec02
+ Inner classes and such.
  */
 public class CollisionDetect {
 
@@ -56,38 +57,40 @@ public class CollisionDetect {
         } else {
             System.out.println("Collision");
         }
+
+
     }
 
 
-    private static class Circle {
-        private Point mCenter;
-        private double mRad;
+}
 
-        private Circle(Point center, double rad) {
-            mCenter = center;
-            mRad = rad;
-        }
+  class Circle {
+    private Point mCenter;
+    private double mRad;
 
-        private Circle(int nX, int nY, double rad) {
-            mCenter = new Point(nX, nY);
-            mRad = rad;
-        }
-
-        private Point getCenter() {
-            return mCenter;
-        }
-
-        private void setCenter(Point center) {
-            mCenter = center;
-        }
-
-        private double getRad() {
-            return mRad;
-        }
-
-        private void setRad(double rad) {
-            mRad = rad;
-        }
+     Circle(Point center, double rad) {
+        mCenter = center;
+        mRad = rad;
     }
 
+     Circle(int nX, int nY, double rad) {
+        mCenter = new Point(nX, nY);
+        mRad = rad;
+    }
+
+     Point getCenter() {
+        return mCenter;
+    }
+
+     void setCenter(Point center) {
+        mCenter = center;
+    }
+
+     double getRad() {
+        return mRad;
+    }
+
+     void setRad(double rad) {
+        mRad = rad;
+    }
 }

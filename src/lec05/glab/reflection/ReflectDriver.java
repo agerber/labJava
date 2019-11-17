@@ -11,6 +11,10 @@ public class ReflectDriver {
 
     public static void main(String[] args) {
 
+        Double dub = 56.7;
+        Reflector.printClass(dub.getClass());
+
+
     }
 
 }

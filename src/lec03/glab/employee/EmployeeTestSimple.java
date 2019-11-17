@@ -39,7 +39,7 @@ public class EmployeeTestSimple {
 		
 		
 		for (Employee emp : empChicagos) {
-			System.out.println(emp);
+			System.out.println(emp.toString());
 		}
 		
 		

@@ -14,7 +14,7 @@ public interface Boxable {
 
 
 	
-	public static final String[] SOUNDS = {
+	 String[] SOUNDS = {
 			
 		"BaAAm!",
 		"bIfff!@#",
@@ -24,17 +24,17 @@ public interface Boxable {
 			
 	};
 	
-	public static final Random RAN = new Random(); //a random to use
+   Random RAN = new Random(); //a random to use
 	
 	// #################################################
 	// ##### CONTRACTED METHODS OF INTERFACE
 	// #################################################
 	
-	public boolean punch(Boxable boxOpponent);
-	public void ouch(int nPoints);
-	public int healthStatus();
-	public String display();
-	public String vocalize();
+	 boolean punch(Boxable boxOpponent);
+	 void ouch(int nPoints);
+	 int healthStatus();
+	 String display();
+	 String vocalize();
 	
 	
 	

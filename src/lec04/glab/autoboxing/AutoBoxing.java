@@ -15,6 +15,10 @@ public class AutoBoxing {
 
 
 
+        Double dub = 3.4;
+        Integer intme = 4;
+        
+        double dub2 = new Integer(6);
 
 		Integer intNum1 = new Integer(5);
 		Integer intNum2 = 5;  // autoboxing; released in Java5

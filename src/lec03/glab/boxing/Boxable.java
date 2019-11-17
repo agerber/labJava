@@ -28,7 +28,7 @@ public interface Boxable {
 			
 	};
 	
-	public static final Random RAN = new Random(); //a random to use
+	 Random RAN = new Random(); //a random to use
 	
 	// #################################################
 	// ##### CONTRACTED METHODS OF INTERFACE

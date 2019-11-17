@@ -13,14 +13,21 @@ public class StringManipulation {
 		//this is a String literal  "Hello World";
 		//a String literal has no object reference, so unless it's assined to
 		   //a reference or a passed into a method, and then assined, it's unfindable
-		
+
+		//1. Strings are immutable objects, which means that once initialized, their values can NOT be changed - ever.
+		//2. The + operator is overloaded to concatenate strings.
+		//3. Strings may be pooled.
+		//4. Use the .equals or .compareTo methods to check for lexicographical equality.
+
+
+
+
 		//strResult refers to "Hello World." now. 
 		String strResult1 = "Hello " + "World.";
 		System.out.println(strResult1);
 		
 		String strOne = "CSPP";
-		String strTwo = strOne; //sometimes this will copy references, and sometimes values
-		                        //so you must assume values
+		String strTwo = strOne;
 
 		
 		String strState = "Mississippi";

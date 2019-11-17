@@ -5,7 +5,7 @@ package lec04.glab.override;
  */
 
 //an abstract class has zero or more abstract methods which MUST be overriden in subclasses
-public abstract  class Vehicle implements Drawable{
+public abstract  class Vehicle {
 
     protected Vehicle(String model) {
         mModel = model;
@@ -22,10 +22,10 @@ public abstract  class Vehicle implements Drawable{
     }
 
 
-    @Override
-    public void draw() {
-        System.out.println("adfasdfasdf");
-    }
+//    @Override
+//    public void draw() {
+//        System.out.println("adfasdfasdf");
+//    }
 
     //an abstract method
     public abstract String reportNumWheels();

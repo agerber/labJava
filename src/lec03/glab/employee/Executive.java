@@ -1,6 +1,8 @@
 package lec03.glab.employee;
 
-public final class Executive extends Manager {
+import java.util.Date;
+
+public final class Executive extends Manager{
 
 
 
@@ -15,9 +17,15 @@ public final class Executive extends Manager {
 	public double getStockValue() {
 		return mStockValue;
 	}
+ // Date
 
-	public void setStockValue(double stockValue) {
-		mStockValue = stockValue;
+//	public void setStockValue(double mStockValue) {
+//
+//		this.mStockValue = mStockValue;
+//	}
+
+	public void setmStockValue(double m) {
+		mStockValue = m;
 	}
 
 	@Override
@@ -32,5 +40,8 @@ public final class Executive extends Manager {
 	public static String getAlphaOrder(Executive executive){
 		return  "MMMMMMMMMMMM".compareTo(executive.getName()) < 1 ? executive.getName() + ": exec's name greater than M" : executive.getName() +  ": exec's name less than M";
 	}
+
+
+
 
 }

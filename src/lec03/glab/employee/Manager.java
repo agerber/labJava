@@ -10,6 +10,8 @@ public class Manager extends Employee {
 		mBonus = bonus;
 	}
 
+
+
 	public double getBonus() {
 		return mBonus;
 	}
@@ -23,7 +25,7 @@ public class Manager extends Employee {
 		// TODO Auto-generated method stub
 		return String.format("a Manager with a salary of " +  getSalary()+ " and a bonus of " + getBonus() );
 	}
-	
+
 	
 	
 

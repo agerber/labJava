@@ -17,9 +17,9 @@ public class ErrorDriver {
 	
 	
 		
-		findPrinterBurryError();
-		findPrinterHandleError();
-		doSomeMemoryIntensiveOperations3();
+		//findPrinterBurryError();
+		//findPrinterHandleError();
+		doSomeMemoryIntensiveOperations1();
 		
 	}
 	

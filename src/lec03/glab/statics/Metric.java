@@ -6,8 +6,7 @@ package lec03.glab.statics;
 	// ===============================================
 	// ==EVERYTHING IN THIS CLASS IS STATIC: FIELDS AND METHODS
 	// ===============================================
-	
-	
+
 	private Metric(){};
 	
 	// ===============================================

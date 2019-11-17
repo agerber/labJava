@@ -22,25 +22,41 @@ public class Brady {
         return junior;
     }
 
-    public void setJunior(Brady junior) {
-        this.junior = junior;
-    }
+    public Brady setJunior(Brady junior) {
 
-    public void setJuniors(Brady... juniors){
 
-        Brady youngest = this;
-        //while juniuo is not null
-        while (null != youngest.getJunior()){
-            youngest = youngest.getJunior();
-        }
-        for (Brady brady : juniors) {
-            youngest.setJunior(brady);
-            youngest = youngest.getJunior();
+        if (this.junior == null){
+            setJunior(junior);
+        } else {
 
+            Brady juniorCounter = getJunior();
+            while (juniorCounter != null ){
+                juniorCounter = juniorCounter.getJunior();
+            }
+            juniorCounter.setJunior(junior);
         }
 
+        return this;
 
+
+       // juniorCounter.setJunior(junior);
     }
+
+//    public void setJuniors(Brady... juniors){
+//
+//        Brady youngest = this;
+//        //while juniuo is not null
+//        while (null != youngest.getJunior()){
+//            youngest = youngest.getJunior();
+//        }
+//        for (Brady brady : juniors) {
+//            youngest.setJunior(brady);
+//            youngest = youngest.getJunior();
+//
+//        }
+//
+//
+//    }
 
     @Override
     public String toString() {

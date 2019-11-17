@@ -15,7 +15,7 @@ public class InterfaceDriver {
         draVehicles.add(new Corsair("Corsair 89000 Luxury"));
         draVehicles.add(new Bike("Swhinn magna"));
         draVehicles.add(new Ambulance("GM 1200"));
-        draVehicles.add(new MyClass());
+
 
       //  Drawable drawable = new Corsair("Corsair 87000 Luxur");
 
@@ -26,6 +26,8 @@ public class InterfaceDriver {
 
             System.out.println(draVehicle.getClass() );
             draVehicle.draw();
+
+
 
         }
 

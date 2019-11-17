@@ -10,7 +10,7 @@ public class PostFix {
         //postfix and prefix these
         int nC = 0;
         while (nC < 10){
-            System.out.println(nC++);
+            System.out.println(++nC);
         }
 
     }

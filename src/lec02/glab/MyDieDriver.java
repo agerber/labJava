@@ -1,5 +1,7 @@
 package lec02.glab;
 
+import lec03.glab.boxing.Boxable;
+
 public class MyDieDriver {
 
 	/**
@@ -16,7 +18,7 @@ public class MyDieDriver {
 		
 		//what is happening here? 
 		die1 = die2;
-		
+
 		
 		System.out.println(die1);
 		

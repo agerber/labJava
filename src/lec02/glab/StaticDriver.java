@@ -33,6 +33,10 @@ public class StaticDriver {
 
         System.out.println(Math.pow(2,3));
 
+        Math.round(8.909999);
+
+        new Student("ADam", 2020).getGraduate();
+
 
         ArrayList<Student> stuStudents = new ArrayList<>();
         Student stu;

@@ -14,6 +14,7 @@ public class PitFight {
             //bite
             attacker.bite(attackee);
 
+            //swap
             Dog dogTemp;
             dogTemp = attackee;
 
@@ -21,14 +22,14 @@ public class PitFight {
             attacker = dogTemp;
 
 
-            //swap dogs
-            System.out.println(attacker.getName() + "bites" );
+
+            System.out.println(attacker.getName() + ", the " +  attacker.getClass().getSimpleName() +  " attacks " + attackee.getName() + " with health " + attackee.getHealth());
 
 
         }
 
         System.out.println(attacker.getName() +
-                " wins" + attackee.getName() +" is dead.");
+                " wins, " + attackee.getName() +" is dead.");
 
 
 

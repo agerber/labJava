@@ -12,4 +12,6 @@ public class BadUserDataException extends  Exception {
     public BadUserDataException(Throwable cause) {
         super(cause);
     }
+
+
 }

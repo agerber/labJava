@@ -59,6 +59,20 @@ public class PolySimple {
 		numTemps.add(new Integer(-60));
 		numTemps.add(new Double(-1.8));
 		numTemps.add(new Double(3.1));
+		numTemps.add(5);
+
+		Double myDub = (double) new Integer(54);
+		//int nMe2 = new Integer(54);
+		System.out.println("myDub " + myDub.doubleValue());
+
+		//byte yMe = new Integer(45);
+
+		//System.out.println(nMe1 == nMe2);
+
+
+
+
+
 
        for (Number num : numTemps) {
 		

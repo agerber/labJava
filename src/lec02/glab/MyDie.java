@@ -6,10 +6,9 @@ public class MyDie {
 	private double width;
 	private double height;
 	private String[] facets;
-	
-	
-	
-	
+
+
+
 	public MyDie(double length, double width, double height, String[] facets) {
 		super();
 		this.length = length;
@@ -45,9 +44,9 @@ public class MyDie {
 	public void setFacets(String[] facets) {
 		this.facets = facets;
 	}
-	
-	
-	
+
+
+
 	@Override
 	public String toString(){
 		

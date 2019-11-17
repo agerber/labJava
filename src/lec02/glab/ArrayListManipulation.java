@@ -4,15 +4,13 @@ import java.util.ArrayList;
 
 public class ArrayListManipulation {
 
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 
 		//delcare a new arrayList and import from java.util
 		//here we're using the generic form so we're tellign the compiler that
 		//this data structure can ONLY hold strings
-		ArrayList<String> strNames = new ArrayList<String>();
+		ArrayList<String> strNames = new ArrayList<>();
 		
 		
 		//the nice thing about arrayLists is that their length is indeterminate
@@ -21,6 +19,7 @@ public class ArrayListManipulation {
 		strNames.add("Marcia");
 		strNames.add("Jan");
 		strNames.add("Cindy");
+
 
 
 		
@@ -52,7 +51,7 @@ public class ArrayListManipulation {
 		strNames.add("Alice");
 		strNames.add("Tiger");
 		
-		//wait...get ride of Tiger, Jan is allergic. 
+		//wait...get rid of Tiger, Jan is allergic.
 		strNames.remove(strNames.size()-1);
 
 		//let's iterate over this ArrayList

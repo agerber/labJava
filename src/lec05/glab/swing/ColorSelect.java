@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ColorSelect {
+public class ColorSelect implements ChangeListener {
 
 	private JFrame frm;
 	private JPanel panColor;
@@ -21,6 +21,8 @@ public class ColorSelect {
 	private JMenuBar menuBar;
 	private JMenu menu;
 	private JMenuItem menuItem;
+
+	//private ChangeListener changeListener;
 
 	/**
 	 * Launch the application.
@@ -62,13 +64,16 @@ public class ColorSelect {
 		
 		lblRed = new JLabel("Red");
 		panControl.add(lblRed);
+
+//		changeListener = new ChangeListener() {
+//			@Override
+//			public void stateChanged(ChangeEvent e) {
+//				setPanelColor();
+//			}
+//		};
 		
 		sldRed = new JSlider(0,255,1);
-		sldRed.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
-				setPanelColor();
-			}
-		});
+		sldRed.addChangeListener(this);
 
 		panControl.add(sldRed);
 		
@@ -76,24 +81,17 @@ public class ColorSelect {
 		panControl.add(lblGreen);
 		
 		sldGreen = new JSlider(0,255,57);
-		sldGreen.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
-				setPanelColor();
-			}
-		});
+
+		sldGreen.addChangeListener(this);
 
 		panControl.add(sldGreen);
 		
 		lblBlue = new JLabel("Blue");
-		lblBlue.setForeground(new Color(0, 0, 255));
+		//lblBlue.setForeground(new Color(0, 0, 255));
 		panControl.add(lblBlue);
 		
 		sldBlue = new JSlider(0,255,168);
-		sldBlue.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
-				setPanelColor();
-			}
-		});
+		sldBlue.addChangeListener(this);
 
 		panControl.add(sldBlue);
 		
@@ -123,7 +121,15 @@ public class ColorSelect {
 		panColor.setBackground(new Color(sldRed.getValue(), sldGreen.getValue(), sldBlue.getValue()));
 		
 	}
-	
-	
 
+
+	/**
+	 * Invoked when the target of the listener has changed its state.
+	 *
+	 * @param e a ChangeEvent object
+	 */
+	@Override
+	public void stateChanged(ChangeEvent e) {
+		setPanelColor();
+	}
 }

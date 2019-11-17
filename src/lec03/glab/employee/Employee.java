@@ -76,12 +76,17 @@ public class Employee extends Person {
 		mSalary += dRaise;
 	}
 
-
-
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return String.format("an Employee with a salary of $%.2f", mSalary);
+		return null;
 	}
+
+//
+//
+//	@Override
+//	public String getDescription() {
+//		// TODO Auto-generated method stub
+//		return String.format("an Employee with a salary of $%.2f", mSalary);
+//	}
 
 }

@@ -30,7 +30,7 @@ public class Painter {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Painter");
 
-        frame.setContentPane(new Painter().getPanel());
+        frame.setContentPane(new Painter().mPanel);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -38,13 +38,13 @@ public class Painter {
         frame.setVisible(true);
     }
 
-    public JPanel getPanel() {
-        return mPanel;
-    }
-
-    public void setPanel(JPanel mPanel) {
-        this.mPanel = mPanel;
-    }
+//    public JPanel getPanel() {
+//        return mPanel;
+//    }
+//
+//    public void setPanel(JPanel mPanel) {
+//        this.mPanel = mPanel;
+//    }
 
     public Painter() {
         mButtonGroup = new ButtonGroup();

@@ -11,7 +11,7 @@ public class Person {
 	private byte yAge; //-128 to 127
 	private boolean bVeteran;
 	private String strSocialSecurityNum;
-	private ArrayList<Person> perDependents;
+	//private ArrayList<Person> perDependents;
 	
 	
 	public Person(String firstName, String lastName, byte age, boolean veteran,
@@ -22,7 +22,7 @@ public class Person {
 		this.yAge = age;
 		this.bVeteran = veteran;
 		this.strSocialSecurityNum = socialSecurityNum;
-		this.perDependents = arlDependents;
+		//this.perDependents = arlDependents;
 	}
 	
 
@@ -86,17 +86,17 @@ public class Person {
 		this.strSocialSecurityNum = socialSecurityNum;
 	}
 
-
-	public ArrayList<Person> getArlDependents() {
-		return this.perDependents;
-	}
-
-
-	public void setArlDependents(ArrayList<Person> arlDependents) {
-		this.perDependents = arlDependents;
-	}
-	
-	
+//
+//	public ArrayList<Person> getArlDependents() {
+//		return this.perDependents;
+//	}
+//
+//
+//	public void setArlDependents(ArrayList<Person> arlDependents) {
+//		this.perDependents = arlDependents;
+//	}
+//
+//
 	@Override
 	public String toString(){
 		
@@ -105,14 +105,14 @@ public class Person {
 				+ "Age: " + getAge() + " Veteran status: " + isVeteran() +
 				" SSN: " + getSocialSecurityNum());
 		
-		if(perDependents != null && perDependents.size() != 0){
-			
-			stb.append("\n\tDependents: \n");
-			for (Person p: perDependents) {
-				stb.append("\t\t\t" + p.getFirstName() + " " + p.getLastName() + " Age: " + p.getAge());
-				stb.append('\n');
-			}
-		}
+//		if(perDependents != null && perDependents.size() != 0){
+//
+//			stb.append("\n\tDependents: \n");
+//			for (Person p: perDependents) {
+//				stb.append("\t\t\t" + p.getFirstName() + " " + p.getLastName() + " Age: " + p.getAge());
+//				stb.append('\n');
+//			}
+//		}
 		
 
 		return stb.toString();	

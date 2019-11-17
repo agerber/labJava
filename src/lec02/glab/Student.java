@@ -29,11 +29,11 @@ class Student{
         mGraduate = graduate;
     }
 
-    private String getName() {
+    public String getName() {
         return mName;
     }
 
-    private void setName(String name) {
+     void setName(String name) {
         mName = name;
     }
 
