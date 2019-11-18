@@ -1,6 +1,8 @@
 package lec10.glab.serialize;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +14,10 @@ import java.io.Serializable;
 
 //needs to implement the serializeale interface
 public class Student implements Serializable {
+
+
+    //https://stackoverflow.com/questions/285793/what-is-a-serialversionuid-and-why-should-i-use-it
+    private static final long serialVersionUID = 456780L;
 
     private String mName;
     private int mYear;

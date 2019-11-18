@@ -4,6 +4,7 @@ package lec07.glab.stream.intro;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class Finding{
 
@@ -44,5 +45,6 @@ public class Finding{
     private static Optional<Dish> findVegetarianDish(){
         return menu.stream().filter(Dish::isVegetarian).findAny();
     }
-    
+
+
 }

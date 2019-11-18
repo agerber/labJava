@@ -38,7 +38,7 @@ public class SumAllEmployees {
                 .sum();
 
 
-        //What is Google's MapReduce - google it.
+
 
     }
 }

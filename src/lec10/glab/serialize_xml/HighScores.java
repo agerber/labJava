@@ -1,6 +1,5 @@
 package lec10.glab.serialize_xml;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
