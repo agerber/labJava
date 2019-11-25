@@ -30,7 +30,7 @@ public class MyParellelSearch {
 
         long start = System.currentTimeMillis();
         stringList.stream()
-                //.parallel()
+                .parallel()
                 .filter(s -> contains.test(s, "aaa"))
                 .forEach(s -> System.out.println(s));
 

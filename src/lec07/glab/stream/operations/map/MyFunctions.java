@@ -10,7 +10,16 @@ public class MyFunctions {
     public static void main(String[] args) {
 
 
-        final Function<String, Student> studentFunction = (String name) ->
+//        final Function<String, Student> studentFunction = name ->
+//        {
+//            if (name.contains("e"))
+//                return new Student(name, "Electrical Engineering");
+//            else
+//                return new Student(name, "Computer Science");
+//        };
+
+
+        final Function<String, Student> stringStudentFunction = name ->
         {
             if (name.contains("e"))
                 return new Student(name, "Electrical Engineering");
@@ -18,9 +27,8 @@ public class MyFunctions {
                 return new Student(name, "Computer Science");
         };
 
-
-        Stream.of("Adam", "Bobby", "Carla", "Danny", "Ellie", "Frank", "Gregg")
-                .map(studentFunction) //this returns Stream<Student>
+        Stream.of("Adam", "Bobby", "Carla", "Danny", "Ellie", "Frank", "Gregg")  //Stream<String>
+                .map(stringStudentFunction) //this returns Stream<Student>
                 .filter(student -> student.getMajor().contains("Computer")) // returns Stream<Student>
                 .forEach(student -> System.out.println(student.toString()));
 

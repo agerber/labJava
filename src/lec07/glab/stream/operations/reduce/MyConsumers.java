@@ -1,4 +1,5 @@
 package lec07.glab.stream.operations.reduce;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -8,17 +9,8 @@ public class MyConsumers {
     public static void main(String[] args) {
 
 
-        final Consumer<Student> studentConsumer = student -> System.out.println(student.toString());
-        Stream.of("Adam", "Bobby", "Carla", "Danny", "Ellie", "Frank", "Gregg")
-                .map((String name) ->
-                {
-                    if (name.contains("e"))
-                        return new Student(name, "Electrical Engineering");
-                    else
-                        return new Student(name, "Computer Science");
-                }) //this returns Stream<Student>
-                .filter(student -> student.getMajor().contains("Computer")) // returns Stream<Student>
-                .forEach(studentConsumer);
+
+
 
 
     }

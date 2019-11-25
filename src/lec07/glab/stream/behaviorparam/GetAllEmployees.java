@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class GetAllEmployees {
 
@@ -28,6 +29,12 @@ public class GetAllEmployees {
 
         };
 
+
+
+       Stream<Employee> employeeStream = Arrays.stream(employees);
+
+
+
         List<Employee> accumulator = new ArrayList<>();
         for (Employee employee : employees) {
             if (employee.getSalary() < 30000){
@@ -41,8 +48,10 @@ public class GetAllEmployees {
 
 
         List<Employee> poorEmployees = Arrays.stream(employees)
-                .filter(employee -> employee.getSalary() < 30_000)
+                .filter(e -> e.getSalary() < 30_000)  //Stream<Employee>
                 .collect(Collectors.toList());
+
+
 
 
 

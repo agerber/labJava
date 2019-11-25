@@ -28,7 +28,7 @@ public class SimpleStack<T> {
 
 	}
 
-	
+	//First-in, last-out, FILO. Imagine a stack of weights at the gym.
 	
 	// ===============================================
 	// ==ADD-FIRST O(1)
@@ -92,7 +92,10 @@ public class SimpleStack<T> {
 	}
 
 	public T peek() {
+		if (nodTop == null) {
+			throw new NullPointerException("doesn't exist");
 
+		}
 		return nodTop.getValue();
 	}
 

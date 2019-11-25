@@ -1,14 +1,18 @@
 package lec07.glab.circle_click;
 
+import javafx.event.ActionEvent;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class CircleClicker {
     private JPanel mPanel;
-
+    private JButton btnGo;
+    private JButton button1;
 
 
     //my vars
@@ -25,6 +29,11 @@ public class CircleClicker {
 
     public CircleClicker() {
 
+
+        final ActionListener actionListener = e -> System.out.println(e.getWhen());
+        btnGo.addActionListener(actionListener);
+
+       // mPanel.addMouseListener;
 
 
         mPanel.addMouseListener(new MouseAdapter() {

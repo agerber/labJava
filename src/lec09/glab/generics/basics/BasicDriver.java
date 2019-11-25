@@ -1,5 +1,6 @@
 package lec09.glab.generics.basics;
 
+import java.awt.*;
 import java.util.Date;
 
 class GenericClass<T> {
@@ -11,7 +12,7 @@ class GenericClass<T> {
 
 
 
-     T getOb() {
+      T getOb() {
        // T t = new T();  //can not instantiate directly.
          //T.getClass() doesn't work either
 
@@ -27,11 +28,29 @@ class GenericClass<T> {
     }
 }
 
+class GenClass<U> {
+    private U obj;
+
+    public GenClass(U obj) {
+        this.obj = obj;
+    }
+
+    public U getObj() {
+        return obj;
+    }
+
+    public void setObj(U obj) {
+        this.obj = obj;
+    }
+}
+
 public class BasicDriver {
     public static void main(String args[]) {
         // Create a Gen reference for Integers.
         GenericClass<Integer> iOb = new GenericClass<>(88);
         iOb.showType();
+
+
 
         // no cast is needed.
         int v = iOb.getOb();

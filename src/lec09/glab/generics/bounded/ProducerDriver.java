@@ -19,6 +19,7 @@ public class ProducerDriver
         //this says that this list will hold one particiular subtype that extends Fruit.
         List<? extends Fruit> basket = apples;
 
+
         for (Fruit fruit : basket) {
             System.out.println(fruit);
         }
@@ -30,15 +31,15 @@ public class ProducerDriver
 
 
         //Here we know that in basket there is nothing but fruit only
-//        for (Fruit fruit : basket)
-//        {
-//            System.out.println(fruit);
-//        }
+        for (Fruit fruit : basket)
+        {
+            System.out.println(fruit);
+        }
 
         //(You actually cannot add anything to a Collection<? extends Thing>, because you cannot know at runtime
         // which specific subtype of Thing the collection holds.)
 
-        //basket.add(new Apple()); //Compile time error
-        //basket.add(new Fruit()); //Compile time error
+      //  basket.add(new Apple()); //Compile time error
+      //  basket.add(new Fruit()); //Compile time error
     }
 }

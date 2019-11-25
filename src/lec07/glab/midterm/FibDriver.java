@@ -7,7 +7,7 @@ package lec07.glab.midterm;
  * Time: 11:45 AM
  * To change this template use File | Settings | File Templates.
  */
-public class FibDriver {
+public class    FibDriver {
 
     public static void main(String[] args) {
         System.out.println(fib(4));

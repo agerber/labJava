@@ -30,6 +30,7 @@ class GenericStats<T extends Number> {
         return sum / nums.length;
     }
 
+    //we can use Number or ?
     boolean sameAvg(GenericStats<?> ob) {
         if(average() == ob.average())
             return true;

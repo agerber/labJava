@@ -150,6 +150,7 @@ public class SimpleLinkedList<T>  {
 				nodCurrent = nodCurrent.getNext();
 			}
 
+			//this is a temporary reference without which, we would orphan this node
 			Node<T> nodReturn = nodLast;
 			nodLast = nodCurrent;
 			nodLast.setNext(null);
@@ -394,7 +395,8 @@ public class SimpleLinkedList<T>  {
 		}
 
 	}
-	
+
+
 	
 	//inner class
 	class LinkedListIterator implements Iterator<T> {

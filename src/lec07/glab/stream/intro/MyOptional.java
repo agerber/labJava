@@ -3,6 +3,7 @@ package lec07.glab.stream.intro;
 
 
 import java.awt.Rectangle;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -27,9 +28,10 @@ public class MyOptional {
        rectangleOptionals.add( Optional.ofNullable(getRandomRectangle()) );
 
         for (Optional<Rectangle> rectangleOptional : rectangleOptionals) {
-            if (rectangleOptional.isPresent()){
-                System.out.println(rectangleOptional.get().toString());
-            }
+
+
+                System.out.println(rectangleOptional.toString());
+
         }
 
 
