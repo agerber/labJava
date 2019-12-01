@@ -40,6 +40,7 @@ public class YetMorePredicates {
             }
         }
 
+
         list.forEach(p -> System.out.println(p.getValue().toString() + p.getKey().toString()));
 
 

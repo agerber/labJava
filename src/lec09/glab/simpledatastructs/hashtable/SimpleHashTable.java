@@ -16,6 +16,8 @@ public class SimpleHashTable<T> {
 		nodHashes = new Node[1999];
 		nSize = 0;
 
+
+
 	}
 
 	//overlaoded

@@ -1,9 +1,35 @@
 package lec09.glab.recurse;
 
+import java.util.Arrays;
+
 public class Coins {
 
     public static void main(String[] args) {
-        pay(100, new StringBuilder());
+        printAllCents(20, new int[] {100, 20, 5}, 500, new int[] {100} );
+    }
+
+
+
+
+    public static void printAllCents(int ind, int[] denom,int N,int[] vals){
+        if(N==0){
+            if(ind < denom.length) {
+                for(int i=ind;i<denom.length;i++)
+                    vals[i] = 0;
+            }
+            System.out.println(Arrays.toString(vals));
+            return;
+        }
+        if(ind == (denom.length)) {
+            vals[ind-1] = 0;
+            return;
+        }
+
+        int currdenom = denom[ind];
+        for(int i=0;i<=(N/currdenom);i++){
+            vals[ind] = i;
+            printAllCents(ind+1,denom,N-i*currdenom,vals);
+        }
     }
 
 

@@ -13,7 +13,8 @@ public class MoreMethodRefs {
     public static void main(String[] args) {
 
         //very clear about what is going on
-        Function<Double, String> stringFunction1 = dub -> String.valueOf(dub);
+        Function<Double, String> stringFunction1 = (d) -> String.valueOf(d);
+
 
         //this is rather confusing, as we don't see any parameters!
         Function<Double, String> stringFunction2 = String::valueOf;

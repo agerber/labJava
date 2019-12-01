@@ -17,7 +17,7 @@ public class Student implements Serializable {
 
 
     //https://stackoverflow.com/questions/285793/what-is-a-serialversionuid-and-why-should-i-use-it
-    private static final long serialVersionUID = 456780L;
+    private static final long serialVersionUID = 456781L;
 
     private String mName;
     private int mYear;
