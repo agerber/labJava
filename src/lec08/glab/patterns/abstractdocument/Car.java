@@ -26,7 +26,7 @@ import java.util.Map;
 
 
 /**
- * Car entity
+ * Drivable entity
  */
 public class Car extends AbstractDocument implements HasModel, HasPrice, HasParts {
 

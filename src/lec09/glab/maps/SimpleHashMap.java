@@ -1,29 +1,17 @@
 package lec09.glab.maps;
 
 // this class is generic
-public class SimpleHashMap<K extends Comparable,V> implements SimpleMap<K,V>{
+public class SimpleHashMap<K extends Comparable, V> implements SimpleMap<K ,V>{
 
     private HashMapNode<K,V>[] nodHashes;
-
-    private int nSize;
 
     // ===============================================
     // ==CONSTRUCTOR
     // ===============================================
     public SimpleHashMap() {
-        nodHashes = new HashMapNode[1999];
-        nSize = 0;
+        nodHashes = new HashMapNode[31];
 
     }
-
-    //overlaoded
-    public SimpleHashMap(int nHashTableSize) {
-        nodHashes = new HashMapNode[nHashTableSize];
-        nSize = 0;
-
-    }
-
-
 
     // ===============================================
     // ==ADD
@@ -39,7 +27,7 @@ public class SimpleHashMap<K extends Comparable,V> implements SimpleMap<K,V>{
 
         if (nodCurrent == null) {
             nodHashes[nHash] = new HashMapNode<K,V>(typKey,typValue, null);
-            nSize++;
+
         } else {
 
             boolean bFound = false;
@@ -54,7 +42,7 @@ public class SimpleHashMap<K extends Comparable,V> implements SimpleMap<K,V>{
             }
             if (!bFound){
                 nodHashes[nHash] = new HashMapNode<K,V>(typKey,typValue, nodHashes[nHash]);
-                nSize++;
+
             }
 
 

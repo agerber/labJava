@@ -24,8 +24,8 @@ public class FutureDriver {
     public static void main(String[] args) {
         ExecutorService pool = Executors.newFixedThreadPool(3);
 
-        Callable<String> callableJavaClass = new WebsiteCallable("http://java-class.cs.uchicago.edu/");
-        Callable<String> callableAndroidClass = new WebsiteCallable("http://android.cs.uchicago.edu/");
+        Callable<String> callableJavaClass = new WebsiteCallable("http://gerber.cs.uchicago.edu/java/");
+        Callable<String> callableAndroidClass = new WebsiteCallable("http://gerber.cs.uchicago.edu/android/");
         //notice that the future object's generic maps directly to the Callable's generic.
         Future<String> futureJava = pool.submit(callableJavaClass);
         Future<String> futureAndroid = pool.submit(callableAndroidClass);

@@ -2,14 +2,14 @@ package lec09.glab.maps;
 
 public class MapDriver {
     public static void main(String[] args) {
-        SimpleMap<Integer, String> map = new SimpleTreeMap<>();
-        map.insert(60001,"Chicago");
+        SimpleMap<String, String> map = new SimpleHashMap<>();
+        map.insert("Chicago", "City of broad shoulders; meatmarket to the world.");
        // map.insert(60001,"Evanston");
-        map.insert(20001,"New York");
-        map.insert(90001,"Los Angeles");
-        map.insert(99998,"Shanghai");
-        map.insert(99999,"Moscow");
-        map.insert(99997,"Hong Kong");
+        map.insert("New York", "The big apple, if I can make it here.");
+        map.insert("Los Angeles", "Tinsle town. Lala land");
+        map.insert("Shanghai", "Cosmopolitan China");
+        map.insert("Moscow", "Capital of Russia");
+        map.insert("Singapore", "China....town");
 
         System.out.println("ORIGINAL MAP");
         map.print();
@@ -20,6 +20,8 @@ public class MapDriver {
     }
 
 
+    //for TreeMap O(n)
+    //for HashMap O(n * log n) * O(n)
     private static void printSorted(SimpleMap map){
         if (map instanceof SimpleHashMap){
             map = ((SimpleHashMap)map).convertToTreeMap();
