@@ -8,7 +8,7 @@ public class PoolDriver {
 
 	public static void main(String[] args) {
 	
-		ExecutorService excPool = Executors.newFixedThreadPool(2);
+		ExecutorService excPool = Executors.newFixedThreadPool(3);
 		
 		
 		//creates a queue if excess threads

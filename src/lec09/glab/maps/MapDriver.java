@@ -2,7 +2,7 @@ package lec09.glab.maps;
 
 public class MapDriver {
     public static void main(String[] args) {
-        SimpleMap<String, String> map = new SimpleHashMap<>();
+        SimpleMap<String, String> map = new SimpleTreeMap<>();
         map.insert("Chicago", "City of broad shoulders; meatmarket to the world.");
        // map.insert(60001,"Evanston");
         map.insert("New York", "The big apple, if I can make it here.");

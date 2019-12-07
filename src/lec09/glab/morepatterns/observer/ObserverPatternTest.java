@@ -22,7 +22,7 @@ public class ObserverPatternTest {
         obj3.setSubject(topic);
 
         //check if any update is available
-        obj1.update();
+        //obj1.update();
 
         //now send message to subject
         topic.postMessage("New Message");

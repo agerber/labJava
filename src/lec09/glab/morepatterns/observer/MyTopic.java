@@ -3,6 +3,7 @@ package lec09.glab.morepatterns.observer;
 import java.util.ArrayList;
 import java.util.List;
 
+//jave event nodel works like this
 public class MyTopic implements Subject {
 
     private List<Observer> observers;
