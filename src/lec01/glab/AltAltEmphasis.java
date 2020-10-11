@@ -11,7 +11,7 @@ public class AltAltEmphasis {
 
     /*
 
-    //next
+//get input from user
 //replace any two spaces with one space
 //trim any spaces on ends of String
 //define a boolean flag

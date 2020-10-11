@@ -9,7 +9,7 @@ public class Mastiff extends Dog {
 
     @Override
     public void bite(Dog dog) {
-        //a chiwawa is fast so his percetage is high, but his bit is weak
+        //a chiwawa is fast so his percetage is high, but his bit is weak. and vice versa for mastiff
         int percentage = (int) (Math.random() * 30) ;  //from 70 to 99 percent
         int effective = (int) (Math.random() * 30) + 70;  //from 0 to 30 percent
 

@@ -35,16 +35,17 @@ public class PromotionAndCastingPrimitives {
 		//you can downcast a primitive. 
 		//upcasting happens automatically; it's called promotion and you lose no precision
 		//downcasting loses precsion
-		
-		int nAnswer1 = (int)56.9356974;
 
-		
-		//long lAnswer1 = Math.max(3.856, 98798798);
-		long lAnswer1 = Math.max((long)3654.856, 568211);
-		//you must cast and casting primitives sometimes loses precision
-		
-		System.out.println(nAnswer1);
-		System.out.println(lAnswer1);
+		//truncate - not round
+		int nAnswer1 = (int)56.9356974;
+//
+//
+//		//long lAnswer1 = Math.max(3.856, 98798798);
+//		long lAnswer1 = Math.max((long)3654.856, 568211);
+//		//you must cast and casting primitives sometimes loses precision
+//
+     	System.out.println("truncate, not round: " + nAnswer1);
+//		System.out.println(lAnswer1);
 
         //BASIC RULES OF INTEGER DIVISION
         //keep in mind that integer division produces a TRUNCATED result, not rounded
@@ -56,6 +57,9 @@ public class PromotionAndCastingPrimitives {
         //AUTOMATIC PROMOTION (AKA UPCASTING) -- will not reduce precision of result
         //in the following example, 51 (an int) will be cast to a double
         double dVal = 51 / 24.89989;
+
+        float fValue =   89393.0008f;
+        long lValme = 893938948934893498L;
 
 
         //EXPLICIT CASTING (AKA DOWNCASTING) --will result in loss of precision

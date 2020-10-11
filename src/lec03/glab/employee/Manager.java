@@ -1,5 +1,8 @@
 package lec03.glab.employee;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 public class Manager extends Employee {
 	
 	private double mBonus;
@@ -10,7 +13,10 @@ public class Manager extends Employee {
 		mBonus = bonus;
 	}
 
-
+	public Manager(String name, double salary, double bonus) {
+		super(name, salary, new Date().getYear(), new Date().getMonth(), new Date().getDay() );
+		this.mBonus = bonus;
+	}
 
 	public double getBonus() {
 		return mBonus;
@@ -20,11 +26,11 @@ public class Manager extends Employee {
 		mBonus = bonus;
 	}
 
-	@Override
-	public String getDescription() {
-		// TODO Auto-generated method stub
-		return String.format("a Manager with a salary of " +  getSalary()+ " and a bonus of " + getBonus() );
-	}
+//	@Override
+//	public String getDescription() {
+//		// TODO Auto-generated method stub
+//		return String.format("a Manager with a salary of " +  getSalary()+ " and a bonus of " + getBonus() );
+//	}
 
 	
 	

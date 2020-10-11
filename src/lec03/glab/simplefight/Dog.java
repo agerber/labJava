@@ -1,6 +1,6 @@
 package lec03.glab.simplefight;
 
-public  class Dog {
+public abstract class Dog {
 
     // **********************************
     // ******* members
@@ -41,13 +41,9 @@ public  class Dog {
     // **********************************
     // ******* abstract method
     // **********************************
-    public  void bite(Dog dog){
+    public abstract void bite(Dog dog);
 
-        int percentage = (int) (Math.random() * 50) ;  //from 70 to 99 percent
-        int effective = (int) (Math.random() * 50) + 50;  //from 0 to 30 percent
 
-        dog.setHealth(dog.getHealth() - percentage * effective);
-    }
 
     @Override
     public String toString() {

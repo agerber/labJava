@@ -9,6 +9,8 @@ package lec02.glab;
  */
 public class Convert {
 
+    private Convert() {
+    }
 
     public static double tempToMetric(double dFar){
        //(°F  -  32)  x  5/9

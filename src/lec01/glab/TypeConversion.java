@@ -11,14 +11,20 @@ public class TypeConversion {
 	public static void main(String[] args) {
 
 
-	List<String> strNames = new ArrayList<>();
-		strNames.add("Adam");
-		strNames.add("Bob");
-		strNames.add("Charlie");
+	ArrayList<Integer> intAges = new ArrayList<>();
 
-		for (String strName : strNames) {
+	intAges.add(new Integer(3));
+	intAges.add(new Integer(3));
+	intAges.add(new Integer(6));
 
-		}
+
+
+
+
+
+
+
+
 
 		
 	int nNumber =	Integer.parseInt("5");

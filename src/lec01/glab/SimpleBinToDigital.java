@@ -15,7 +15,10 @@ public class SimpleBinToDigital {
 
     public static void main(String[] args) {
 
-        String strBinary = "0111 1111";
+
+        String strBinary = "1001 0001";
+
+                            //2^2     //2^1      // 2^0
 
         //strip out any spaces
         strBinary = strBinary.replace(" ", "");

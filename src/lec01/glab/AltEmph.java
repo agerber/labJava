@@ -9,12 +9,12 @@ public class AltEmph {
     //Store input-message in String
     //Split the String using space as regex
     //for each word in input-message
-    //if even word
-    //print word all lower-case
-    //else (word is odd)
-    //print word all uppper-case
+        //if even word
+             //print word all lower-case
+        //else (word is odd)
+            //print word all uppper-case
 
-    //print space
+        //print space
 
     public static void main(String[] args) {
 

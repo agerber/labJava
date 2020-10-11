@@ -1,6 +1,6 @@
 package lec03.glab.employee;
 
-public abstract class Person {
+public abstract class Person  {
 
     //cntrl-H to see object hierachy
     //ctrl-alt-shift-u to see class UML diagram
@@ -11,6 +11,7 @@ public abstract class Person {
 		super();
 		mName = name;
 	}
+
 
 	public abstract String getDescription();
 	

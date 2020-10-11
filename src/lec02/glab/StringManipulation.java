@@ -1,6 +1,9 @@
 package lec02.glab;
 
-import java.awt.*;
+
+import java.awt.Rectangle;
+import java.util.Date;
+
 
 public class StringManipulation {
 
@@ -25,8 +28,10 @@ public class StringManipulation {
 		//strResult refers to "Hello World." now. 
 		String strResult1 = "Hello " + "World.";
 		System.out.println(strResult1);
-		
-		String strOne = "CSPP";
+
+
+		//Ox32BC
+		String strOne = "MPCS";
 		String strTwo = strOne;
 
 		
@@ -76,16 +81,20 @@ public class StringManipulation {
 		String strMostCorruptState1 = new String("Illinois");
 
 		System.out.println("Illinois == Illinois? " + (strBig0 == strMostCorruptState1));
+		System.out.println(strBig0.equals(strMostCorruptState1));
 
 
 
         System.out.println(56.21 == 56.21);
 
         //the == sign is comparing memory address
+		//Ox1234
         Rectangle recOne = new Rectangle(2,3,4,5);
+        //Ox2345
         Rectangle recTwo = new Rectangle(2,3,4,5);
 
         //this is false
+
         System.out.println(recOne == recTwo);
 
 
@@ -96,6 +105,21 @@ public class StringManipulation {
 
         //this should be false, but sometimes it's true??
         System.out.println(strNoLake1 == strBig6);
+
+        String strSum = new String("");
+        StringBuilder stringBuilder = new StringBuilder();
+
+		for (int nC = 0; nC < 100; nC++) {
+			stringBuilder.append(nC);
+		}
+		System.out.println(stringBuilder.toString());
+
+		Rectangle rectangle = new Rectangle(1,3,56, 34);
+
+		Date myDate = new Date();
+		java.sql.Date myDate2 = new java.sql.Date(123132123342L);
+
+
 
 
 

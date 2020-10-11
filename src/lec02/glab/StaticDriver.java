@@ -30,6 +30,9 @@ public class StaticDriver {
         //why shouldn't you just create all methods this way, and never allocated memory on the heap using the new keyword
 
         System.out.println(Convert.tempToImperial(100.0));
+        System.out.println(rectangle.getCenterX());
+
+
 
         System.out.println(Math.pow(2,3));
 

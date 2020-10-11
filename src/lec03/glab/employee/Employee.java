@@ -76,9 +76,14 @@ public class Employee extends Person {
 		mSalary += dRaise;
 	}
 
+
+
 	@Override
 	public String getDescription() {
-		return null;
+		return "Employee{" +
+				"mSalary=" + mSalary +
+				", mHireDate=" + mHireDate +
+				'}';
 	}
 
 //

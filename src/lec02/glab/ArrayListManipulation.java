@@ -1,6 +1,7 @@
 package lec02.glab;
 
 import java.util.ArrayList;
+import java.awt.Rectangle;
 
 public class ArrayListManipulation {
 
@@ -23,10 +24,10 @@ public class ArrayListManipulation {
 
 
 		
-		//let's iterate over this ArrayList
-		for (String str : strNames) {
-			System.out.println(str);
-		}
+//		//let's iterate over this ArrayList
+//		for (String str : strNames) {
+//			System.out.println(str);
+//		}
 
 
 
@@ -68,7 +69,7 @@ public class ArrayListManipulation {
 		objObjects.add(new Integer(5));
 		objObjects.add(new Double(5.5));
 		objObjects.add(new Boolean(true));
-		objObjects.add(new java.awt.Rectangle(1,5,15,78));
+		objObjects.add(new Rectangle(1,5,15,78));
 		
 		
 		
@@ -79,7 +80,7 @@ public class ArrayListManipulation {
 		System.out.println("-----------------------------");
 		
 		//let's use the fully qualified Class name; rather than import; just for fun
-		ArrayList<java.awt.Rectangle> recShapes = new ArrayList<java.awt.Rectangle>();
+		ArrayList<Rectangle> recShapes = new ArrayList<>();
 		recShapes.add(new java.awt.Rectangle(2,3,4,5));
 		recShapes.add(new java.awt.Rectangle(16,8,9,12));
 		recShapes.add(new java.awt.Rectangle(14,8,15,11));

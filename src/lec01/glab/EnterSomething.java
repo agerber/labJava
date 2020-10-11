@@ -11,7 +11,7 @@ public class EnterSomething {
 		//declare a string to hold input
 	    //while input != exit
 			//ask for input and give instructions
-			//print Echo + input
+			//print integer-values of chars
 			
         Scanner in = new Scanner(System.in);
 		String strInput;

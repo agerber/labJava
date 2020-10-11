@@ -9,7 +9,7 @@ import java.awt.*;
  * Time: 3:34 PM
  * To change this template use File | Settings | File Templates.
  */
-public class PassBy {
+public class PassBy  {
 
     public static void main(String[] args) {
 
@@ -19,6 +19,7 @@ public class PassBy {
 
 
         Rectangle recSquare = new Rectangle(1,1,10,10);
+        //Ox67AB
         doubleRec(recSquare);
         System.out.println("recSquare: " + recSquare);
 

@@ -10,6 +10,7 @@ public class MoreDownCasting {
 
         System.out.println("integer values");
         //try the following 259, 132, 128
+
         short sResult = 132;
         byte yResult = (byte) sResult;
         System.out.println(yResult);
@@ -19,6 +20,7 @@ public class MoreDownCasting {
         //double to float downcasting
         double dValue1 = 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012;
         double dValue2 = 101.6546465465464321351654313465123168768546134650646546546546546545645645646545646546546546545646546654564654646546540303212;
+       // float dValue3 = (float)101.6546;
         float fValue1 = (float)dValue1;
         float fValue2 = (float)dValue2;
 

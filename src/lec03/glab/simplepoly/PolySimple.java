@@ -12,7 +12,39 @@ public class PolySimple {
 
     //Cntrl-H for class hierarchy on PC
 	public static void main(String[] args) {
-		
+
+
+
+
+		Double dub = new Double(8443.908);
+
+		Rectangle2D rectangle2D = new Rectangle(3,4,9,9);
+
+	    Object object = (Object) rectangle2D;
+
+	    //will cause a class cast exception
+	    String string = (String) object;
+
+	    String string2 = rectangle2D.toString();
+
+	    Number number = (Number) dub;
+
+	    //will cause a class cast exception
+	    number = (Number) object;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 		//very simple polymorphism
         //first rule of polymorphism:
@@ -32,8 +64,6 @@ public class PolySimple {
 		
 		for (Object obj : objObjects){
 			System.out.println(obj.getClass() + " : " + obj.toString());
-
-
         }
 
 		//O b rectangle = new Rectangle(4,5,7,8);
@@ -59,34 +89,45 @@ public class PolySimple {
 		numTemps.add(new Integer(-60));
 		numTemps.add(new Double(-1.8));
 		numTemps.add(new Double(3.1));
-		numTemps.add(5);
 
-		Double myDub = (double) new Integer(54);
-		//int nMe2 = new Integer(54);
-		System.out.println("myDub " + myDub.doubleValue());
+		for (Number numTemp : numTemps) {
+			if (numTemp.equals(numTemp.intValue())){
+				System.out.println(numTemp + " is an Integer");
+			} else {
+				System.out.println(numTemp + " is an Double");
 
-		//byte yMe = new Integer(45);
-
-		//System.out.println(nMe1 == nMe2);
-
-
+			}
+		}
 
 
 
 
-       for (Number num : numTemps) {
-		
-    	   if (num instanceof Double){
-    		   System.out.println("At " + num + " degrees Celcius, water is a " +getStateCel(num.doubleValue()) );
-    		
-    	   }
-    	   else if (num instanceof Integer){
-    		   System.out.println("At " + num + " degrees Fahrenheit, water is a " +getStateFar(num.intValue()) );
-    	   }
-    	   else {
-    		   System.out.println("Can not determine the state of water for this number.");
-    	   }
-	   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       for (Number num : numTemps) {
+//
+//    	   if (num instanceof Double){
+//    		   System.out.println("At " + num + " degrees Celcius, water is a " +getStateCel(num.doubleValue()) );
+//
+//    	   }
+//    	   else if (num instanceof Integer){
+//    		   System.out.println("At " + num + " degrees Fahrenheit, water is a " +getStateFar(num.intValue()) );
+//    	   }
+//    	   else {
+//    		   System.out.println("Can not determine the state of water for this number.");
+//    	   }
+//	   }
 		
 
 	}
