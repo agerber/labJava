@@ -15,7 +15,19 @@ public class EmployeeTestSimple {
 		Executive thad = new Executive("Thad Chatwick", 200_000, 50_000, 3_000_000);
 		Executive bret = new Executive("Bret Underwood", 200_000, 50_000, 40_000_000 );
 
+
+
+		System.out.println(bret.promote().promote().getDescription());
+
+
+
+
+
+
 		Manager victor = new Manager("Victor Orban", 200_000, 20_000);
+
+		System.out.println(bret.getDescription() + bret.healthPlan());
+		System.out.println(victor.getDescription() + victor.healthPlan());
 
 
 		System.out.println(thad.greetOther(victor));

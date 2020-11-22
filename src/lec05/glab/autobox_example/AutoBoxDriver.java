@@ -17,8 +17,12 @@ public class AutoBoxDriver {
 
 
 
+
         //Auto Boxing
         Double dubNum = 56.87;
+        double dDub = dubNum;
+
+        System.out.println(" this is my dubNum" + dubNum.getClass().getCanonicalName());
 
         ArrayList<Character> chrChars = new ArrayList<>();
         chrChars.add('a');

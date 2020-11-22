@@ -100,7 +100,8 @@ public class House implements Cloneable {
 		     //no need to clone string because it is immutable
 		     
 		    // comment out below line and see if clone works.
-		     houClone.setDatInstantiated((Date) getDatInstantiated().clone());
+		    // houClone.setDatInstantiated((Date) getDatInstantiated().clone());
+
 
 
 

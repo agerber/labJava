@@ -12,6 +12,7 @@ public class ReferenceAnonDriver {
 
     public static void main(String[] args) {
 
+        //what is REFERENCE ANONYMITY?
 
         List<Integer> list = new ArrayList<>();
 

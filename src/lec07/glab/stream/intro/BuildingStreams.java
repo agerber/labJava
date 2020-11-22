@@ -2,13 +2,18 @@ package lec07.glab.stream.intro;
 
 import java.util.Arrays;
 import java.util.function.IntSupplier;
+import java.util.function.Supplier;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class BuildingStreams {
 
     public static void main(String...args) throws Exception{
-        
+
+
+
+
+
         // Stream.of
         Stream<String> stream = Stream.of("Java 8", "Lambdas", "In", "Action");
         stream.map(String::toUpperCase).forEach(System.out::println);

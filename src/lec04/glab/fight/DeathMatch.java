@@ -93,7 +93,8 @@ public class DeathMatch {
 			
 			
 		}
-			
+
+		System.out.println(boxPuncher.display());
 		
 		
 		if (boxPuncher instanceof Human)

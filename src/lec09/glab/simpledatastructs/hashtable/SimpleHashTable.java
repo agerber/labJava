@@ -1,6 +1,7 @@
 package lec09.glab.simpledatastructs.hashtable;
 
 
+import java.util.Date;
 
 // this class is generic
 public class SimpleHashTable<T> {
@@ -44,6 +45,7 @@ public class SimpleHashTable<T> {
 	// ===============================================
 	//O(1) very fast
 	public void add(T typ) {
+
 
 		int nHash = typ.hashCode();
 		nHash = Math.abs(nHash);

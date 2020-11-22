@@ -1,6 +1,6 @@
 package lec03.glab.simplefight;
 
-public abstract class Dog {
+public abstract class Dog  {
 
     // **********************************
     // ******* members

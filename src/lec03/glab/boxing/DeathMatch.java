@@ -8,10 +8,7 @@ public class DeathMatch {
 	 */
 	public static void main(String[] args) {
 
-	
-		
 
-		
 		Boxable boxPuncher   = new Human(
 
 				"//src//lec03//glab//resources//box_human.jpg",

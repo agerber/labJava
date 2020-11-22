@@ -8,6 +8,7 @@ public class TypeSafetyDriver {
 
         //no type safety
         List objObjects = new ArrayList();
+
         objObjects.add("Adam");
         objObjects.add(2018);
         objObjects.add(new Object());
@@ -22,7 +23,7 @@ public class TypeSafetyDriver {
 
 
 
-        //with type safety
+        //with type safety (diamond notation)
         List<String> strNames = new ArrayList<>();
         strNames.add("Adam");
         strNames.add("Bobby");
@@ -34,6 +35,15 @@ public class TypeSafetyDriver {
         String s2 = strNames.get(2);
         System.out.println(s2.toUpperCase());
 
+        //with type safety (diamond notation)
+        List<Number> numNumbers = new ArrayList<>();
+        numNumbers.add(20145);
+        numNumbers.add(new Double(67.8));
+        numNumbers.add(78.44556F);
+
+        for (Number numNumber : numNumbers) {
+            System.out.println(numNumber.doubleValue());
+        }
 
 
 

@@ -3,7 +3,7 @@ package lec04.glab.phone2;
 /**
  * Created by Adam on 10/17/2016.
  */
-public  class Phone  {
+public abstract class Phone  {
 
     private String  model;
 

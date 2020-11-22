@@ -29,7 +29,7 @@ public class BradyBunch {
 
 
 
-        mike.setJunior(new Brady("Gregg").setJunior(new Brady("Peter").setJunior(new Brady("Bobby"))));
+      //  mike.setJunior(new Brady("Gregg").setJunior(new Brady("Peter").setJunior(new Brady("Bobby"))));
 
 
 

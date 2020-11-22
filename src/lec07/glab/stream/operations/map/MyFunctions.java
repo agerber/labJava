@@ -19,12 +19,12 @@ public class MyFunctions {
 //        };
 
 
-        final Function<String, Student> stringStudentFunction = name ->
+        final Function<String, Student> stringStudentFunction = (n) ->
         {
-            if (name.contains("e"))
-                return new Student(name, "Electrical Engineering");
+            if (n.contains("e"))
+                return new Student(n, "Electrical Engineering");
             else
-                return new Student(name, "Computer Science");
+                return new Student(n, "Computer Science");
         };
 
         Stream.of("Adam", "Bobby", "Carla", "Danny", "Ellie", "Frank", "Gregg")  //Stream<String>

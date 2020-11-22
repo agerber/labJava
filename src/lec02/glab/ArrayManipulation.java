@@ -54,11 +54,15 @@ public class ArrayManipulation {
 		//this reads, foreach String element called str in strNames
 
 
+		for (int nC = 0; nC < strNames.length; nC++) {
+			System.out.println(strNames[nC]);
+		}
+
+		for (String strName : strNames) {
+			System.out.println(strName);
+		}
 
 
-		for (String str : strNames){
-			    System.out.println(str);
-        }
 
 
 

@@ -1,5 +1,7 @@
 package lec03.glab.dogfight;
 
+import java.util.ArrayList;
+
 public class PitFight {
 
     public static void main(String[] args) {
@@ -8,6 +10,9 @@ public class PitFight {
         Dog attacker = new Chiwawa("Rico");
         Dog attackee = new Mastiff("Gianni");
 
+//        ArrayList<Dog> dogs = new ArrayList<>();
+//        dogs.add(attackee);
+
 
         while (attackee.getHealth() > 0){
 
@@ -15,7 +20,7 @@ public class PitFight {
             attacker.bite(attackee);
 
             //swap
-            Dog dogTemp;
+             Dog dogTemp;
             dogTemp = attackee;
 
             attackee = attacker;

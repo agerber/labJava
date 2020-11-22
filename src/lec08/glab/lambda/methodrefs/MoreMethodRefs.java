@@ -1,5 +1,6 @@
 package lec08.glab.lambda.methodrefs;
 
+import lec07.glab.stream.intro.Dish;
 import lec10.glab.lambdas.Circle;
 import sun.plugin.dom.css.Rect;
 
@@ -13,7 +14,7 @@ public class MoreMethodRefs {
     public static void main(String[] args) {
 
         //very clear about what is going on
-        Function<Double, String> stringFunction1 = (d) -> String.valueOf(d);
+        Function<Double, String> stringFunction1 = (Double d) -> String.valueOf(d);
 
 
         //this is rather confusing, as we don't see any parameters!

@@ -31,7 +31,7 @@ public class TimerTestLocal {
 
 
         //You can't instantiate an interface, so what is the type (class) of the object act above?
-       //Reflector.printClass(lis.getClass());
+       Reflector.printClass(lis.getClass());
 
         Timer tim = new Timer(1000, lis);
 		tim.start();

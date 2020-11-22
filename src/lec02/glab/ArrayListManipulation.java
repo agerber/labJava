@@ -8,6 +8,8 @@ public class ArrayListManipulation {
 
 	public static void main(String[] args) {
 
+
+
 		//delcare a new arrayList and import from java.util
 		//here we're using the generic form so we're tellign the compiler that
 		//this data structure can ONLY hold strings
@@ -20,6 +22,8 @@ public class ArrayListManipulation {
 		strNames.add("Marcia");
 		strNames.add("Jan");
 		strNames.add("Cindy");
+
+
 
 
 
@@ -68,13 +72,18 @@ public class ArrayListManipulation {
 		
 		objObjects.add(new Integer(5));
 		objObjects.add(new Double(5.5));
-		objObjects.add(new Boolean(true));
-		objObjects.add(new Rectangle(1,5,15,78));
+		objObjects.add(56L);
+
+
+
+
+//		objObjects.add(new Boolean(true));
+//		objObjects.add(new Rectangle(1,5,15,78));
 		
 		
 		
 		for (Object obj : objObjects) {
-			System.out.println(obj.toString());
+			System.out.println(obj.getClass().getCanonicalName());
 		}
 		
 		System.out.println("-----------------------------");

@@ -1,13 +1,10 @@
 package lec09.glab.simpledatastructs.linkedlist;
 
-import java.util.Iterator;
-import java.util.List;
-
-import java.util.ArrayList;
-import java.util.SortedSet;
+import java.util.*;
 
 //this class is generic
 public class SimpleLinkedList<T>  {
+
 
 
 	private Node<T> nodFirst;

@@ -1,5 +1,7 @@
 package lec09.glab.generics.basics;
 
+import org.w3c.dom.css.Rect;
+
 import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +10,9 @@ import java.util.stream.Collectors;
 public class GenericMethods {
 
     public static void main(String[] args) {
+
+
+        String[] myNames = {"Adam", "Bobby", "Charlie"};
 
         Number[] numbers = {
 
@@ -20,11 +25,15 @@ public class GenericMethods {
                 78.9
         };
 
+        List<String> myNamesList = fromArrayToList(myNames);
+
+
         List<Number> myList = fromArrayToList(numbers);
 
         for (Number number : myList) {
             System.out.println(getDubGenerically(number));
         }
+        //double myDub = getDubGenerically(new Rectangle(1,2,3,4));
 
     }
 

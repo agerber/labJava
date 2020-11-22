@@ -22,6 +22,7 @@ public class LatinDictionary {
     private JButton mButtonNew;
     private JButton mButtonSearch;
     private JList mList;
+
     private DefaultListModel<String> mModel;
 
 

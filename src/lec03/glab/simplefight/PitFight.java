@@ -10,7 +10,7 @@ public class PitFight {
 
         while (attackee.getHealth() > 0){
 
-             attacker.bite(attackee);
+           attacker.bite(attackee);
 
              //swap
              Dog dogTemp = attacker;

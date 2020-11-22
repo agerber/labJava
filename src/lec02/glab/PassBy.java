@@ -29,6 +29,7 @@ public class PassBy  {
     //when you pass primitives into methods in Java, the are passed by value, in other words - they are copied.
     private static void multByFive(int nParam){
         nParam  = nParam * 5;
+        System.out.println(nParam);
 
     }
 

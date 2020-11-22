@@ -1,8 +1,8 @@
 package lec09.glab.simpledatastructs.tree;
 
-public class SimpleTree {
+public class SimpleTree<T> {
 
-	private TreeNode nodHead;
+	private TreeNode<T> nodHead;
 
 	public SimpleTree() {
 
@@ -10,10 +10,10 @@ public class SimpleTree {
 	}
 
 	//one-arg
-	public void insert(Comparable comVal) {
+	public void insert(Comparable<T> comVal) {
 
 		if (nodHead == null) {
-			nodHead = new TreeNode(comVal, null, null);
+			nodHead = new TreeNode<T>(comVal, null, null);
 			System.out.println("  Inserted " + comVal + " at the root.");
 		} else {
 			insert(nodHead, comVal);
@@ -21,23 +21,23 @@ public class SimpleTree {
 	}
 
 	//two arg ; overloaded
-	public void insert(TreeNode nod, Comparable comVal) {
+	public void insert(TreeNode<T> nod, Comparable<T> comVal) {
 
-		if (comVal.compareTo(nod.getValue()) < 0) {
+		if (comVal.compareTo((T) nod.getValue()) < 0) {
 			if (nod.getLeft() != null) {
 				insert(nod.getLeft(), comVal);
 			} else {
 				System.out.println("  Inserted " + comVal + " to left of "
 						+ nod.getValue());
-				nod.setLeft(new TreeNode(comVal, null, null));
+				nod.setLeft(new TreeNode<T>(comVal, null, null));
 			}
-		} else if (comVal.compareTo(nod.getValue()) > 0) {
+		} else if (comVal.compareTo((T) nod.getValue()) > 0) {
 			if (nod.getRight() != null) {
 				insert(nod.getRight(), comVal);
 			} else {
 				System.out.println("  Inserted " + comVal + " to right of "
 						+ nod.getValue());
-				nod.setRight(new TreeNode(comVal, null, null));
+				nod.setRight(new TreeNode<T>(comVal, null, null));
 			}
 		} else {
 			throw new RuntimeException("Dupblicate item at "
@@ -49,7 +49,7 @@ public class SimpleTree {
 		printInOrder(nodHead);
 	}
 
-	public void printInOrder(TreeNode nod) {
+	public void printInOrder(TreeNode<T> nod) {
 
         //base case
         if (nod == null){
@@ -65,13 +65,13 @@ public class SimpleTree {
 
 	//inner class     
 	//package access
-	class TreeNode {
-        private TreeNode nodL;
-		private Comparable comV;
-		private TreeNode nodR;
+	static class TreeNode<T> {
+        private TreeNode<T> nodL;
+		private Comparable<T> comV;
+		private TreeNode<T> nodR;
 
-		public TreeNode(Comparable comInitValue, TreeNode nodLeft,
-				TreeNode nodRight) {
+		public TreeNode(Comparable<T> comInitValue, TreeNode<T> nodLeft,
+						TreeNode<T> nodRight) {
 			comV = comInitValue;
 			nodL = nodLeft;
 			nodR = nodRight;
@@ -83,7 +83,7 @@ public class SimpleTree {
 		 * @return this tree node's value
 		 */
 
-		public Comparable getValue() {
+		public Comparable<T>  getValue() {
 			return comV;
 		}
 
@@ -93,7 +93,7 @@ public class SimpleTree {
 		 * @return a reference to the left subtree of this node
 		 */
 
-		public TreeNode getLeft() {
+		public TreeNode<T>  getLeft() {
 			return nodL;
 		}
 
@@ -103,7 +103,7 @@ public class SimpleTree {
 		 * @return a reference to the right subtree of this node
 		 */
 
-		public TreeNode getRight() {
+		public TreeNode<T>  getRight() {
 			return nodR;
 		}
 
@@ -114,7 +114,7 @@ public class SimpleTree {
 		 *            is the (new) value stored in this node
 		 */
 
-		public void setValue(Comparable comNewValue) {
+		public void setValue(Comparable<T> comNewValue) {
 			comV = comNewValue;
 		}
 
@@ -125,7 +125,7 @@ public class SimpleTree {
 		 *            is the (new) left subtree of this node
 		 */
 
-		public void setLeft(TreeNode nodLeft) {
+		public void setLeft(TreeNode<T>  nodLeft) {
 			nodL = nodLeft;
 		}
 
@@ -136,7 +136,7 @@ public class SimpleTree {
 		 *            is the (new) right subtree of this node
 		 */
 
-		public void setRight(TreeNode nodRight) {
+		public void setRight(TreeNode<T>  nodRight) {
 			nodR = nodRight;
 		}
 

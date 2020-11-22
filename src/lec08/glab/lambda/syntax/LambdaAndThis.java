@@ -1,5 +1,6 @@
 package lec08.glab.lambda.syntax;
 
+import java.util.Collection;
 import java.util.function.Function;
 
 public class LambdaAndThis {

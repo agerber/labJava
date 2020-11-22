@@ -25,6 +25,7 @@ public class InterfaceDriver {
         for (Drawable draVehicle : draVehicles) {
 
             System.out.println(draVehicle.getClass() );
+
             draVehicle.draw();
 
 

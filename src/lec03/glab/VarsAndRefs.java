@@ -120,12 +120,12 @@ public class VarsAndRefs {
 		int nOp2 = 7;
 		
 		System.out.println(nOp1 < nOp2 ? "yes" : "no");
-		
-		
+
 
 		
-		
 	}
+
+
 	
 	
 	

@@ -9,7 +9,7 @@ import java.lang.String;import java.lang.System;public class VarArgs {
 		int[] ints = { 8,2,5,7, 6, 8, 101, -9};
 		//int[] myints = new int[10];
 
-		sum("The sum of",8,2,5,7, 6, 8, 101, -9);
+		sum("The sum of",8,2,5,7, 6, 8, 101, -9, 6,788, 344, 6777, 42423, 243);
 		sumArray("The sum of",ints);
 
 	}

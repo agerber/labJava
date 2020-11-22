@@ -68,6 +68,19 @@ public final class Executive extends Manager{
 
 	}
 
+	public String demote(){
+		return "you've been demoted: " + super.getDescription();
+	}
+
+	public Executive promote(){
+		this.setSalary(this.getSalary() * 2);
+		return  this;
+	}
+
+
+
+
+
 
 
 }

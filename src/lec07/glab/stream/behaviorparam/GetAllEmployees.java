@@ -31,7 +31,7 @@ public class GetAllEmployees {
 
 
 
-       Stream<Employee> employeeStream = Arrays.stream(employees);
+       //Stream<Employee> employeeStream = Arrays.stream(employees);
 
 
 
@@ -47,7 +47,8 @@ public class GetAllEmployees {
 
 
 
-        List<Employee> poorEmployees = Arrays.stream(employees)
+        List<Employee> poorEmployees =
+                Arrays.stream(employees)
                 .filter(e -> e.getSalary() < 30_000)  //Stream<Employee>
                 .collect(Collectors.toList());
 
@@ -79,7 +80,7 @@ public class GetAllEmployees {
                 .filter(employee -> employee.getSalary() < 30_000)  //Stream<Employee>
                 .map(employee -> employee.getName())  //Stream<String>
                 .filter(name -> name.charAt(1) == 'o') //Stream<String>
-                .forEach(name -> name.toUpperCase()); //Terminal operation
+                .forEach(name -> System.out.println(name.toUpperCase())); //Terminal operation
 
 
 
