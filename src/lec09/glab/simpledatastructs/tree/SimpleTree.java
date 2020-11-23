@@ -16,6 +16,7 @@ public class SimpleTree<T> {
 			nodHead = new TreeNode<T>(comVal, null, null);
 			System.out.println("  Inserted " + comVal + " at the root.");
 		} else {
+			//this is a recursive method in its 2-arg overloaded form
 			insert(nodHead, comVal);
 		}
 	}
@@ -24,17 +25,23 @@ public class SimpleTree<T> {
 	public void insert(TreeNode<T> nod, Comparable<T> comVal) {
 
 		if (comVal.compareTo((T) nod.getValue()) < 0) {
+			//recursive case
 			if (nod.getLeft() != null) {
 				insert(nod.getLeft(), comVal);
-			} else {
+			}
+			//base case
+			else {
 				System.out.println("  Inserted " + comVal + " to left of "
 						+ nod.getValue());
 				nod.setLeft(new TreeNode<T>(comVal, null, null));
 			}
 		} else if (comVal.compareTo((T) nod.getValue()) > 0) {
+			//recursive case
 			if (nod.getRight() != null) {
 				insert(nod.getRight(), comVal);
-			} else {
+			}
+			//base case
+			else {
 				System.out.println("  Inserted " + comVal + " to right of "
 						+ nod.getValue());
 				nod.setRight(new TreeNode<T>(comVal, null, null));
@@ -77,64 +84,26 @@ public class SimpleTree<T> {
 			nodR = nodRight;
 		}
 
-		/**
-		 * Returns the value stored in this tree node.
-		 * 
-		 * @return this tree node's value
-		 */
 
 		public Comparable<T>  getValue() {
 			return comV;
 		}
 
-		/**
-		 * Returns the left subtree of this node.
-		 * 
-		 * @return a reference to the left subtree of this node
-		 */
-
 		public TreeNode<T>  getLeft() {
 			return nodL;
 		}
-
-		/**
-		 * Returns the right subtree of this node.
-		 * 
-		 * @return a reference to the right subtree of this node
-		 */
 
 		public TreeNode<T>  getRight() {
 			return nodR;
 		}
 
-		/**
-		 * Sets the value of this tree node.
-		 * 
-		 * @param comNewValue
-		 *            is the (new) value stored in this node
-		 */
-
 		public void setValue(Comparable<T> comNewValue) {
 			comV = comNewValue;
 		}
 
-		/**
-		 * Sets the value of the left subtree of this node.
-		 * 
-		 * @param nodLeft
-		 *            is the (new) left subtree of this node
-		 */
-
 		public void setLeft(TreeNode<T>  nodLeft) {
 			nodL = nodLeft;
 		}
-
-		/**
-		 * Sets the value of the right subtree of this node.
-		 * 
-		 * @param nodRight
-		 *            is the (new) right subtree of this node
-		 */
 
 		public void setRight(TreeNode<T>  nodRight) {
 			nodR = nodRight;
