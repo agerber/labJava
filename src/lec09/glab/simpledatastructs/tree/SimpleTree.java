@@ -22,7 +22,9 @@ public class SimpleTree<T> {
 	}
 
 	//two arg ; overloaded
+	@SuppressWarnings("unchecked")
 	public void insert(TreeNode<T> nod, Comparable<T> comVal) {
+
 
 		if (comVal.compareTo((T) nod.getValue()) < 0) {
 			//recursive case
