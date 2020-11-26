@@ -9,17 +9,17 @@ import java.util.List;
 public class BasicDriver {
     public static void main(String args[]) {
         // Create a Gen reference for Integers.
-//        GenericClass<Integer> iOb = new GenericClass<>(88);
-//        iOb.showType();
+        GenericClass<Integer> iOb = new GenericClass<>(88);
+        iOb.showType();
 
-        List<Pair<Integer, String>> list = new ArrayList<>();
-        list.add(new Pair<>(60101, "Chicago"));
-        list.add(new Pair<>(94562, "San Francisco"));
-        list.add(new Pair<>(12183, "Boston"));
-
-        for (Pair<Integer, String> integerStringPair : list) {
-            System.out.println(integerStringPair);
-        }
+//        List<Pair<Integer, String>> list = new ArrayList<>();
+//        list.add(new Pair<>(60101, "Chicago"));
+//        list.add(new Pair<>(94562, "San Francisco"));
+//        list.add(new Pair<>(12183, "Boston"));
+//
+//        for (Pair<Integer, String> integerStringPair : list) {
+//            System.out.println(integerStringPair);
+//        }
 
 //
 //        // no cast is needed.
@@ -55,6 +55,7 @@ class GenericClass<T> {
 
     void showType() {
         System.out.println("Type of T is " + ob.getClass().getName());
+
     }
 }
 

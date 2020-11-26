@@ -25,7 +25,7 @@ public class SimpleHashTable<T> {
     //the load-factor of buckets should be around 75% full, which means there
     // should be around 1.333 x the estimated number of elements for buckets
 	public SimpleHashTable(int nHashTableSize) {
-		nodHashes = new Node[(int)(nHashTableSize * 1.333)];
+		nodHashes = new Node[nHashTableSize];
 		nSize = 0;
 
 	}

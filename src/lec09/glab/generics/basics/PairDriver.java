@@ -12,11 +12,15 @@ import java.util.List;
 public class PairDriver {
     public static void main(String[] args) {
 
-        List<Pair<String, ? extends Serializable>> list = new ArrayList<>();
+        List<Pair<String, ? super TDPoint>> list = new ArrayList<>();
 
-        list.add(new Pair<>("my generic point", 45));
-        list.add(new Pair<>("my object", 67.9));
+        list.add(new Pair<>("my generic point", 34));
+        list.add(new Pair<>("my object", 89L));
 
+
+        for (Pair<String, ? super TDPoint> stringPair : list) {
+            System.out.println(stringPair);
+        }
 
 
 

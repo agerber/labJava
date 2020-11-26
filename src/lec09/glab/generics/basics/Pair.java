@@ -1,6 +1,7 @@
 package lec09.glab.generics.basics;
 
-public class Pair<F, S> {
+public class Pair<F,S> {
+
     private F first;
     private S second;
 

@@ -6,7 +6,6 @@ import java.util.*;
 public class SimpleLinkedList<T>  {
 
 
-
 	private Node<T> nodFirst;
 	private Node<T> nodLast;
 	private int nSize;
