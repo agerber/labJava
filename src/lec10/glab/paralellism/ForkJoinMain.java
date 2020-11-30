@@ -20,7 +20,7 @@
  *
  *******************************************************************************/
 
-package lec10.glab.more;
+package lec10.glab.paralellism;
 
 import java.util.Random;
 import java.util.concurrent.ForkJoinPool;

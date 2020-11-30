@@ -54,7 +54,6 @@ public class BankAccountExampleSynchronizedDriver {
 class BankAccount {
 	
 	private double dBalance;
-
 	public BankAccount() {
 		
 		this.dBalance = 0;

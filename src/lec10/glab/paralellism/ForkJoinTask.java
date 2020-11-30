@@ -6,7 +6,7 @@
  * http://www.javacodegeeks.com/2013/02/java-7-forkjoin-framework-example.html
  */
 
-package lec10.glab.more;
+package lec10.glab.paralellism;
 
 import java.util.concurrent.RecursiveTask;
 
@@ -23,7 +23,7 @@ public class ForkJoinTask extends RecursiveTask<Integer> {
     // than 5 elements in it, we will search for the lowest value by simply
     // looping through the list and identifying the lowest value.
     
-    private static final int THRESHOLD = 5;
+    private static final int THRESHOLD = 10;
         
     private final int[] data;
     private final int start;

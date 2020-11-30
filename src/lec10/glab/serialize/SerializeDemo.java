@@ -9,7 +9,8 @@ public class SerializeDemo
 {
    public static void main(String [] args)
    {
-	   
+
+
 	  List<Student> stuNames =  new ArrayList<>();
        stuNames.add(new Student("David",2014));
        stuNames.add(new Student("Gyan",2014));
