@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="611.0" prefWidth="595.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uchicago.gerber.labjava.lec08.glab.javafx.PdfMain">
+    <stylesheets>
+        <URL value="@/styles/yelp.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="txtSearch" layoutX="151.0" layoutY="52.0" promptText="Hedge funds" />
+      <Label layoutX="64.0" layoutY="56.0" text="Terms" />
+      <Button fx:id="btnGo" layoutX="356.0" layoutY="52.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="103.0" text="Search" />
+      <ListView fx:id="lstView" layoutX="64.0" layoutY="147.0" prefHeight="157.0" prefWidth="462.0" />
+      <Label fx:id="lblStatus" layoutX="64.0" layoutY="317.0" prefHeight="17.0" prefWidth="462.0" text="Label" />
+      <Label fx:id="lblTitle" layoutX="50.0" layoutY="22.0" prefHeight="17.0" prefWidth="462.0" text="find pdf documents" />
+      <TableView fx:id="table" layoutX="64.0" layoutY="349.0" prefHeight="200.0" prefWidth="462.0">
+
+      </TableView>
+      <Button fx:id="btnSelect" layoutX="474.0" layoutY="565.0" mnemonicParsing="false" onAction="#btnSelect_go" text="Select Dir" />
+   </children>
+</AnchorPane>

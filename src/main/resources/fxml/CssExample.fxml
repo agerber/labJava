@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="AnchorPane" prefHeight="341.0" prefWidth="491.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uchicago.gerber.labjava.lec08.glab.javafx.basics.CssExampleMain">
+    <stylesheets>
+        <URL value="@/styles/cssexample.css" />
+    </stylesheets>
+
+   <center>
+      <Label fx:id="lblName" text="Name:" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <Button fx:id="btnGo" mnemonicParsing="false" onAction="#btnGoAction" prefHeight="112.0" prefWidth="94.0" text="Go" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <TextField fx:id="txtHello" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Label fx:id="lblResult" prefHeight="18.0" prefWidth="214.0" text="" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

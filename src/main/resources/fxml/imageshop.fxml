@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="862.0" prefWidth="1328.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uchicago.gerber.labjava.lec08.glab.javafx.imageshop.ImageShopController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" onAction="#mnuOpenAction" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#mnuCloseAction" text="Close" />
+            <MenuItem mnemonicParsing="false" onAction="#mnuSaveAction" text="Save" />
+            <MenuItem mnemonicParsing="false" onAction="#mnuSaveAsAction" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuReOpenLast" text="re-open last" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#mnuQuitAction" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Filter">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#mnuUndo" text="Undo" />
+            <MenuItem mnemonicParsing="false" onAction="#mnuRedo" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuSaturate" text="Saturate" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuGrayscale" text="GrayScale" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <ToolBar prefHeight="40.0" prefWidth="1328.0">
+         <items>
+            <ColorPicker fx:id="cpkColor" />
+            <Label text="Pen-Size" />
+            <Slider fx:id="sldSize" value="50.0" />
+            <Label text="Filter" />
+            <ComboBox fx:id="cboSome" prefWidth="150.0" />
+            <ToggleButton fx:id="tgbFilter" mnemonicParsing="false" text="Apply-Filter" />
+            <ToggleButton fx:id="tgbCircle" mnemonicParsing="false" text="Circle" />
+            <ToggleButton fx:id="tgbSquare" mnemonicParsing="false" text="Square" />
+         </items>
+      </ToolBar>
+      <ScrollPane prefHeight="835.0" prefWidth="1328.0">
+        <content>
+          <AnchorPane fx:id="ancRoot" minHeight="0.0" minWidth="0.0" prefHeight="830.0" prefWidth="1329.0">
+               <children>
+                  <ImageView fx:id="imgView" fitHeight="816.0" fitWidth="1328.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+  </children>
+</VBox>

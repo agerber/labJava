@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="edu.uchicago.gerber.labjava.lec08.glab.javafx.concurrency.ThreadsMain">
+   <children>
+      <Button fx:id="btnThCancel" layoutX="154.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnThCancel_cancel" text="Task Cancel" />
+      <Button fx:id="btnSvStart" layoutX="358.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSvStart_start" text="Service Start" />
+      <ProgressBar fx:id="prgThread" layoutX="37.0" layoutY="200.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="prgService" layoutX="340.0" layoutY="191.0" prefWidth="200.0" progress="0.0" />
+      <Button fx:id="btnThStart" layoutX="69.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnThStart_start" text="Task Start" />
+      <Button fx:id="btnSvCancel" layoutX="458.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSvCancel_cancel" text="Service Cancel" />
+   </children>
+</AnchorPane>

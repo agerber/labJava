@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="edu.uchicago.gerber.labjava.lec08.glab.javafx.MyAppController">
+    <stylesheets>
+        <URL value="@/styles/MyApp.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="btnGo" layoutX="234.0" layoutY="175.0" mnemonicParsing="false" onAction="#btnGo_action" text="Button" />
+   </children>
+</AnchorPane>
