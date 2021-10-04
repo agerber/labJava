@@ -13,7 +13,8 @@ public class FalseSwap {
         System.out.println("rec1:" + rec1);
         System.out.println("rec2:" + rec2);
 
-        mutate(rec1, rec2);
+        mutate(rec1);
+        mutate(rec2);
         swap(rec1, rec2);
 
         System.out.println("AFTER SWAP::::::::::::::::::::::::::::::::");
@@ -36,10 +37,8 @@ public class FalseSwap {
     }
 
     //you are passing a copy of the credit-card, you can mutate
-    private static void mutate(Rectangle param1, Rectangle param2){
-
-        param1.setSize(10,10);
-        param2.setSize(20,20);
+    private static void mutate(Rectangle rec){
+        rec.setSize((int) rec.getWidth() * 2,(int) rec.getHeight() * 2);
 
     }
 }
