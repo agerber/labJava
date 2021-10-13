@@ -3,6 +3,7 @@ package edu.uchicago.gerber.labjava.lec03.glab.simplepoly;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.awt.Rectangle;
+import java.util.Date;
 
 public class PolySimple {
 
@@ -15,23 +16,49 @@ public class PolySimple {
 
 
 
+		Double dub =new Double(34.56);
+		System.out.println(dub.getClass().getName());
 
-		Double dub = new Double(8443.908);
 
-		Rectangle2D rectangle2D = new Rectangle(3,4,9,9);
+		Number num = (Number) dub;
+		System.out.println(num.getClass().getName());
 
-	    Object object = (Object) rectangle2D;
 
-	    //will cause a class cast exception
-	    String string = (String) object;
 
-	    String string2 = rectangle2D.toString();
+		Object obj = (Object) num;
+		System.out.println(obj.getClass().getName());
 
-	    Number number = (Number) dub;
+		System.out.println(obj.toString());
 
-	    //will cause a class cast exception
-	    number = (Number) object;
 
+		Object objectme = new Object();
+		Double dubme2 = (Double) objectme;
+
+		//System.out.println(new Date());
+
+
+
+
+
+
+
+
+
+
+//		Rectangle2D rectangle2D = new Rectangle(3,4,9,9);
+//
+//	    Object object = (Object) rectangle2D;
+//
+//	    //will cause a class cast exception
+//	    String string = (String) object;
+//
+//	    String string2 = rectangle2D.toString();
+//
+//	    Number number = (Number) dub;
+//
+//	    //will cause a class cast exception
+//	    number = (Number) object;
+//
 
 
 
@@ -61,10 +88,14 @@ public class PolySimple {
 		objObjects[3] = new Character('H');
 		objObjects[4] = new Rectangle(5,8,9,12);
 		objObjects[5] = new MyClass();
+
+		for (Object objObject : objObjects) {
+			System.out.println(objObject.toString());
+		}
 		
-		for (Object obj : objObjects){
-			System.out.println(obj.getClass() + " : " + obj.toString());
-        }
+//		for (Object obj : objObjects){
+//			System.out.println(obj.getClass() + " : " + obj.toString());
+//        }
 
 		//O b rectangle = new Rectangle(4,5,7,8);
 

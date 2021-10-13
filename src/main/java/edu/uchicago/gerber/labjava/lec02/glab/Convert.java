@@ -12,6 +12,8 @@ public class Convert {
     private Convert() {
     }
 
+
+
     public static double tempToMetric(double dFar){
        //(°F  -  32)  x  5/9
         return (dFar -32) * 5.0/9.0;

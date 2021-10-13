@@ -34,7 +34,10 @@ public abstract class Dog {
 
     @Override
     public String toString() {
-        return this.name + this.getClass().getSimpleName() +
-                " has " + this.health;
+        return this.name + ":" + this.getClass().getSimpleName();
+    }
+
+    public String toStringHealth() {
+        return toString() + ":" + getHealth();
     }
 }

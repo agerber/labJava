@@ -2,6 +2,7 @@ package edu.uchicago.gerber.labjava.lec02.glab;
 
 import java.util.ArrayList;
 import java.awt.Rectangle;
+import java.util.List;
 
 public class ArrayListManipulation {
 

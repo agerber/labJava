@@ -4,25 +4,26 @@ public final class Executive extends Manager{
 
 
 
-	private double mStockValue;
+	private double stockValue;
 
 	public Executive(String name, double salary, double bonus, double stockValue) {
 		super(name, salary, bonus);
-		mStockValue = stockValue;
+		this.stockValue = stockValue;
 	}
 
 	public double getStockValue() {
-		return mStockValue;
+		return stockValue;
 	}
 
 	public void setStockValue(double m) {
-		mStockValue = m;
+		stockValue = m;
 	}
 
 	@Override
 	public String getDescription() {
-		return String.format("an exec with a salary of " +  getSalary()+ " and a bonus of " + getBonus() +
-				" and a stock comp of " + getStockValue()) ;
+		return super.getName();
+//		return String.format("an exec with a salary of " +  getSalary()+ " and a bonus of " + getBonus() +
+//				" and a stock comp of " + getStockValue()) ;
 
 	}
 
@@ -35,20 +36,6 @@ public final class Executive extends Manager{
 			return "You are just a " + strType + ", leave me alone";
 		}
 
-	}
-
-	public String greetOther(Employee employee, boolean shout){
-
-		if (shout){
-			if (employee instanceof  Executive) {
-				return (greetOther((Executive) employee)).toUpperCase();
-			} else {
-				String strType = employee.getClass().getSimpleName();
-				return ("You are just a " + strType + ", leave me alone").toUpperCase();
-			}
-		} else {
-			return  greetOther(employee);
-		}
 	}
 
 	private String greetOther(Executive other){

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 
-public class EmployeeTestSimple {
+public class EmployeeTestSimple  {
 
 	/**
 	 * @param args
@@ -30,8 +30,8 @@ public class EmployeeTestSimple {
 		System.out.println(victor.getDescription() + victor.healthPlan());
 
 
-		System.out.println(thad.greetOther(victor));
-		System.out.println(thad.greetOther(bret, true));
+		System.out.println("the call " + thad.greetOther(victor));
+
 
 		ArrayList<Executive> arrayList = new ArrayList<>();
 		arrayList.add(thad);

@@ -4,10 +4,16 @@ import java.awt.*;
 
 public class FalseSwap {
 
+
     public static void main(String[] args) {
 
-        Rectangle rec1 = new Rectangle(1,1,1,1);
-        Rectangle rec2 = new Rectangle(2,2,2,2);
+        Rectangle rec1 = null;
+        Rectangle rec2 = null;
+
+
+       rec1 = new Rectangle(1,1,1,1);
+       rec2 = new Rectangle(2,2,2,2);
+
 
         System.out.println("BEFORE SWAP::::::::::::::::::::::::::::::::");
         System.out.println("rec1:" + rec1);

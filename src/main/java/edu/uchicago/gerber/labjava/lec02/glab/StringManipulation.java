@@ -78,6 +78,7 @@ public class StringManipulation {
 
 
 		String strMostCorruptState0 = new String("Nevada");
+		strMostCorruptState0.substring(2, 4);
 		String strMostCorruptState1 = new String("Illinois");
 
 		System.out.println("Illinois == Illinois? " + (strBig0 == strMostCorruptState1));
@@ -107,6 +108,13 @@ public class StringManipulation {
         System.out.println(strNoLake1 == strBig6);
 
         String strSum = new String("");
+
+		for (int i = 0; i < 100; i++) {
+			strSum = strSum + i;
+
+		}
+
+
         StringBuilder stringBuilder = new StringBuilder();
 
 		for (int nC = 0; nC < 100; nC++) {

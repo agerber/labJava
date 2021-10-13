@@ -6,7 +6,7 @@ public class InterDriver {
 
     public static void main(String[] args) {
 
-        Intern intern = new Intern();
+        //Intern intern = new Intern();
 
        // the new keyword/cosntrutor returns the memory address (on the heap) to the newly constructed object
 

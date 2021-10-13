@@ -72,6 +72,8 @@ public class ArrayManipulation {
 	
 		};
 
+
+
         for (int nC = 0; nC < recShapes.length; nC++) {
 		     System.out.println(nC + ":" + recShapes[nC]);
         }
@@ -110,7 +112,7 @@ public class ArrayManipulation {
 		
 		int[][] nNumbers = new int[3][4];
 		for (int nRow = 0; nRow < nNumbers.length; nRow++) {
-			for (int nCol = 0; nCol < nNumbers[0].length; nCol++) {
+			for (int nCol = 0; nCol < nNumbers[3].length; nCol++) {
 				nNumbers[nRow][nCol] = ran.nextInt(100);
 			}
 			

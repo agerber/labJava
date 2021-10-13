@@ -9,10 +9,10 @@ public class Mastiff extends Dog{
     @Override
     public void bite(Dog dog) {
 
-        int percentage = ((int) (Math.random() * 30));
-        int effective = ((int) (Math.random() * 30 + 70));
+        int speed = ((int) (Math.random() * 30));
+        int strength = ((int) (Math.random() * 30 + 70));
 
-        dog.setHealth(dog.getHealth() - percentage * effective);
+        dog.setHealth(dog.getHealth() - speed * strength);
 
     }
 }

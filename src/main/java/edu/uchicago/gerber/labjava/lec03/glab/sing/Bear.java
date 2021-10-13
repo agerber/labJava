@@ -1,9 +1,11 @@
 package edu.uchicago.gerber.labjava.lec03.glab.sing;
 
 
+import java.io.Serializable;
+
 public class Bear implements Singable {
 
-    //    @Override
+    @Override
     public String sing() {
         return "DO *********";
     }
