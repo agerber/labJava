@@ -7,12 +7,13 @@ public class PitFight {
         Dog attacker = new Chiwawa("Rico");
         Dog attackee = new Mastiff("Gianni");
 
+        //declare a temporary reference used for swapping
+        Dog dogTemp;
 
         while (attackee.getHealth() > 0){
 
 
             //swap
-            Dog dogTemp;
             dogTemp = attackee;
             attackee = attacker;
             attacker = dogTemp;
