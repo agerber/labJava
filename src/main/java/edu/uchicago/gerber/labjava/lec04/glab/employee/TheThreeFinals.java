@@ -14,7 +14,7 @@ public class TheThreeFinals {
         final int total = 500;
         //total += 60;
 
-        //3. the third is final with objects. You may mutate, but you can not re-assign
+        //3. the third is final with objects. You may mutate,
         final Student student = new Student("Adam", "Economics");
         student.setSchool("Computer Science");
         System.out.println(student.getDescription());

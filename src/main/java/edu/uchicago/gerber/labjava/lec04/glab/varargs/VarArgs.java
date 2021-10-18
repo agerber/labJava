@@ -1,6 +1,8 @@
 package edu.uchicago.gerber.labjava.lec04.glab.varargs;
 
-import java.lang.String;import java.lang.System;public class VarArgs {
+
+
+public class VarArgs {
 
 
 	public static void main(String[] args) {
@@ -9,17 +11,18 @@ import java.lang.String;import java.lang.System;public class VarArgs {
 		int[] ints = { 8,2,5,7, 6, 8, 101, -9};
 		//int[] myints = new int[10];
 
-		sum("The sum of",8,2,5,7, 6, 8, 101, -9, 6,788, 344, 6777, 42423, 243);
-		sumArray("The sum of",ints);
+		sum("The sum of var-args",8,2,5,7, 6, 8, 101, -9, 6,788, 344, 6777, 42423, 243);
+		sum("The sum raw array", ints);
+		//sumArray("The sum of",ints);
 
 	}
 
 
-	private static void sumArray(String strSum, int[] ints){
-
-		sum(strSum, ints[0], ints[1], ints[2]);
-
-	}
+//	private static void sumArray(String strSum, int[] ints){
+//
+//		sum(strSum, ints[0], ints[1], ints[2]);
+//
+//	}
 	
 	//varargs, introduced in Java5
     //notice how the varargs argument is last!
@@ -42,7 +45,7 @@ import java.lang.String;import java.lang.System;public class VarArgs {
 			nResult += nParams[nC]; 
 		}
 		
-		System.out.print(" is: " + nResult);
+		System.out.println(" is: " + nResult);
 		
 	}
 
