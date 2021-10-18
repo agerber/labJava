@@ -4,7 +4,7 @@ import edu.uchicago.gerber.labjava.lec03.glab.ascii.Asciify;
 import edu.uchicago.gerber.labjava.lec03.glab.dogfight.Dog;
 
 
-public abstract class Animal {
+public abstract class Animal implements Boxable {
 
 
 	private String name;
@@ -12,7 +12,7 @@ public abstract class Animal {
 
 	public Animal(String name) {
 		this.name = name;
-		this.health = 10000;
+		this.health = 10_000;
 	}
 
 
@@ -35,16 +35,32 @@ public abstract class Animal {
 
 
 
+
 	@Override
 	public String toString() {
 		return this.name + ":" + this.getClass().getSimpleName();
 	}
 
-	public String toStringHealth() {
-		return toString() + ":" + getHealth();
-	}
-		
-		
 
-	
+
+	@Override
+	public void ouch(int points) {
+		setHealth(getHealth() - points);
+	}
+
+	@Override
+	public String punch(Boxable other) {
+		int hits = (int) (Math.random() * 100);
+		other.ouch(hits);
+
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("\n" + this.getAscii());
+		stringBuilder.append("\nPUNCHES");
+		stringBuilder.append("\n" + other.getAscii());
+		return stringBuilder.toString();
+
+	}
+
+
+
 }
