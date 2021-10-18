@@ -1,7 +1,8 @@
 package edu.uchicago.gerber.labjava.lec03.glab.employee;
 
-public final class Executive extends Manager{
+import java.util.Date;
 
+public final class Executive extends Manager{
 
 
 	private double stockValue;
@@ -28,7 +29,7 @@ public final class Executive extends Manager{
 	public String greetOther(Employee employee){
 
 		if (employee instanceof  Executive){
-			return greetOther((Executive) employee, "Hey there");
+			return greetOther("On " + new Date(), (Executive) employee);
 		} else {
 			String strType = employee.getClass().getSimpleName();
 			return "You are just a " + strType + ", leave me alone";
@@ -36,7 +37,7 @@ public final class Executive extends Manager{
 
 	}
 
-	private String greetOther(Executive other, String preamble){
+	private String greetOther(String preamble, Executive other ){
 
 		double myMojo = this.getSalary() + this.getBonus() + this.getStockValue();
 		double otherMojo = other.getSalary() + other.getBonus() + other.getStockValue();
