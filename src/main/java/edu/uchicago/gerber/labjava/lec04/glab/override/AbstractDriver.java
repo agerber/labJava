@@ -1,6 +1,7 @@
 package edu.uchicago.gerber.labjava.lec04.glab.override;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by ag on 10/20/2014.
