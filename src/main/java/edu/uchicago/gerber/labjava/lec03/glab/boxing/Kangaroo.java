@@ -1,6 +1,5 @@
 package edu.uchicago.gerber.labjava.lec03.glab.boxing;
 
-import edu.uchicago.gerber.labjava.lec03.glab.race.Raceable;
 
 
 public class Kangaroo extends Animal implements Boxable {
