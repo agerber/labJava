@@ -70,12 +70,12 @@ public class DeepCopyDriver {
 		}
 
 
-		System.out.println("dates point to same object " + (houCloned.getDatInstantiated() == houOrig.getDatInstantiated()));
+		System.out.println("dates point to same object " + (houCloned.getTimestamp() == houOrig.getTimestamp()));
 		houCloned.setAddress("123 Kenwood Drive");
 		houCloned.setDatInstantiated(new Date());
 		System.out.println("address point to same object " +  (houCloned.getAddress() == houOrig.getAddress()));
 
-		System.out.println(houOrig.getDatInstantiated().equals(houCloned.getDatInstantiated()));
+		System.out.println(houOrig.getTimestamp().equals(houCloned.getTimestamp()));
 
 //		System.out.println("houOrig and houCloned point the same instantiated object in memory space? " + (houOrig == houCloned));
 //

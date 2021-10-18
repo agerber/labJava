@@ -9,16 +9,16 @@ public class House implements Cloneable {
 	// ===============================================
 	// ==INSTANCE VARIABLES
 	// ===============================================	
-	private String mAddress;
-	private double mMarketValue;
-	private boolean mForeclosed;
+	private String address;
+	private double marketValue;
+	private boolean foreclosed;
 	//this gets added later
-	private Date mDatInstantiated;
+	private Date timestamp;
 
     //I want this instance to be available to all classes to instantiate it in the static context
-    private static DecimalFormat sFormatter;
+    private static DecimalFormat formatter;
     static {
-        sFormatter = new DecimalFormat("$#,###.00");
+        formatter = new DecimalFormat("$#,###.00");
     }
 	
 	
@@ -27,10 +27,10 @@ public class House implements Cloneable {
 	// ===============================================	
 	public House(String address, double marketValue,
 			 boolean foreclosed) {
-		this.mAddress = address;
-		this.mMarketValue = marketValue;
-		this.mForeclosed = foreclosed;
-		mDatInstantiated = new Date();
+		this.address = address;
+		this.marketValue = marketValue;
+		this.foreclosed = foreclosed;
+		timestamp = new Date();
 	}
 
 	// ===============================================
@@ -38,52 +38,52 @@ public class House implements Cloneable {
 	// ===============================================
 
 	public String getAddress() {
-		return this.mAddress;
+		return this.address;
 
 	}
 
 	public void setAddress(String address) {
-		this.mAddress = address;
+		this.address = address;
 	}
 
 
 
 	public double getMarketValue() {
-		return this.mMarketValue;
+		return this.marketValue;
 	}
 
 	public void setMarketValue(double marketValue) {
-		this.mMarketValue = marketValue;
+		this.marketValue = marketValue;
 	}
 
 
 	public boolean isForeclosed() {
-		return this.mForeclosed;
+		return this.foreclosed;
 	}
 
 	public void setForeclosed(boolean foreclosed) {
-		this.mForeclosed = foreclosed;
+		this.foreclosed = foreclosed;
 	}
 	
 	
 	
 	//these get added later
-	public Date getDatInstantiated() {
-		return this.mDatInstantiated;
+	public Date getTimestamp() {
+		return this.timestamp;
 	}
 
 	public void setDatInstantiated(Date datInstantiated) {
-		this.mDatInstantiated = datInstantiated;
+		this.timestamp = datInstantiated;
 	}
 
     @Override
 	public String toString(){
 
-		return getDatInstantiated() + " : "
-                + getDatInstantiated().getTime()
+		return getTimestamp() + " : "
+                + getTimestamp().getTime()
                 + " : " + getAddress()
-                + " : " + sFormatter.format(getMarketValue())
-                + (mForeclosed ? " >FORECLOSED" : ""
+                + " : " + formatter.format(getMarketValue())
+                + (foreclosed ? " >FORECLOSED" : ""
                 + "\n");
 
 	}
@@ -97,7 +97,7 @@ public class House implements Cloneable {
 		     //no need to clone string because it is immutable
 		     
 		    // comment out below line and see if clone works.
-		    // houClone.setDatInstantiated((Date) getDatInstantiated().clone());
+		     houClone.setDatInstantiated((Date) getTimestamp().clone());
 
 
 
