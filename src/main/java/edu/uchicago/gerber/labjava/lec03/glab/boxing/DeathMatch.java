@@ -8,18 +8,21 @@ public class DeathMatch {
 		//heterogeneous data structure, Robot does not share hierarchy with
 		//Human and Kangaroo
 		Boxable[] boxables = {
-				new Human("Bart"),
-				new Kangaroo("Roo"),
+				new Bart(),
+				new Lucy(),
+				new Marge(),
+				new Homer(),
+				new Kangaroo(),
 				new Robot("Mac2e")};
 
-		Boxable boxPuncher = boxables[(int) (Math.random() * 3)];
+		Boxable boxPuncher = boxables[(int) (Math.random() * boxables.length)];
 		Boxable boxPunchee;
 		Boxable boxSwap;
 
 
 		//assign punchee
 		while (true){
-			 boxPunchee = boxables[(int) (Math.random() * 3)];
+			 boxPunchee = boxables[(int) (Math.random() * boxables.length)];
 			 if (boxPunchee != boxPuncher) break;
 		}
 

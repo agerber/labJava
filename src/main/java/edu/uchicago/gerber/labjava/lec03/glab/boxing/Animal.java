@@ -1,7 +1,5 @@
 package edu.uchicago.gerber.labjava.lec03.glab.boxing;
 
-import edu.uchicago.gerber.labjava.lec03.glab.ascii.Asciify;
-import edu.uchicago.gerber.labjava.lec03.glab.dogfight.Dog;
 
 
 public abstract class Animal implements Boxable {

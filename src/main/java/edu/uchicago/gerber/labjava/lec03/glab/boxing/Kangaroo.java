@@ -6,10 +6,8 @@ public class Kangaroo extends Animal implements Boxable {
 
 
 
-
-	//constructor
-	public Kangaroo(String name) {
-		super(name);
+	public Kangaroo() {
+		super("Roo");
 
 	}
 

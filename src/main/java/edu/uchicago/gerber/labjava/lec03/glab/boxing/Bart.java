@@ -2,14 +2,11 @@ package edu.uchicago.gerber.labjava.lec03.glab.boxing;
 
 
 
-public class Human extends Animal implements Boxable  {
+public class Bart extends Animal implements Boxable  {
 
 
-
-
-	//constructor
-	public Human(String name) {
-		super(name);
+	public Bart() {
+		super("Bart");
 
 	}
 
