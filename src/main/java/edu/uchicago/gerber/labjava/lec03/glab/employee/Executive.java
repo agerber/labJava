@@ -22,15 +22,13 @@ public final class Executive extends Manager{
 	@Override
 	public String getDescription() {
 		return super.getName();
-//		return String.format("an exec with a salary of " +  getSalary()+ " and a bonus of " + getBonus() +
-//				" and a stock comp of " + getStockValue()) ;
 
 	}
 
 	public String greetOther(Employee employee){
 
 		if (employee instanceof  Executive){
-			return greetOther((Executive) employee);
+			return greetOther((Executive) employee, "Hey there");
 		} else {
 			String strType = employee.getClass().getSimpleName();
 			return "You are just a " + strType + ", leave me alone";
@@ -38,17 +36,17 @@ public final class Executive extends Manager{
 
 	}
 
-	private String greetOther(Executive other){
+	private String greetOther(Executive other, String preamble){
 
 		double myMojo = this.getSalary() + this.getBonus() + this.getStockValue();
 		double otherMojo = other.getSalary() + other.getBonus() + other.getStockValue();
 
 		if (myMojo > otherMojo){
-			return "Bow to me, you peasant, " + other.getName();
+			return preamble + "; bow to me, you peasant, " + other.getName();
 		} else if (myMojo < otherMojo){
-			return "I bet you think you are a hot shot, don't you?";
+			return preamble + "; I bet you think you are a hot shot, don't you?";
 		} else {
-			return "Let's play golf";
+			return  preamble + "; let's play golf";
 		}
 
 	}
