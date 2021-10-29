@@ -2,7 +2,7 @@ package edu.uchicago.gerber.labjava.lec04.glab.tetris;
 
 import java.awt.*;
 
-public class Widget
+public   class Widget
 {
 
 

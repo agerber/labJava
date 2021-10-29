@@ -34,6 +34,8 @@ public class TimeTestAnon {
 		);
 
 
+
+
 		tim.start();
 
 		JOptionPane.showMessageDialog(null, "Quit?");

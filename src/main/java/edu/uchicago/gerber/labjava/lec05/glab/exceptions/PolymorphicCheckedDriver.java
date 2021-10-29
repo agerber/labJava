@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 // https://stackoverflow.com/questions/6159118/using-java-to-pull-data-from-a-webpage
-public class CheckedDriver2 {
+public class PolymorphicCheckedDriver {
 
 
     public static void main(String[] args)  {

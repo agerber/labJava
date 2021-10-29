@@ -6,7 +6,7 @@ public class BankAccount {
 	// ==STATIC FIELDS
 	// ===============================================
 	
-	// private static int nLastAssignedNumber = 1000;
+	 private static int nLastAssignedNumber = 1000;
 	 public static final double OVERDRAFT_FEE = 5.0;
 	 
 	 
@@ -16,7 +16,7 @@ public class BankAccount {
 	// ===============================================
 	
     private double dBalance;   
-   // private int nAccountNumber;
+    private int nAccountNumber;
     
     
     
@@ -29,7 +29,7 @@ public class BankAccount {
 	public BankAccount(double balance) {
 		//super();
 		this.dBalance = balance;
-		//this.nAccountNumber = nLastAssignedNumber++;
+		this.nAccountNumber = nLastAssignedNumber++;
 	}    
     
 

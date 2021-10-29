@@ -10,9 +10,9 @@ public class CommandLine {
 	//put args in program arguments || Run
 	//10 Hello there my name is Adam
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		//the first arg is assumed to be an integer
-		try {
+		//try {
 			int nNum = Integer.parseInt(args[0]);
 
             //print nB times
@@ -24,10 +24,10 @@ public class CommandLine {
 				System.out.println();
 			}
 
-		} catch (NumberFormatException nfe) {
-			System.out.println("Error: " + nfe.getMessage());
-			return;
-		}
+//		} catch (NumberFormatException nfe) {
+//			System.out.println("Error: " + nfe.getMessage());
+//			return;
+//		}
 
 	}
 

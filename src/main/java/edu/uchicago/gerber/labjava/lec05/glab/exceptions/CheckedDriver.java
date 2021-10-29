@@ -22,7 +22,7 @@ public class CheckedDriver {
                 array = getBytes(filePath);
                 break;
             } catch (IOException e) {
-                System.out.println("You got an excep[t here " + e.getMessage());
+                System.out.println("You got an exception here " + e.getMessage());
             }
         }
         System.out.println(new String(array, Charset.defaultCharset()));

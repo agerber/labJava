@@ -14,11 +14,12 @@ public class TheThreeFinals {
         final int total = 500;
         //total += 60;
 
-        //3. the third is final with objects. You may mutate,
+        //3. the third is final with objects. You may mutate, but you can NOT re-assign the mem address.
         final Student student = new Student("Adam", "Economics");
+        //student = new Student("Bart", "Poli Sci");
         student.setSchool("Computer Science");
         System.out.println(student.getDescription());
-        //student = new Student("Bart", "Poli Sci");
+        //
 
 
 

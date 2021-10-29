@@ -1,11 +1,11 @@
 package edu.uchicago.gerber.labjava.lec05.glab.exceptions;
 
-public class UncheckedExceptionDriver3 {
+class BadStleUncheckedExceptionDriver3 {
 	public static void main(String[] args) {
 
 		//although getHighValue3 throws an exception, it's an unchecked one
 		try {
-			System.out.println(getReverseHighValue("Northwestern", "UIC", "Loyala", "Unviersity of Chicago", "DePaul"));
+			System.out.println(getHighValue3("Northwestern", "UIC", "Loyala", "Unviersity of Chicago", "DePaul"));
 			//System.out.println(getReverseHighValue());
 		} catch (NullVarArgsPointerException exp) {
 			// TODO Auto-generated catch block

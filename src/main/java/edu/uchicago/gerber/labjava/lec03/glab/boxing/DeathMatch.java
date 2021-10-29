@@ -17,7 +17,9 @@ public class DeathMatch {
 
 		Boxable boxPuncher = boxables[(int) (Math.random() * boxables.length)];
 		Boxable boxPunchee;
-		Boxable boxSwap;
+		Boxable boxSwap; //null
+
+
 
 
 		//assign punchee

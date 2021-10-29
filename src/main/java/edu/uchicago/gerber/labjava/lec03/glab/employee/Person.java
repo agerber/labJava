@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec03.glab.employee;
 
-public abstract class Person extends Object {
+public abstract class Person  {
 
     //cntrl-H to see object hierachy
     //ctrl-alt-shift-u to see class UML diagram

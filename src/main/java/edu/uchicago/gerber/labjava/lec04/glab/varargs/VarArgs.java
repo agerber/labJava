@@ -31,6 +31,7 @@ public class VarArgs {
 	private static void sum(String strSum, int... nParams){
 		int nResult = 0;
 		System.out.print(strSum + " ");
+
 		//notice that the int... is converted to int[] inside the method
 		for (int nC = 0; nC < nParams.length; nC++) {
             //just output to the command-line
