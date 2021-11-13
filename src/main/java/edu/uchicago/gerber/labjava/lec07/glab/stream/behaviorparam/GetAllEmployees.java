@@ -57,22 +57,13 @@ public class GetAllEmployees {
 
         //1/ limit by salary,
         //2/  convert the collection of Employees to a collection of String
-        // print each one if the second char is 'o'
 
-
-        List<String> names = new ArrayList<>();
         for (Employee employee : employees) {
-            if (employee.getSalary() < 30_000){
-                names.add(employee.getName());
+            if (employee.getSalary() < 30_000 && employee.getName().charAt(1) == 'o'){
+                System.out.println(employee.getName().toUpperCase());
             }
         }
 
-        //print those names that are o
-        for (String name : names) {
-            if (name.charAt(1) == 'o'){
-                System.out.println(name.toUpperCase());
-            }
-        }
 
         //in one statement, we use functional programming (declarative) we do the same thing
         Arrays.stream(employees)

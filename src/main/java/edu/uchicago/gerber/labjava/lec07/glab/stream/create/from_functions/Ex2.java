@@ -1,7 +1,7 @@
 package edu.uchicago.gerber.labjava.lec07.glab.stream.create.from_functions;
 
 import java.util.stream.Stream;
-//from w w w  . j a v a2 s  .c  om
+
 public class Ex2 {
     public static void main(String[] args) {
         Stream.iterate(2L, n  ->  n  + 1)

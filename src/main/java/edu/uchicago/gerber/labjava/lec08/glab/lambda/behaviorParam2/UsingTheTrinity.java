@@ -28,6 +28,6 @@ public class UsingTheTrinity {
         myList.stream()
                 .filter(startsWithC) //intermediate - returns a stream
                 .map(capMe) //intermediate - returns a stream
-                .forEach(s -> System.out.println(s)); //terminal - consumes the stream.
+                .forEach(consumeMe); //terminal - consumes the stream.
     }
 }

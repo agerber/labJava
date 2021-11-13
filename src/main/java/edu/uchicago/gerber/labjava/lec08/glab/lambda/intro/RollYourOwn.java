@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec08.glab.lambda.intro;
 
-//http://www.java2s.com/Tutorials/Java/Java_Lambda/index.htm
+
 
 
 

@@ -3,6 +3,7 @@ package edu.uchicago.gerber.labjava.lec07.glab.stream.intro;
 
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -30,7 +31,7 @@ public class Filtering{
 
        Function<Dish, String> getName = d -> d.getName();
 
-       Consumer<Dish> printMe = d -> System.out.println(d);
+      // Consumer<Dish> printMe = d -> System.out.println(d);
 
        boolean areFrenchFriesFattening = dishPredicate.test(menu.get(3));
        System.out.println("French fries have lots of calories ? " + areFrenchFriesFattening);
@@ -38,13 +39,30 @@ public class Filtering{
        String theName = getName.apply(menu.get(3));
         System.out.println(theName);
 
+        Function<Dish, Dish>
+                getDishDishFunction = d -> new Dish(d.getName(), d.isVegetarian(), d.getCalories() * 2, d.getType());
+//
+        Consumer<Dish> printMe = d -> System.out.println(d);
 
-//
-//
          menu.stream()
-               .filter(d -> d.getCalories() > 400)     //Stream<Dish>
-               .map(d -> new Dish(d.getName(), d.isVegetarian(), d.getCalories() * 2, d.getType()))  //Stream<Dish>
-               .forEach(d -> System.out.println(d));
+               .filter(dishPredicate)
+                .sorted(new Comparator<Dish>() {
+                    @Override
+                    public int compare(Dish o1, Dish o2) {
+                        if ( o1.getCalories() > o2.getCalories()){
+                            return 1;
+                        } else if (o1.getCalories() < o2.getCalories()){
+                            return  - 1;
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                })
+               .map(getDishDishFunction)
+               .limit(2)
+               .forEach(printMe);
 
 
        // List<Dish> accumulator = new ArrayList<>();
@@ -116,4 +134,7 @@ public class Filtering{
 //
 //        dishesSkip2.forEach(System.out::println);
     }
+
+
+
 }

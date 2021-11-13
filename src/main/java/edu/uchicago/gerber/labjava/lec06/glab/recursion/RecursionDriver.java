@@ -12,8 +12,8 @@ public class RecursionDriver {
 		System.out.println(replaceIter("Java", 'a', 'o'));
 
 
-		//System.out.println(myFactorialRec(5L));
-		//System.out.println(myFactorialIter(5));
+		System.out.println(myFactorialRec(5L));
+		System.out.println(myFactorialIter(5L));
 
         testIsPalindrome("A man, a plan, a canal, Panama!");
         testIsPalindrome("Madam, I'm Adam");
@@ -53,6 +53,12 @@ public class RecursionDriver {
 	}
 
 	private static long myFactorialRec(long lVal){
+
+		//base-case
+		if (lVal < 1){
+			throw new RuntimeException("sorry dude, your factorial must be gerater than 1");
+		}
+
 		//base-case(s)
 		if(lVal == 1){
 			return  1;

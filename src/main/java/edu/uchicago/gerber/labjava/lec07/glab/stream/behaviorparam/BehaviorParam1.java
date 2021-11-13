@@ -3,6 +3,8 @@ package edu.uchicago.gerber.labjava.lec07.glab.stream.behaviorparam;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 
 public class BehaviorParam1 {
 
@@ -16,17 +18,17 @@ public class BehaviorParam1 {
         //2 There is a lot of boilerplate that we don't need here. If there is only one method in this interface,
         //we can iner the interface name, the method name, and even the parameter types. So, get rid of them.
 
-
+       //this.getClass().getSimpleName() +
         final ActionListener actionListener7 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(e.getWhen());
+                System.out.println(this.getClass().getSimpleName() + e.getWhen());
             }
         };
 
 
 
-        Timer timer1 = new Timer(1000, e -> System.out.println(e.getWhen()));
+        Timer timer1 = new Timer(1000, actionListener7);
         timer1.start();
 
 
@@ -35,14 +37,20 @@ public class BehaviorParam1 {
         //in Java8
         //extract variable
 
-        final ActionListener actionListener8 = e -> {
+        final ActionListener actionListener8 = (e) -> {
             System.out.println(e.getWhen());
         };
+
         Timer timer2 = new Timer(1000, actionListener8);
         timer2.start();
 
 
-        //we couldn't do this on a MouseClick interface b/c it has more than one contract method
+
+
+
+
+
+
 
 
 

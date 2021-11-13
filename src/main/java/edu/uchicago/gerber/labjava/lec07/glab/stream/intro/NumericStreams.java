@@ -24,12 +24,19 @@ public class NumericStreams{
                     new Dish("salmon", false, 450, Dish.Type.FISH));
 
     public static void main(String...args){
-    
+
+        int[] myInts = {1,4,6,7,4,3,3,3,3,3,3,3,3};
+
+
+
+
+
         List<Integer> numbers = Arrays.asList(3,4,5,1,2);
 
-        Arrays.stream(numbers.toArray()).forEach(System.out::println);
+        Arrays.stream(numbers.toArray()).forEach(x -> System.out.println(x));
         int calories = menu.stream()
-                           .mapToInt(Dish::getCalories)
+                           .mapToInt(dish -> dish.getCalories())
+
                            .sum();
         System.out.println("Number of calories:" + calories);
 

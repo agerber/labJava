@@ -27,9 +27,9 @@ public class SpentStreams {
 
 
         //this won't produce anything
-//        while (iterator.hasNext()){
-//            System.out.println(iterator.next());
-//        }
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
        // System.out.println("the next element is  " + iterator.next());
 
 

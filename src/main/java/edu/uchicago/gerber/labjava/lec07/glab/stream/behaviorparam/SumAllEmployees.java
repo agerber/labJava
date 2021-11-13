@@ -19,7 +19,7 @@ public class SumAllEmployees {
         employees.add(new Employee("Jason", 21000, 3, 4, 1999));
 
 
-        //sum the salaries of all employees whose name starts with J and whose birthday year is less than 2000
+        //sum the salaries of all employees whose name starts with J and whose hire date year is less than 2000
 
       double sumOfSalaries =  employees.stream()
                 //filter out those employees we don't want

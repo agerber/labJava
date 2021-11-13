@@ -7,7 +7,7 @@ public class Example2 {
         List<Box> inventory = Arrays.asList(new Box(80, "green"), new Box(
                 155, "green"), new Box(120, "red"));
 
-        List<Box> greenApples = filter(inventory,Example2::isGreenApple);
+        List<Box> greenApples = filter(inventory, apple -> isGreenApple(apple));
         System.out.println(greenApples);
 
         List<Box> heavyApples = filter(inventory,Example2::isHeavyApple);
@@ -32,8 +32,7 @@ public class Example2 {
         return apple.getWeight() > 150;
     }
 
-    public static List<Box> filter(List<Box> inventory,
-                                   Predicate<Box> p) {
+    public static List<Box> filter(List<Box> inventory, Predicate<Box> p) {
         List<Box> result = new ArrayList<>();
         for (Box apple : inventory) {
             if (p.test(apple)) {

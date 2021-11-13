@@ -7,32 +7,20 @@ public class RecurseAgainDriver {
 
        // System.out.println(reverso("abcdefghijklmnopqrstuvwxyz"));
 
-      //  System.out.println(yodaString("speak no evil jedi"));
+        System.out.println(yodaString("speak no evil jedi"));
         System.out.println(yodaString("wars not make one great"));
-        System.out.println(yodaString("once you start down the dark path, forever will it dominate your destiny"));
-        System.out.println(yodaString("There is no try. Do or do not"));
 
         System.out.println(factorial(5));
-        System.out.println(replaceChar("This is so cool isn't it?", 'i', 'j'));
+        System.out.println(replaceChar("Banana", 'a', 'o'));
 
     }
 
-    private static String reverso(String chars){
 
-        //base case
-        if (chars.length() ==1 ){
-            return String.valueOf(chars.charAt(0));
-            //recruseiv ecase
-        } else {
-            return chars.charAt(chars.length() -1) + reverso(chars.substring(0, chars.length() -1));
-        }
-
-    }
 
 
     private static String yodaString(String wiseWords){
 
-        //base case(s)
+        //base case(s) //e.g. it can't find any more words.
         if (wiseWords.lastIndexOf(' ') < 1){
             return wiseWords;
         }
@@ -73,6 +61,11 @@ public class RecurseAgainDriver {
 
     private static String replaceChar(String sentence, char cOrig, char cNew){
 
+        //base-case
+        if (sentence == null || sentence.length() == 0){
+            throw  new RuntimeException("Sorry, your sentence must contain some data");
+        }
+
         //base case
         if (sentence.length() == 1){
             return sentence;
@@ -86,6 +79,19 @@ public class RecurseAgainDriver {
     }
 
 
+
+    //not used
+    private static String reverso(String chars){
+
+        //base case
+        if (chars.length() ==1 ){
+            return String.valueOf(chars.charAt(0));
+            //recruseiv ecase
+        } else {
+            return chars.charAt(chars.length() -1) + reverso(chars.substring(0, chars.length() -1));
+        }
+
+    }
 
 
 }

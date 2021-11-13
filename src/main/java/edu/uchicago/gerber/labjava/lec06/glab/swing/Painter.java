@@ -6,23 +6,24 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseMotionListener;
 
 /**
  * Created by Adam on 11/2/2015.
  */
-public class Painter implements ChangeListener {
+public class Painter {
     //define a frame
     private JFrame frm;
     private JPanel mPanelIndicator;
     private JPanel mPanelCenter;
-    private JPanel mPanelSlider;
+    //private JPanel mPanelSlider;
 
     private JSlider mSliderRed;
     private JSlider mSliderGreen;
     private JSlider mSliderBlue;
 
     private Color mColor;
-
+    private Graphics graphics;
 
 
     //creaete a main method that insantiates the ecnlosing object
@@ -66,15 +67,13 @@ public class Painter implements ChangeListener {
         frm.getContentPane().add(mPanelCenter, BorderLayout.CENTER);
 
         mPanelCenter.addMouseMotionListener(new MouseMotionAdapter() {
-
             @Override
             public void mouseDragged(MouseEvent e) {
-
-                    Graphics graphics =  mPanelCenter.getGraphics();
-                    graphics.setColor(mColor);
-                    graphics.fillOval(e.getX(), e.getY(), 20,20);
-
+                graphics = mPanelCenter.getGraphics();
+                graphics.setColor(mColor);
+                graphics.fillOval(e.getX(), e.getY(), 20,20);
             }
+
         });
 
 
@@ -82,14 +81,22 @@ public class Painter implements ChangeListener {
         mSliderGreen = new JSlider(0,255);
         mSliderRed = new JSlider(0,255);
 
-        mSliderBlue.addChangeListener(this);
-        mSliderGreen.addChangeListener(this);
-        mSliderRed.addChangeListener(this);
+        ChangeListener changeListener = new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                setColor();
+            }
+        };
+
+        mSliderBlue.addChangeListener(changeListener);
+        mSliderGreen.addChangeListener(changeListener);
+        mSliderRed.addChangeListener(changeListener);
 
 
 
 
-        mPanelSlider = new JPanel();
+
+        JPanel  mPanelSlider = new JPanel();
         mPanelSlider.add(mSliderRed);
         mPanelSlider.add(mSliderGreen);
         mPanelSlider.add(mSliderBlue);
@@ -106,19 +113,12 @@ public class Painter implements ChangeListener {
 
     }
 
-
-    /**
-     * Invoked when the target of the listener has changed its state.
-     *
-     * @param e a ChangeEvent object
-     */
-    @Override
-    public void stateChanged(ChangeEvent e) {
-        mColor =  new Color(mSliderRed.getValue(),
+    private void setColor() {
+        mColor = new Color(mSliderRed.getValue(),
                 mSliderGreen.getValue(),
-                mSliderBlue.getValue()
-
-        );
+                mSliderBlue.getValue());
         mPanelIndicator.setBackground(mColor);
     }
+
+
 }

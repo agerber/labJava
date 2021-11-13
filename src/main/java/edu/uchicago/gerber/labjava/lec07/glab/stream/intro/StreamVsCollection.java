@@ -9,8 +9,9 @@ public class StreamVsCollection {
 
     public static void main(String...args){
         List<String> names = Arrays.asList("Java8", "Lambdas", "In", "Iction");
-        Stream<String> s = names.stream();
-        s
+        Stream<String> stream = names.stream();
+
+        stream
                 .filter(u -> u.startsWith("I"))  //intermediate
                 .map(y -> y.length()) //intermediate
                 .forEach(System.out::println);

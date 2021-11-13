@@ -4,7 +4,8 @@ public class RecurseMe {
 
     public static void main(String[] args) {
         System.out.println(facorial(5));
-        System.out.println(replaceChar("This is so cool, isn't it?", 'i', 'j'));
+        System.out.println(replaceChar("Banana", 'a', 'o'));
+
     }
 
     private static int facorial(int factor){
@@ -28,11 +29,14 @@ public class RecurseMe {
     private static String replaceChar(String sentence, char cOrig, char cNew){
 
         //base-case
+        if (sentence == null || sentence.length() == 0){
+            throw  new RuntimeException("Sorry, your sentence must contain some data");
+        }
+
+        //base-case
         if (sentence.length() == 1){
             return  sentence;
         }
-
-
 
         //recursive-case
         else {
