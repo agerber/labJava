@@ -2,12 +2,9 @@ package edu.uchicago.gerber.labjava.lec07.glab.stream.intro;
 
 
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.Collectors;
 
 
 public class Filtering{
@@ -27,66 +24,82 @@ public class Filtering{
 
     public static void main(String...args){
 
-       Predicate<Dish> dishPredicate = d -> d.getCalories() > 400;
 
-       Function<Dish, String> getName = d -> d.getName();
-
-      // Consumer<Dish> printMe = d -> System.out.println(d);
-
-       boolean areFrenchFriesFattening = dishPredicate.test(menu.get(3));
-       System.out.println("French fries have lots of calories ? " + areFrenchFriesFattening);
-
-       String theName = getName.apply(menu.get(3));
-        System.out.println(theName);
+        Predicate<Dish> predicateMoreThan400 = d -> d.getCalories() > 400;
 
         Function<Dish, Dish>
-                getDishDishFunction = d -> new Dish(d.getName(), d.isVegetarian(), d.getCalories() * 2, d.getType());
-//
-        Consumer<Dish> printMe = d -> System.out.println(d);
+                functionSuperSizeMe = d -> new Dish(d.getName(), d.isVegetarian(), d.getCalories() * 2, d.getType());
 
-         menu.stream()
-               .filter(dishPredicate)
-                .sorted(new Comparator<Dish>() {
-                    @Override
-                    public int compare(Dish o1, Dish o2) {
-                        if ( o1.getCalories() > o2.getCalories()){
-                            return 1;
-                        } else if (o1.getCalories() < o2.getCalories()){
-                            return  - 1;
-                        }
-                        else
-                        {
-                            return 0;
-                        }
-                    }
-                })
-               .map(getDishDishFunction)
-               .limit(2)
+        BiConsumer<Dish.Type, List<Dish>> printMe = (t, list) -> System.out.println(t + ":" + list);
+
+      //  Map<Dish.Type, List<Dish>>  map =
+      menu.stream()
+               .filter(predicateMoreThan400)
+               .map(functionSuperSizeMe)
+                .collect(Collectors.groupingBy(dish -> dish.getType()))
                .forEach(printMe);
 
 
-       // List<Dish> accumulator = new ArrayList<>();
 
-//        for (Dish dish : menu) {
-//            if (dish.getCalories() > 400){
-//                dish = new Dish(dish.getName(), dish.isVegetarian(), dish.getCalories() * 2, dish.getType());
-//                System.out.println(dish);
+
+      class Sport {
+          private String city;
+          private String[] teams;
+
+          public Sport(String city, String[] teams) {
+              this.city = city;
+              this.teams = teams;
+          }
+
+          public String getCity() {
+              return city;
+          }
+
+          public void setCity(String city) {
+              this.city = city;
+          }
+
+          public String[] getTeams() {
+              return teams;
+          }
+
+          public void setTeams(String[] teams) {
+              this.teams = teams;
+          }
+      }
+
+      List<Sport> sports = new ArrayList<>();
+      sports.add(new Sport("Chicago", new String[] {"Sox", "Cubs", "Bears", "Bulls", "Blackhawks"}));
+      sports.add(new Sport("New York", new String[] {"Yankees", "Mets", "Giants", "Jets", "Nets", "Knicks", "Rangers",
+              "Islanders",}));
+
+
+      sports.stream()
+              .map(sport -> sport.getTeams())
+              .flatMap(teams -> Arrays.stream(teams))
+              .filter(team -> !team.startsWith("B"))
+              .forEach(s -> System.out.println(s));
+
+
+
+//        List<String> langs = new ArrayList<>();
 //
-//            }
-//        }
+//        langs.add( "Java");
+//        langs.add(  "C++");
+//        langs.add(  "Python");
+//        langs.add(  "TypeScript");
+//        langs.add(  "Kotlin");
+//
+//        final String python = "Python";
+//
+//        langs.stream()
+//                .filter()
+//                .forEach(s -> System.out.println(s));
 
 
 
 
 
-//        for (Dish dish : menu) {
-//            if (dishPredicate.test(dish)){
-//                System.out.println(dish);
-//            }
-//        }
-//        for (Dish dish : menu) {
-//            System.out.println(dishStringFunction.apply(dish));
-//        }
 
 
 

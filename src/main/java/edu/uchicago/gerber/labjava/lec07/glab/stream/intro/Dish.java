@@ -3,7 +3,7 @@ package edu.uchicago.gerber.labjava.lec07.glab.stream.intro;
 import java.util.Arrays;
 import java.util.List;
 
-public class Dish {
+public class Dish implements Comparable<Dish> {
 
     private final String name;
     private final boolean vegetarian;
@@ -32,6 +32,12 @@ public class Dish {
     public Type getType() {
         return type;
     }
+
+    @Override
+    public int compareTo(Dish dish) {
+            return  getName().compareTo(dish.getName());
+    }
+
 
     public enum Type { MEAT, FISH, OTHER }
 
