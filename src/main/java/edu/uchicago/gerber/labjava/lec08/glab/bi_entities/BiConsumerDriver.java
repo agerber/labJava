@@ -2,10 +2,13 @@ package edu.uchicago.gerber.labjava.lec08.glab.bi_entities;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.BiPredicate;
 
-public class BiPredicateDriver {
+public class BiConsumerDriver {
 
+    //1. use-case either you are consuming a map, or Pair. See: GroupByDriver.java
+    //2. you don't know the second parameter until R/T. see below:
 
     public static void main(String[] args) {
 
@@ -22,14 +25,13 @@ public class BiPredicateDriver {
 
 
         //let's assume this value comes from another query at R/T
-        final int minCharValue = 5;
+        final String message = "Presenting";
 
-        //BiPredicate use case, the second value can not be determined at compile time.
-        BiPredicate<Dish, Integer> minChars = (dish, i) -> dish.getName().length() > i;
+        //BiConsumer use case, the second value can not be determined at compile time.
+        BiConsumer<Dish, String> dishWithMessage = (dish, s) -> System.out.println(s + ":"  + dish);
 
         menu.stream()
-                .filter(d -> minChars.test(d, minCharValue))
-                .forEach(d -> System.out.println(d));
+                .forEach(d -> dishWithMessage.accept(d, message));
 
 
 
@@ -39,6 +41,7 @@ public class BiPredicateDriver {
 
 
     }
+
+
+
 }
-
-
