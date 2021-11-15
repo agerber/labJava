@@ -8,15 +8,18 @@ import java.util.List;
 public class PairDriver {
     public static void main(String[] args) {
 
-        List<Pair<String, ? super TDPoint>> list = new ArrayList<>();
+        List<Pair<String, ?>> list = new ArrayList<>();
 
-        list.add(new Pair<>("my generic point", 34));
-        list.add(new Pair<>("my object", 89L));
+        list.add(new Pair<>("To be or not to be", "Shakespeare"));
+        list.add(new Pair<>("Do or do not do, there is no try", "Yoda"));
+        list.add(new Pair<>("Let there be light", new Long(-2000L)));
 
-
-        for (Pair<String, ? super TDPoint> stringPair : list) {
+        for (Pair<String, ?> stringPair : list) {
             System.out.println(stringPair);
         }
+
+
+
 
 
 
