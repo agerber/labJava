@@ -4,6 +4,7 @@ package edu.uchicago.gerber.labjava.lec08.glab.group_by;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -23,19 +24,18 @@ public class GroupByDriver {
 
     public static void main(String[] args) {
 
-            Predicate<Dish> predicateMoreThan400 = d -> d.getCalories() > 400;
-
-            Function<Dish, Dish>
-                    functionSuperSizeMe = d -> new Dish(d.getName(), d.isVegetarian(), d.getCalories() * 2, d.getType());
+//            Predicate<Dish> predicateMoreThan400 = d -> d.getCalories() > 400;
+//
+//            Function<Dish, Dish>
+//                    functionSuperSizeMe = d -> new Dish(d.getName(), d.isVegetarian(), d.getCalories() * 2, d.getType());
 
             BiConsumer<Dish.Type, List<Dish>> printMe = (t, list) -> System.out.println(t + ":" + list);
 
             //  Map<Dish.Type, List<Dish>>  map =
-            menu.stream()
-                    .filter(predicateMoreThan400)
-                    .map(functionSuperSizeMe)
-                    .collect(Collectors.groupingBy(dish -> dish.getType()))
-                    .forEach(printMe);
+
+
+
+                   // .forEach(printMe);
 
         }
 }

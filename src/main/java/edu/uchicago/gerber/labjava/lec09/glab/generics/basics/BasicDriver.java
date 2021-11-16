@@ -22,8 +22,8 @@ public class BasicDriver {
 //        System.out.println("value: " + v);
 //
 //        // Create a Gen object for Strings.
-//        GenericClass<String> strOb = new GenericClass<>("Generics Test");
-//        strOb.showType();
+        GenericClass<String> strOb = new GenericClass<>("Generics Test");
+        strOb.showType();
 //
 //        String str = strOb.getOb();
 //        System.out.println("value: " + str);

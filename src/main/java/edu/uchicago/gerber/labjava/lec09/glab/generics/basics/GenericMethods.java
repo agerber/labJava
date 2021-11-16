@@ -42,4 +42,8 @@ public class GenericMethods {
     private static <T extends Number> double getDubGenerically(T value){
          return value.doubleValue();
     }
+
+    private List getList(List list){
+        return list;
+    }
 }

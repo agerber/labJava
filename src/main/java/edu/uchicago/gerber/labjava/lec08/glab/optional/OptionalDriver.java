@@ -14,6 +14,9 @@ public class OptionalDriver {
 
 
         Optional<Rectangle> optionalRectangle = Optional.of(rectangle);
+
+
+
         System.out.println(optionalRectangle.orElse(new Rectangle(2,3,4,5)));
 
         System.out.println(optionalRectangle.orElseThrow(new Supplier<Throwable>() {
