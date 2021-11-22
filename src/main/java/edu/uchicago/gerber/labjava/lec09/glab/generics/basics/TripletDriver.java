@@ -7,7 +7,7 @@ public class TripletDriver {
         Triplet<String,String, ?> trip = new Triplet("Hello", "There", 12);
        // Triplet<String,String, ?> trip2 = new Triplet("Hello", "There", "String");
         Triplet<String,String, ?> trip3 = new Triplet("Hello", "There", new Long(12L));
-        System.out.println(trip);
+        System.out.println(trip3 + ":" + trip);
 
     }
 }

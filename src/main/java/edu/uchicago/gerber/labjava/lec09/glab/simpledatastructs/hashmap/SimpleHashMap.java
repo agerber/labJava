@@ -13,7 +13,7 @@ public class SimpleHashMap<K,V> {
 	// ==CONSTRUCTOR
 	// ===============================================
 	public SimpleHashMap() {
-		nodHashes = new HashMapNode[1999];
+		nodHashes = new HashMapNode[7];
 		nSize = 0;
 
 	}

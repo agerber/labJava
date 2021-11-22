@@ -12,7 +12,7 @@ public class SimpleHashTable<T> {
 	// ==CONSTRUCTOR
 	// ===============================================
 	public SimpleHashTable() {
-		nodHashes = new Node[1999];
+		nodHashes = new Node[7];
 		nSize = 0;
 
 
@@ -56,7 +56,7 @@ public class SimpleHashTable<T> {
 		}
 		else {
 	
-		//add it to the beginning
+		//add it to the beginning, and set next to the previous first.
 			nodHashes[nHash] = new Node<T>(typ, nodHashes[nHash]);
 			
 	
