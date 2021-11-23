@@ -6,7 +6,7 @@ public class Stack <T>
 { 
 
 private int nSize;
-private static final int CAP = 50;
+private static final int CAP = 10;
 private Object[] objEs;
 
 	

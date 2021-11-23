@@ -45,6 +45,7 @@ public class SimpleHashTable<T> {
 	public void add(T typ) {
 
 
+
 		int nHash = typ.hashCode();
 		nHash = Math.abs(nHash);
 		nHash = nHash % nodHashes.length;

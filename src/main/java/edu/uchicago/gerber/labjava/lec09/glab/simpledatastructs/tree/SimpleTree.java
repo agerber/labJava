@@ -1,5 +1,7 @@
 package edu.uchicago.gerber.labjava.lec09.glab.simpledatastructs.tree;
 
+import java.util.LinkedList;
+
 public class SimpleTree<T> {
 
 	private TreeNode<T> nodHead;
