@@ -73,7 +73,6 @@ public class SimpleTree<T> {
 			printInOrder(nod.getRight());
 		}
 	}
-
 	//inner class     
 	//package access
 	static class TreeNode<T> {
