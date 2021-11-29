@@ -22,6 +22,8 @@ public class BasicDriver {
         thrZero.start();
 
 
+
+
         //Thread is called thrOne, and Runnable is an anonymous inner class BasicDriver$1
         Thread thrOne = new Thread(new Runnable() {
             @Override
@@ -37,6 +39,7 @@ public class BasicDriver {
             }
         });
         thrOne.start();
+        System.out.println(thrOne.getState());
 
         //Thread is reference anonymous, and Runnable is an anonymous inner class BasicDriver$2
         new Thread(new Runnable() {

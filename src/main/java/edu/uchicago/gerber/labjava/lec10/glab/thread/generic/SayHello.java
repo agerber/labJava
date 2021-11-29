@@ -32,9 +32,10 @@ public class SayHello implements Runnable {
 		
 		try {
 			for (int nC = 0; nC < REPS; nC++) {
-				Date datNow = new Date();
-				System.out.println(datNow + " " + strGreet);
+				long start = System.currentTimeMillis();
+
 				Thread.sleep(DELAY);
+				System.out.println((System.currentTimeMillis() - start) + " " + strGreet);
 			}
 		} catch (InterruptedException exp) {
 			// TODO Auto-generated catch block

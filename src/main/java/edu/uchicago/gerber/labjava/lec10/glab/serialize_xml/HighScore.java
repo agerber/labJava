@@ -14,6 +14,8 @@ public class HighScore implements Serializable, Comparable<HighScore> {
     private String mName;
     private long mScore;
 
+    private static final long serialVersionUID = 78965434233L;
+
     //you must include a no-arg consturctor
     public HighScore() {
     }
