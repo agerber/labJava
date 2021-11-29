@@ -39,7 +39,7 @@ public class linkedHashDriver {
 
         //when iterating uses O(n) unordered where n is the number buckets.
         int nC = 1;
-        System.out.println("\n\nO(n) unordered, where n is the number of buckets:");
+        System.out.println("\n\nO(n) unordered and unsorted, where n is the number of buckets:");
         for (String rankedSquashPlayer : hashSet) {
             System.out.println(nC++ + ": " + rankedSquashPlayer);
         }
@@ -76,7 +76,7 @@ public class linkedHashDriver {
         //when iterating, will use linkedList in order (not sorted), and O(n) where n is the number of ->
         //-> elements, not buckets.
         int nD = 1;
-        System.out.println("\n\nO(n) unordered, where n is the number of buckets:");
+        System.out.println("\n\nO(n) ordered but unsorted, where n is the number of elements, not buckets:");
         for (String rankedSquashPlayer : linkedHashSet) {
             System.out.println(nD++ + ": " + rankedSquashPlayer);
         }
