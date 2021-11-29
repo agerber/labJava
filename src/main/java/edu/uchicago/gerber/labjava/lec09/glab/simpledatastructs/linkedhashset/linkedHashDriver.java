@@ -37,7 +37,7 @@ public class linkedHashDriver {
         //When seeking, will use hashtable, so O(1)
         System.out.println("O(1) is MIGUEL RODRIGUEZ ranked? :" + hashSet.contains("MIGUEL RODRIGUEZ"));
 
-        //when iterating and O(n) unordered where n is the number buckets.
+        //when iterating uses O(n) unordered where n is the number buckets.
         int nC = 1;
         System.out.println("\n\nO(n) unordered, where n is the number of buckets:");
         for (String rankedSquashPlayer : hashSet) {
@@ -73,7 +73,8 @@ public class linkedHashDriver {
         //When seeking, will use hashtable, so O(1)
         System.out.println("O(1) is MIGUEL RODRIGUEZ ranked? :" + linkedHashSet.contains("MIGUEL RODRIGUEZ"));
 
-        //when iterating, will use linkedList in order, and O(n) where n is the number of elements, not buckets.
+        //when iterating, will use linkedList in order (not sorted), and O(n) where n is the number of ->
+        //-> elements, not buckets.
         int nD = 1;
         System.out.println("\n\nO(n) unordered, where n is the number of buckets:");
         for (String rankedSquashPlayer : linkedHashSet) {
