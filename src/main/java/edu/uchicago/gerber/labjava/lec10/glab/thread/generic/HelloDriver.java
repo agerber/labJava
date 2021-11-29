@@ -10,8 +10,6 @@ public class HelloDriver {
 	 */
 	public static void main(String[] args) {
 
-		boolean constrained = false;
-
 		SayHello one = new SayHello("1");
 		SayHello two = new SayHello("2");
 		SayHello three = new SayHello("3");
@@ -24,7 +22,7 @@ public class HelloDriver {
 		SayHello line = new SayHello("#####################");
 
 
-	//	if (!constrained){
+
 
 			new Thread(one).start();
 			new Thread(two).start();
@@ -36,23 +34,6 @@ public class HelloDriver {
 			new Thread(eight).start();
 			new Thread(nine).start();
 			new Thread(line).start();
-
-
-
-		//} else {
-//			ExecutorService executorService =	Executors.newFixedThreadPool(3);
-//			executorService.submit(one);
-//			executorService.submit(two);
-//			executorService.submit(three);
-//			executorService.submit(four);
-//			executorService.submit(five);
-//			executorService.submit(six);
-//			executorService.submit(seven);
-//			executorService.submit(eight);
-//			executorService.submit(nine);
-//			executorService.submit(line);
-		//}
-
 
 
 
