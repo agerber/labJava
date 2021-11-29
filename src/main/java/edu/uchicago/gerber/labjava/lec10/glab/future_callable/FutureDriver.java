@@ -24,6 +24,7 @@ public class FutureDriver {
         Callable<String> callableJavaClass = new WebsiteCallable("http://gerber.cs.uchicago.edu/java/");
         Callable<String> callableAndroidClass = new WebsiteCallable("http://gerber.cs.uchicago.edu/android/");
         //notice that the future object's generic maps directly to the Callable's generic.
+
         Future<String> futureJava = pool.submit(callableJavaClass);
         Future<String> futureAndroid = pool.submit(callableAndroidClass);
 

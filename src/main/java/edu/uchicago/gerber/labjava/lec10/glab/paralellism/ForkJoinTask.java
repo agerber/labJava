@@ -68,7 +68,8 @@ public class ForkJoinTask extends RecursiveTask<Integer> {
         
         // By calling the left.join() method, we retrieve the value from the 
         // left fork after it is completed.
-        
+
+        //this is recursive and Math.min(right, left) is on the stack.
         return Math.min(right.compute(), left.join());
     }
     
@@ -85,7 +86,8 @@ public class ForkJoinTask extends RecursiveTask<Integer> {
         System.out.println();
       //  System.out.println(" computing elements " + start + " to " + end);
         int min = Integer.MAX_VALUE;
-        
+
+        //brute force O(n) calculate minimum
         for (int i = start; i < end; i++) {
             if (data[i] < min) {
                 min = data[i];

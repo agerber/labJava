@@ -28,12 +28,12 @@ public class JoinWebDriver {
         //comment-out the following try-catch to see the difference in results.
 
         //this joins thread thrWeb to the main thread.
-        try {
-            thrWeb.join();
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+//        try {
+//            thrWeb.join();
+//
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//        }
 
 
 

@@ -32,11 +32,11 @@ public class ForkJoinMain {
         // We first create a data array of 100,000 random integers
         // ranging from 0 to 99,999
         
-        final int data[] = new int[100000];
+        final int data[] = new int[100_000];
         final Random random = new Random();
         
         for(int i = 0; i < data.length; i++){
-            data[i] = random.nextInt(100000);
+            data[i] = random.nextInt(100_000);
         }
         
         // We then create a Fork/Join pool with 4 threads in it
