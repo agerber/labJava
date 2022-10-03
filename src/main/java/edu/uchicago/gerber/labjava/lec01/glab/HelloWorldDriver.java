@@ -2,6 +2,10 @@ package edu.uchicago.gerber.labjava.lec01.glab;
 
 public class HelloWorldDriver {
     public static void main(String[] args) {
-        System.out.println(60/7);
+
+        String helloWorld = new String("Hello World");
+
+        System.out.println(helloWorld);
     }
 }
+

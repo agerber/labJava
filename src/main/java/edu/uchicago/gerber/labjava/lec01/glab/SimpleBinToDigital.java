@@ -16,24 +16,35 @@ public class SimpleBinToDigital {
     public static void main(String[] args) {
 
 
-        String strBinary = "1001 0001";
+     //   String strBinary = "0001 0011"; //19
+        //String strBinary = "0000 1011"; // 11
+       // String strBinary = "0111 1111"; //127
+        String strBinary = "1000 0000"; //-128
+       // String strBinary = "1111 1111"; //-1
+       // String strBinary = "1111 0111"; //-9
 
                             //2^2     //2^1      // 2^0
 
         //strip out any spaces
         strBinary = strBinary.replace(" ", "");
 
-        int nPow =0;
-        int lResult = 0;
+        int power =0;
+        int result = 0;
 
-        //for each char in string backwards and skip the sign bit
-        for (int nC = strBinary.length()-1; nC > 0 ; nC--) {
-            if (strBinary.charAt(nC) == '1') {
-                lResult += Math.pow(2, nPow);
+        char[] chars = new StringBuilder(strBinary).reverse().toString().toCharArray();
+
+        for (int nC = 0; nC < chars.length -1; nC++) {
+            if (chars[nC] == '1') {
+                result += Math.pow(2, power);
             }
-           nPow++;
+            power++;
         }
-        System.out.println(lResult);
+        //the sign bit
+        if (chars[chars.length-1] == '1'){
+            result = result - 128;
+        }
+
+        System.out.println(result);
 
     }
 }
