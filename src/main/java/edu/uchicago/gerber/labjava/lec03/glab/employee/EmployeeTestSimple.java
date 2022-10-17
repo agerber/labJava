@@ -17,7 +17,7 @@ public class EmployeeTestSimple  {
 
 
 
-		System.out.println(bret.promote().promote().getDescription());
+		System.out.println(bret.doubleSalary().doubleSalary().getDescription());
 
 
 
