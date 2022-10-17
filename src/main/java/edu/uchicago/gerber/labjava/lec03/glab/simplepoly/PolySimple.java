@@ -18,20 +18,17 @@ public class PolySimple {
 
 		Double dub =new Double(34.56);
 		System.out.println(dub.getClass().getName());
-
-
 		Number num = (Number) dub;
 		System.out.println(num.getClass().getName());
 
-
-
 		Object obj = (Object) num;
-		System.out.println(obj.getClass().getName());
+		System.out.println(obj instanceof Double);
 
 		System.out.println(obj.toString());
 
 
 		Object objectme = new Object();
+		//widening - danger!
 		Double dubme2 = (Double) objectme;
 
 		//System.out.println(new Date());
@@ -45,19 +42,22 @@ public class PolySimple {
 
 
 
-//		Rectangle2D rectangle2D = new Rectangle(3,4,9,9);
-//
-//	    Object object = (Object) rectangle2D;
-//
-//	    //will cause a class cast exception
-//	    String string = (String) object;
-//
-//	    String string2 = rectangle2D.toString();
-//
-//	    Number number = (Number) dub;
-//
-//	    //will cause a class cast exception
-//	    number = (Number) object;
+		Rectangle2D rectangle2D = new Rectangle(3,4,9,9);
+
+		//narrowing the apperature - safe
+	    Object object = (Object) rectangle2D;
+
+		//widening the aperature - dangerous!
+	    //will cause a class cast exception
+	    String string = (String) object;
+
+	    String string2 = rectangle2D.toString();
+
+		//widening the aperature - dangerous!
+	    Number number = (Number) dub;
+
+	    //will cause a class cast exception
+	    number = (Number) object;
 //
 
 

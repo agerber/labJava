@@ -19,9 +19,12 @@ public class PassBy  {
 
 
         Rectangle recSquare = new Rectangle(1,1,10,10);
+
+        nullMyReference(recSquare);
         //Ox67AB
-        doubleRec(recSquare);
+       // doubleRec(recSquare);
         System.out.println("recSquare: " + recSquare);
+
 
     }
 
@@ -38,6 +41,16 @@ public class PassBy  {
     //memory address of the object
     private static void doubleRec(Rectangle recParam){
         recParam.setSize(recParam.width * 2, recParam.height * 2);
+
+    }
+
+    private static void nullMyReference(Rectangle recParam){
+
+        //set null to the reference
+        recParam.setSize(500,500);
+        recParam = new Rectangle(200, 200, 200, 200);
+        recParam.setSize(1,1);
+       // recParam = null;
 
     }
 

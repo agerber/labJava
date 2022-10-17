@@ -25,6 +25,8 @@ public class EmployeeTestSimple  {
 
 
 		Manager victor = new Manager("Victor Orban", 200_000, 20_000);
+		Executive victorTheExec = new Executive(victor.getName(), victor.getSalary(), victor.getBonus(), 454545);
+		Manager  victoDemoted = victorTheExec;
 
 		System.out.println(bret.getDescription() + bret.healthPlan());
 		System.out.println(victor.getDescription() + victor.healthPlan());

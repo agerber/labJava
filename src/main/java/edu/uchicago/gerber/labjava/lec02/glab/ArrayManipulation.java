@@ -38,6 +38,9 @@ public class ArrayManipulation {
 		//keeping track of how many elements in your array
 		//int nResult2 = nIds[4];
 
+
+
+		//THESE ARE OBJECT REFERENCES
         System.out.println("-----------------------");
 		String[] strNames = {"Harry", "Larry", "Mary", "Perry"};
 		//this has indices from 0 to 3
@@ -63,7 +66,7 @@ public class ArrayManipulation {
 
 
 
-
+       //THESE ARE OBJECT REFERENCES
         Rectangle[] recShapes =
 		{
 				new Rectangle(4,5,8,9),

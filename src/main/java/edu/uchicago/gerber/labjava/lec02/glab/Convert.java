@@ -9,10 +9,19 @@ package edu.uchicago.gerber.labjava.lec02.glab;
  */
 public class Convert {
 
-    private Convert() {
+    //private Convert() {}
+
+
+    private String name;
+
+    public Convert(String name) {
+        this.name = name;
     }
-
-
+    public Convert(){}
+    @Override
+    public String toString() {
+       return  name;
+    }
 
     public static double tempToMetric(double dFar){
        //(°F  -  32)  x  5/9

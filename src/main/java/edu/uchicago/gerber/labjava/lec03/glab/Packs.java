@@ -2,7 +2,7 @@ package edu.uchicago.gerber.labjava.lec03.glab;
 
 //import java.util.Date;
 //import java.sql.Date;
-import java.util.*;
+//import java.util.*;
 
 public class Packs {
 
@@ -15,7 +15,7 @@ public class Packs {
 
     public static void main(String[] args) {
         java.sql.Date date1 = new java.sql.Date(1L);
-        Date date2 = new Date();
+        java.util.Date date2 = new java.util.Date();
 
 
        // date1 = date2;

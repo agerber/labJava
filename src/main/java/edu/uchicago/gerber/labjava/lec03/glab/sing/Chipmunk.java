@@ -1,6 +1,7 @@
 package edu.uchicago.gerber.labjava.lec03.glab.sing;
 
 public class Chipmunk implements Singable {
+
     @Override
     public String sing() {
         return "MI *********************************************************";

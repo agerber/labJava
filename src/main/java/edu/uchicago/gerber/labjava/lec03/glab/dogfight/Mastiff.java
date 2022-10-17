@@ -12,7 +12,15 @@ public class Mastiff extends Dog{
         int speed = ((int) (Math.random() * 30));
         int strength = ((int) (Math.random() * 30 + 70));
 
+
+        System.out.println(super.getName());
+        System.out.println(this.getName());
         dog.setHealth(dog.getHealth() - speed * strength);
 
+    }
+
+    @Override
+    public String getName() {
+        return "Mastiff:" + this.getName();
     }
 }

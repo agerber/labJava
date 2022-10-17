@@ -6,6 +6,7 @@ public class Chiwawa extends Dog {
         super(name);
     }
 
+
     @Override
     public void bite(Dog dog) {
 

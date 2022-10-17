@@ -16,11 +16,11 @@ public class SimpleBinToDigital {
     public static void main(String[] args) {
 
 
-     //   String strBinary = "0001 0011"; //19
+       //String strBinary = "0001 0011"; //19
         //String strBinary = "0000 1011"; // 11
-       // String strBinary = "0111 1111"; //127
-        String strBinary = "1000 0000"; //-128
-       // String strBinary = "1111 1111"; //-1
+      //  String strBinary = "0111 1111"; //127
+      //  String strBinary = "1000 0000"; //-128
+       String strBinary = "1111 1110"; //-2
        // String strBinary = "1111 0111"; //-9
 
                             //2^2     //2^1      // 2^0

@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.awt.Rectangle;
 import java.util.List;
 
+
 public class ArrayListManipulation {
 
 
 	public static void main(String[] args) {
+
 
 
 
@@ -27,12 +29,11 @@ public class ArrayListManipulation {
 
 
 
-
 		
 //		//let's iterate over this ArrayList
-//		for (String str : strNames) {
-//			System.out.println(str);
-//		}
+		for (String str : strNames) {
+			System.out.println(str);
+		}
 
 
 

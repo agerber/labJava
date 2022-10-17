@@ -15,7 +15,7 @@ public class PromotionAndCastingPrimitives {
 		//there are two operands of different primtive types; the smaller precision operand will get promoted to larger precision operand
 		double dResult = dOperand1 / nOperand2; //here nOperand2 is promoted to double
 
-		//integer division - will truncate, not round!
+		//integer division - will truncate, not round! The result will be 2
 		int nResultIntDivision =  23/ 8;
 
 
@@ -58,8 +58,8 @@ public class PromotionAndCastingPrimitives {
         //in the following example, 51 (an int) will be cast to a double
         double dVal = 51 / 24.89989;
 
-        float fValue =   89393.0008f;
-        long lValme = 893938948934893498L;
+        float fValue =   89393.0008F;
+        long lValme = 89393898L;
 
 
         //EXPLICIT CASTING (AKA DOWNCASTING) --will result in loss of precision
@@ -74,8 +74,8 @@ public class PromotionAndCastingPrimitives {
 
 
 //		int to byte downcasting
-//		0000 0000 0000 0000 0000 0001 1000 1001
-//		                              1000 1001
+//		0000 0000 0000 0000 0000 0000 0100 1001
+//		                              0100 1001
 
 
 //				-119

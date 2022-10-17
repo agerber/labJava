@@ -1,5 +1,6 @@
 package edu.uchicago.gerber.labjava.lec02.glab;
 
+import java.awt.Rectangle;
 /**
 Let's do this in class today
  */
@@ -19,6 +20,15 @@ public class NewKeyword {
         System.out.println("-----------original----------");
         System.out.println("stuOne: " + stuOne);
         System.out.println("stuTwo: " + stuTwo);
+
+
+        Rectangle[] rectangles  = {
+                new Rectangle(1,4,5,8),
+                new Rectangle(7,4,3,8),
+                new Rectangle(3,4,7,9),
+        };
+
+
 
         //swap
         Student stuTemp = stuOne;
