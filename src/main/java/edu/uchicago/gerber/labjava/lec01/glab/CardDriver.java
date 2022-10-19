@@ -14,10 +14,10 @@ public class CardDriver {
 
         //Card cardKS = new Card('K', 'S', (byte)10);
        // System.out.println(cardKS.getFace());
-        Card cardKS = new Card('K', 'S', (byte)10);
+       // Card cardKS = new Card('K', 'S', (byte)10);
 
         System.out.println("METHODS ==========================");
-        Method[] methods = cardKS.getClass().getDeclaredMethods();
+        Method[] methods = Card.class.getDeclaredMethods();
         for (Method method : methods) {
             if (Modifier.isStatic(method.getModifiers()))
                 System.out.print(":::::::::STATIC ");
@@ -25,7 +25,7 @@ public class CardDriver {
             System.out.println(method);
         }
         System.out.println("FIELOS ==========================");
-        Field[] fields = cardKS.getClass().getDeclaredFields();
+        Field[] fields = Card.class.getDeclaredFields();
         for (Field field : fields) {
 
             if (Modifier.isStatic(field.getModifiers())){
@@ -39,7 +39,7 @@ public class CardDriver {
             System.out.println(field);
         }
         System.out.println("CONSTRUCTORS ==========================");
-        Constructor<?>[] constructors = cardKS.getClass().getDeclaredConstructors();
+        Constructor<?>[] constructors = Card.class.getDeclaredConstructors();
         for (Constructor<?> constructor : constructors) {
             System.out.println(constructor);
         }
@@ -52,8 +52,8 @@ public class CardDriver {
        // Card cardQS = new Card('Q', 'S', (byte)10);
         //Card cardAS = new Card('A', 'S', (byte)1);
       //  System.out.println(cardKS.toString());
-        Player player1 = new Player("Adam", 50_000.09);
-        System.out.println(player1.getName());
+       // Player player1 = new Player("Adam", 50_000.09);
+       // System.out.println(player1.getName());
 
 
 

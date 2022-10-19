@@ -7,7 +7,7 @@ public class PrefixPostfixDriver {
 
        // prefix ->
         // nX = nX + 1;
-        System.out.println(++nX);
+        System.out.println(nX++);
         // postfix ->
         // nX = nX + 1;
 

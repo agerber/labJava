@@ -22,12 +22,6 @@ public class NewKeyword {
         System.out.println("stuTwo: " + stuTwo);
 
 
-        Rectangle[] rectangles  = {
-                new Rectangle(1,4,5,8),
-                new Rectangle(7,4,3,8),
-                new Rectangle(3,4,7,9),
-        };
-
 
 
         //swap
@@ -41,7 +35,7 @@ public class NewKeyword {
 
 
       //  System.out.println("---------this is a false swap------------");
-       // swap(stuOne, stuTwo);
+        falseSwap(stuOne, stuTwo);
 
         System.out.println("stuOne: " + stuOne);
         System.out.println("stuTwo: " + stuTwo);
@@ -64,7 +58,7 @@ public class NewKeyword {
 
     }
 
-    public static void swap(Student stuFirst, Student stuSecond){
+    public static void falseSwap(Student stuFirst, Student stuSecond){
 
         Student stuTemp = stuFirst;
         stuFirst = stuSecond;

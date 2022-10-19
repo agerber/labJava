@@ -14,7 +14,7 @@ public class Card {
 
     //calling syntax: Card.howManyCards()
     //static method definition loaded by class-loader
-    public static int howManyCards(){
+    public static char howManyCards(){
         return NUM_CARDS_IN_DECK;
     }
 
