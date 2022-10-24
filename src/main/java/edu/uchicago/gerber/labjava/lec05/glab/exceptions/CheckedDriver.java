@@ -11,7 +11,7 @@ public class CheckedDriver {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        byte[] array = null;
+        byte[] arrayOfBytes;
 
 
         while (true) {
@@ -19,21 +19,21 @@ public class CheckedDriver {
             System.out.println("What is the absolute path to your file?");
             String filePath = scanner.nextLine();
             try {
-                array = getBytes(filePath);
+                arrayOfBytes = getBytes(filePath);
                 break;
-            } catch (IOException e) {
-                System.out.println("You got an exception here " + e.getMessage());
+            } catch (IOException exception) {
+                System.out.println("Try again, this path is invalid: " + exception.getMessage());
             }
         }
-        System.out.println(new String(array, Charset.defaultCharset()));
+        System.out.println(new String(arrayOfBytes, Charset.defaultCharset()));
 
     }
 
 
     private static byte[] getBytes(String filePath) throws IOException {
-        byte[] array;
-        array = Files.readAllBytes(Paths.get(filePath));
-        return array;
+        byte[] arrayOfBytes;
+        arrayOfBytes = Files.readAllBytes(Paths.get(filePath));
+        return arrayOfBytes;
     }
 
 
