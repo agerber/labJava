@@ -18,7 +18,7 @@ public class ProgramToInterfacesDriver {
         myList.add("Los Angeles");
         myList.add("Albany");
 
-        myList =  sortList(myList);
+       sortList(myList);
         printList(myList);
 
     }
@@ -32,7 +32,7 @@ public class ProgramToInterfacesDriver {
 
     }
 
-    private static List<String> sortList(List<String> list){
+    private static void sortList(List<String> list){
 
         list.sort(new Comparator<String>() {
             @Override
@@ -40,7 +40,7 @@ public class ProgramToInterfacesDriver {
                 return o1.compareTo(o2);
             }
         });
-        return list;
+
     }
 
 }

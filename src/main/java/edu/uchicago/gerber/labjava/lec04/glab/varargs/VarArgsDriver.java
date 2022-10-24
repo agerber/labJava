@@ -2,7 +2,7 @@ package edu.uchicago.gerber.labjava.lec04.glab.varargs;
 
 
 
-public class VarArgs {
+public class VarArgsDriver {
 
 
 	public static void main(String[] args) {
