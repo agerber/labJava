@@ -25,7 +25,7 @@ public class AutoBoxDriver {
 
         List<Character> chrChars = new ArrayList<>();
         //Auto-boxing
-        chrChars.add('A');
+        chrChars.add(new Character('A'));
         chrChars.add('d');
         chrChars.add('a');
         chrChars.add('m');

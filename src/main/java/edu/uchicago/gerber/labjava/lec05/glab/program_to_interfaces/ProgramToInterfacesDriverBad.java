@@ -2,6 +2,7 @@ package edu.uchicago.gerber.labjava.lec05.glab.program_to_interfaces;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ProgramToInterfacesDriverBad {

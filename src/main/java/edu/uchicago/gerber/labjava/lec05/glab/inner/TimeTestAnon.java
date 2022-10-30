@@ -12,31 +12,19 @@ public class TimeTestAnon {
 
 	public static void main(String[] args) {
 
-		//uncomment and see what happens; you can't instantiate an interface
-		//UNLESS you implement all of its contracted methods inline
-		// ActionListener lis2 = new ActionListener();
-
-		// ActionListener lis1 = new ActionListener();  //can't instantiate, EXCEPT anonymously like above
-
-		Timer tim = new Timer(1000,
-
-		new ActionListener() {
-
-			public void actionPerformed(ActionEvent evn) {
-				Date datNow = new Date();
-				System.out.println("type-anonymous and reference-anonymous > At the tone, the time is "
-						+ datNow);
-				Toolkit.getDefaultToolkit().beep();
-                Reflector.printClass(this.getClass());
-			}
-		}
-
+		Timer timer = new Timer(1000,
+				new ActionListener() {
+					public void actionPerformed(ActionEvent evn) {
+						ActionListener[] actionListeners = ( (Timer) evn.getSource()).getActionListeners();
+						System.out.println(actionListeners[0].getClass().getName() +  " -> at the tone, the time is " + new Date());
+						Toolkit.getDefaultToolkit().beep();
+						//Reflector.printClass(actionListeners[0].getClass());
+					}
+				}
 		);
 
 
-
-
-		tim.start();
+		timer.start();
 
 		JOptionPane.showMessageDialog(null, "Quit?");
 		System.exit(0);

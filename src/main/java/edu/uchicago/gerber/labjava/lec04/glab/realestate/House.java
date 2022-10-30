@@ -95,6 +95,7 @@ public class House implements Cloneable {
 		     House houClone =  (House) super.clone();
 		     
 
+			// houClone.setAddress((String) getAddress().c);
 		    // comment out below line and see if clone works.
 		     houClone.setDatInstantiated((Date) getTimestamp().clone());
 

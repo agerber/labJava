@@ -21,12 +21,12 @@ public class ReflectDriver {
 
 
         objects.add(new Integer(45)); //can remove new-keyword, but still an Integer object due to auto-boxing
-        objects.add(new String("Hello")); // can remove new-keyword, but String is still an object
-        objects.add(new Rectangle(5,4,12,8));
-        objects.add(new Date());
+//        objects.add(new String("Hello")); // can remove new-keyword, but String is still an object
+//        objects.add(new Rectangle(5,4,12,8));
+//        objects.add(new Date());
 
-        reportName(objects);
-        reportHierarchy(objects);
+       // reportName(objects);
+       reportHierarchy(objects);
 
 
     }

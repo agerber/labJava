@@ -13,28 +13,20 @@ public class TimerTestLocal {
 	public static void main(String[] args) {
 
 		
-		//uncomment and see what happens; you can't instantiate an interface
-		//UNLESS you implement all of its contracted methods inline
-	    // ActionListener lis2 = new ActionListener();
-
-
-
-		
-		ActionListener lis = new ActionListener() {
+		ActionListener listener = new ActionListener() {
 				public void actionPerformed(ActionEvent evn){
-					Date datNow = new Date();
-					System.out.println("type-anonymous > At the tone, the time is " + datNow);
+					ActionListener[] actionListeners = ( (Timer) evn.getSource()).getActionListeners();
+					//You can't instantiate an interface, so what is the type (class) of the object act above?
+					System.out.println(actionListeners[0].getClass().getName() +  " -> at the tone, the time is " + new Date());
 					Toolkit.getDefaultToolkit().beep();
-					//Reflector.printClass(this.getClass());
+
 				}
 		};
 
 
-        //You can't instantiate an interface, so what is the type (class) of the object act above?
-       Reflector.printClass(lis.getClass());
 
-        Timer tim = new Timer(1000, lis);
-		tim.start();
+        Timer timer = new Timer(1000, listener);
+		timer.start();
 		
 		JOptionPane.showMessageDialog(null, "Quit?");
 		System.exit(0);

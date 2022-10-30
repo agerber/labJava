@@ -63,10 +63,11 @@ public class DeepCopyDriver {
 
 		House houCloned = null;
 
+
 		try {
 			houCloned = houOrig.clone();
 		} catch (CloneNotSupportedException e) {
-			throw new RuntimeException(e);
+			System.out.println(e.getMessage());
 		}
 
 

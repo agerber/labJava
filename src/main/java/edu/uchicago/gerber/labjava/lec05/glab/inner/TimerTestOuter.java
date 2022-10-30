@@ -14,13 +14,14 @@ public class TimerTestOuter {
 	public static void main(String[] args) {
 
 
-		ActionListener lis = new EventListenerOuter();
+		ActionListener listener = new EventListenerOuter();
         //EventListenerOuter lis = new EventListenerOuter();   //this is legal as well
-        Reflector.printClass(lis.getClass());
 
-        Timer tim = new Timer(1000, lis);
-		tim.start();
+		//kick-off the timer event every second
+        Timer timer = new Timer(1000, listener);
+		timer.start();
 
+		//this just allows me to terminate
 		JOptionPane.showMessageDialog(null, "Quit?");
 		System.exit(0);
 		

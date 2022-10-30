@@ -8,7 +8,7 @@ import java.util.List;
 public class ProgramToInterfacesDriver {
     public static void main(String[] args) {
 
-        List<String> myList = new LinkedList<>();
+        List<String> myList = new ArrayList<>();
 
         myList.add("Chicago");
         myList.add("Ypsilanti");
