@@ -6,24 +6,23 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.awt.event.MouseMotionListener;
 
 /**
  * Created by Adam on 11/2/2015.
  */
 public class Painter {
     //define a frame
-    private JFrame frm;
-    private JPanel mPanelIndicator;
-    private JPanel mPanelCenter;
-    //private JPanel mPanelSlider;
+    private JFrame frame;
+    private JPanel panelColor;
+    private JPanel panelCanvas;
 
-    private JSlider mSliderRed;
-    private JSlider mSliderGreen;
-    private JSlider mSliderBlue;
+    private JSlider sliderRed;
+    private JSlider sliderGreen;
+    private JSlider sliderBlue;
 
-    private Color mColor;
-    private Graphics graphics;
+    private Color color;
+
+
 
 
     //creaete a main method that insantiates the ecnlosing object
@@ -32,7 +31,7 @@ public class Painter {
             public void run() {
                 try {
                     Painter window = new Painter();
-                    window.frm.setVisible(true);
+                    window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -51,35 +50,37 @@ public class Painter {
 
     //our init methhod
     private void initialize() {
-            frm = new JFrame();
-        frm.setBounds(100, 100, 700, 476);
-        frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame = new JFrame();
+        frame.setBounds(100, 100, 700, 476);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //lay our componnets out
-        mPanelIndicator = new JPanel();
+        panelColor = new JPanel();
 
         //http://stackoverflow.com/questions/17083657/make-bottom-panel-in-borderlayout-to-expand-like-center-panel
-        mPanelIndicator.setPreferredSize(new Dimension(frm.getWidth(), 50));
+        panelColor.setPreferredSize(new Dimension(frame.getWidth(), 50));
 
-        frm.getContentPane().add(mPanelIndicator, BorderLayout.NORTH);
+        frame.getContentPane().add(panelColor, BorderLayout.NORTH);
 
-        mPanelCenter = new JPanel();
-        frm.getContentPane().add(mPanelCenter, BorderLayout.CENTER);
+        panelCanvas = new JPanel();
 
-        mPanelCenter.addMouseMotionListener(new MouseMotionAdapter() {
+        frame.getContentPane().add(panelCanvas, BorderLayout.CENTER);
+
+
+        panelCanvas.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                graphics = mPanelCenter.getGraphics();
-                graphics.setColor(mColor);
+                Graphics graphics = panelCanvas.getGraphics();
+                graphics.setColor(color);
                 graphics.fillOval(e.getX(), e.getY(), 20,20);
             }
 
         });
 
 
-        mSliderBlue = new JSlider(0,255);
-        mSliderGreen = new JSlider(0,255);
-        mSliderRed = new JSlider(0,255);
+        sliderBlue = new JSlider(0,255);
+        sliderGreen = new JSlider(0,255);
+        sliderRed = new JSlider(0,255);
 
         ChangeListener changeListener = new ChangeListener() {
             @Override
@@ -88,24 +89,21 @@ public class Painter {
             }
         };
 
-        mSliderBlue.addChangeListener(changeListener);
-        mSliderGreen.addChangeListener(changeListener);
-        mSliderRed.addChangeListener(changeListener);
+        sliderBlue.addChangeListener(changeListener);
+        sliderGreen.addChangeListener(changeListener);
+        sliderRed.addChangeListener(changeListener);
 
 
+        JPanel  panelSlider = new JPanel();
+        panelSlider.add(sliderRed);
+        panelSlider.add(sliderGreen);
+        panelSlider.add(sliderBlue);
+
+        frame.getContentPane().add(panelSlider, BorderLayout.SOUTH);
 
 
-
-        JPanel  mPanelSlider = new JPanel();
-        mPanelSlider.add(mSliderRed);
-        mPanelSlider.add(mSliderGreen);
-        mPanelSlider.add(mSliderBlue);
-
-        frm.getContentPane().add(mPanelSlider, BorderLayout.SOUTH);
-
-
-        mColor = Color.GRAY;
-        mPanelIndicator.setBackground(mColor);
+        color = Color.GRAY;
+        panelColor.setBackground(color);
 
 
 
@@ -114,10 +112,10 @@ public class Painter {
     }
 
     private void setColor() {
-        mColor = new Color(mSliderRed.getValue(),
-                mSliderGreen.getValue(),
-                mSliderBlue.getValue());
-        mPanelIndicator.setBackground(mColor);
+        color = new Color(sliderRed.getValue(),
+                sliderGreen.getValue(),
+                sliderBlue.getValue());
+        panelColor.setBackground(color);
     }
 
 
