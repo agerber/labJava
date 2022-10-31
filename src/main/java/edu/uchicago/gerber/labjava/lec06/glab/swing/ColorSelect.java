@@ -9,15 +9,15 @@ import java.awt.event.ActionListener;
 
 public class ColorSelect implements ChangeListener {
 
-	private JFrame frm;
-	private JPanel panColor;
-	private JPanel panControl;
-	private JSlider sldGreen;
-	private JSlider sldRed;
-	private JSlider sldBlue;
-	private JLabel lblRed;
-	private JLabel lblGreen;
-	private JLabel lblBlue;
+	private JFrame frame;
+	private JPanel panelColor;
+	private JPanel panelSlider;
+	private JSlider sliderGreen;
+	private JSlider sliderRed;
+	private JSlider sliderBlue;
+	private JLabel labelRed;
+	private JLabel labelGreen;
+	private JLabel labelBlue;
 	private JMenuBar menuBar;
 	private JMenu menu;
 	private JMenuItem menuItem;
@@ -32,7 +32,7 @@ public class ColorSelect implements ChangeListener {
 			public void run() {
 				try {
 					ColorSelect window = new ColorSelect();
-					window.frm.setVisible(true);
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -51,19 +51,19 @@ public class ColorSelect implements ChangeListener {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frm = new JFrame();
-		frm.setBounds(100, 100, 450, 476);
-		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 476);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		panColor = new JPanel();
-		frm.getContentPane().add(panColor, BorderLayout.CENTER);
+		panelColor = new JPanel();
+		frame.getContentPane().add(panelColor, BorderLayout.CENTER);
 		
-		panControl = new JPanel();
-		frm.getContentPane().add(panControl, BorderLayout.SOUTH);
-		panControl.setLayout(new GridLayout(3, 2, 0, 0));
+		panelSlider = new JPanel();
+		frame.getContentPane().add(panelSlider, BorderLayout.SOUTH);
+		panelSlider.setLayout(new GridLayout(3, 2, 0, 0));
 		
-		lblRed = new JLabel("Red");
-		panControl.add(lblRed);
+		labelRed = new JLabel("Red");
+		panelSlider.add(labelRed);
 
 //		changeListener = new ChangeListener() {
 //			@Override
@@ -72,31 +72,32 @@ public class ColorSelect implements ChangeListener {
 //			}
 //		};
 		
-		sldRed = new JSlider(0,255,1);
-		sldRed.addChangeListener(this);
+		sliderRed = new JSlider(0,255,1);
+		sliderRed.addChangeListener(this);
 
-		panControl.add(sldRed);
+		panelSlider.add(sliderRed);
 		
-		lblGreen = new JLabel("Green");
-		panControl.add(lblGreen);
+		labelGreen = new JLabel("Green");
+		panelSlider.add(labelGreen);
 		
-		sldGreen = new JSlider(0,255,57);
+		sliderGreen = new JSlider(0,255,57);
 
-		sldGreen.addChangeListener(this);
+		sliderGreen.addChangeListener(this);
 
-		panControl.add(sldGreen);
+		panelSlider.add(sliderGreen);
 		
-		lblBlue = new JLabel("Blue");
-		//lblBlue.setForeground(new Color(0, 0, 255));
-		panControl.add(lblBlue);
-		
-		sldBlue = new JSlider(0,255,168);
-		sldBlue.addChangeListener(this);
+		labelBlue = new JLabel("Blue");
 
-		panControl.add(sldBlue);
+		panelSlider.add(labelBlue);
+		
+		sliderBlue = new JSlider(0,255,168);
+
+		sliderBlue.addChangeListener(this);
+
+		panelSlider.add(sliderBlue);
 		
 		menuBar = new JMenuBar();
-		frm.setJMenuBar(menuBar);
+		frame.setJMenuBar(menuBar);
 		
 		menu = new JMenu("File");
 		menuBar.add(menu);
@@ -118,16 +119,11 @@ public class ColorSelect implements ChangeListener {
 	// ===============================================
 	private void setPanelColor(){
 		
-		panColor.setBackground(new Color(sldRed.getValue(), sldGreen.getValue(), sldBlue.getValue()));
+		panelColor.setBackground(new Color(sliderRed.getValue(), sliderGreen.getValue(), sliderBlue.getValue()));
 		
 	}
 
 
-	/**
-	 * Invoked when the target of the listener has changed its state.
-	 *
-	 * @param e a ChangeEvent object
-	 */
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		setPanelColor();
