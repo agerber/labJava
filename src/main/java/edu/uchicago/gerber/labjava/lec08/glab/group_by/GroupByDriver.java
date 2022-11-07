@@ -2,6 +2,8 @@ package edu.uchicago.gerber.labjava.lec08.glab.group_by;
 
 
 
+
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +11,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import edu.uchicago.gerber.labjava.lec08.glab.*;
 
 public class GroupByDriver {
     public static final List<Dish> menu =
@@ -24,71 +27,21 @@ public class GroupByDriver {
 
     public static void main(String[] args) {
 
-//            Predicate<Dish> predicateMoreThan400 = d -> d.getCalories() > 400;
-//
-//            Function<Dish, Dish>
-//                    functionSuperSizeMe = d -> new Dish(d.getName(), d.isVegetarian(), d.getCalories() * 2, d.getType());
+        Predicate<Dish> predicateMoreThan400 = d -> d.getCalories() > 400;
 
-            BiConsumer<Dish.Type, List<Dish>> printMe = (t, list) -> System.out.println(t + ":" + list);
+        Function<Dish, Dish>
+                functionSuperSizeMe = d -> new Dish(d.getName(), d.isVegetarian(), d.getCalories() * 2, d.getType());
 
-            //  Map<Dish.Type, List<Dish>>  map =
+        BiConsumer<Dish.Type, List<Dish>> printMe = (t, list) -> System.out.println(t + ":" + list);
 
+        //  Map<Dish.Type, List<Dish>>  map =
+        menu.stream()
+                .filter(predicateMoreThan400)
+                .map(functionSuperSizeMe)
+                .collect(Collectors.groupingBy(dish -> dish.getType()))
+                .forEach(printMe);
 
-
-                   // .forEach(printMe);
 
         }
 }
 
- class Dish implements Comparable<Dish> {
-
-    private final String name;
-    private final boolean vegetarian;
-    private int calories;
-    private final Dish.Type type;
-
-    public Dish(String name, boolean vegetarian, int calories, Dish.Type type) {
-        this.name = name;
-        this.vegetarian = vegetarian;
-        this.calories = calories;
-        this.type = type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public boolean isVegetarian() {
-        return vegetarian;
-    }
-
-    public int getCalories() {
-        return calories;
-    }
-
-    public Dish.Type getType() {
-        return type;
-    }
-
-    @Override
-    public int compareTo(Dish dish) {
-        return getName().compareTo(dish.getName());
-    }
-
-
-    public enum Type {MEAT, FISH, OTHER}
-
-    public void setCalories(int value) {
-        calories = value;
-    }
-
-    @Override
-    public String toString() {
-        return "Dish{" +
-                "name='" + name + '\'' +
-                ", vegetarian=" + vegetarian +
-                ", calories=" + calories +
-                ", type=" + type +
-                '}';
-    }
-}

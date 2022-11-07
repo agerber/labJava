@@ -1,7 +1,5 @@
 package edu.uchicago.gerber.labjava.lec08.glab.flat_map;
 
-import org.junit.Ignore;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,15 +15,19 @@ public class FlatMapDriver {
                 "Islanders",}));
 
 
+
+
         sports.stream()
                 .map(sport -> sport.getTeams())
                 .flatMap(teams -> Arrays.stream(teams))
                 .filter(team -> !team.startsWith("B"))
                 .forEach(s -> System.out.println(s));
+
+
     }
 
 }
- class Sport {
+class Sport {
     private String city;
     private String[] teams;
 
