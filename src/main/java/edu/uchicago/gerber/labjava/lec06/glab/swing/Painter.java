@@ -6,6 +6,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseMotionListener;
 
 /**
  * Created by Adam on 11/2/2015.
@@ -67,12 +68,17 @@ public class Painter {
         frame.getContentPane().add(panelCanvas, BorderLayout.CENTER);
 
 
-        panelCanvas.addMouseMotionListener(new MouseMotionAdapter() {
+        panelCanvas.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
                 Graphics graphics = panelCanvas.getGraphics();
                 graphics.setColor(color);
                 graphics.fillOval(e.getX(), e.getY(), 20,20);
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+
             }
 
         });

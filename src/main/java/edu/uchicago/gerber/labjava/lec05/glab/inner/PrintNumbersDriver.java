@@ -21,49 +21,48 @@ public class PrintNumbersDriver {
                 4.5555f,
                 1001.6666,
                 20000000000000001L,
+                new Number() {
+                    @Override
+                    public int intValue() {
+                        return 0;
+                    }
 
-//                new Number() {
-//                    @Override
-//                    public int intValue() {
-//                        return 0;
-//                    }
-//
-//                    @Override
-//                    public long longValue() {
-//                        return 0;
-//                    }
-//
-//                    @Override
-//                    public float floatValue() {
-//                        return 0;
-//                    }
-//
-//                    @Override
-//                    public double doubleValue() {
-//                        return 0;
-//                    }
-//                },
-//                new Number() {
-//                    @Override
-//                    public int intValue() {
-//                        return 0;
-//                    }
-//
-//                    @Override
-//                    public long longValue() {
-//                        return 0;
-//                    }
-//
-//                    @Override
-//                    public float floatValue() {
-//                        return 0;
-//                    }
-//
-//                    @Override
-//                    public double doubleValue() {
-//                        return 0;
-//                    }
-//                }
+                    @Override
+                    public long longValue() {
+                        return 0;
+                    }
+
+                    @Override
+                    public float floatValue() {
+                        return 0;
+                    }
+
+                    @Override
+                    public double doubleValue() {
+                        return 0;
+                    }
+                },
+                new Number() {
+                    @Override
+                    public int intValue() {
+                        return 0;
+                    }
+
+                    @Override
+                    public long longValue() {
+                        return 0;
+                    }
+
+                    @Override
+                    public float floatValue() {
+                        return 0;
+                    }
+
+                    @Override
+                    public double doubleValue() {
+                        return 0;
+                    }
+                }
 
         };
 

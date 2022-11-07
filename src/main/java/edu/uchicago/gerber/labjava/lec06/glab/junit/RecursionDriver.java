@@ -42,6 +42,10 @@ public class RecursionDriver {
      * @should return some factorial recrusively
      */
 	public static int myFactorialRec(int nVal) {
+		//base-cases
+		if (nVal < 1){
+			throw new RuntimeException("no good");
+		}
 		//base-case
 		if (nVal == 1)
 			return 1;

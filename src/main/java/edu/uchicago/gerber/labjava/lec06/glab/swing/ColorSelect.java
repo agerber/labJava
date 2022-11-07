@@ -119,13 +119,23 @@ public class ColorSelect implements ChangeListener {
 	// ===============================================
 	private void setPanelColor(){
 		
-		panelColor.setBackground(new Color(sliderRed.getValue(), sliderGreen.getValue(), sliderBlue.getValue()));
+		panelColor.setBackground(new Color(sliderRed.getValue(),
+				sliderGreen.getValue(),
+				sliderBlue.getValue()));
 		
 	}
-
 
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		setPanelColor();
+
+
+
 	}
+
+
+//	@Override
+//	public void stateChanged(ChangeEvent e) {
+//		setPanelColor();
+//	}
 }

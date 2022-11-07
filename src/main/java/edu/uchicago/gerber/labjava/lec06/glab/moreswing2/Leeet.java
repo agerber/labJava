@@ -51,11 +51,6 @@ public class Leeet implements ActionListener {
 
     //4 call init from the construtor
     public Leeet() {
-        initialize();
-    }
-
-    //3 create the intialize method
-    private void initialize() {
         frm = new JFrame();
         frm.setBounds(100, 100, 700, 476);
         frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -114,6 +109,11 @@ public class Leeet implements ActionListener {
 
             }
         });
+
+    }
+
+    //3 create the intialize method
+    private void initialize() {
 
     }
 

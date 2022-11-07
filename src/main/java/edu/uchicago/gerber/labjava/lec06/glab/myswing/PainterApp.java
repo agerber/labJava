@@ -5,12 +5,15 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
-public class PainterApp implements ChangeListener, MouseMotionListener {
+public class PainterApp  {
 
     private JPanel panRoot;
-    private JPanel panCenter;
     private JPanel panNorth;
     private JSlider sliderRed;
     private JSlider sliderGreen;
@@ -33,34 +36,58 @@ public class PainterApp implements ChangeListener, MouseMotionListener {
     public PainterApp() {
 
         color = Color.GRAY;
-        sliderBlue.addChangeListener(this);
-        sliderGreen.addChangeListener(this);
-        sliderRed.addChangeListener(this);
 
-        panCanvas.addMouseMotionListener(this);
+       // 1/ you can not use reflection on the lambda because a lambda is not an object.
+       // 2/ Any interface with exactly one contract method can be transformed into a lambda.
+
+
+        ChangeListener changeListener = e -> {
+            color = new Color(sliderRed.getValue(), sliderGreen.getValue(), sliderBlue.getValue());
+            panNorth.setBackground(color);
+            System.out.println(this.getClass().getName());
+        };
+
+        sliderBlue.addChangeListener(changeListener);
+        sliderGreen.addChangeListener(changeListener);
+        sliderRed.addChangeListener(changeListener);
+
+        panCanvas.addMouseMotionListener(new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                    Graphics graphics = panCanvas.getGraphics();
+                    graphics.setColor(color);
+                    graphics.fillOval(e.getX(), e.getY(), 30, 30);
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+
+            }
+        });
+
     }
 
-    /**
-     * Invoked when the target of the listener has changed its state.
-     *
-     * @param e a ChangeEvent object
-     */
-    @Override
-    public void stateChanged(ChangeEvent e) {
-        color = new Color(sliderRed.getValue(), sliderGreen.getValue(), sliderBlue.getValue());
-        panNorth.setBackground(color);
-    }
+    //contracts methods of ChangeListener overridden to satisfy contract
+//    @Override
+//    public void stateChanged(ChangeEvent e) {
+//        color = new Color(sliderRed.getValue(), sliderGreen.getValue(), sliderBlue.getValue());
+//        panNorth.setBackground(color);
+//    }
 
-    @Override
-    public void mouseDragged(MouseEvent e) {
-        Graphics graphics = panCanvas.getGraphics();
-        graphics.setColor(color);
-        graphics.fillOval(e.getX(), e.getY(), 30, 30);
-    }
+    //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
+    //contracts methods of MouseMotionListener overridden to satisfy contract
+//    @Override
+//    public void mouseDragged(MouseEvent e) {
+//        Graphics graphics = panCanvas.getGraphics();
+//        graphics.setColor(color);
+//        graphics.fillOval(e.getX(), e.getY(), 30, 30);
+//    }
+//
+//
+//    @Override
+//    public void mouseMoved(MouseEvent e) {
+//            //required to satisfy contract
+//    }
 
-    @Override
-    public void mouseMoved(MouseEvent e) {
-            //required to satisfy contract
-    }
 }

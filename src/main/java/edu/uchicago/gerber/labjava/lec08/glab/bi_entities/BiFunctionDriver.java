@@ -29,12 +29,12 @@ public class BiFunctionDriver {
         final String someString = "s";
 
         //one good use case for BiFunctions is that the second parameter is not known at R/T
-        BiFunction<Dish, String, Dish> dishStringDishBiFunction = (d, s) ->
+        BiFunction<Dish, String, Dish> dishStringDishBiFunction = (dish, s) ->
         {
-            if (d.getName().startsWith(s))
-               return new Dish(d.getName().toUpperCase(), d.isVegetarian(), d.getCalories(), d.getType());
+            if (dish.getName().startsWith(s))
+               return new Dish(dish.getName().toUpperCase(), dish.isVegetarian(), dish.getCalories(), dish.getType());
             else
-                return d;
+                return dish;
         };
 
         menu.stream()
