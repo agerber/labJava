@@ -13,27 +13,28 @@ public class Example1 {
                 "Rhode Island", "Connecticut", "California", "Mississippi", "Montana", "Minnesota"};
 
         Predicate<String> startsWithM  = s -> s.startsWith("M");
-        Function<String, String> upperCaseMe = s -> s.toUpperCase();
-        final StringBuilder stringBuilder = new StringBuilder();
 
-        Consumer<String> printWithColons = s -> {
-
+        //must be idempotent. Highly deterministic. is a property of some operations such that no matter how many times
+        // you execute them, you achieve the same result.
+        Function<String, String> rightAlign = s -> {
             final int INDENT = 30;
             int colonLen = INDENT - s.length();
 
-            stringBuilder.setLength(0);
+            StringBuilder stringBuilder = new StringBuilder();
+
             while(colonLen-- > 0){
                 stringBuilder.append(":");
             }
-            System.out.println(stringBuilder + s);
-
-
+            return stringBuilder + s.toUpperCase();
         };
+
+        Consumer<String> printMe = s -> System.out.println(s);
+
 
         Arrays.stream(states)
                 .filter(startsWithM)
-                .map(upperCaseMe)
-                .forEach(printWithColons);
+                .map(rightAlign)
+                .forEach(printMe);
 
 
 
