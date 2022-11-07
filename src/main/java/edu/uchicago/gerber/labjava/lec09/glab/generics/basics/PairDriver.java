@@ -1,6 +1,7 @@
 package edu.uchicago.gerber.labjava.lec09.glab.generics.basics;
 
 import edu.uchicago.gerber.labjava.lec04.glab.points.TDPoint;
+import java.awt.Point;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,19 +19,41 @@ public class PairDriver {
             System.out.println(stringPair);
         }
 
+        System.out.println("########################################################");
+
+
+
+        List<Pair<String, ? extends Number>> list2 = new ArrayList<>();
+
+        list2.add(new Pair<>("New York", 68));
+        list2.add(new Pair<>("Tokyo", 24.2));
+        list2.add(new Pair<>("Vienna", 23.5));
+
+        for (Pair<String, ? extends Number> stringPair : list2) {
+            if (stringPair.getSecond() instanceof Double){
+                System.out.println("The Celcius temp is " + stringPair);
+            } else {
+                System.out.println("The Fahrenheit temp is " + stringPair);
+            }
+        }
+
+
+        System.out.println("########################################################");
+
+        List<Pair<String, ? super TDPoint>> list3 = new ArrayList<>();
+
+        list3.add(new Pair<>("My TDPoint", new TDPoint(1,2,3)));
+        list3.add(new Pair<>("My Point", new Point(1,2)));
+        list3.add(new Pair<>("My Object", new Object()));
+
+
+        for (Pair<String, ? super TDPoint> stringPair : list3) {
+            System.out.println(stringPair.getFirst() + stringPair.getSecond());
+        }
 
 
 
 
-
-
-//        for (Pair<String, ? extends Number> stringPair : list) {
-//            if (stringPair.getSecond() instanceof Double){
-//                System.out.println("The Celcius temp is " + stringPair);
-//            } else {
-//                System.out.println("The Fahrenheit temp is " + stringPair);
-//            }
-//        }
 
 
     }
