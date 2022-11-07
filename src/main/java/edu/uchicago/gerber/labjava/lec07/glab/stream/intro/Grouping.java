@@ -21,6 +21,7 @@ public class Grouping {
                     new Dish("salmon", false, 450, Dish.Type.FISH));
 
     public static void main(String ... args) {
+
         System.out.println("Dishes grouped by type: " + groupDishesByType());
         System.out.println("Dishes grouped by caloric level: " + groupDishesByCaloricLevel());
         System.out.println("Dishes grouped by type and caloric level: " + groupDishedByTypeAndCaloricLevel());

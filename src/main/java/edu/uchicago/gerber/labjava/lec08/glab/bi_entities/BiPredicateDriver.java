@@ -1,8 +1,5 @@
 package edu.uchicago.gerber.labjava.lec08.glab.bi_entities;
 
-import edu.uchicago.gerber.labjava.lec09.glab.generics.basics.Pair;
-
-import javax.print.attribute.standard.MediaSize;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiPredicate;
@@ -45,27 +42,54 @@ public class BiPredicateDriver {
         //multiple classes and use that as your seocnd parameter.
         final int maxCals = 300;
         final String name = "Adam";
-        Pref<Integer, String> pref = new Pref<>(maxCals, name);
+        Pair<Integer, String> theUserPair = new Pair<>(maxCals, name);
 
 
-        BiPredicate<Dish, Pref<Integer,String>> onlyUserPrefs = (dish, p) -> {
-               if( pref.getSecond().equalsIgnoreCase("ADAM")) {
-                 return dish.getCalories() < p.getFirst() * 2;
+        BiPredicate<Dish, Pair<Integer,String>> onlyUserPrefs = (dish, pair) -> {
+               if( pair.getSecond().equalsIgnoreCase("ADAM")) {
+                 return dish.getCalories() < pair.getFirst() * 2;
                } else {
-                   return dish.getCalories() <  p.getFirst();
+                   return dish.getCalories() <  pair.getFirst();
                }
         };
 
 
 
-        System.out.println(":::::ONLY THOSE DISHES WITH CALS LESS THAN 400, unless it's Adam, in which case 600");
+        System.out.println(":::::ONLY THOSE DISHES WITH CALS LESS THAN 300, unless it's Adam, in which case 600");
 
         menu.stream()
-                .filter(d -> onlyUserPrefs.test(d, pref))
-                .forEach(d -> System.out.println(d));
+                .filter(dish -> onlyUserPrefs.test(dish, theUserPair))
+                .forEach(dish -> System.out.println(dish));
 
 
 
+    }
+}
+
+
+class Pair<F,S> {
+    private F first;
+    private S second;
+
+    public Pair(F first, S second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public F getFirst() {
+        return first;
+    }
+
+    public void setFirst(F first) {
+        this.first = first;
+    }
+
+    public S getSecond() {
+        return second;
+    }
+
+    public void setSecond(S second) {
+        this.second = second;
     }
 }
 
