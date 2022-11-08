@@ -9,7 +9,7 @@ public class OptionalDriver {
 
         //uncommenting the null set will cause a null-pointer exception
         Rectangle rectangle = new Rectangle(1,2,3,4);
-        //rectangle = null;
+        rectangle = null;
         System.out.println(rectangle);
 
 

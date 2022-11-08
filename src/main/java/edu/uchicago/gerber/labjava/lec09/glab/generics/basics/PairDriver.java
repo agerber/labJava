@@ -20,6 +20,9 @@ public class PairDriver {
         for (Pair<String, ?> stringPair : list) {
             System.out.println(stringPair);
         }
+//        for (Pair<String, ?> stringPair : list) {
+//            System.out.println(stringPair);
+//        }
 
         System.out.println("########################################################");
 

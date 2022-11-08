@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class PainterApp  {
+public class PainterApp {
 
     private JPanel panRoot;
     private JPanel panNorth;
@@ -41,11 +41,18 @@ public class PainterApp  {
        // 2/ Any interface with exactly one contract method can be transformed into a lambda.
 
 
+//        ChangeListener changeListener = e -> {
+//            color = new Color(sliderRed.getValue(), sliderGreen.getValue(), sliderBlue.getValue());
+//            panNorth.setBackground(color);
+//            System.out.println(this.getClass().getName());
+//        };
+
         ChangeListener changeListener = e -> {
             color = new Color(sliderRed.getValue(), sliderGreen.getValue(), sliderBlue.getValue());
             panNorth.setBackground(color);
-            System.out.println(this.getClass().getName());
+            //System.out.println(this.getClass().getName());
         };
+
 
         sliderBlue.addChangeListener(changeListener);
         sliderGreen.addChangeListener(changeListener);
@@ -66,6 +73,8 @@ public class PainterApp  {
         });
 
     }
+
+
 
     //contracts methods of ChangeListener overridden to satisfy contract
 //    @Override

@@ -31,14 +31,8 @@ public class SortingStreamsDriver {
            //both examples here of sorted() and sorted(new Comparable...
 
             menu.stream()
-                    //.sorted()
-                    //.sorted(Comparator.comparing(Dish::getName))
-                    .sorted(new Comparator<Dish>() {
-                        @Override
-                        public int compare(Dish o1, Dish o2) {
-                            return o1.getName().compareTo(o2.getName());
-                        }
-                    })
+                    .sorted(Comparator.comparing(dish -> dish.getCalories())
+                    )
                     .forEach(d -> System.out.println(d));
 
         }

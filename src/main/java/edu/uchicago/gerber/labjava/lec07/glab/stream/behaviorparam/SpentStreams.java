@@ -55,12 +55,12 @@ public class SpentStreams {
                 .forEach(n -> System.out.println(String.valueOf(n)));
 
 //        //already spent
-//        //stream = IntStream.range(1, 1000);
-//        stream
-//
-//                .filter(n -> n % 2 == 0)
-//                .map(n -> n * n)
-//                .forEach(n -> System.out.println(String.valueOf(n)));
+//       stream = IntStream.range(1, 1000);
+        stream
+
+                .filter(n -> n % 2 == 0)
+                .map(n -> n * n)
+                .forEach(n -> System.out.println(String.valueOf(n)));
 //
 //
 //
