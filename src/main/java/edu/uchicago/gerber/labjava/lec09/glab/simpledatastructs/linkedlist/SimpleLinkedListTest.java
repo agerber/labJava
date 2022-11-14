@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class SimpleLinkedListTest {
 	SimpleLinkedList<String> strNames;
@@ -88,6 +89,18 @@ public class SimpleLinkedListTest {
 		assertEquals(strNames.getFirstValue(), "Aaron");
 		assertEquals(3,strNames.size());
 		
+	}
+
+	@Test
+	public void testSeekAndGet(){
+
+		boolean result = strNames.seek("Charlie");
+		assertTrue(result);
+
+		boolean result2 = strNames.seek("Bob");
+		assertTrue(result2);
+
+
 	}
 
 }
