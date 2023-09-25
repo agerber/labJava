@@ -10,7 +10,7 @@ public class HashTableOfSimpleLinkedLists<T> {
 
 
     public HashTableOfSimpleLinkedLists(int seed) {
-        buckets = new SimpleLinkedList<>[seed];
+        buckets = new SimpleLinkedList[seed];
         this.size = 0;
     }
 

@@ -66,6 +66,7 @@ class BankAccount {
      */
 
 	public synchronized void deposit(double dAmount){
+
 		System.out.print("Depositing " + dAmount);
 		double dNewBal = getBalance() + dAmount;
 		System.out.println(", the new balance is "+ dNewBal);
