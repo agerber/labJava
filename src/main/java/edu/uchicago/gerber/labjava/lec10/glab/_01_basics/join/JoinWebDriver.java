@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab.join;
+package edu.uchicago.gerber.labjava.lec10.glab._01_basics.join;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class JoinWebDriver {
 
 
 
-          thrWeb.start();
+        thrWeb.start();
         //comment-out the following try-catch to see the difference in results.
 
         //this joins thread thrWeb to the main thread.
