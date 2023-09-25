@@ -1,6 +1,6 @@
-package edu.uchicago.gerber.labjava.lec10.glab._01_basics.join;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.join;
 
-public class NoJoinExample {
+public class JoinExample {
     public static void main(String[] args) {
         Thread workerThread = new Thread(() -> {
             for (int i = 1; i <= 5; i++) {
@@ -15,8 +15,12 @@ public class NoJoinExample {
 
         workerThread.start();
 
-        // No join() here
+        try {
+            workerThread.join();  // Main thread waits for workerThread to complete
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        System.out.println("Main thread might complete before or during the worker thread execution.");
+        System.out.println("Main thread completes after worker thread.");
     }
 }

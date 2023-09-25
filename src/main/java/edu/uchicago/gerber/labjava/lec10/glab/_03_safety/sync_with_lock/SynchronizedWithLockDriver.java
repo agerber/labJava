@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._02_synchronized.sync_with_lock;
+package edu.uchicago.gerber.labjava.lec10.glab._03_safety.sync_with_lock;
 
 public class SynchronizedWithLockDriver {
 

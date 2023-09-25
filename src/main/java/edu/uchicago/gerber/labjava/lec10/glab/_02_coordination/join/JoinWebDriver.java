@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._01_basics.join;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.join;
 
 import java.io.BufferedReader;
 import java.io.IOException;

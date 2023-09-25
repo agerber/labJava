@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._01_basics.interrupt;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.interrupt;
 
 public class ThreadInterruptExample {
 

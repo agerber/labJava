@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_deadlock;
+package edu.uchicago.gerber.labjava.lec10.glab._04_deadlock;
 
 public class DeadLockExample {
 

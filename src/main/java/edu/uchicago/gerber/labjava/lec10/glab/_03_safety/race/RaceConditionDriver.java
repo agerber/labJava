@@ -1,6 +1,6 @@
-package edu.uchicago.gerber.labjava.lec10.glab._02_synchronized.sync;
+package edu.uchicago.gerber.labjava.lec10.glab._03_safety.race;
 
-public class SynchronizedDriver {
+public class RaceConditionDriver {
 
     public static void main(String[] args) {
         BankAccount account = new BankAccount(50); // Initial balance is 50
@@ -45,19 +45,19 @@ public class SynchronizedDriver {
     }
 }
 
- class BankAccount {
+class BankAccount {
     private double balance;
 
     public BankAccount(double balance) {
         this.balance = balance;
     }
 
-    public synchronized void deposit(double amount) {
+    public void deposit(double amount) {
         balance += amount;
         System.out.println("Deposited " + amount + ". Current balance: " + balance);
     }
 
-    public synchronized void withdraw(double amount) {
+    public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
             System.out.println("Withdrew " + amount + ". Current balance: " + balance);

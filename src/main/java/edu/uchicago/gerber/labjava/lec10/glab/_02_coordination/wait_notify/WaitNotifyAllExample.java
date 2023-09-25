@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._01_basics.wait_notify;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.wait_notify;
 
 class TaskManager {
     private int currentTask = 1;

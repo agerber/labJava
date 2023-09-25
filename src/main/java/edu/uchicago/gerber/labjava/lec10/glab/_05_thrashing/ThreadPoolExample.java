@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._04_thrashing;
+package edu.uchicago.gerber.labjava.lec10.glab._05_thrashing;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
