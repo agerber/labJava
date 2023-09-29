@@ -22,6 +22,8 @@ public class JoinWebDriver {
 
          WebRunner webRunner = new WebRunner("http://gerber.cs.uchicago.edu/java");
          webRunner.setName("webRunner");
+         System.out.println(webRunner.getName() + ":" + webRunner.getState().toString().toUpperCase()); // NEW
+
 
 
           webRunner.start();
@@ -34,7 +36,7 @@ public class JoinWebDriver {
         }
 
         System.out.println(webRunner.getReturnValue());
-        System.out.println(Thread.currentThread().getName() + ":TERMINATING");
+        System.out.println(Thread.currentThread().getName() + ":TERMINATED");
 
     }
 
@@ -62,6 +64,8 @@ public class JoinWebDriver {
         public void run() {
             try {
 
+                System.out.println(this.getName() + ": go fetch html from website");
+
                 URL urlObject = new URL(strUrl);
                 URLConnection con = urlObject.openConnection();
                 InputStream is = con.getInputStream();
@@ -78,7 +82,7 @@ public class JoinWebDriver {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
             finally {
-                System.out.println(this.getName() + ":TERMINATING");
+                System.out.println(this.getName() + ":TERMINATED");
             }
 
 
