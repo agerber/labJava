@@ -20,14 +20,17 @@ public class JoinWebDriver {
 
       System.out.println(Thread.currentThread().getName() + ":" + Thread.currentThread().getState());
 
-         WebRunner webRunner = new WebRunner("http://gerber.cs.uchicago.edu/java");
-         webRunner.setName("webRunner");
-         System.out.println(webRunner.getName() + ":" + webRunner.getState().toString().toUpperCase()); // NEW
+      WebRunner webRunner = new WebRunner("http://gerber.cs.uchicago.edu/java");
+      webRunner.setName("webRunner");
+      System.out.println(webRunner.getName() + ":" + webRunner.getState().toString().toUpperCase()); // NEW
 
 
 
-          webRunner.start();
+        webRunner.start();
         //comment-out the following try-catch to see the difference in results.
+
+       //join does the following things. 1/ sets the main into a wait() state. 2/ adds itself to the waitSet of
+          // webRunner
 
         try {
             webRunner.join();
