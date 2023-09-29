@@ -6,7 +6,7 @@ public class _01_ExtendThreadDriver {
     public static void main(String[] args) {
         MyThread thread = new MyThread();
         thread.setPriority(Thread.MAX_PRIORITY); //optional
-        thread.setName("MyThread"); // Set thread name
+        thread.setName("MyThread"); // optional - set thread name
         thread.start(); // Start the thread
     }
 }
