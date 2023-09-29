@@ -1,8 +1,8 @@
-package edu.uchicago.gerber.labjava.lec10.glab._01_basics.interrupt;
+package edu.uchicago.gerber.labjava.lec10.glab._01_basics.terminate;
 
 import java.util.Random;
 
-public class InterruptCheckWrongDriver {
+public class DaemonPrimeDriver {
     public static void main(String[] args) {
         Thread workerThread = new Thread(new Runnable() {
             private final Random random = new Random();
@@ -18,6 +18,7 @@ public class InterruptCheckWrongDriver {
             }
         });
 
+        workerThread.setDaemon(true);
         workerThread.start();
 
         // Let the thread run for two seconds
@@ -27,8 +28,7 @@ public class InterruptCheckWrongDriver {
             e.printStackTrace();
         }
 
-        // Interrupt the worker thread
-        workerThread.interrupt();
+
     }
 
 

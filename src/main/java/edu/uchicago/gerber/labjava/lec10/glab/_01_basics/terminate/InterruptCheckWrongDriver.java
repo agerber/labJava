@@ -1,8 +1,8 @@
-package edu.uchicago.gerber.labjava.lec10.glab._01_basics.interrupt;
+package edu.uchicago.gerber.labjava.lec10.glab._01_basics.terminate;
 
 import java.util.Random;
 
-public class InterruptCheckCorrectDriver {
+public class InterruptCheckWrongDriver {
     public static void main(String[] args) {
         Thread workerThread = new Thread(new Runnable() {
             private final Random random = new Random();
@@ -10,17 +10,10 @@ public class InterruptCheckCorrectDriver {
             //some long-running cpu-intensvie operation
             @Override
             public void run() {
-                while (true) {
-                    if (!Thread.interrupted()) {
-                        long num = random.nextLong();
-                        System.out.print("Checking if prime:  " + num + " -> prime? ");
-                        System.out.println( isPrime(num));
-                    } else {
-                        System.out.println("Thread was interrupted!...");
-                        System.out.println("Closing any open connections or cleaning up resources");
-                        //perform any clean up of resources here.
-                        return;  // Exit the thread
-                    }
+                while(true){
+                    long num = random.nextLong();
+                    System.out.print("Checking if prime:  " + num + " -> prime? ");
+                    System.out.println( isPrime(num));
                 }
             }
         });
