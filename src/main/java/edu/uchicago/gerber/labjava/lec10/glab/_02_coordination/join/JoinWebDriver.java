@@ -30,13 +30,14 @@ public class JoinWebDriver {
         //comment-out the following try-catch to see the difference in results.
 
        //join does the following things. 1/ sets the main into a wait() state. 2/ adds itself to the waitSet of
-          // webRunner
+          // webRunner. We time-out after 3 seconds
 
         try {
-            webRunner.join();
+            webRunner.join(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+
 
         System.out.println(webRunner.getReturnValue());
         System.out.println(Thread.currentThread().getName() + ":TERMINATED");
