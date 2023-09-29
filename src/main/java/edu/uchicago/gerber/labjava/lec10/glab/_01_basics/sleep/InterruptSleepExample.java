@@ -6,6 +6,9 @@ public class InterruptSleepExample {
     public static void main(String[] args) {
         // Create a new thread
         Thread myThread = new Thread(new Runnable() {
+
+            //if my background thread has intermittant sleep calls. I can use it's checked exception to interrupt the
+            // thread. Overkill otherwise.
             public void run() {
                 int i = 0;
                 while (true) {
