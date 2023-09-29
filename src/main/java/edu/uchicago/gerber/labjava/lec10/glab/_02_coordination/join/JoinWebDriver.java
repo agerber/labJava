@@ -18,31 +18,30 @@ public class JoinWebDriver {
 
       public static void main(String[] args) {
 
+      System.out.println(Thread.currentThread().getName() + ":" + Thread.currentThread().getState());
 
-        WebRunner webRunner = new WebRunner("http://gerber.cs.uchicago.edu/java");
-        Thread thrWeb = new Thread(webRunner);
+         WebRunner webRunner = new WebRunner("http://gerber.cs.uchicago.edu/java");
+         webRunner.setName("webRunner");
 
 
-
-        thrWeb.start();
+          webRunner.start();
         //comment-out the following try-catch to see the difference in results.
 
-        //this joins thread thrWeb to the main thread.
         try {
-            thrWeb.join();
-
+            webRunner.join();
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
-
-
         System.out.println(webRunner.getReturnValue());
+        System.out.println(Thread.currentThread().getName() + ":TERMINATING");
 
     }
 
 
-    private static class WebRunner implements Runnable {
+    private static class WebRunner extends Thread {
+
+
 
         private String strUrl;
         private String strReturnValue;
@@ -51,23 +50,35 @@ public class JoinWebDriver {
             this.strUrl = strUrl;
         }
 
+
+        @Override
+        public void start() {
+            super.start();
+            System.out.println(this.getName() + ":" + this.getState().toString().toUpperCase());
+
+        }
+
         @Override
         public void run() {
             try {
-                String strRet = "";
+
                 URL urlObject = new URL(strUrl);
                 URLConnection con = urlObject.openConnection();
                 InputStream is = con.getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(is));
-                String strLine = "";
+                StringBuilder stringBuilder  = new StringBuilder();
+                String strLine;
 
                 while ((strLine = br.readLine()) != null) {
-                    strRet += strLine + "\n";
+                   stringBuilder.append(strLine).append("\n");
                 }
-                strReturnValue = strRet;
+                strReturnValue = stringBuilder.toString();
 
             } catch (IOException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+            finally {
+                System.out.println(this.getName() + ":TERMINATING");
             }
 
 

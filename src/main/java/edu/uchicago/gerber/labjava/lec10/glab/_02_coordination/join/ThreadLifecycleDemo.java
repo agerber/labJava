@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._01_basics.lifecycle;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.join;
 
 public class ThreadLifecycleDemo {
 
@@ -25,7 +25,8 @@ public class ThreadLifecycleDemo {
 
         // Sleep the main thread for a short time to ensure the new thread starts executing
         Thread.sleep(100);
-        System.out.println("Thread state after start method: " + thread.getState().toString().toUpperCase()); // RUNNABLE
+        System.out.println("Thread state after sleep method: " + thread.getState().toString().toLowerCase()); //
+        // RUNNABLE
 
         // Notify the waiting thread so that it can continue its execution and eventually terminate
         synchronized (ThreadLifecycleDemo.class) {

@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._01_basics.naming;
+package edu.uchicago.gerber.labjava.lec10.glab._XX_holding.naming;
 
 public class ThreadNamingExample {
 
