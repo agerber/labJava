@@ -6,8 +6,6 @@ public class Pseudo3_UnicodeTranslator {
 
 
 
-
-
     public static void main(String[] args) {
 
     /*
