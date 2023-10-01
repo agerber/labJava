@@ -5,10 +5,10 @@ import java.util.Random;
 public class InterruptUserThreadDriver {
 
     public static void main(String[] args) {
-        Thread userThread = new Thread(new Runnable() {
+        Thread childThread = new Thread(new Runnable() {
             private final Random random = new Random();
 
-            //some long-running cpu-intensvie operation
+            //some long-running cpu-intensive operation
             @Override
             public void run() {
                 while (true) {
@@ -26,17 +26,27 @@ public class InterruptUserThreadDriver {
             }
         });
 
-        userThread.start();
+        childThread.setDaemon(true);
+        childThread.start();
 
-        // Let the main-thread run for two seconds
+        // Let the main-thread sleep for one second
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("main thread interrupted");
         }
 
-        // Interrupt the user thread
-        userThread.interrupt();
+        // Interrupt the main-thread
+        Thread.currentThread().interrupt();
+        //childThread.interrupt();
+
+
+        // Let the main-thread sleep for half second
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            System.out.println("main thread interrupted");
+        }
     }
 
 
