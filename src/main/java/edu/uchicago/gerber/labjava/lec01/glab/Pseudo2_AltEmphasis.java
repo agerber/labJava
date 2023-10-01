@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by Adam on 9/26/2016.
  */
-public class AltAltEmphasis {
+public class Pseudo2_AltEmphasis {
 
 
     /*

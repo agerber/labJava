@@ -2,7 +2,7 @@ package edu.uchicago.gerber.labjava.lec01.glab;
 
 import java.util.Scanner;
 
-public class AltEmph {
+public class Pseudo1_AltEmphasis {
 
 
     //get input-message from user
