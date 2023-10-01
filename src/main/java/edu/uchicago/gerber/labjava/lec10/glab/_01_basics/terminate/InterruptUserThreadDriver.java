@@ -2,9 +2,10 @@ package edu.uchicago.gerber.labjava.lec10.glab._01_basics.terminate;
 
 import java.util.Random;
 
-public class InterruptCheckCorrectDriver {
+public class InterruptUserThreadDriver {
+
     public static void main(String[] args) {
-        Thread workerThread = new Thread(new Runnable() {
+        Thread userThread = new Thread(new Runnable() {
             private final Random random = new Random();
 
             //some long-running cpu-intensvie operation
@@ -17,7 +18,7 @@ public class InterruptCheckCorrectDriver {
                         System.out.println( isPrime(num));
                     } else {
                         System.out.println("Thread was interrupted!...");
-                        System.out.println("Closing any open connections or cleaning up resources");
+                        System.out.println("perform any clean up of resources here like close a socket on a server, or close a connection to a database");
                         //perform any clean up of resources here.
                         return;  // Exit the thread
                     }
@@ -25,17 +26,17 @@ public class InterruptCheckCorrectDriver {
             }
         });
 
-        workerThread.start();
+        userThread.start();
 
-        // Let the thread run for two seconds
+        // Let the main-thread run for two seconds
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        // Interrupt the worker thread
-        workerThread.interrupt();
+        // Interrupt the user thread
+        userThread.interrupt();
     }
 
 

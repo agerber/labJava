@@ -2,9 +2,10 @@ package edu.uchicago.gerber.labjava.lec10.glab._01_basics.terminate;
 
 import java.util.Random;
 
-public class InterruptCheckWrongDriver {
+public class InterruptUserThreadRogueDriver {
+
     public static void main(String[] args) {
-        Thread workerThread = new Thread(new Runnable() {
+        Thread userThread = new Thread(new Runnable() {
             private final Random random = new Random();
 
             //some long-running cpu-intensvie operation
@@ -18,17 +19,17 @@ public class InterruptCheckWrongDriver {
             }
         });
 
-        workerThread.start();
+        userThread.start();
 
-        // Let the thread run for two seconds
+        // Let the main-thread run for two seconds
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        // Interrupt the worker thread
-        workerThread.interrupt();
+        // Interrupt the user thread
+        userThread.interrupt();
     }
 
 
