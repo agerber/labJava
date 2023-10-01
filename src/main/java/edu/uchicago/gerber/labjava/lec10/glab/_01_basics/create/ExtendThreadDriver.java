@@ -2,7 +2,7 @@ package edu.uchicago.gerber.labjava.lec10.glab._01_basics.create;
 
 
 
-public class _01_ExtendThreadDriver {
+public class ExtendThreadDriver {
     public static void main(String[] args) {
         MyThread thread = new MyThread();
         //thread.setPriority(Thread.MAX_PRIORITY); //optional
