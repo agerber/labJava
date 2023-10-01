@@ -8,7 +8,6 @@ public class PrecedenceDemo {
         System.out.println(2 + a * ++b);  // first increment b to 11, second multiply 5 (a) * 11, third add 2
         b = 10; //reset b
 
-
         System.out.println((2 + a) * ++b);  // first evaluate express in inner parens (7), second increment b to 11
                                                 //third multply 7 * 11
         b = 10; //reset b
