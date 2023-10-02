@@ -9,13 +9,14 @@ public class CardDriver {
     public static void main(String[] args) throws IllegalAccessException {
 
 
-        byte aceValue = 11;
-        System.out.println(aceValue);
+        //the instance values are stored on the heap.
+        //the method definitions (including constructors) are stored on the .class object.
+        Card cardKS = new Card('K', 'S', (byte)10);
+        System.out.println(cardKS.getFace());
+        System.out.println(cardKS.getSuit());
+        System.out.println(cardKS.getValue());
 
 
-        //Card cardKS = new Card('K', 'S', (byte)10);
-       // System.out.println(cardKS.getFace());
-       // Card cardKS = new Card('K', 'S', (byte)10);
 
         System.out.println("METHODS ==========================");
         Method[] methods = Card.class.getDeclaredMethods();

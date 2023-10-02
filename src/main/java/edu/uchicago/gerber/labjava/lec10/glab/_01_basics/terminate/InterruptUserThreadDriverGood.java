@@ -27,7 +27,7 @@ public class InterruptUserThreadDriverGood {
         });
 
 
-        childThread.setDaemon(false);
+        childThread.setDaemon(true);
         childThread.start();
 
         // Let the main-thread sleep for one second
@@ -37,9 +37,7 @@ public class InterruptUserThreadDriverGood {
             System.out.println("main thread interrupted");
         }
 
-        // Interrupt the main-thread
-        Thread.currentThread().interrupt();
-        //childThread.interrupt();
+       // childThread.interrupt();
 
         System.out.println("Exiting main thread");
 
