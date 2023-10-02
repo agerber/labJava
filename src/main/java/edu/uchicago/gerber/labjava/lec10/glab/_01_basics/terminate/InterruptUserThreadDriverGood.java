@@ -2,7 +2,7 @@ package edu.uchicago.gerber.labjava.lec10.glab._01_basics.terminate;
 
 import java.util.Random;
 
-public class InterruptUserThreadDriver {
+public class InterruptUserThreadDriverGood {
 
     public static void main(String[] args) {
         Thread childThread = new Thread(new Runnable() {
@@ -26,7 +26,8 @@ public class InterruptUserThreadDriver {
             }
         });
 
-        childThread.setDaemon(true);
+
+        childThread.setDaemon(false);
         childThread.start();
 
         // Let the main-thread sleep for one second
@@ -40,13 +41,8 @@ public class InterruptUserThreadDriver {
         Thread.currentThread().interrupt();
         //childThread.interrupt();
 
+        System.out.println("Exiting main thread");
 
-        // Let the main-thread sleep for half second
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            System.out.println("main thread interrupted");
-        }
     }
 
 
