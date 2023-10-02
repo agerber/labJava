@@ -28,6 +28,7 @@ public class TypeConversion {
 		byte yNumber = Byte.parseByte("127");
 
 
+
 		boolean bFlag = Boolean.parseBoolean("TruE");
 
 
