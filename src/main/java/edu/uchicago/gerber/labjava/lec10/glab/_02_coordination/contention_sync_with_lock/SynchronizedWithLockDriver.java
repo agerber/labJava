@@ -1,6 +1,6 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_safety.sync_this;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.contention_sync_with_lock;
 
-public class SynchronizedThisDriver {
+public class SynchronizedWithLockDriver {
 
     public static void main(String[] args) {
         BankAccount account = new BankAccount(50); // Initial balance is 50
@@ -46,6 +46,9 @@ public class SynchronizedThisDriver {
 }
 
  class BankAccount {
+
+    private final Object lock = new Object();
+
     private double balance;
 
     public BankAccount(double balance) {
@@ -53,16 +56,16 @@ public class SynchronizedThisDriver {
     }
 
     public void deposit(double amount) {
-        synchronized (this){
+        synchronized (lock){
             balance += amount;
         }
 
         System.out.println("Deposited " + amount + ". Current balance: " + balance);
     }
 
-    public synchronized void withdraw(double amount) {
+    public void withdraw(double amount) {
         if (balance >= amount) {
-            synchronized (this){
+            synchronized (lock){
                 balance -= amount;
             }
             System.out.println("Withdrew " + amount + ". Current balance: " + balance);

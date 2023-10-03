@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_safety.race;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.contention_race;
 
 public class RaceConditionDriver {
 

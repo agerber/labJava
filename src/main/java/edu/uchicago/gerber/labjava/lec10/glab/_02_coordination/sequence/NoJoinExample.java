@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.join;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.sequence;
 
 public class NoJoinExample {
     public static void main(String[] args) {

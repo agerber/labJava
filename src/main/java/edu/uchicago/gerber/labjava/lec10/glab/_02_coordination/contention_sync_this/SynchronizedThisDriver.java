@@ -1,6 +1,6 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_safety.sync;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.contention_sync_this;
 
-public class SynchronizedDriver {
+public class SynchronizedThisDriver {
 
     public static void main(String[] args) {
         BankAccount account = new BankAccount(50); // Initial balance is 50
@@ -52,14 +52,19 @@ public class SynchronizedDriver {
         this.balance = balance;
     }
 
-    public synchronized void deposit(double amount) {
-        balance += amount;
+    public void deposit(double amount) {
+        synchronized (this){
+            balance += amount;
+        }
+
         System.out.println("Deposited " + amount + ". Current balance: " + balance);
     }
 
     public synchronized void withdraw(double amount) {
         if (balance >= amount) {
-            balance -= amount;
+            synchronized (this){
+                balance -= amount;
+            }
             System.out.println("Withdrew " + amount + ". Current balance: " + balance);
         } else {
             System.out.println("Not enough funds to withdraw " + amount + ". Current balance: " + balance);
