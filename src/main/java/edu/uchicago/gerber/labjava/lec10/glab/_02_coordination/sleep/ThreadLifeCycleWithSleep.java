@@ -2,6 +2,8 @@ package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.sleep;
 
 public class ThreadLifeCycleWithSleep {
 
+
+    //there is no wait() and notify() call with sleep(). The O/S Thread schedule pauses the thread and wakes it up.
     public static void main(String[] args) {
         // Create a new thread
         Thread thread = new Thread(() -> {
