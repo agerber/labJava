@@ -60,7 +60,7 @@ public class SynchronizedThisDriver {
         System.out.println("Deposited " + amount + ". Current balance: " + balance);
     }
 
-    public synchronized void withdraw(double amount) {
+    public void withdraw(double amount) {
         if (balance >= amount) {
             synchronized (this){
                 balance -= amount;
