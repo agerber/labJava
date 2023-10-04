@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.wait_notify;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.wait_notify_yield;
 
 class NumberPrinter {
     private int count = 1;
