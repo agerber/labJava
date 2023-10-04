@@ -2,6 +2,7 @@ package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.contention_race;
 
 public class RaceConditionDriver {
 
+    //this example demonstrates is a READ-MODIFY-WRITE race condition
     public static void main(String[] args) {
         BankAccount account = new BankAccount(50); // Initial balance is 50
 
