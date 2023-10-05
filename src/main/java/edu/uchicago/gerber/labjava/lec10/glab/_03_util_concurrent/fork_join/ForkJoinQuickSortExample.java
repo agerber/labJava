@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_modern.fork_join;
+package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.fork_join;
 
 import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.ForkJoinPool;

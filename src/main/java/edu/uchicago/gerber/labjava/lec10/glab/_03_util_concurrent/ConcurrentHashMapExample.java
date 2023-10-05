@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_modern;
+package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent;
 
 import java.util.concurrent.ConcurrentHashMap;
 

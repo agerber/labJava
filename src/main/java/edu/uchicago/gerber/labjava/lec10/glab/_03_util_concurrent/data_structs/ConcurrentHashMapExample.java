@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_modern.data_structs;
+package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.data_structs;
 
 import java.util.concurrent.ConcurrentHashMap;
 

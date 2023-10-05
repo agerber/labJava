@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_modern.orchestrate;
+package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate;
 
 
 
@@ -21,10 +21,10 @@ public class CyclicBarrierDemo {
         });
 
         //starting each of thread
-        Thread biker1 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_modern.orchestrate.Biker(checkPoint), "Biker Thread 1");
-        Thread biker2 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_modern.orchestrate.Biker(checkPoint), "Biker Thread 2");
-        Thread biker3 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_modern.orchestrate.Biker(checkPoint), "Biker Thread 3");
-        Thread biker4 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_modern.orchestrate.Biker(checkPoint), "Biker Thread 4");
+        Thread biker1 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate.Biker(checkPoint), "Biker Thread 1");
+        Thread biker2 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate.Biker(checkPoint), "Biker Thread 2");
+        Thread biker3 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate.Biker(checkPoint), "Biker Thread 3");
+        Thread biker4 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate.Biker(checkPoint), "Biker Thread 4");
 
         biker1.start();
         biker2.start();

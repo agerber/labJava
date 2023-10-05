@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_modern.lock;
+package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.lock;
 
 import java.util.concurrent.locks.ReentrantLock;
 

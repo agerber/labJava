@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_modern.future_callable;
+package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.future_callable;
 
 import java.util.ArrayList;
 import java.util.List;
