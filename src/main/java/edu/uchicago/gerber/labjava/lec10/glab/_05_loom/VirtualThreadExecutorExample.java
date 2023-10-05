@@ -6,6 +6,8 @@ public class VirtualThreadExecutorExample {
 
     public static void main(String[] args) {
 
+        //fibers and virtual threads are conceptually same. elaborate
+
         // Create an Executor for virtual threads
         ExecutorService virtualThreadExecutor = Executors.newVirtualThreadPerTaskExecutor();
 
