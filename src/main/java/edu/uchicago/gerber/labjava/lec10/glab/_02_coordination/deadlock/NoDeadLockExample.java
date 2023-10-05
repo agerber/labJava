@@ -1,6 +1,6 @@
-package edu.uchicago.gerber.labjava.lec10.glab._04_deadlock;
+package edu.uchicago.gerber.labjava.lec10.glab._02_coordination.deadlock;
 
-public class DeadLockExample {
+public class NoDeadLockExample {
 
     private static final Object lockA = new Object();
     private static final Object lockB = new Object();
@@ -21,15 +21,15 @@ public class DeadLockExample {
         });
 
         Thread thread2 = new Thread(() -> {
-            synchronized (lockB) {
-                System.out.println("Thread2 acquired lock2");
+            synchronized (lockA) {
+                System.out.println("Thread2 acquired lock1");
 
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {}
 
-                synchronized (lockA) {
-                    System.out.println("Thread2 acquired lock1");
+                synchronized (lockB) {
+                    System.out.println("Thread2 acquired lock2");
                 }
             }
         });
