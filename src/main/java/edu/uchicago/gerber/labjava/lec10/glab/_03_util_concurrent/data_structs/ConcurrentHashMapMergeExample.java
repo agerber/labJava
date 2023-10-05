@@ -1,7 +1,7 @@
 package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.data_structs;
 
 import java.util.AbstractMap;
-import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
@@ -34,7 +34,7 @@ public class ConcurrentHashMapMergeExample {
         // Print word counts
         wordCountMap.forEach((word, count) -> System.out.println(word + ": " + count));
 //        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-//        sortByKey(wordCountMap).forEach((word, count) -> System.out.println(word + ": " + count));
+//        toLinkedList(wordCountMap).forEach(System.out::println);
     }
 
     private static void processWords(String[] words) {
@@ -44,18 +44,14 @@ public class ConcurrentHashMapMergeExample {
         }
     }
 
-    private static LinkedHashMap<String,Integer> sortByKey(AbstractMap<String,Integer> unsortedMap){
+    private static LinkedList<String> toLinkedList(AbstractMap<String,Integer> unsortedMap){
 
        return  unsortedMap.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByKey())
-                //.sorted(Map.Entry.comparingByValue())
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (e1, e2) -> e1, // merge function, should not be needed in this context
-                        LinkedHashMap::new // keep order
-                ));
+                .map(e -> String.valueOf(e.getKey().charAt(0)).toUpperCase() + e.getKey().substring(1) + ": " + e.getValue())
+                .collect(Collectors.toCollection(LinkedList::new));
+
 
     }
 }
