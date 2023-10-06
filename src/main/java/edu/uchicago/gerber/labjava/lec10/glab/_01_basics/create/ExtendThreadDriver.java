@@ -5,7 +5,7 @@ package edu.uchicago.gerber.labjava.lec10.glab._01_basics.create;
 public class ExtendThreadDriver {
     public static void main(String[] args) {
         MyThread thread = new MyThread();
-        //thread.setPriority(Thread.MAX_PRIORITY); //optional
+        thread.setPriority(Thread.MIN_PRIORITY); //optional
         //thread.setName("MyThread"); // optional - set thread name
         thread.start(); // Start the thread
     }
