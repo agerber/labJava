@@ -37,7 +37,7 @@ public class InterruptUserAndDaemonThreadDriver {
             System.out.println("main thread interrupted");
         }
 
-       // childThread.interrupt();
+        //child.interrupt();
 
         System.out.println("Exiting main thread");
 
