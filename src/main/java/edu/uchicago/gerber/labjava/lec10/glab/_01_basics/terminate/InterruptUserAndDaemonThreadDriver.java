@@ -2,10 +2,10 @@ package edu.uchicago.gerber.labjava.lec10.glab._01_basics.terminate;
 
 import java.util.Random;
 
-public class InterruptUserThreadDriverGood {
+public class InterruptUserAndDaemonThreadDriver {
 
     public static void main(String[] args) {
-        Thread childThread = new Thread(new Runnable() {
+        Thread child = new Thread(new Runnable() {
             private final Random random = new Random();
 
             //some long-running cpu-intensive operation
@@ -27,8 +27,8 @@ public class InterruptUserThreadDriverGood {
         });
 
 
-        childThread.setDaemon(true);
-        childThread.start();
+        child.setDaemon(true);
+        child.start();
 
         // Let the main-thread sleep for one second
         try {
