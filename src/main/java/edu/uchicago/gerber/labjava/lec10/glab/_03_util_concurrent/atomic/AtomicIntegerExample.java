@@ -4,22 +4,37 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerExample {
 
+    /*
+       Atomic classes provide both visibility and atomicity. Use them in place of volatile.
+     */
     private static final AtomicInteger counter = new AtomicInteger(0);
 
-    public static void incrementCounter() {
-        counter.incrementAndGet();  // Atomically increment the current value by 1
+    public static int incrementCounter() {
+       return counter.incrementAndGet();  // Atomically increment the current value by 1
     }
 
     public static void main(String[] args) throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                incrementCounter();
+                System.out.println( incrementCounter());
+
+                try {
+                    Thread.sleep(1); // Adding a delay for demonstration purposes
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
         Thread thread2 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
-                incrementCounter();
+                System.out.println( incrementCounter());
+
+                try {
+                    Thread.sleep(1); // Adding a delay for demonstration purposes
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
