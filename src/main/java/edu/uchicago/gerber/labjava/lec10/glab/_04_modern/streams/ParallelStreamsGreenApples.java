@@ -9,7 +9,7 @@ public class ParallelStreamsGreenApples {
 
         Stream.of(new Apple("Blue", 'A'), new Apple("Green", 'B'), new Apple("Green", 'C'), new Apple("Blue", 'D'),
                 new Apple("Green", 'E'))
-                .parallel()
+                //.parallel()
                 .peek(a -> System.out.println(Thread.currentThread().getName() + ": " + a.getColor()))
                 .filter(a -> a.getColor().equalsIgnoreCase("GREEN"))
                 .forEach(System.out::println);
