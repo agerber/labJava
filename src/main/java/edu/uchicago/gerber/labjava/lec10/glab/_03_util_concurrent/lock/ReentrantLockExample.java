@@ -5,6 +5,10 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockExample {
 
     //private static final ReentrantLock lock = new ReentrantLock();
+    //fairness means that the longest waiting thread will get the lock first. Solves for Arrival order first.
+    //also gives you the ability to interrupt the thread while it's waiting.
+    //both monitors and Reentrant locks are re-entrant, meaning that if a thread acquires the lock, it won't be
+    //prevented from entering another protected block (perhaps a nested method) that is protected with the same lock.
     private static final ReentrantLock lock = new ReentrantLock(true);
     private static int counter = 0;
 

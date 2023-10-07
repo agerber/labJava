@@ -23,11 +23,14 @@ public class ParkingLotSemaphoreDriver {
         ParkingLotSemaphoreDriver parkingLot = new ParkingLotSemaphoreDriver();
         int count = 0;
         while (++count < 11) {
-            new Thread(() -> {
-                try {
-                    parkingLot.park();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        parkingLot.park();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }, "Car " + (count)).start();
         }
