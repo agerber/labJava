@@ -2,6 +2,7 @@ package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.future_callab
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.*;
 
 public class FutureCallableExample {
@@ -13,6 +14,8 @@ public class FutureCallableExample {
         // List to hold Future objects
         List<Future<Integer>> futureList = new ArrayList<>();
 
+       final Random random = new Random();
+
         // Enqueue 10 Callable tasks
         for (int count = 1; count <= 10; count++) {
             final int number = count;
@@ -20,7 +23,7 @@ public class FutureCallableExample {
                 @Override
                 public Integer call() throws Exception {
                     System.out.println("Callable: calculating square of " + number + " by " + Thread.currentThread().getName());
-                    Thread.sleep(500);  // Simulating work
+                    Thread.sleep(random.nextInt(2000));  // Simulating work
                     return number * number;
                 }
             };
