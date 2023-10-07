@@ -1,5 +1,6 @@
 package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.fork_join;
 
+import java.util.Random;
 import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.ForkJoinPool;
 import java.util.Arrays;
@@ -54,12 +55,27 @@ public class ForkJoinQuickSortExample {
     }
 
     public static void main(String[] args) {
-        int[] numbers = {29, 4, 94, 59, 34, 76, 23, 1, 45, 87, 83, 56, 38, 50, 72};
+
+
+
+        int[] numbers = genRandomArray(30);
+        System.out.println("Unsorted array: " + Arrays.toString(numbers));
 
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         ParallelQuickSortTask task = new ParallelQuickSortTask(numbers, 0, numbers.length - 1);
         forkJoinPool.invoke(task);
 
-        System.out.println("Sorted array: " + Arrays.toString(numbers));
+        System.out.println("Sorted array  : " + Arrays.toString(numbers));
+    }
+
+    private static int[] genRandomArray(int size){
+        Random random = new Random();
+        int[] numbers = new int[size];
+        for (int nC = 0; nC < numbers.length; nC++)
+            numbers[nC] = random.nextInt(100);
+
+        return numbers;
+
+
     }
 }
