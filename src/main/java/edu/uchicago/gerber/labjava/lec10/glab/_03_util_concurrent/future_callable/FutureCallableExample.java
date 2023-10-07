@@ -13,13 +13,16 @@ public class FutureCallableExample {
         // List to hold Future objects
         List<Future<Integer>> futureList = new ArrayList<>();
 
-        // Enqueue 30 Callable tasks
-        for (int i = 1; i <= 30; i++) {
-            final int number = i;  // Required for lambda expression below
-            Callable<Integer> task = () -> {
-                System.out.println("Calculating square of " + number + " by " + Thread.currentThread().getName());
-                Thread.sleep(500);  // Simulating work
-                return number * number;
+        // Enqueue 10 Callable tasks
+        for (int i = 1; i <= 10; i++) {
+            final int number = i;
+            Callable<Integer> task = new Callable<Integer>() {
+                @Override
+                public Integer call() throws Exception {
+                    System.out.println("Calculating square of " + number + " by " + Thread.currentThread().getName());
+                    Thread.sleep(500);  // Simulating work
+                    return number * number;
+                }
             };
 
             // Submit the task to the thread pool and store the Future object
