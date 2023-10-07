@@ -16,15 +16,15 @@ public class CyclicBarrierDemo {
             @Override
             public void run(){
                 //This task will be executed once all biker threads will reach barrier
-                System.out.println("\nAll bikers have arrived to checkpoint. pitstop\n");
+                System.out.println("\nAll bikers have arrived to checkpoint....pitstop\n");
             }
         });
 
         //starting each of thread
-        Thread biker1 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate.Biker(checkPoint), "Biker Thread 1");
-        Thread biker2 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate.Biker(checkPoint), "Biker Thread 2");
-        Thread biker3 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate.Biker(checkPoint), "Biker Thread 3");
-        Thread biker4 = new Thread(new edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate.Biker(checkPoint), "Biker Thread 4");
+        Thread biker1 = new Thread(new Biker(checkPoint), "Biker 1");
+        Thread biker2 = new Thread(new Biker(checkPoint), "Biker 2");
+        Thread biker3 = new Thread(new Biker(checkPoint), "Biker 3");
+        Thread biker4 = new Thread(new Biker(checkPoint), "Biker 4");
 
         biker1.start();
         biker2.start();
