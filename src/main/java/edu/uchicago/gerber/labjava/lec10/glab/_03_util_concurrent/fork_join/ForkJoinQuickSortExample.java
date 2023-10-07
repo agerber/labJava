@@ -57,7 +57,6 @@ public class ForkJoinQuickSortExample {
     public static void main(String[] args) {
 
 
-
         int[] numbers = genRandomArray(30);
         System.out.println("Unsorted array: " + Arrays.toString(numbers));
 
@@ -69,8 +68,10 @@ public class ForkJoinQuickSortExample {
     }
 
     private static int[] genRandomArray(int size){
+
         Random random = new Random();
         int[] numbers = new int[size];
+
         for (int nC = 0; nC < numbers.length; nC++)
             numbers[nC] = random.nextInt(100);
 
