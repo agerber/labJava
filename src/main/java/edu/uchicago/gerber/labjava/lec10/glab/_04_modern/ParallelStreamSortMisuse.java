@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._04_streams;
+package edu.uchicago.gerber.labjava.lec10.glab._04_modern;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,7 +1,8 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.fork_join;
+package edu.uchicago.gerber.labjava.lec10.glab._04_modern.fork_join;
 
 
-import edu.uchicago.gerber.labjava.lec09.glab.searchsort.JPanelDB;
+
+import edu.uchicago.gerber.labjava.lec09.glab.searchsort.Quick;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -13,26 +14,36 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Random;
 
-public class SeqSearchFrame extends JFrame
+//import _ssort.quicksort.*;
+//import _ssort.util.draw.*;
+
+public class BinarySearchFrame extends JFrame
 {
 
   private Random r = new Random();
   private int nR = 0;
   private int nB = 0;
-  private int nY = 0;
+  private int nY = -1;
+  private boolean bD = false;
+  private boolean bFound = false;
+  private int nPR = 0;
+  private int nPB = 0;
+  private boolean bDone = false;
+
   boolean bWait = true;
   private Color colG = new Color( 1, 42, 42 );
+  private boolean bGuess = false;
 
   private Timer timT;
 
   private Comparable[] cA = new Integer[100];
   private boolean bEmpty = true;
 
-  private final int nMAX = 20;
+  private final int nMAX = 1000;
 
   private JPanel contentPane;
   private BorderLayout borderLayout1 = new BorderLayout();
-  private JPanelDB panC = new JPanelDB();
+  private JPanel panC = new JPanel();
   private JPanel panN = new JPanel();
   private GridLayout gridLayout1 = new GridLayout();
 
@@ -46,7 +57,11 @@ public class SeqSearchFrame extends JFrame
   private GridLayout gridLayout2 = new GridLayout();
   private JLabel lblPick = new JLabel();
   private JSlider sldVal = new JSlider();
-  public SeqSearchFrame ()
+  
+  
+
+  
+  public BinarySearchFrame ()
   {
     try
     {
@@ -70,7 +85,7 @@ public class SeqSearchFrame extends JFrame
     contentPane = ( JPanel )getContentPane();
     contentPane.setLayout( borderLayout1 );
     setSize( new Dimension( 800, 600 ) );
-    setTitle( "Sequential Search O(n)" );
+    setTitle( "Binary Search O(log n)" );
     this.addWindowListener( new WindowAdapter()
     {
       public void windowClosing ( WindowEvent e )
@@ -98,7 +113,7 @@ public class SeqSearchFrame extends JFrame
       }
     } );
     lblMe.setHorizontalAlignment( SwingConstants.CENTER );
-    lblMe.setText( "Sequential Search" );
+    lblMe.setText( "Binary Search" );
     panS.setLayout( gridLayout2 );
     sldSpeed.addChangeListener( new ChangeListener()
     {
@@ -131,20 +146,21 @@ public class SeqSearchFrame extends JFrame
       public void actionPerformed ( ActionEvent e )
       {
 
-        if ( nR < cA.length )
+        if ( !bFound )
         {
           doWork();
-          // clearPanC();
+          //clearPanC();
           display();
 
         }
         else
         {
-          timT.stop();
+          //timT.stop();
           bttGo.setSelected( false );
           bttGo.setText( "go" );
-          clearPanC();
-          display();
+          //clearPanC();
+          clearGreen();
+          //display();
         }
 
       }
@@ -161,7 +177,7 @@ public class SeqSearchFrame extends JFrame
 
   public void bttGo_actionPerformed ( ActionEvent e )
   {
-    if ( !bEmpty )
+    if ( !bDone )
     {
 
       if ( bttGo.isSelected() )
@@ -179,6 +195,11 @@ public class SeqSearchFrame extends JFrame
 
       }
     }
+    else
+    {
+      bttGo.setSelected( false );
+      bttGo.setText( "go" );
+    }
   } //end bttGo_action
 
 
@@ -194,33 +215,102 @@ public class SeqSearchFrame extends JFrame
   } //end createUnsortedArray()
 
 
+//if guessing then leave
+
+
+
+
   private void display ()
   {
-    panC.clearDB();
-    Graphics g = panC.getGraphicsDB();
+    Graphics g = panC.getGraphics();
 
     int nW = panC.getWidth() / 100;
     int nS = getSearch();
+    int nLeft;
+    int nRight;
+    Color colArrow;
 
     for ( int nC = 0; nC < cA.length; nC++ )
     {
-
-      if ( nC == nR )
+      //I'm guessing and it's not found
+      if ( bGuess && !bFound )
       {
-        if ( ( ( Integer )cA[nC] ).intValue() == nS )
+        //set the appropriate parameters
+        nLeft = nPR;
+        nRight = nPB;
+        colArrow = Color.yellow;
+
+        if ( bDone )
         {
-
-          g.setColor( Color.yellow );
-          g.fill3DRect( nW * nC,
-                        panC.getHeight() - ( ( Integer )cA[nC] ).intValue(),
-                        nW, ( ( Integer )cA[nC] ).intValue(), true );
-
-          g.setColor( Color.red );
-          g.fill3DRect( nW * nC + nW / 3, 0,
-                        nW / 3, panC.getHeight(), true );
+          nLeft = Math.max( nR, nPR );
+          nRight = Math.min( nB, nPB );
+          colArrow = Color.yellow;
 
         }
-        else
+
+      }
+      //I"m guessing and it's found!
+      else if ( bGuess && bFound )
+      {
+        nLeft = Math.max( nR, nPR );
+        nRight = Math.min( nB, nPB );
+        colArrow = Color.yellow;
+      }
+      //I"m not guessing and it's not found
+      else if ( !bGuess && !bFound )
+      {
+        nLeft = Math.max( nR, nPR );
+        nRight = Math.min( nB, nPB );
+        colArrow = Color.black;
+
+      }
+      else if ( !bGuess && bFound )
+      {
+        nLeft = Math.max( nR, nPR );
+        nRight = Math.min( nB, nPB );
+        colArrow = Color.black;
+      }
+      else
+      {
+        nLeft = Math.max( nR, nPR );
+        nRight = Math.min( nB, nPB );
+        colArrow = Color.yellow;
+
+      }
+
+      //found
+      if ( nC == nY && ( ( Integer )cA[nC] ).intValue() == nS )
+      {
+
+        g.setColor( Color.yellow );
+        g.fill3DRect( nW * nC,
+                      panC.getHeight() - ( ( Integer )cA[nC] ).intValue(),
+                      nW, ( ( Integer )cA[nC] ).intValue(), true );
+
+        g.setColor( Color.yellow );
+        g.fill3DRect( nW * nC + nW / 3, 0,
+                      nW / 3,
+                      panC.getHeight() - ( ( Integer )cA[nC] ).intValue(), true );
+
+        //draw the pointer of the arrow triangle
+        int nP = 3; //triangle
+        int[] nX = new int[nP];
+        int[] nY = new int[nP];
+
+        nX[0] = nW * nC + nW / 3;
+        nX[1] = nW * nC;
+        nX[2] = nW * nC + nW;
+
+        nY[0] = panC.getHeight() - ( ( Integer )cA[nC] ).intValue();
+        nY[1] = panC.getHeight() - ( ( Integer )cA[nC] ).intValue() - 15;
+        nY[2] = panC.getHeight() - ( ( Integer )cA[nC] ).intValue() - 15;
+
+        g.fillPolygon( nX, nY, nP );
+      } //end first if
+      //it's yellow but its not found
+      else if ( nC == nY && ( ( Integer )cA[nC] ).intValue() != nS )
+      {
+        if ( !bDone )
         {
 
           g.setColor( Color.cyan );
@@ -228,48 +318,73 @@ public class SeqSearchFrame extends JFrame
                         panC.getHeight() - ( ( Integer )cA[nC] ).intValue(),
                         nW, ( ( Integer )cA[nC] ).intValue(), true );
 
-          g.setColor( Color.red );
+          g.setColor( colArrow );
           g.fill3DRect( nW * nC + nW / 3, 0,
-                        nW / 3, panC.getHeight(), true );
+                        nW / 3,
+                        panC.getHeight() - ( ( Integer )cA[nC] ).intValue(), true );
+
+//draw the pointer of the arrow triangle
+          int nP = 3; //triangle
+          int[] nX = new int[nP];
+          int[] nY = new int[nP];
+
+          nX[0] = nW * nC + nW / 3;
+          nX[1] = nW * nC;
+          nX[2] = nW * nC + nW;
+
+          nY[0] = panC.getHeight() - ( ( Integer )cA[nC] ).intValue();
+          nY[1] = panC.getHeight() - ( ( Integer )cA[nC] ).intValue() - 15;
+          nY[2] = panC.getHeight() - ( ( Integer )cA[nC] ).intValue() - 15;
+
+          g.fillPolygon( nX, nY, nP );
+        }
+        //done
+        else
+        {
+
+          g.setColor( colG );
+          g.fill3DRect( nW * nC,
+                        panC.getHeight() - ( ( Integer )cA[nC] ).intValue(),
+                        nW, ( ( Integer )cA[nC] ).intValue(), true );
 
         }
-
       }
-
-      else if ( nC < nR )
+      else if ( nC < nLeft )
       {
-
-        //g.setColor( Color.cyan );
         g.setColor( colG );
         g.fill3DRect( nW * nC,
                       panC.getHeight() - ( ( Integer )cA[nC] ).intValue(),
                       nW, ( ( Integer )cA[nC] ).intValue(), true );
 
       }
-
-      else if ( nC > nR )
+      else if ( nC > nRight )
       {
-        //
-        g.setColor( Color.cyan );
-        //g.setColor(colG);
+        g.setColor( colG );
         g.fill3DRect( nW * nC,
                       panC.getHeight() - ( ( Integer )cA[nC] ).intValue(),
                       nW, ( ( Integer )cA[nC] ).intValue(), true );
 
       }
+      else if ( nC >= nLeft && nC <= nRight )
+      {
+        g.setColor( Color.cyan );
+        g.fill3DRect( nW * nC,
+                      panC.getHeight() - ( ( Integer )cA[nC] ).intValue(),
+                      nW, ( ( Integer )cA[nC] ).intValue(), true );
 
+      }
     }
 
-    panC.repaintDB();
-
-  } //end display()
+    //expand the thing to nPR and nPB red and blue on the right
+  }
 
 
   private void clearPanC ()
   {
+    Graphics g = panC.getGraphics();
 
-    panC.clearDB();
-    panC.repaintDB();
+    g.setColor( Color.black );
+    g.fillRect( 0, 0, panC.getWidth(), panC.getHeight() );
 
   }
 
@@ -279,13 +394,19 @@ public class SeqSearchFrame extends JFrame
 
     sldVal.setMaximum( panC.getHeight() );
     sldVal.setMinimum( 0 );
-    //sldVal.setValue(panC.getHeight()/ 2);
+    sldVal.setValue(panC.getHeight()/ 2);
     nR = 0;
-    nB = 0;
-    nY = 0;
+    nB = cA.length - 1;
+    nPR = nR;
+    nPB = nB;
+    nY = -1;
+    bD = false;
+    bFound = false;
     clearPanC();
     createUnsortedArray();
+    Quick.sort( cA );
     display();
+    bDone = false;
     //lblPick.setText( "Search value from 0 to " + panC.getHeight() );
 
   } //btnReset
@@ -312,32 +433,91 @@ public class SeqSearchFrame extends JFrame
 
   private void finish ()
   {
+
+    bDone = true;
+    clearPanC();
+    clearGreen();
     timT.stop();
     bttGo.setSelected( false );
     bttGo.setText( "go" );
+    //bGuess = true;
+    //bD = true;
+    // if (nB < n
+
+
+  }
+
+
+  private void clearGreen ()
+  {
+    Graphics g = panC.getGraphics();
+    // clearPanC();
+    g.setColor( colG );
+
+    int nW = panC.getWidth() / 100;
+    for ( int nC = 0; nC < cA.length; nC++ )
+    {
+
+      g.fill3DRect( nW * nC,
+                    panC.getHeight() - ( ( Integer )cA[nC] ).intValue(),
+                    nW, ( ( Integer )cA[nC] ).intValue(), true );
+
+    }
+    // g.setColor(Color.red);
+    // g.fillOval(50,50, 50, 50);
+    //System.out.println( "afdadf" );
 
   }
 
 
   private void doWork ()
   {
-    int nS = getSearch();
 
-    if ( nR <= cA.length - 1 )
+    //flip it
+    bGuess = !bGuess;
+
+    if ( bGuess )
     {
 
-      if ( ( ( Integer )cA[nR] ).intValue() == nS )
+      int nS = getSearch();
+
+      if ( nR <= nB )
       {
-        finish();
+        nY = ( nR + nB ) / 2;
+        if ( ( ( Integer )cA[nY] ).intValue() == nS )
+        {
+          // System.out.println(nKey);
+          // return nMid;
+          bFound = true;
+          nPR = Math.max( nPR, nR );
+          nR = Math.max( nPR, nR );
+          nPB = Math.min( nPB, nB );
+          nB = Math.min( nPB, nB );
+          finish();
+
+        }
+        else if ( ( ( Integer )cA[nY] ).intValue() < nS )
+        {
+          //System.out.println(nNums[nMid]);
+          nPR = nR;
+          nPB = nB;
+          nR = nY + 1;
+
+        }
+        else
+        {
+          //System.out.println(nNums[nMid]);
+          nPB = nB;
+          nPR = nR;
+          nB = nY - 1;
+        }
       }
       else
       {
-        nR++;
+        finish();
       }
-
     }
-
-  }
+  } //end dowork
 
 
   public static void main ( String[] args )
@@ -348,7 +528,7 @@ public class SeqSearchFrame extends JFrame
      * Construct and show the application.
      */
 
-    SeqSearchFrame frame = new SeqSearchFrame();
+    BinarySearchFrame frame = new BinarySearchFrame();
     // Validate frames that have preset sizes
     // Pack frames that have useful preferred size info, e.g. from their layout
     if ( packFrame )
@@ -387,10 +567,13 @@ public class SeqSearchFrame extends JFrame
 
   public void this_windowClosing ( WindowEvent e )
   {
-    createUnsortedArray();
-    timT.stop();
-    bttGo.setSelected( false );
-    bttGo.setText( "go" );
+
+
+     createUnsortedArray();
+     finish();
+//Quick.sort( cA );
+//display();
+//bDone = false;
 
   }
 } //end class

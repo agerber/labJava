@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.atomic.vol_broken;
+package edu.uchicago.gerber.labjava.lec10.glab._XX_holding.vol_broken;
 
 class SharedCounter {
     /*
