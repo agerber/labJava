@@ -18,18 +18,17 @@ public class HtmlFetchJoin {
       webRunner.setName("webRunner");
       System.out.println(webRunner.getName() + ":" + webRunner.getState().toString().toUpperCase()); // NEW
 
-      webRunner.setDaemon(true);
       webRunner.start();
         //comment-out the following try-catch to see the difference in results.
 
        //join does the following things. 1/ sets the main into a wait() state. 2/ adds itself to the waitSet of
           // webRunner. We can set time-out as well
 
-        try {
-            webRunner.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+//        try {
+//            webRunner.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//        }
 
 
         System.out.println(webRunner.getReturnValue());
@@ -41,7 +40,7 @@ public class HtmlFetchJoin {
     private static class WebRunner extends Thread {
 
         private String strUrl;
-        private String strReturnValue;
+        private String strHtml;
 
         private WebRunner(String strUrl) {
             this.strUrl = strUrl;
@@ -71,7 +70,7 @@ public class HtmlFetchJoin {
                 while ((strLine = br.readLine()) != null) {
                    stringBuilder.append(strLine).append("\n");
                 }
-                strReturnValue = stringBuilder.toString();
+                strHtml = stringBuilder.toString();
 
             } catch (IOException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -84,7 +83,7 @@ public class HtmlFetchJoin {
         }
 
         private String getReturnValue() {
-            return strReturnValue;
+            return strHtml;
         }
 
 
