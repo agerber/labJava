@@ -24,10 +24,11 @@ public class CollectionsVsStreams {
 
         // Stream Example: Arrayed in Time
         //I'm printing the values as they are generated in real-time.
+        //since the objects are never stored on the heap, we don't have to worry about side-effects
         IntStream intStream = IntStream.range(0, TOTAL);
         intStream
-                .filter(n -> n % 2 == 0)
-                .map(n -> n * 3)
+//                .filter(n -> n % 2 == 0)
+//                .map(n -> n * 3)
                 .forEach(System.out::println);  // Elements are computed and processed on-the-fly
     }
 }
