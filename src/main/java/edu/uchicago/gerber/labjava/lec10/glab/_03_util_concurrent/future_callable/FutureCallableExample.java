@@ -19,7 +19,7 @@ public class FutureCallableExample {
             Callable<Integer> task = new Callable<Integer>() {
                 @Override
                 public Integer call() throws Exception {
-                    System.out.println("Calculating square of " + number + " by " + Thread.currentThread().getName());
+                    System.out.println("Callable: calculating square of " + number + " by " + Thread.currentThread().getName());
                     Thread.sleep(500);  // Simulating work
                     return number * number;
                 }
@@ -31,11 +31,11 @@ public class FutureCallableExample {
         }
 
         // Retrieve the results from the Future objects
-        for (int count = 1; count < futureList.size(); count++) {
+        for (int count = 0; count < futureList.size(); count++) {
             try {
                 //this will simply block until the Future has a value, at which point it will execute and return value.
                 Integer result = futureList.get(count).get();
-                System.out.println("Square of " + (count + 1) + " is: " + result);
+                System.out.println("Future result: square of " + (count + 1) + " is: " + result);
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }

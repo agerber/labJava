@@ -50,6 +50,7 @@ public class HtmlFetchCallable implements Callable<String> {
         Future<String> future = executor.submit(new HtmlFetchCallable(url));
 
         try {
+            //this call will block until future.get() has a value!
             String htmlContent = future.get();
             System.out.println(htmlContent);
         } finally {
