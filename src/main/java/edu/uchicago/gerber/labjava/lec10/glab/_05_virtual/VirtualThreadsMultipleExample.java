@@ -1,6 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._05_loom;
-
-import java.util.concurrent.*;
+package edu.uchicago.gerber.labjava.lec10.glab._05_virtual;
 
 public class VirtualThreadsMultipleExample {
 
