@@ -14,8 +14,8 @@ public class FutureCallableExample {
         List<Future<Integer>> futureList = new ArrayList<>();
 
         // Enqueue 10 Callable tasks
-        for (int i = 1; i <= 10; i++) {
-            final int number = i;
+        for (int count = 1; count <= 10; count++) {
+            final int number = count;
             Callable<Integer> task = new Callable<Integer>() {
                 @Override
                 public Integer call() throws Exception {
@@ -31,14 +31,18 @@ public class FutureCallableExample {
         }
 
         // Retrieve the results from the Future objects
-        for (int i = 0; i < futureList.size(); i++) {
+        for (int count = 1; count < futureList.size(); count++) {
             try {
-                Integer result = futureList.get(i).get();
-                System.out.println("Square of " + (i + 1) + " is: " + result);
+                //this will simply block until the Future has a value, at which point it will execute and return value.
+                Integer result = futureList.get(count).get();
+                System.out.println("Square of " + (count + 1) + " is: " + result);
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
         }
+
+        //notice that we don't need to use join here to wait for runnables to finish to check the results in a
+        //local variable or a local data-structure.
 
         // Shutdown the executor service
         executorService.shutdown();
