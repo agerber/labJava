@@ -2,6 +2,7 @@ package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate;
 
 
 
+import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
@@ -37,6 +38,8 @@ public class CyclicBarrierDemo {
 
 class Biker implements Runnable
 {
+
+    private Random random = new Random();
 
     private CyclicBarrier checkPoint;
 

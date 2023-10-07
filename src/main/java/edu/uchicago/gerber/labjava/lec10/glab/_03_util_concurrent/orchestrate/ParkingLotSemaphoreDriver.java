@@ -21,14 +21,15 @@ public class ParkingLotSemaphoreDriver {
 
     public static void main(String[] args) {
         ParkingLotSemaphoreDriver parkingLot = new ParkingLotSemaphoreDriver();
-        for (int i = 0; i < 10; i++) {
+        int count = 0;
+        while (++count < 11) {
             new Thread(() -> {
                 try {
                     parkingLot.park();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }, "Car " + (i + 1)).start();
+            }, "Car " + (count)).start();
         }
     }
 }
