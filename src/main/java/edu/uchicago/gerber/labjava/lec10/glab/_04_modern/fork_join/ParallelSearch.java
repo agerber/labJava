@@ -25,7 +25,7 @@ public class ParallelSearch extends RecursiveTask<Integer> {
         int length = end - start;
         if (length < THRESHOLD) {
             // Sequential search
-            System.out.println("Brute force searching with with set size of " + length);
+            System.out.println("Brute force searching with set size of " + length);
             for (int i = start; i < end; i++) {
                 if (data[i] == target) {
                     return i; // Found
@@ -48,6 +48,10 @@ public class ParallelSearch extends RecursiveTask<Integer> {
     }
 
     public static void main(String[] args) {
+
+        System.out.println("Threshold size is " + THRESHOLD);
+
+
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         int[] data = new int[ARRAY_SIZE];
 
@@ -62,7 +66,7 @@ public class ParallelSearch extends RecursiveTask<Integer> {
         int result = forkJoinPool.invoke(task);
 
         if (result != -1) {
-            System.out.println("Found " + target + " at index " + result);
+            System.out.println("Found target: " + target + " at index " + result);
         } else {
             System.out.println(target + " not found.");
         }
