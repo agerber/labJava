@@ -1,9 +1,9 @@
-package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.data_structs;
+package edu.uchicago.gerber.labjava.lec10.glab._04_modern.debug;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-public class ProducerConsumerBlockingQueue {
+public class DebugBlockingQueue {
 
     /*
     Because the consumer is slower than the producer, the queue will eventually fill up, and the producer will block waiting for space to become available in the queue.
@@ -48,5 +48,12 @@ public class ProducerConsumerBlockingQueue {
 
         producerThread.start();
         consumerThread.start();
+
+        try {
+            Thread.sleep(3000);
+            throw new InterruptedException("something went wrong on " + Thread.currentThread().getName());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
