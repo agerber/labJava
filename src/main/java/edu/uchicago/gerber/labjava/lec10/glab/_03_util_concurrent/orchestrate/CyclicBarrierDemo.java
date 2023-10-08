@@ -11,21 +11,21 @@ public class CyclicBarrierDemo {
     public static void main(String args[])
     {
 
-        // creating CyclicBarrier (checkPoint) with
+        // creating CyclicBarrier (cyclicBarrier) with
         // 4 parties (Bikers) threads that need to call await()
-        final CyclicBarrier checkPoint = new CyclicBarrier(4, new Runnable(){
+        final CyclicBarrier cyclicBarrier = new CyclicBarrier(4, new Runnable(){
             @Override
             public void run(){
                 //This task will be executed once all biker threads will reach barrier
-                System.out.println("\nAll bikers have arrived to checkpoint....pitstop\n");
+                System.out.println("\nAll bikers have arrived at the checkpoint.\n");
             }
         });
 
         //starting each of thread
-        Thread biker1 = new Thread(new Biker(checkPoint), "Biker 1");
-        Thread biker2 = new Thread(new Biker(checkPoint), "Biker 2");
-        Thread biker3 = new Thread(new Biker(checkPoint), "Biker 3");
-        Thread biker4 = new Thread(new Biker(checkPoint), "Biker 4");
+        Thread biker1 = new Thread(new Biker(cyclicBarrier), "Biker 1");
+        Thread biker2 = new Thread(new Biker(cyclicBarrier), "Biker 2");
+        Thread biker3 = new Thread(new Biker(cyclicBarrier), "Biker 3");
+        Thread biker4 = new Thread(new Biker(cyclicBarrier), "Biker 4");
 
         biker1.start();
         biker2.start();
@@ -53,7 +53,7 @@ class Biker implements Runnable
     {
         try
         {
-            System.out.println(Thread.currentThread().getName() + " Rally race begins");
+            System.out.println(Thread.currentThread().getName() + " has left the start line." );
 
             checkPoint.await();
             System.out.println(Thread.currentThread().getName() + " has left the first checkpoint / barrier");
