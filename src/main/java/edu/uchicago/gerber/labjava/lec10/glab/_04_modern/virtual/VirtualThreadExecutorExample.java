@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec10.glab._05_virtual;
+package edu.uchicago.gerber.labjava.lec10.glab._04_modern.virtual;
 
 import java.util.concurrent.*;
 
