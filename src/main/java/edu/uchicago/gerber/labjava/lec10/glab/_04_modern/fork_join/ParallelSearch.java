@@ -44,14 +44,14 @@ public class ParallelSearch extends RecursiveTask<Integer> {
 
     public static void main(String[] args) {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        int[] data = new int[100_000];
+        int[] data = new int[1_000_000];
 
         // Fill the array with some random numbers for demonstration
         for (int i = 0; i < data.length; i++) {
-            data[i] = (int)(Math.random() * 1000);
+            data[i] = (int)(Math.random() * 1_000_000);
         }
 
-        int target = 500; // Number we're looking for
+        int target = 500_001; // Number we're looking for
 
         ParallelSearch task = new ParallelSearch(data, 0, data.length, target);
         int result = forkJoinPool.invoke(task);
