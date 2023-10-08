@@ -17,7 +17,7 @@ public class ParkingLotSemaphoreDriver {
         System.out.println(Thread.currentThread().getName() + " trying to park");
         semaphore.acquire();
         System.out.println(Thread.currentThread().getName() + " parked");
-        Thread.sleep(random.nextInt(2000)); // simulate the car being parked for 2 seconds
+        Thread.sleep(random.nextInt(2000)); // simulate the car being parked for up to 2 seconds
         System.out.println(Thread.currentThread().getName() + " leaving");
         semaphore.release();
     }
@@ -25,7 +25,7 @@ public class ParkingLotSemaphoreDriver {
     public static void main(String[] args) {
         ParkingLotSemaphoreDriver parkingLot = new ParkingLotSemaphoreDriver();
         int count = 0;
-        while (++count < 11) {
+        while (count++ < 10) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
