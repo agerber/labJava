@@ -12,12 +12,13 @@ public class ProducerConsumerBlockingQueue {
         BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(7);
 
         //producer is 3x faster than consumer, so blocking queue will fill up
-        Thread producerThread = new Thread(new Runnable() {
+        Thread producerThread = new Thread( new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < 50; i++) {
+                for (int i = 0; i < 10; i++) {
                     try {
                         //put is blocking
+                        if (i % 2 != 0) throw new InterruptedException("something went wrong on " + i + " : " + Thread.currentThread().getName());
                         blockingQueue.put("Item " + i);
                         System.out.println("Produced item " + i);
                         Thread.sleep(50);  // simulating some time taken to produce an item
@@ -26,13 +27,14 @@ public class ProducerConsumerBlockingQueue {
                     }
                 }
             }
-        });
+        }, "producer");
 
         Thread consumerThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < 150; i++) {
+                for (int i = 0; i < 10; i++) {
                     try {
+                        if (i % 2 == 0)  throw new InterruptedException("something went wrong on " + i + " : " + Thread.currentThread().getName());
                         //take() is blocking
                         String item = blockingQueue.take();
                         System.out.println("Consumed " + item);
@@ -42,7 +44,7 @@ public class ProducerConsumerBlockingQueue {
                     }
                 }
             }
-        });
+        } ,"consumer");
 
         producerThread.start();
         consumerThread.start();
