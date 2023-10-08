@@ -5,6 +5,8 @@ package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate;
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class CyclicBarrierDemo {
 
@@ -39,7 +41,6 @@ public class CyclicBarrierDemo {
 class Biker implements Runnable
 {
 
-    private Random random = new Random();
 
     private CyclicBarrier checkPoint;
 
@@ -55,16 +56,20 @@ class Biker implements Runnable
         {
             System.out.println(Thread.currentThread().getName() + " has left the start line." );
 
+            //checkPoint.await(10, TimeUnit.SECONDS);
             checkPoint.await();
             System.out.println(Thread.currentThread().getName() + " has left the first checkpoint / barrier");
 
+            //checkPoint.await(10, TimeUnit.SECONDS);
             checkPoint.await();
             System.out.println(Thread.currentThread().getName() + " has left the second checkpoint / barrier");
 
+            //checkPoint.await(10, TimeUnit.SECONDS);
             checkPoint.await();
             System.out.println(Thread.currentThread().getName() + " has reached the finish line");
 
         }
+        //catch (InterruptedException |  BrokenBarrierException | TimeoutException ex)
         catch (InterruptedException |  BrokenBarrierException ex)
         {
             ex.printStackTrace();
