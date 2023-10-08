@@ -4,7 +4,10 @@ import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.ForkJoinPool;
 
 public class ParallelSearch extends RecursiveTask<Integer> {
-    private static final int THRESHOLD = 100;
+
+    public static final int ARRAY_SIZE = 1_000_000;
+
+    private static final int THRESHOLD =  ARRAY_SIZE/ (Runtime.getRuntime().availableProcessors() / 2);
     private final int[] data;
     private final int start;
     private final int end;
@@ -22,6 +25,7 @@ public class ParallelSearch extends RecursiveTask<Integer> {
         int length = end - start;
         if (length < THRESHOLD) {
             // Sequential search
+            System.out.println("Brute force searching with with set size of " + length);
             for (int i = start; i < end; i++) {
                 if (data[i] == target) {
                     return i; // Found
@@ -35,6 +39,7 @@ public class ParallelSearch extends RecursiveTask<Integer> {
             ParallelSearch rightSearch = new ParallelSearch(data, mid, end, target);
             leftSearch.fork(); // Fork off the left-side search
             int rightResult = rightSearch.compute(); // Compute the right-side search directly
+            //join() is not the same as thread.join(). This is a merge operation.
             int leftResult = leftSearch.join(); // Wait for the left-side search to complete
 
             if (leftResult != -1) return leftResult;
@@ -44,11 +49,11 @@ public class ParallelSearch extends RecursiveTask<Integer> {
 
     public static void main(String[] args) {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        int[] data = new int[1_000_000];
+        int[] data = new int[ARRAY_SIZE];
 
         // Fill the array with some random numbers for demonstration
         for (int i = 0; i < data.length; i++) {
-            data[i] = (int)(Math.random() * 1_000_000);
+            data[i] = (int)(Math.random() * ARRAY_SIZE);
         }
 
         int target = 500_001; // Number we're looking for
