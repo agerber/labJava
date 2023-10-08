@@ -2,11 +2,8 @@ package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate;
 
 
 
-import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 public class CyclicBarrierDemo {
 
@@ -42,10 +39,10 @@ class Biker implements Runnable
 {
 
 
-    private CyclicBarrier checkPoint;
+    private CyclicBarrier cyclicBarrier;
 
-    public Biker(CyclicBarrier checkPoint) {
-        this.checkPoint = checkPoint;
+    public Biker(CyclicBarrier cyclicBarrier) {
+        this.cyclicBarrier = cyclicBarrier;
     }
 
     // Code to be executed by each biker
@@ -57,15 +54,15 @@ class Biker implements Runnable
             System.out.println(Thread.currentThread().getName() + " has left the start line." );
 
             //checkPoint.await(10, TimeUnit.SECONDS);
-            checkPoint.await();
+            cyclicBarrier.await();
             System.out.println(Thread.currentThread().getName() + " has left the first checkpoint / barrier");
 
             //checkPoint.await(10, TimeUnit.SECONDS);
-            checkPoint.await();
+            cyclicBarrier.await();
             System.out.println(Thread.currentThread().getName() + " has left the second checkpoint / barrier");
 
             //checkPoint.await(10, TimeUnit.SECONDS);
-            checkPoint.await();
+            cyclicBarrier.await();
             System.out.println(Thread.currentThread().getName() + " has reached the finish line");
 
         }

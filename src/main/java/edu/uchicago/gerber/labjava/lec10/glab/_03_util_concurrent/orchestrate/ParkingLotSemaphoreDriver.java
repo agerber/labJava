@@ -1,8 +1,11 @@
 package edu.uchicago.gerber.labjava.lec10.glab._03_util_concurrent.orchestrate;
 
+import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 public class ParkingLotSemaphoreDriver {
+
+    Random random = new Random();
 
     /*
     Imagine a parking lot with a limited number of parking spaces. Multiple cars (threads) want to park in this parking lot. Once the parking lot is full, the next car has to wait until a parking spot becomes available.
@@ -14,7 +17,7 @@ public class ParkingLotSemaphoreDriver {
         System.out.println(Thread.currentThread().getName() + " trying to park");
         semaphore.acquire();
         System.out.println(Thread.currentThread().getName() + " parked");
-        Thread.sleep(2000); // simulate the car being parked for 2 seconds
+        Thread.sleep(random.nextInt(2000)); // simulate the car being parked for 2 seconds
         System.out.println(Thread.currentThread().getName() + " leaving");
         semaphore.release();
     }
