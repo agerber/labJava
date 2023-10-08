@@ -4,7 +4,20 @@ public class Hand {
 
     private byte value;
 
+
+
+
+    //local method variables do not escape a Thread's stack
+    //THREAD-SAFE
+    public int add10(int paramValue){
+        final int TEN = 10;
+        return paramValue + TEN;
+    }
+
+
+
     //StringBuilder sb is local and does not escape a Thread's stack
+    //THREAD-SAFE
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -13,12 +26,7 @@ public class Hand {
         return sb.toString();
     }
 
-    //local method variables do not escape a Thread's stack
-    public int add10(int paramValue){
-        final int TEN = 10;
-        return paramValue + TEN;
-    }
-
+    //NOT THREAD-SAFE
     public void hitMe(byte hitValue){
         //possible check-then-act race condition
         if (this.value < 21){
@@ -26,9 +34,10 @@ public class Hand {
         }
     }
 
+    //NOT THREAD-SAFE
     public void incrementMe(){
         //possible read-write-modify race condition
-        setValue((byte)(getValue() +1));
+        setValue((byte)(this.value +1));
     }
 
 
