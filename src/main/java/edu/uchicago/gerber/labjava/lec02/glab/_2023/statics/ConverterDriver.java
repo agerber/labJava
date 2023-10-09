@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec02.glab._2023.statics;
 
-public class TempDriver {
+public class ConverterDriver {
 
     public static void main(String[] args) {
         // Convert 25°C to Fahrenheit

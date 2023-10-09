@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec02.glab._2023.refs;
 
-public class PassDemo {
+public class PassByDriver {
 
     public static void main(String[] args) {
         // Primitive

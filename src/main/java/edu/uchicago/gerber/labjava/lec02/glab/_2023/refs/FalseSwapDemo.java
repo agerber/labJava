@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec02.glab._2023.refs;
 
-public class ReferenceSwapDemo {
+public class FalseSwapDemo {
 
     public static void main(String[] args) {
         Person personA = new Person("Alice");

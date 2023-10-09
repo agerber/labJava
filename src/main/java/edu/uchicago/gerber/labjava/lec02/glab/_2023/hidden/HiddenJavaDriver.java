@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec02.glab;
+package edu.uchicago.gerber.labjava.lec02.glab._2023.hidden;
 
 public class HiddenJavaDriver {
 

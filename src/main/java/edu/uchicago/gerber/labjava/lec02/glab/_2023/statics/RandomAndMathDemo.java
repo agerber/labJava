@@ -2,7 +2,7 @@ package edu.uchicago.gerber.labjava.lec02.glab._2023.statics;
 
 import java.util.Random;
 
-public class RandomDemo {
+public class RandomAndMathDemo {
 
     public static void main(String[] args) {
         // Create a new random number generator.

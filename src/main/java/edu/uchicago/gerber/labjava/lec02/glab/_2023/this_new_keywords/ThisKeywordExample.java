@@ -1,8 +1,12 @@
-package edu.uchicago.gerber.labjava.lec02.glab._2023.this_keyword;
+package edu.uchicago.gerber.labjava.lec02.glab._2023.this_new_keywords;
 
 public class ThisKeywordExample {
 
     public static void main(String[] args) {
+
+
+        //the new keyword returns the memeory address of the object on the heap
+
 
         Author tolkien = new Author("J.R.R. Tolkien")
                 .setNationality("British");

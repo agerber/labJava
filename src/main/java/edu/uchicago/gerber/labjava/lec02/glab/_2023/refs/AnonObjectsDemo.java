@@ -4,7 +4,7 @@ import java.awt.Rectangle;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PopulateDemo {
+public class AnonObjectsDemo {
 
     public static void main(String[] args) {
         // Define size for demonstration
