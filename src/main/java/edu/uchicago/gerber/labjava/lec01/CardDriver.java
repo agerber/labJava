@@ -14,7 +14,7 @@ public class CardDriver {
 
 
         System.out.println("THESE ARE THE INSTANCES - THERE CAN BE MANY >>>>>>>>>>>>>");
-        System.out.println("Instance are created at runtime >>>>>>>>>>>>>");
+        System.out.println("Instance are created on the heap dynamically at runtime >>>>>>>>>>>>>");
         System.out.println("Instances contain field-values ONLY >>>>>>>>>>>>>");
         System.out.println();
 
@@ -30,7 +30,7 @@ public class CardDriver {
         }
 
         System.out.println("THIS is the ONE and ONLY class-object for the Card class");
-        System.out.println("Class-objects are loaded PRIOR to runtime ");
+        System.out.println("Class-objects are loaded (created on the heap) PRIOR to runtime ");
         System.out.println("Class-objects contain all the meta-data of this class");
         System.out.println("There is always only ONE class-object per class in your program, even if you import and " +
                 "use it in multiple source files");
