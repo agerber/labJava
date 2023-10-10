@@ -11,7 +11,8 @@ public class StringPoolDemo {
         String s3 = new String("Hello");
         String s4 = new String("Hello");
 
-        // Comparing references
+        // Comparing references. When you use the double-equals operator on references, it checks
+        //to see if the memory addresses of the two references are the same (e.g. pointing to the same object)
         System.out.println("s1 == s2: " + (s1 == s2)); // This will be true because both refer to the same object in the string pool.
         System.out.println("s3 == s4: " + (s3 == s4)); // This will be false because both refer to different objects in the heap.
 
