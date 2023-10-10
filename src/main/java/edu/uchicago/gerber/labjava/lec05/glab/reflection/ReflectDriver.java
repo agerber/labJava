@@ -1,9 +1,7 @@
 package edu.uchicago.gerber.labjava.lec05.glab.reflection;
 
-import edu.uchicago.gerber.labjava.lec01.glab.Card;
 import java.awt.Rectangle;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
