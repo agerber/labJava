@@ -34,7 +34,8 @@ public class PrimitiveCastingDriver {
         System.out.println();
         System.out.println();
 
-        System.out.println("DOWNCASTING PRIMITIVES IS HIGHLY UNPREDUCTABLE. Make sure the value can be held in the variable");
+        System.out.println("DOWNCASTING PRIMITIVES IS DANGEROUS. Make sure the value is within the range of the " +
+                "target variable");
 
         System.out.println();
         System.out.println();
