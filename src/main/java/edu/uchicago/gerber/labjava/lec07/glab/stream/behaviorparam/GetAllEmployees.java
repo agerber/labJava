@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec07.glab.stream.behaviorparam;
 
-import edu.uchicago.gerber.labjava.lec03.glab.employee.Employee;
+import edu.uchicago.gerber.labjava.lec03.employee.Employee;
 
 import java.util.ArrayList;
 import java.util.Arrays;

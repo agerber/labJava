@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec04.glab.fight;
 
-import edu.uchicago.gerber.labjava.lec03.glab.ascii.Asciify;
+import edu.uchicago.gerber.labjava.lec03.ascii.Asciify;
 import edu.uchicago.gerber.labjava.lec04.glab.race.Raceable;
 
 public class Robot implements Boxable {
