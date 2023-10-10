@@ -7,9 +7,9 @@ public class NewAndThisDriver {
         //the constructor returns the memory address of the
         //newly instantiated object.
 
-        //'this' keyword does two things:
+        //'this' keyword provides two things:
         //1. provides a way to call other constructors from within constructors
-        //2. provides a way to get a reference of the object on the heap at runtime, which is NOT know to us at
+        //2. provides a way to get a reference to the object on the heap at runtime, which is NOT know to us at
         // compile-time.
 
 
