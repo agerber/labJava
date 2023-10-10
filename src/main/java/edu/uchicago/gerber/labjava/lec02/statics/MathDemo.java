@@ -5,32 +5,32 @@ public class MathDemo {
     public static void main(String[] args) {
 
         // Basic arithmetic
-        double a = 25.5;
-        double b = 5.7;
+        double dubA = 25.5;
+        double dubB = 5.7;
 
-        System.out.println("a: " + a + ", b: " + b);
+        System.out.println("dubA: " + dubA + ", dubB: " + dubB);
 
         // Maximum and Minimum
-        System.out.println("Max of a and b: " + Math.max(a, b));
-        System.out.println("Min of a and b: " + Math.min(a, b));
+        System.out.println("Max of dubA and dubB: " + Math.max(dubA, dubB));
+        System.out.println("Min of dubA and dubB: " + Math.min(dubA, dubB));
 
         // Square root
-        System.out.println("Square root of a: " + Math.sqrt(a));
+        System.out.println("Square root of dubA: " + Math.sqrt(dubA));
 
         // Power
-        System.out.println("a raised to the power of b: " + Math.pow(a, b));
+        System.out.println("dubA raised to the power of dubB: " + Math.pow(dubA, dubB));
 
         // Absolute
-        System.out.println("Absolute value of -a: " + Math.abs(-a));
+        System.out.println("Absolute value of -dubA: " + Math.abs(-dubA));
 
         // Trigonometry
-        System.out.println("Sin of a: " + Math.sin(Math.toRadians(a))); // Convert to radians first
-        System.out.println("Cos of a: " + Math.cos(Math.toRadians(a)));
+        System.out.println("Sin of dubA: " + Math.sin(Math.toRadians(dubA))); // Convert to radians first
+        System.out.println("Cos of dubA: " + Math.cos(Math.toRadians(dubA)));
 
         // Rounding
-        System.out.println("a rounded: " + Math.round(a));
-        System.out.println("Floor of a: " + Math.floor(a));
-        System.out.println("Ceiling of a: " + Math.ceil(a));
+        System.out.println("dubA rounded: " + Math.round(dubA));
+        System.out.println("Floor of dubA: " + Math.floor(dubA));
+        System.out.println("Ceiling of dubA: " + Math.ceil(dubA));
 
 
     }

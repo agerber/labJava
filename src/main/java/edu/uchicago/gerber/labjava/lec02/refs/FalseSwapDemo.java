@@ -47,45 +47,45 @@ public class FalseSwapDemo {
 
     }
 
-    public static void falseSwap(Person a, Person b) {
+    public static void falseSwap(Person personA, Person personB) {
 
         //because these references (memory addresses) are copies, if we repoint the
         //local references, these changes are NOT reflected outside the scope of this method.
-        Person temp = a;
-        a = b;
-        b = temp;
+        Person temp = personA;
+        personA = personB;
+        personB = temp;
 
         // Let's print inside the method after the swap
         System.out.println("\nInside method after swap:");
-        System.out.println("a: " + a);
-        System.out.println("b: " + b);
+        System.out.println("personA: " + personA);
+        System.out.println("personB: " + personB);
     }
 
-    public static void mutateObjects(Person a, Person b){
-        //When you pass an object reference (copy of memory address) into a method, the method
+    public static void mutateObjects(Person personA, Person personB){
+        //When you pass an object reference (copy of memory address) into personA method, the method
         //can still MUTATE the objects
-        a.setName(a.getName() + "-|MUTATED|-");
-        b.setName(b.getName() + "-|MUTATED|-");
+        personA.setName(personA.getName() + "-|MUTATED|-");
+        personB.setName(personB.getName() + "-|MUTATED|-");
 
     }
 
-    public static void mutateThenFalseSwap(Person a, Person b) {
+    public static void mutateThenFalseSwap(Person personA, Person personB) {
 
-        //When you pass an object reference (copy of memory address) into a method, the method
+        //When you pass an object reference (copy of memory address) into personA method, the method
         //can still MUTATE the objects
-        a.setName(a.getName() + "-|MUTATED|-");
-        b.setName(b.getName() + "-|MUTATED|-");
+        personA.setName(personA.getName() + "-|MUTATED|-");
+        personB.setName(personB.getName() + "-|MUTATED|-");
 
         //because these references (copies of memory addresses) are copies, if we repoint the
         //local references, these changes are NOT reflected outside the scope of this method.
-        Person temp = a;
-        a = b;
-        b = temp;
+        Person temp = personA;
+        personA = personB;
+        personB = temp;
 
         // Let's print inside the method after the swap
         System.out.println("\nInside method after swap:");
-        System.out.println("a: " + a);
-        System.out.println("b: " + b);
+        System.out.println("personA: " + personA);
+        System.out.println("personB: " + personB);
     }
 }
 
