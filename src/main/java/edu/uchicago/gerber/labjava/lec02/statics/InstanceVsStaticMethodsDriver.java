@@ -11,14 +11,26 @@ public class InstanceVsStaticMethodsDriver {
     instances (objects) are created at runtime.
      */
 
+    public static void main(String[] args) {
+        MyObject myObject = new MyObject(25);
 
+        //instance call
+        int localValue = myObject.mustBeInstance();
+
+        //static call
+        int someOtherValue = MyObject.canBeInstanceOrStatic(50);
+
+    }
+
+
+}
+
+class MyObject {
     //my instance field
     private int value;
 
-    //this method can be either instance or static as it does not reference any
-    //instance fields
-    public static int canBeInstanceOrStatic(int n){
-        return n + 10;
+    public MyObject(int value) {
+        this.value = value;
     }
 
     //this method MUST be an instance method because it references a field.
@@ -27,4 +39,13 @@ public class InstanceVsStaticMethodsDriver {
         return value;
 
     }
+
+    //this method can be either instance or static as it does not reference any
+    //instance fields. If you make it an instance method, you must call it from the
+    // implicit parameter above (and not the class).
+    public static int canBeInstanceOrStatic(int n){
+        return n + 10;
+    }
+
+
 }
