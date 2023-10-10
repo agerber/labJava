@@ -67,43 +67,5 @@ public class Card {
         sb.append("==================\n\n");
         return sb.toString();
     }
-//
-//    public String getClassObjectAsString() throws IllegalAccessException {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("====class-object =============================================================\n");
-//
-//        sb.append("METHODS\n");
-//        Method[] methods = Card.class.getDeclaredMethods();
-//        for (Method method : methods) {
-//            if (Modifier.isStatic(method.getModifiers()))
-//                sb.append(":::::::::STATIC \n");
-//
-//            sb.append("\n");
-//        }
-//
-//        sb.append("FIELOS\n");
-//        Field[] fields = Card.class.getDeclaredFields();
-//        for (Field field : fields) {
-//
-//            if (Modifier.isStatic(field.getModifiers())){
-//                sb.append(":::::::::STATIC\n");
-//                field.setAccessible(true);
-//                sb.append(field.get(null).toString() + "\n");
-//            }
-//            sb.append(field+ "\n");
-//        }
-//        sb.append("CONSTRUCTORS \n");
-//        Constructor<?>[] constructors = Card.class.getDeclaredConstructors();
-//        for (Constructor<?> constructor : constructors) {
-//            sb.append(constructor+ "\n");
-//        }
-//
-//
-//        sb.append("\n");
-//        sb.append("====end class-object =============================================================\n");
-//
-//        return sb.toString();
-//
-//
-//    }
+
 }

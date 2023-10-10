@@ -46,7 +46,7 @@ public class CardDriver {
 
             System.out.println(method);
         }
-        System.out.println("FIELOS ==========================");
+        System.out.println("FIELDS ==========================");
         Field[] fields = Card.class.getDeclaredFields();
         for (Field field : fields) {
 
