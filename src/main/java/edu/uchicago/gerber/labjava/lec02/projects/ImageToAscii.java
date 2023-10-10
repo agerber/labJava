@@ -8,6 +8,15 @@ import java.net.URL;
 
 public class ImageToAscii {
 
+    /*
+    To run this program, copy the url of an online image resource into your clipboard,
+    for example, copy this into your clipboard ->
+
+    https://hips.hearstapps.com/hmg-prod/images/gettyimages-527191268-copy.jpg
+
+     and then run the program.
+     */
+
     public static void main(String[] args) {
         try {
             // Capture the clipboard content
