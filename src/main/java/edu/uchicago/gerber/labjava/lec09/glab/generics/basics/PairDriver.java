@@ -1,11 +1,10 @@
 package edu.uchicago.gerber.labjava.lec09.glab.generics.basics;
 
-import edu.uchicago.gerber.labjava.lec04.glab.points.TDPoint;
+import edu.uchicago.gerber.labjava.lec04.points.TDPoint;
 import java.awt.Point;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class PairDriver {
