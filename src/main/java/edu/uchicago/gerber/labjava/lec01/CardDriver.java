@@ -30,13 +30,44 @@ public class CardDriver {
         }
 
         System.out.println("THIS is the ONE and ONLY class-object for the Card class");
-        System.out.println("Class-objects are loaded PRIOR to runtime >>>>>>>>>>>>>");
+        System.out.println("Class-objects are loaded PRIOR to runtime ");
         System.out.println("Class-objects contain all the meta-data of this class");
-        System.out.println("There is always only ONE class-object per class in your program, even if you use it in " +
-                "multiple source files");
+        System.out.println("There is always only ONE class-object per class in your program, even if you import and " +
+                "use it in multiple source files");
 
 
-        System.out.println(cards[0].getClassObjectAsString());
+        System.out.println();
+
+        System.out.println("METHODS ==========================");
+        Method[] methods = Card.class.getDeclaredMethods();
+        for (Method method : methods) {
+            if (Modifier.isStatic(method.getModifiers()))
+                System.out.print(":::::::::STATIC ");
+
+            System.out.println(method);
+        }
+        System.out.println("FIELOS ==========================");
+        Field[] fields = Card.class.getDeclaredFields();
+        for (Field field : fields) {
+
+            if (Modifier.isStatic(field.getModifiers())){
+                System.out.print(":::::::::STATIC ");
+                field.setAccessible(true);
+                System.out.print(field.get(null).toString() + ":::: ");
+
+            }
+
+
+            System.out.println(field);
+        }
+        System.out.println("CONSTRUCTORS ==========================");
+        Constructor<?>[] constructors = Card.class.getDeclaredConstructors();
+        for (Constructor<?> constructor : constructors) {
+            System.out.println(constructor);
+        }
+
+
+        System.out.println();
 
 
 
