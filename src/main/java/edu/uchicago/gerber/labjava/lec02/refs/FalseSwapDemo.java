@@ -49,7 +49,7 @@ public class FalseSwapDemo {
 
     public static void falseSwap(Person a, Person b) {
 
-        //because these references (memory addresses) are copies, however, if we attempt to repoint the
+        //because these references (memory addresses) are copies, if we repoint the
         //local references, these changes are NOT reflected outside the scope of this method.
         Person temp = a;
         a = b;
@@ -76,7 +76,7 @@ public class FalseSwapDemo {
         a.setName(a.getName() + "-|MUTATED|-");
         b.setName(b.getName() + "-|MUTATED|-");
 
-        //because these references (memory addresses) are copies, however, if we attempt to repoint the
+        //because these references (copies of memory addresses) are copies, if we repoint the
         //local references, these changes are NOT reflected outside the scope of this method.
         Person temp = a;
         a = b;
