@@ -5,7 +5,7 @@ public class ThisKeywordExample {
     public static void main(String[] args) {
 
 
-        //the new keyword returns the memeory address of the object on the heap
+        //the new keyword returns the memeory address of the newly-created object on the heap
 
 
         Author tolkien = new Author("J.R.R. Tolkien")
