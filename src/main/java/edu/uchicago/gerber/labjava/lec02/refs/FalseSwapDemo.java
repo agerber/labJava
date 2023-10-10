@@ -62,7 +62,7 @@ public class FalseSwapDemo {
     }
 
     public static void mutateObjects(Person personA, Person personB){
-        //When you pass an object reference (copy of memory address) into personA method, the method
+        //When you pass an object reference (copy of memory address) into mutateObjects method, the method
         //can still MUTATE the objects
         personA.setName(personA.getName() + "-|MUTATED|-");
         personB.setName(personB.getName() + "-|MUTATED|-");
@@ -71,7 +71,7 @@ public class FalseSwapDemo {
 
     public static void mutateThenFalseSwap(Person personA, Person personB) {
 
-        //When you pass an object reference (copy of memory address) into personA method, the method
+        //When you pass an object reference (copy of memory address) into mutateThenFalseSwap method, the method
         //can still MUTATE the objects
         personA.setName(personA.getName() + "-|MUTATED|-");
         personB.setName(personB.getName() + "-|MUTATED|-");
