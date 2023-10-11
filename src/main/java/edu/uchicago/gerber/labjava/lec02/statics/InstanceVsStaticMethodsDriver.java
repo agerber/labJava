@@ -36,7 +36,7 @@ class MyObject {
     //this method MUST be an instance method because it references a field.
     //if you try to make it static, the compiler will complain.
     public int mustBeInstance(){
-        return value;
+        return value + 15;
 
     }
 
