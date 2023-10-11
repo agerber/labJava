@@ -5,7 +5,7 @@ public class ChainThisKeywordExample {
     public static void main(String[] args) {
 
 
-        //the new keyword (in combination with the Constructor) returns the memory address of the newly-created object
+        //the 'new' keyword (in combination with the Constructor) returns the memory address of the newly-created object
         // on the heap
 
 
