@@ -2,6 +2,8 @@ package edu.uchicago.gerber.labjava.lec02.statics;
 
 public class ConverterDriver {
 
+    //This example shows how to create a static utility class. Seem Math.java for similar class.
+
     public static void main(String[] args) {
         // Convert 25°C to Fahrenheit
         double fahrenheit = TempUtil.celsiusToFahrenheit(25);
