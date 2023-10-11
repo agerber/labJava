@@ -1,11 +1,12 @@
 package edu.uchicago.gerber.labjava.lec02.this_new_keywords;
 
-public class ThisKeywordExample {
+public class ChainThisKeywordExample {
 
     public static void main(String[] args) {
 
 
-        //the new keyword returns the memeory address of the newly-created object on the heap
+        //the new keyword (in combination with the Constructor) returns the memory address of the newly-created object
+        // on the heap
 
 
         Author tolkien = new Author("J.R.R. Tolkien")
@@ -28,6 +29,7 @@ class Author {
         this.name = name;
     }
 
+    //notice that this method returns a reference to itself which facilitates chaining.
     public Author setNationality(String nationality) {
         this.nationality = nationality;
         return this;  // method chaining using 'this'
@@ -50,11 +52,13 @@ class Book {
         this.author = author;
     }
 
+    //notice that this method returns a reference to itself which facilitates chaining.
     public Book setPages(int pages) {
         this.pages = pages;
         return this;  // method chaining using 'this'
     }
 
+    //notice that this method returns a reference to itself which facilitates chaining.
     public Book setGenre(String genre) {
         this.genre = genre;
         return this;  // method chaining using 'this'
