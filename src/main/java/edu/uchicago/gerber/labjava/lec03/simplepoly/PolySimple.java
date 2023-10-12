@@ -14,30 +14,25 @@ public class PolySimple {
 	public static void main(String[] args) {
 
 
-
-		//Effectivetly
+		//I'm creating a new object here
 		Double dub =34.56;
+
+
 		System.out.println(dub.getClass().getName());
+
+		//up-cast (automatic casting)
 		Number num = (Number) dub;
 		System.out.println(num.getClass().getName());
 
 		Object obj = (Object) num;
-		System.out.println(obj instanceof Double);
-
-		System.out.println(obj.toString());
-
-
-		Object objectme = new Object();
-		//widening - danger!
-		Double dubme2 = (Double) objectme;
-
-		//System.out.println(new Date());
+		System.out.println(obj.getClass().getName());
 
 
 
 
-
-
+		Object anotherObject = new Object();
+		//down-casting (widening) be careful, this is dangerous!
+		Double dubme2 = (Double) anotherObject;
 
 
 
