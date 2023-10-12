@@ -13,20 +13,7 @@ public class PolySimple {
     //Cntrl-H for class hierarchy on PC
 	public static void main(String[] args) {
 
-
-		//I'm creating a new object here
-		Double dub =34.56;
-
-
-		System.out.println(dub.getClass().getName());
-
-		//up-cast (automatic casting)
-		Number num = (Number) dub;
-		System.out.println(num.getClass().getName());
-
-		Object obj = (Object) num;
-		System.out.println(obj.getClass().getName());
-
+		Double dub  = 87.12;
 
 
 
@@ -53,7 +40,7 @@ public class PolySimple {
 
 	    //will cause a class cast exception
 	    number = (Number) object;
-//
+
 
 
 
