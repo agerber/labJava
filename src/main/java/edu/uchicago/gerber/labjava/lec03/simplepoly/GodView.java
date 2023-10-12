@@ -45,12 +45,18 @@ public class GodView {
         addBrick(sb, br, side, length);
         sb.append("\n");
 
-        for(int i = 0; i < side; i++){
+
+        String trailer = (isObject) ? "" : "REFERENCE";
+        String trailerPlus = classRef.getName() + " " + trailer;
+
+        int sideRefName = 14 - (trailerPlus.length()/ 6);
+
+        for(int i = 0; i < sideRefName ; i++){
             sb.append("   ");
         }
-        String trailer = (isObject) ? "OBJECT" : "REFERENCE";
+
         //add middle here
-        sb.append(classRef.getName() + "  " + trailer + "\n");
+        sb.append(trailerPlus + "\n");
 
         addBrick(sb, br, side, length);
         System.out.println(sb);
