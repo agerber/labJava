@@ -14,7 +14,9 @@ public class AlternativesToNewKeyword {
         //and this also creates a new object, and is equivalent to Double dub = new Double(38.12);
         Double dub = 38.12;
 
-        //3. We can simply use the 'new' keyword to instantiate a new object.
+        //3. We can simply use the 'new' keyword to instantiate a new object on the heap.
         Rectangle rectangle = new Rectangle(1,2,3,4);
+
+        //if we don't use of the three techniques above, we DO NOT have an object.
     }
 }
