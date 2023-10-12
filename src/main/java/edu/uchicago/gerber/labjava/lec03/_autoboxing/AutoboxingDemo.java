@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec03.autobox_example;
+package edu.uchicago.gerber.labjava.lec03._autoboxing;
 
 import java.util.ArrayList;
 import java.util.List;

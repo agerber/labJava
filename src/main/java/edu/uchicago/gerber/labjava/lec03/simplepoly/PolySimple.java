@@ -15,7 +15,8 @@ public class PolySimple {
 
 
 
-		Double dub =new Double(34.56);
+		//Effectivetly
+		Double dub =34.56;
 		System.out.println(dub.getClass().getName());
 		Number num = (Number) dub;
 		System.out.println(num.getClass().getName());
