@@ -41,6 +41,7 @@ public class GodView {
             sb.append('\n');
         }
 
+        String br = (isObject)? "===":"|||";
 
         //build side
         for(int i = 0; i < side; i++){
@@ -48,7 +49,7 @@ public class GodView {
         }
         //build length
         for(int i = 0; i < length; i++){
-            sb.append("===");
+            sb.append(br);
         }
         sb.append("\n");
 
@@ -65,7 +66,7 @@ public class GodView {
         }
         //build length
         for(int i = 0; i < length; i++){
-            sb.append("===");
+            sb.append(br);
         }
 
         System.out.println(sb);
