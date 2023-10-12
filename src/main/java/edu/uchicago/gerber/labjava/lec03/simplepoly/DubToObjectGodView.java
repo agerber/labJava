@@ -1,7 +1,5 @@
 package edu.uchicago.gerber.labjava.lec03.simplepoly;
 
-import edu.uchicago.gerber.labjava.lec03.GodView;
-
 public class DubToObjectGodView {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec03;
+package edu.uchicago.gerber.labjava.lec03.simplepoly;
 
 public class GodView {
 
@@ -31,6 +31,17 @@ public class GodView {
         }
 
         StringBuilder sb = new StringBuilder();
+
+        if (!isObject){
+
+            for(int i = 0; i < 15; i++){
+                sb.append("   ");
+            }
+            sb.append('\u2193');
+            sb.append('\n');
+        }
+
+
         //build side
         for(int i = 0; i < side; i++){
             sb.append("   ");
