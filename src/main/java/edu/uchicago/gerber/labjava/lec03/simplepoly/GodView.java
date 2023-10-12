@@ -42,15 +42,7 @@ public class GodView {
         }
 
         String br = (isObject)? "===":"|||";
-
-        //build side
-        for(int i = 0; i < side; i++){
-            sb.append("   ");
-        }
-        //build length
-        for(int i = 0; i < length; i++){
-            sb.append(br);
-        }
+        addBrick(sb, br, side, length);
         sb.append("\n");
 
         for(int i = 0; i < side; i++){
@@ -60,15 +52,7 @@ public class GodView {
         //add middle here
         sb.append(classRef.getName() + "  " + trailer + "\n");
 
-        //build side
-        for(int i = 0; i < side; i++){
-            sb.append("   ");
-        }
-        //build length
-        for(int i = 0; i < length; i++){
-            sb.append(br);
-        }
-
+        addBrick(sb, br, side, length);
         System.out.println(sb);
 
         if (isObject){
@@ -80,5 +64,16 @@ public class GodView {
         }
 
 
+    }
+
+    private static void addBrick(StringBuilder sb, String br, int side, int length){
+        //build side
+        for(int i = 0; i < side; i++){
+            sb.append("   ");
+        }
+        //build length
+        for(int i = 0; i < length; i++){
+            sb.append(br);
+        }
     }
 }
