@@ -6,44 +6,20 @@ public class FalseSwapDemo {
         Person personA = new Person("Alice");
         Person personB = new Person("Bob");
 
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
 
-        System.out.println("Before falseSwap:");
-        System.out.println("personA: " + personA);
-        System.out.println("personB: " + personB);
-
-        falseSwap(personA, personB);
-
-        System.out.println("\nAfter falseSwap:");
-        System.out.println("personA: " + personA);
-        System.out.println("personB: " + personB);
-
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-
-        System.out.println("Before mutateThenFalseSwap:");
-        System.out.println("personA: " + personA);
-        System.out.println("personB: " + personB);
-
-        mutateThenFalseSwap(personA, personB);
-
-        System.out.println("\nAfter mutateThenFalseSwap:");
-        System.out.println("personA: " + personA);
-        System.out.println("personB: " + personB);
-
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-
-        System.out.println("Before mutateObjects:");
+        System.out.println("Before:");
         System.out.println("personA: " + personA);
         System.out.println("personB: " + personB);
 
         mutateObjects(personA, personB);
+        swapThenMutate(personA, personB);
+        falseSwap(personA, personB);
+        mutateThenFalseSwap(personA, personB);
 
-        System.out.println("\nAfter mutateObjects:");
+        System.out.println("\nAfter:");
         System.out.println("personA: " + personA);
         System.out.println("personB: " + personB);
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
 
     }
 
@@ -61,11 +37,11 @@ public class FalseSwapDemo {
         System.out.println("personB: " + personB);
     }
 
-    public static void mutateObjects(Person personA, Person personB){
+    public static void mutateObjects(Person personA, Person personB) {
         //When you pass an object reference (copy of memory address) into mutateObjects method, the method
         //can still MUTATE the objects
-        personA.setName(personA.getName() + "-|MUTATED|-");
-        personB.setName(personB.getName() + "-|MUTATED|-");
+        personA.setName(personA.getName() + "-MUTATED-A-");
+        personB.setName(personB.getName() + "-MUTATED-B-");
 
     }
 
@@ -73,8 +49,8 @@ public class FalseSwapDemo {
 
         //When you pass an object reference (copy of memory address) into mutateThenFalseSwap method, the method
         //can still MUTATE the objects
-        personA.setName(personA.getName() + "-|MUTATED|-");
-        personB.setName(personB.getName() + "-|MUTATED|-");
+        personA.setName(personA.getName() + "-MUTATED-A-");
+        personB.setName(personB.getName() + "-MUTATED-B-");
 
         //because these references (copies of memory addresses) are copies, if we repoint the
         //local references, these changes are NOT reflected outside the scope of this method.
@@ -87,7 +63,32 @@ public class FalseSwapDemo {
         System.out.println("personA: " + personA);
         System.out.println("personB: " + personB);
     }
+
+
+
+
+    public static void swapThenMutate(Person personA, Person personB) {
+
+
+        //because these references (copies of memory addresses) are copies, if we repoint the
+        //local references, these changes are NOT reflected outside the scope of this method.
+        Person temp = personA;
+        personA = personB;
+        personB = temp;
+
+        //When you pass an object reference (copy of memory address) into mutateThenFalseSwap method, the method
+        //can still MUTATE the objects
+        personA.setName(personA.getName() + "-MUTATED-A-");
+        personB.setName(personB.getName() + "-MUTATED-B-");
+
+
+        // Let's print inside the method after the swap
+        System.out.println("\nInside method after swap:");
+        System.out.println("personA: " + personA);
+        System.out.println("personB: " + personB);
+    }
 }
+
 
 class Person {
     String name;
