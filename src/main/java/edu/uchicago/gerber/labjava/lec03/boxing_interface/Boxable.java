@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec03.boxing;
+package edu.uchicago.gerber.labjava.lec03.boxing_interface;
 
 public interface Boxable {
 	 String punch(Boxable other);

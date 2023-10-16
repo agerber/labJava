@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec03.sing;
+package edu.uchicago.gerber.labjava.lec03._sing;
 
 public class OrchestraDriver {
 
@@ -6,13 +6,7 @@ public class OrchestraDriver {
 
      //https://www.asciiart.eu/animals/
 
-//        Singable sing1 = new Bear();
-//        Singable sing2 = new Frog();
-
-
-
         Singable[] singables = {new Bear(), new Frog(), new Chipmunk()};
-
 
 
         for (int nC = 0; nC < 100; nC++) {

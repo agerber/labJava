@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec03.sing;
+package edu.uchicago.gerber.labjava.lec03._sing;
 
 
 public class Bear implements Singable {
