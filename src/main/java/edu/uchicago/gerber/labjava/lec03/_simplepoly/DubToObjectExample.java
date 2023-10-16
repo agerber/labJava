@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec03.simplepoly;
+package edu.uchicago.gerber.labjava.lec03._simplepoly;
 
 public class DubToObjectExample {
     public static void main(String[] args) {

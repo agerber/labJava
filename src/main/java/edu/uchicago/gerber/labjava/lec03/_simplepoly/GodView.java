@@ -1,11 +1,12 @@
-package edu.uchicago.gerber.labjava.lec03.simplepoly;
+package edu.uchicago.gerber.labjava.lec03._simplepoly;
 
 public class GodView {
 
     public  enum Size {
         SMALL,
         MEDIUM,
-        LARGE;
+        LARGE,
+        SKEW;
 
     }
 
@@ -26,6 +27,11 @@ public class GodView {
             case Size.SMALL:
                 side = 10;
                 length = 10;
+                break;
+
+            case Size.SKEW:
+                side = 13;
+                length = 30;
                 break;
 
         }
@@ -54,6 +60,8 @@ public class GodView {
         for(int i = 0; i < sideRefName ; i++){
             sb.append("   ");
         }
+
+        if (size == Size.SKEW) sb.append("                                      ");
 
         //add middle here
         sb.append(trailerPlus + "\n");
