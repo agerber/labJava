@@ -59,13 +59,15 @@ public class PolymorphismDemo {
 
         while (boxPuncher.getHitpoints() > 0 && boxPunchee.getHitpoints() > 0) {
             boxPuncher.punch(boxPunchee);
+            System.out.print(boxPuncher.getClass().getSimpleName() + " swings! ");
             System.out.println(boxPunchee.report());
             Boxer temp = boxPuncher;
             boxPuncher = boxPunchee;
             boxPunchee = temp;
         }
 
-        System.out.println(boxPuncher.report());
+        System.out.print("--------------------------\nKNOCK-OUT!  ");
+        System.out.print(boxPuncher.report() + " ");
         System.out.println(boxPunchee.report());
     }
 }

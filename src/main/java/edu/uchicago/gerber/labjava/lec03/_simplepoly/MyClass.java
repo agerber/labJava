@@ -6,7 +6,7 @@ public class MyClass    {
 //	@Override
 //	public String toString() {
 //		// TODO Auto-generated method stub
-//		return "Gerber's made-up class called MyClass : " + super.toString();
+//		return "Gerber's made-up class called MyClass";
 //	}
 
 	
