@@ -1,5 +1,7 @@
 package edu.uchicago.gerber.labjava.lec03._simplepoly;
 
+import java.awt.*;
+
 public class PolySimpleWrong {
 
     public static void main(String[] args) {
@@ -10,9 +12,17 @@ public class PolySimpleWrong {
         GodView.print(Object.class, GodView.Size.SMALL, true);
 
 
-        //Integer intMe = new Rectangle();
+        //Integer intMe = new java.awt.Rectangle();
         GodView.print(Integer.class, GodView.Size.LARGE, false);
         GodView.print(java.awt.Rectangle.class, GodView.Size.SKEW, true);
+
+
+
+
+
+
+
+
 
 
 
