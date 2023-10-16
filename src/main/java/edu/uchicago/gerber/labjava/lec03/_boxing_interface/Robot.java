@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec03.boxing_interface;
+package edu.uchicago.gerber.labjava.lec03._boxing_interface;
 
 public class Robot implements Boxable {
 
