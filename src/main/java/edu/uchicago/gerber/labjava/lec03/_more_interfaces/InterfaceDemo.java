@@ -2,7 +2,10 @@ package edu.uchicago.gerber.labjava.lec03._more_interfaces;
 
 // Define the Drawable interface
 interface Drawable {
-    void draw();
+   void draw();
+
+
+
 }
 
 // Implement the Drawable interface in a Circle class
