@@ -33,6 +33,7 @@ class Human extends Boxer {
     public void punch(Boxer opponent) {
         Random random = new Random();
         if (random.nextInt(100) < 30) {
+            System.out.print("Human lands a punch ");
             opponent.setHitpoints(opponent.getHitpoints() - 10);
         }
     }
@@ -47,6 +48,7 @@ class Kangaroo extends Boxer {
     public void punch(Boxer opponent) {
         Random random = new Random();
         if (random.nextInt(100) < 30) {
+            System.out.print("Ay mate, Kangaroo strikes ");
             opponent.setHitpoints(opponent.getHitpoints() - 10);
         }
     }
