@@ -17,6 +17,6 @@ public class AlternativesToNewKeyword {
         //3. We can simply use the 'new' keyword to instantiate a new object on the heap.
         Rectangle rectangle = new Rectangle(1,2,3,4);
 
-        //if we don't use of the three techniques above, we DO NOT have an object.
+        //if we don't use one of the three techniques above, we DO NOT have an object.
     }
 }
