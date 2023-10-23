@@ -43,12 +43,18 @@ class Manager extends Employee {
     }
 }
 
-final class Executive extends Manager {
+// a final class means that we can not extend this class (and therefore we can not override its methods)
+ final class Executive extends Manager {
     private double bonus;
 
     public Executive(String name, double salary, String department, double bonus) {
         super(name, salary, department);
         this.bonus = bonus;
+    }
+
+    //final means we can NOT override this method
+    public final void sayTitle(String title){
+        System.out.println("Hello, my name is " + getName() + " and I'm a " + title);
     }
 
     public double getBonus() {
@@ -83,6 +89,8 @@ public class InheritanceDemo {
         // Iterate and call toString() method
         for (Employee emp : employees) {
             System.out.println(emp.toString());
+            if (emp instanceof Executive)
+                ((Executive) emp).sayTitle("CIO");
         }
     }
 }

@@ -1,7 +1,7 @@
 package edu.uchicago.gerber.labjava.lec03._employee;
 
 import java.awt.Rectangle;
-public class TheThreeFinals {
+public class TheFourFinals {
 
     public static void main(String[] args) {
 
@@ -25,6 +25,9 @@ public class TheThreeFinals {
         System.out.println("The value of rec1 is " + rec1);
 
         //3. The third use of final relates to a final class definition, which means that class can NOT be extended.
+        // see the Executive class in this package for an example.
+
+        //4. The fourth use of final relates to a final method definition, which means it can not be overriden.
         // see the Executive class in this package for an example.
 
     }
