@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec03._simplepoly;
 
-public class DubToObjectExample {
+public class _1_DubToObjectExample {
     public static void main(String[] args) {
 
         //I'm creating a new object here

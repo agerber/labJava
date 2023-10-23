@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec03._simplepoly;
 
-public class DubToObjectGodView {
+public class _2_DubToObjectGodView {
 
     public static void main(String[] args) {
         //I'm creating a new object here
@@ -21,6 +21,8 @@ public class DubToObjectGodView {
         GodView.print(Object.class, GodView.Size.SMALL, false);
         GodView.print(obj.getClass(), GodView.Size.LARGE, true);
 
+        //watch out!
+        //obj = new Rectangle(1,2,3,4);
 
         //down-casting (widening)
         Double anotherDub = (Double) obj;

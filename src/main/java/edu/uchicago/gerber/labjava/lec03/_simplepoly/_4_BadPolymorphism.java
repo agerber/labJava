@@ -1,11 +1,23 @@
 package edu.uchicago.gerber.labjava.lec03._simplepoly;
 
-import java.awt.Rectangle;
-public class CastingDownWrong {
+public class _4_BadPolymorphism {
 
     public static void main(String[] args) {
 
         //let's examine each in turn
+
+        //this statement is illegal
+        //Double dubMe = new Object();
+        GodView.print(Double.class, GodView.Size.LARGE, false);
+        GodView.print(Object.class, GodView.Size.SMALL, true);
+
+
+        //Integer intMe = new java.awt.Rectangle();
+        GodView.print(Integer.class, GodView.Size.LARGE, false);
+        GodView.print(java.awt.Rectangle.class, GodView.Size.SKEW, true);
+
+
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
 
 
         Object object = new Object();

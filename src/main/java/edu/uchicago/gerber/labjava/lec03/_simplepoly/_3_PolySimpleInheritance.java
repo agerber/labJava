@@ -3,7 +3,7 @@ package edu.uchicago.gerber.labjava.lec03._simplepoly;
 import java.util.ArrayList;
 import java.awt.Rectangle;
 
-public class PolySimpleInheritance {
+public class _3_PolySimpleInheritance {
 
 
     //Cntrl-H for class hierarchy on PC
@@ -11,9 +11,10 @@ public class PolySimpleInheritance {
 
         //first rule of polymorphism:
             //you can store a subclass object in a superclass reference
+		    //the Superclass reference can be concrete or abstract.
 
 		ArrayList<Object> objObjects = new ArrayList<>();
-		
+
 		objObjects.add(89.3);
 		objObjects.add("Hello");
 		objObjects.add(true);
@@ -28,6 +29,7 @@ public class PolySimpleInheritance {
 		System.out.println("-----------------------------------");
 
 		//an example using instanceof to determine the the type of the object reference
+		//In this example, we are storing in an abstract superclass reference
 		ArrayList<Number> numTemps = new ArrayList<Number>();
 
 		numTemps.add(121.6f);
