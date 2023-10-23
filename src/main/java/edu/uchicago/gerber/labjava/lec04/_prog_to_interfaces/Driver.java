@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec04.prog_to_interfaces;
+package edu.uchicago.gerber.labjava.lec04._prog_to_interfaces;
 
 import java.util.*;
 

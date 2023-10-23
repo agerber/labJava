@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec04.singleton;
+package edu.uchicago.gerber.labjava.lec04._singleton;
 
 import java.util.List;
 

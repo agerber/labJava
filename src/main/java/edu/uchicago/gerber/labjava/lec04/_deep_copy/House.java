@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec04.deep_copy;
+package edu.uchicago.gerber.labjava.lec04._deep_copy;
 import java.text.DecimalFormat;
 import java.util.Date;
 
