@@ -25,10 +25,7 @@ public class DeathMatch {
 		Boxable boxPuncher = new Homer();
 		Boxable boxPunchee = new Robot("Mac2e");
 		Boxable boxSwap; //null
-
-
-
-		while(boxPunchee.getHealth() > 0){
+		while(boxPuncher.getHealth() > 0 && boxPunchee.getHealth() > 0){
 
 			//swap
 			boxSwap = boxPunchee;
