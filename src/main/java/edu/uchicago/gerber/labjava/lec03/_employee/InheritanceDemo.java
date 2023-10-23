@@ -52,17 +52,13 @@ class Manager extends Employee {
         this.bonus = bonus;
     }
 
-    //final means we can NOT override this method
-    public final void sayTitle(String title){
-        System.out.println("Hello, my name is " + getName() + " and I'm a " + title);
-    }
 
     public double getBonus() {
         return bonus;
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return "Executive [Name: " + getName() + ", Salary: " + getSalary() + ", Department: " + getDepartment() + ", Bonus: " + bonus + "]";
     }
 }
@@ -89,8 +85,7 @@ public class InheritanceDemo {
         // Iterate and call toString() method
         for (Employee emp : employees) {
             System.out.println(emp.toString());
-            if (emp instanceof Executive)
-                ((Executive) emp).sayTitle("CIO");
+
         }
     }
 }
