@@ -21,6 +21,7 @@ public class DeathMatch {
 //		}
 
 		System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+		System.out.println(Boxable.HELLO);
 
 		Boxable boxPuncher = new Homer();
 		Boxable boxPunchee = new Robot("Mac2e");
