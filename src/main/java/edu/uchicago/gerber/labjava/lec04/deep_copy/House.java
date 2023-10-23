@@ -1,9 +1,10 @@
-package edu.uchicago.gerber.labjava.lec04.realestate;
+package edu.uchicago.gerber.labjava.lec04.deep_copy;
 import java.text.DecimalFormat;
 import java.util.Date;
 
 
 //cntrl-H  and cntrl-shift-alt-U
+
 public class House implements Cloneable {
 
 	// ===============================================
