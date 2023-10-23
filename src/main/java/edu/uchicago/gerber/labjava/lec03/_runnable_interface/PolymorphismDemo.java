@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 public class PolymorphismDemo {
 
     public static void main(String[] args) {
-        // Create a fixed thread pool with 3 threads
+        // Create a fixed thread pool with 1 thread
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         // Submit various tasks to the executor
