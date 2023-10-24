@@ -76,6 +76,7 @@ public class SynchronizedThisDriver {
             System.out.println("Withdrew " + amount + ". Current balance: " + balance);
         else
             System.out.println("Not enough funds to withdraw " + amount + ". Current balance: " + balance);
+
     }
 
     public double getBalance() {
