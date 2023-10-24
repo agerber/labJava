@@ -9,7 +9,7 @@ public class Driver {
     public static void main(String[] args) {
 
         //programming to interfaces
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new LinkedList<>();
 
         list.add("United States");
         list.add("Lithuania");
@@ -25,7 +25,7 @@ public class Driver {
 
 
     //make this a List
-    private static void printList(ArrayList<String> list){
+    private static void printList(List<String> list){
 
         for (String str : list) {
             System.out.println(str);
