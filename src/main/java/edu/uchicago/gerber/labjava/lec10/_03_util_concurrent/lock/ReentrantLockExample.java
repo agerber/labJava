@@ -14,6 +14,9 @@ public class ReentrantLockExample {
 
     public static void incrementCounter() {
         lock.lock();  // Acquire the lock
+
+        System.out.print(Thread.currentThread().getName() + " holds this lock : ");
+        System.out.println("ContentionQueue length -> " + lock.getQueueLength());
         try {
             counter++;
         } finally {
@@ -26,19 +29,27 @@ public class ReentrantLockExample {
             for (int i = 0; i < 1000; i++) {
                 incrementCounter();
             }
-        });
+        }, "Thread1");
 
         Thread thread2 = new Thread(() -> {
             for (int i = 0; i < 1000; i++) {
                 incrementCounter();
             }
-        });
+        }, "Thread2");
+
+        Thread thread3 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                incrementCounter();
+            }
+        }, "Thread3");
 
         thread1.start();
         thread2.start();
+        thread3.start();
 
         thread1.join();
         thread2.join();
+        thread3.join();
 
         System.out.println("Final Counter Value: " + counter);  // Expected: 2000
     }
