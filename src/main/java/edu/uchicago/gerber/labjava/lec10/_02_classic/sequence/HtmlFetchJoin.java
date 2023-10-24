@@ -25,9 +25,9 @@ public class HtmlFetchJoin {
           // webRunner. We can set time-out as well
 
 //        try {
-//            webRunner.join();
+//            webRunner.join(); //webRunner.join(3000);
 //        } catch (InterruptedException e) {
-//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//            e.printStackTrace();
 //        }
 
 
