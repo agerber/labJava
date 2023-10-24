@@ -47,6 +47,9 @@ public class ComprehensiveOverloadingDemo {
             return a * 2;
         }
 
+//        public int multiply(int b) {
+//            return b * 2;
+//        }
         // simply changing the return type is not sufficient to
         //overload a method
 

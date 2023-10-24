@@ -8,32 +8,32 @@ public class Driver {
 
     public static void main(String[] args) {
 
-        Map<String,String> map = new HashMap<>();
+        //programming to interfaces
+        ArrayList<String> list = new ArrayList<>();
 
-        map.put("United States", "North America");
-        map.put("Lithuania", "Europe");
-        map.put("Chile", "South America");
-        map.put("China", "Asia");
-        map.put("Denmark", "Europe");
-        map.put("Vietnam", "Asia");
+        list.add("United States");
+        list.add("Lithuania");
+        list.add("Chile");
+        list.add("China");
+        list.add("Denmark");
+        list.add("Vietnam");
 
-        printMap(map);
+        printList(list);
 
 
     }
 
 
-    private static void printMap(Map<String,String> map){
+    //make this a List
+    private static void printList(ArrayList<String> list){
 
-        for (String key : map.keySet()) {
-            System.out.println(getCountryAndContinent(key, map));
+        for (String str : list) {
+            System.out.println(str);
         }
-    }
-
-    private static String getCountryAndContinent(String key, Map<String,String> map){
-        return key + " : " + map.get(key);
 
     }
+
+
 
 
 }

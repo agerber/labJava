@@ -7,11 +7,11 @@ public class _1_DubToObjectExample {
         Double dub =34.56;
 
         //up-cast (automatic casting)
-        Number num = (Number) dub;
+        Number num =  dub;
 
 
         //up-cast (automatic casting)
-        Object obj = (Object) num;
+        Object obj =  num;
 
 
         //down-casting (widening)
@@ -19,7 +19,7 @@ public class _1_DubToObjectExample {
 
 
         //up-cast (automatic casting)
-        Number anotherNum = (Number) anotherDub;
+        Number anotherNum =  anotherDub;
 
         //how many objects are instantiated in this example?
 

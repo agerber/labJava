@@ -54,6 +54,7 @@ public class PolymorphismDemo {
 
     // A simple task that prints "Goodbye"
     static class GoodbyeTask implements Runnable {
+
         @Override
         public void run() {
             System.out.println("Goodbye");

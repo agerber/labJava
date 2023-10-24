@@ -1,5 +1,7 @@
 package edu.uchicago.gerber.labjava.lec04._simplepoly;
 
+
+
 public class _2_DubToObjectGodView {
 
     public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class _2_DubToObjectGodView {
 
         //up-cast (automatic casting)
         Number num = (Number) dub;
+        //System.out.println(num == dub);
         GodView.print(Number.class, GodView.Size.MEDIUM, false);
         GodView.print(num.getClass(), GodView.Size.LARGE, true);
 
@@ -22,7 +25,7 @@ public class _2_DubToObjectGodView {
         GodView.print(obj.getClass(), GodView.Size.LARGE, true);
 
         //watch out!
-        //obj = new Rectangle(1,2,3,4);
+        //obj = new java.awt.Rectangle(1,2,3,4);
 
         //down-casting (widening)
         Double anotherDub = (Double) obj;
