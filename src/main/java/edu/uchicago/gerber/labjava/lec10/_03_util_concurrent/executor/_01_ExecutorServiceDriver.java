@@ -5,10 +5,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class ExecutorServiceDriver {
+public class _01_ExecutorServiceDriver {
 
     public static void main(String[] args) {
         // Create a thread pool with a fixed number of threads (in this case, 3).
+//        int cores = Runtime.getRuntime().availableProcessors();
+//        System.out.println("Number of available cores: " + cores);
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
         //create a random for generating random sleep times.
