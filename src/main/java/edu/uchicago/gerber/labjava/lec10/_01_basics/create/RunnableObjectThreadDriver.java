@@ -3,9 +3,10 @@ package edu.uchicago.gerber.labjava.lec10._01_basics.create;
 
 public class RunnableObjectThreadDriver {
     public static void main(String[] args) {
-        MyRunnable runnable = new MyRunnable();
-        Thread thread = new Thread(runnable);
-        thread.start(); // Start the thread
+
+        MyRunnable runnable = new MyRunnable(); //this is the engine
+        Thread thread = new Thread(runnable); //put the engine in the car
+        thread.start(); // turn the key
     }
 }
 
