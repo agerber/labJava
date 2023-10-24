@@ -3,18 +3,19 @@ package edu.uchicago.gerber.labjava.lec10._02_classic.sleep;
 public class ThreadLifeCycleWithSleep {
 
 
-    //there is no wait() and notify() call with sleep(). The O/S Thread schedule pauses the thread and wakes it up.
+    //there is no wait() and notify() call with sleep(). The O/S Thread schedule pauses the thread and wakes it up on
+    //The Thread Schedulers own timer.  This thread is consuming zero resources while its sleeping.
     public static void main(String[] args) {
-        // Create a new thread
-        Thread thread = new Thread(new Runnable() {
+        // Create a new child Thread
+        Thread child = new Thread(new Runnable() {
             @Override
             public void run() {
 
-                System.out.println("RUNNING: Inside the thread. Going to sleep for 2 seconds.");
-                System.out.println("....SLEEPING....");
+                System.out.println("RUNNING: Inside the child. Going to sleep for 2 seconds.");
+                System.out.println("....SLEEPING for 2 seconds ...");
 
                 try {
-                    // Make the thread sleep for 2 seconds
+                    // Make the child sleep for 2 seconds
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -24,20 +25,20 @@ public class ThreadLifeCycleWithSleep {
             }
         });
 
-        System.out.println(thread.getState() + ":Thread state after creation.");  // NEW
+        System.out.println(child.getState() + ":Thread state after creation.");  // NEW
 
-        // Start the thread
-        thread.start();
+        // Start the child
+        child.start();
 
-        System.out.println(thread.getState() + ":Thread state after start.");  // RUNNABLE
+        System.out.println(child.getState() + ":Thread state after start.");  // RUNNABLE
 
-        // Wait for the thread to finish to check its state
+        // Wait for the child to finish to check its state
         try {
-            thread.join();
+            child.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("Cleaning up " + e.getMessage());
         }
+        System.out.println(child.getState() + ": Thread state after completion.");  // TERMINATED
 
-        System.out.println(thread.getState() + ": Thread state after completion.");  // TERMINATED
     }
 }
