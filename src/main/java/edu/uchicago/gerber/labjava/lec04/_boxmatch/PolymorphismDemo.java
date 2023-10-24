@@ -2,7 +2,7 @@ package edu.uchicago.gerber.labjava.lec04._boxmatch;
 
 import java.util.Random;
 
-  abstract class Boxer {
+   class Boxer {
     private int hitpoints;
 
     public Boxer(int hitpoints) {
@@ -19,14 +19,14 @@ import java.util.Random;
 
     //Let's run this demo, and then refactor so that punch is an abstract method.
       //forcing the extending classes to implement punch.
-//    public void punch(Boxer opponent) {
-//        Random random = new Random();
-//        if (random.nextInt(100) < 30) {
-//            System.out.println( this.getClass().getSimpleName() + " lands a punch!");
-//            opponent.setHitpoints(opponent.getHitpoints() - 10);
-//        }
-//    }
-    public abstract void punch(Boxer opponent);
+    public void punch(Boxer opponent) {
+        Random random = new Random();
+        if (random.nextInt(100) < 30) {
+            System.out.println( this.getClass().getSimpleName() + " lands a punch!");
+            opponent.setHitpoints(opponent.getHitpoints() - 10);
+        }
+    }
+   // public abstract void punch(Boxer opponent);
 
     public String report() {
         return this.getClass().getSimpleName() + " has " + hitpoints + " hitpoints.";
@@ -38,14 +38,14 @@ class Human extends Boxer {
         super(105);
     }
 
-    @Override
-    public void punch(Boxer opponent) {
-        Random random = new Random();
-        if (random.nextInt(100) < 30) {
-            System.out.println(  "Human lands a punch!");
-            opponent.setHitpoints(opponent.getHitpoints() - 10);
-        }
-    }
+  //  @Override
+//    public void punch(Boxer opponent) {
+//        Random random = new Random();
+//        if (random.nextInt(100) < 30) {
+//            System.out.println(  "Human lands a punch!");
+//            opponent.setHitpoints(opponent.getHitpoints() - 10);
+//        }
+//    }
 
 }
 
@@ -54,14 +54,14 @@ class Kangaroo extends Boxer {
         super(100);
     }
 
-    @Override
-    public void punch(Boxer opponent) {
-        Random random = new Random();
-        if (random.nextInt(100) < 30) {
-            System.out.println(  "Ay mate, Kangaroo stikes!");
-            opponent.setHitpoints(opponent.getHitpoints() - 10);
-        }
-    }
+//    @Override
+//    public void punch(Boxer opponent) {
+//        Random random = new Random();
+//        if (random.nextInt(100) < 30) {
+//            System.out.println(  "Ay mate, Kangaroo stikes!");
+//            opponent.setHitpoints(opponent.getHitpoints() - 10);
+//        }
+//    }
 
 }
 
