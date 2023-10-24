@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.*;
 
-public class FutureCallableExample {
+public class _02_FutureCallableExample {
 
     public static void main(String[] args) {
         // Create a thread pool with 3 threads

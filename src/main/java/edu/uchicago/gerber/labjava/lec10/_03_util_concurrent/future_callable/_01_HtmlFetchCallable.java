@@ -9,11 +9,11 @@ import java.util.concurrent.Future;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class HtmlFetchCallable implements Callable<String> {
+public class _01_HtmlFetchCallable implements Callable<String> {
 
     private final String url;
 
-    public HtmlFetchCallable(String url) {
+    public _01_HtmlFetchCallable(String url) {
         this.url = url;
     }
 
@@ -47,7 +47,7 @@ public class HtmlFetchCallable implements Callable<String> {
         String url = "http://gerber.cs.uchicago.edu/java"; // old java course url
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future<String> future = executor.submit(new HtmlFetchCallable(url));
+        Future<String> future = executor.submit(new _01_HtmlFetchCallable(url));
 
         try {
             //this call will block until future.get() has a value!
