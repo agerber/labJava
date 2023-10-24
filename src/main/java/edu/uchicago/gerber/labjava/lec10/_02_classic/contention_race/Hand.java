@@ -4,17 +4,12 @@ public class Hand {
 
     private byte value;
 
-
-
-
     //local method variables do not escape a Thread's stack
     //THREAD-SAFE
     public int add10(int paramValue){
         final int TEN = 10;
         return paramValue + TEN;
     }
-
-
 
     //StringBuilder sb is local and does not escape a Thread's stack
     //THREAD-SAFE
