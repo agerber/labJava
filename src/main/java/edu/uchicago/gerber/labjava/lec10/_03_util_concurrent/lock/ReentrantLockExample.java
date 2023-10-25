@@ -13,10 +13,14 @@ public class ReentrantLockExample {
     private static int counter = 0;
 
     public static void incrementCounter() {
+
         lock.lock();  // Acquire the lock
 
         System.out.print(Thread.currentThread().getName() + " holds this lock : ");
         System.out.println("ContentionQueue length -> " + lock.getQueueLength());
+        System.out.println("Fair?  -> " + lock.isFair());
+        System.out.println("Held by current thread?  -> " + lock.isHeldByCurrentThread());
+
         try {
             counter++;
         } finally {

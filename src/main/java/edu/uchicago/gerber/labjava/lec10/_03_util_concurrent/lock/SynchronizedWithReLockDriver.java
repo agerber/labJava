@@ -60,10 +60,13 @@ public class SynchronizedWithReLockDriver {
     public void deposit(double amount) {
         lock.lock();
 
+        System.out.print(Thread.currentThread().getName() + " holds this lock : ");
+        System.out.println("ContentionQueue length -> " + lock.getQueueLength());
+        System.out.println("Fair?  -> " + lock.isFair());
+        System.out.println("Held by current thread?  -> " + lock.isHeldByCurrentThread());
+
         try {
             balance += amount;
-            System.out.print(Thread.currentThread().getName() + " inside deposit : ");
-            System.out.print("ContentionQueue length -> " + lock.getQueueLength() + " ");
             System.out.println("Deposited " + amount + ". Current balance: " + balance);
         } finally {
             lock.unlock();
@@ -77,8 +80,6 @@ public class SynchronizedWithReLockDriver {
 
         try {
             balance -= amount;
-            System.out.print(Thread.currentThread().getName() + " inside deposit : ");
-            System.out.print("ContentionQueue length -> " + lock.getQueueLength() + " ");
             System.out.println("Withdrew " + amount + ". Current balance: " + balance);
         } finally {
             lock.unlock();
