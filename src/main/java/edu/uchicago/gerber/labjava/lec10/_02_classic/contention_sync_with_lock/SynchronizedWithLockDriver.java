@@ -3,7 +3,10 @@ package edu.uchicago.gerber.labjava.lec10._02_classic.contention_sync_with_lock;
 public class SynchronizedWithLockDriver {
 
     public static void main(String[] args) {
-        BankAccount account = new BankAccount(50); // Initial balance is 50
+
+        final Object lock = new Object();
+
+        BankAccount account = new BankAccount(50, lock); // Initial balance is 50
 
         // Depositor thread
         Thread depositor = new Thread(() -> {
@@ -47,12 +50,14 @@ public class SynchronizedWithLockDriver {
 
  class BankAccount {
 
-    private final Object lock = new Object();
+
 
     private double balance;
+    private Object lock;
 
-    public BankAccount(double balance) {
+    public BankAccount(double balance, Object lock) {
         this.balance = balance;
+        this.lock = lock;
     }
 
     public void deposit(double amount) {
