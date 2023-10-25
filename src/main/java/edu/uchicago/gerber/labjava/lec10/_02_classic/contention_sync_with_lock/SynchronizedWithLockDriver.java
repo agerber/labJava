@@ -50,8 +50,6 @@ public class SynchronizedWithLockDriver {
 
  class BankAccount {
 
-
-
     private double balance;
     private Object lock;
 
