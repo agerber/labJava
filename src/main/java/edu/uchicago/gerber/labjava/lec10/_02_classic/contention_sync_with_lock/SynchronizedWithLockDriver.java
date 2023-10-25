@@ -56,6 +56,7 @@ public class SynchronizedWithLockDriver {
     }
 
     public void deposit(double amount) {
+
         synchronized (lock){
             balance += amount;
         }
