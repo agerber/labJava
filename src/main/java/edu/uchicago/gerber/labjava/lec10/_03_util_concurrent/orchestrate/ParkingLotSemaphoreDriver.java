@@ -6,10 +6,6 @@ import java.util.concurrent.Semaphore;
 public class ParkingLotSemaphoreDriver {
 
     Random random = new Random();
-
-    /*
-    Imagine a parking lot with a limited number of parking spaces. Multiple cars (threads) want to park in this parking lot. Once the parking lot is full, the next car has to wait until a parking spot becomes available.
-     */
     private static final int MAX_PARKING_SPOTS = 5;
     private final Semaphore semaphore = new Semaphore(MAX_PARKING_SPOTS);
 

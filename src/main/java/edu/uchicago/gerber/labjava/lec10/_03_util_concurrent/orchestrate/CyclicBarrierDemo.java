@@ -38,8 +38,6 @@ public class CyclicBarrierDemo {
 
 class Biker implements Runnable
 {
-
-
     private CyclicBarrier cyclicBarrier;
     private Random random;
 
@@ -47,7 +45,6 @@ class Biker implements Runnable
         this.cyclicBarrier = cyclicBarrier;
         random = new Random();
     }
-
     // Code to be executed by each biker
     @Override
     public void run()
@@ -55,7 +52,6 @@ class Biker implements Runnable
         try
         {
             System.out.println(Thread.currentThread().getName() + " has left the start line." );
-
             Thread.sleep(random.nextInt(500));
             //checkPoint.await(10, TimeUnit.SECONDS);
             cyclicBarrier.await();

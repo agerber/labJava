@@ -8,16 +8,14 @@ import java.util.concurrent.TimeUnit;
 public class _01_ExecutorServiceDriver {
 
     public static void main(String[] args) {
-        // Create a thread pool with a fixed number of threads (in this case, 3).
-//        int cores = Runtime.getRuntime().availableProcessors();
-//        System.out.println("Number of available cores: " + cores);
+
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
         //create a random for generating random sleep times.
         Random random = new Random();
 
-        // Submit 9 tasks to the executor.
-        for (int count = 0; count < 9; count++) {
+        // Submit 5 tasks to the executor.
+        for (int count = 0; count < 5; count++) {
             final int taskNumber = count;
             executor.submit(new Runnable() {
                 @Override
