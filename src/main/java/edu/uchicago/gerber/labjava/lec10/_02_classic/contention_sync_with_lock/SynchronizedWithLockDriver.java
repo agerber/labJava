@@ -64,20 +64,12 @@ public class SynchronizedWithLockDriver {
     }
 
     public void withdraw(double amount) {
-        boolean didWithrawal = false;
 
-        synchronized (lock) {
-            if (balance >= amount) {
-                balance -= amount;
-                didWithrawal = true;
-            }
+        synchronized (this){
+            balance += amount;
         }
 
-        if (didWithrawal)
-            System.out.println("Withdrew " + amount + ". Current balance: " + balance);
-        else
-            System.out.println("Not enough funds to withdraw " + amount + ". Current balance: " + balance);
-
+        System.out.println("Withdrew " + amount + ". Current balance: " + balance);
     }
 
     public double getBalance() {
