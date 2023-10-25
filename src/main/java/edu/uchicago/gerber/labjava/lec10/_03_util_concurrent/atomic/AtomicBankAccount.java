@@ -13,10 +13,6 @@ class AtomicDouble {
         bits.set(Double.doubleToRawLongBits(initialValue));
     }
 
-    public String getRawBitsAsString() {
-        return String.valueOf(bits.get());
-    }
-
     public final double get() {
         return Double.longBitsToDouble(bits.get());
     }
@@ -25,6 +21,10 @@ class AtomicDouble {
         bits.set(Double.doubleToRawLongBits(newValue));
     }
 
+
+    public String getRawBitsAsString() {
+        return String.valueOf(bits.get());
+    }
 
     public final boolean compareAndSet(double expect, double update) {
         return bits.compareAndSet(Double.doubleToRawLongBits(expect), Double.doubleToRawLongBits(update));

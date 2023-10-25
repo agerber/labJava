@@ -52,8 +52,6 @@ public class SynchronizedWithReLockDriver {
 
  class BankAccount {
 
-
-
     private double balance;
     private ReentrantLock lock;
 
@@ -62,7 +60,6 @@ public class SynchronizedWithReLockDriver {
         this.lock = lock;
 
     }
-
     public void deposit(double amount) {
         lock.lock();
 
