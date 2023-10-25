@@ -66,7 +66,7 @@ public class SynchronizedWithLockDriver {
 
     public void withdraw(double amount) {
 
-        synchronized (this){
+        synchronized (lock){
             balance += amount;
         }
 
