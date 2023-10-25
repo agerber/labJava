@@ -67,7 +67,7 @@ public class SynchronizedWithLockDriver {
     public void withdraw(double amount) {
 
         synchronized (lock){
-            balance += amount;
+            balance -= amount;
         }
 
         System.out.println("Withdrew " + amount + ". Current balance: " + balance);

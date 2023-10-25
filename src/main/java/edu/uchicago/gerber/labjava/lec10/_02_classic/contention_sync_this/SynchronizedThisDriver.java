@@ -64,7 +64,7 @@ public class SynchronizedThisDriver {
     public void withdraw(double amount) {
 
         synchronized (this){
-            balance += amount;
+            balance -= amount;
         }
 
         System.out.println("Withdrew " + amount + ". Current balance: " + balance);
