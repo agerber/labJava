@@ -1,11 +1,14 @@
 package edu.uchicago.gerber.labjava.lec10._03_util_concurrent.lock;
 
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class SynchronizedWithReLockDriver {
 
     public static void main(String[] args) {
-        BankAccount account = new BankAccount(50); // Initial balance is 50
+
+        final ReentrantLock lock = new ReentrantLock();
+        BankAccount account = new BankAccount(50, lock); // Initial balance is 50
 
         // Depositor thread
         Thread depositor = new Thread(() -> {
@@ -49,12 +52,15 @@ public class SynchronizedWithReLockDriver {
 
  class BankAccount {
 
-     private final ReentrantLock lock = new ReentrantLock(true);
+
 
     private double balance;
+    private ReentrantLock lock;
 
-    public BankAccount(double balance) {
+    public BankAccount(double balance, ReentrantLock lock) {
         this.balance = balance;
+        this.lock = lock;
+
     }
 
     public void deposit(double amount) {
