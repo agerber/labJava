@@ -53,6 +53,7 @@ public class SynchronizedDriver {
     }
 
     public synchronized void deposit(double amount) {
+
         balance += amount;
         System.out.println("Deposited " + amount + ". Current balance: " + balance);
     }
