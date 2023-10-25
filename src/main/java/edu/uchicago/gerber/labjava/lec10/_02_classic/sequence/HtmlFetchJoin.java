@@ -24,11 +24,11 @@ public class HtmlFetchJoin {
        //join does the following things. 1/ sets the main into a wait() state. 2/ adds itself to the waitSet of
           // webRunner. We can set time-out as well
 
-//        try {
-//            webRunner.join(); //webRunner.join(3000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            webRunner.join(); //webRunner.join(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
         System.out.println(webRunner.getReturnValue());

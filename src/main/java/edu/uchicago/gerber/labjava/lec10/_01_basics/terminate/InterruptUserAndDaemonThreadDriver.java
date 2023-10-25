@@ -50,13 +50,13 @@ public class InterruptUserAndDaemonThreadDriver {
         });
 
 
-        //child.setDaemon(true);
+        child.setDaemon(true);
         child.start();
 
         // Let the main-thread sleep for one second
         try {
             Thread.sleep(1000);
-            //child.interrupt();
+            child.interrupt();
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }

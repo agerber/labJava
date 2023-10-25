@@ -4,23 +4,6 @@ public class Hand {
 
     private byte value;
 
-    //local method variables do not escape a Thread's stack
-    //THREAD-SAFE
-    public int add10(int paramValue){
-        final int TEN = 10;
-        return paramValue + TEN;
-    }
-
-    //StringBuilder sb is local and does not escape a Thread's stack
-    //THREAD-SAFE
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("This class is called: ");
-        sb.append(this.getClass().getName());
-        return sb.toString();
-    }
-
     //NOT THREAD-SAFE
     public void hitMe(byte hitValue){
         //possible check-then-act race condition
@@ -62,5 +45,20 @@ public class Hand {
     public static int howManyCards(){
         return NUM_CARDS_IN_DECK;
     }
+    //local method variables do not escape a Thread's stack
+    //THREAD-SAFE
+    public int add10(int paramValue){
+        final int TEN = 10;
+        return paramValue + TEN;
+    }
 
+    //StringBuilder sb is local and does not escape a Thread's stack
+    //THREAD-SAFE
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("This class is called: ");
+        sb.append(this.getClass().getName());
+        return sb.toString();
+    }
 }
