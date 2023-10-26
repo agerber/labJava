@@ -16,12 +16,11 @@ public class ReentrantLockExample {
 
         lock.lock();  // Acquire the lock
 
-        System.out.print(Thread.currentThread().getName() + " holds this lock : ");
-        System.out.println("ContentionQueue length -> " + lock.getQueueLength());
-        System.out.println("Fair?  -> " + lock.isFair());
-        System.out.println("Held by current thread?  -> " + lock.isHeldByCurrentThread());
-
         try {
+            System.out.print(Thread.currentThread().getName() + " holds this lock : ");
+            System.out.println("ContentionQueue length -> " + lock.getQueueLength());
+            System.out.println("Fair?  -> " + lock.isFair());
+            System.out.println("Held by current thread?  -> " + lock.isHeldByCurrentThread());
             counter++;
         } finally {
             lock.unlock();  // Always ensure the lock is unlocked in a finally block
