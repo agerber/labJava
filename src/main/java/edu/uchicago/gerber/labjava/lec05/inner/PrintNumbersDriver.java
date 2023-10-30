@@ -37,6 +37,11 @@ public class PrintNumbersDriver {
                     public double doubleValue() {
                         return 0;
                     }
+
+                    @Override
+                    public String toString() {
+                        return "Gerber's made-up toString";
+                    }
                 },
                 new Number() {
                     @Override

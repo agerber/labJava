@@ -7,10 +7,9 @@ public class UncheckedDriver {
 
     public static void main(String[] args) {
 
-        Double dub = new Double(89.9);
-        dub = null;
+       // Double dub = 89.9;
+        Double dub = null;
         //this will throw NullPointerException
-
         System.out.println(dub.doubleValue());
 
 

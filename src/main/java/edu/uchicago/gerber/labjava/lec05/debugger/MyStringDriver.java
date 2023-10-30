@@ -8,25 +8,42 @@ public class MyStringDriver {
     public static void main(String[] args) {
 
 
-        System.out.println("My name is " + args[0]);
-        System.out.println("My age is " + Integer.parseInt( args[1]));
-
-
-//        Object[] myArray = { new Rectangle(1,2,3,4), 78, 5.4, new Date()};
-//        printMyArray(6, myArray);
-        printMyArray(2, new Rectangle(1,2,3,4),78, 5.4, new Date(), 334, 34354, new Object(), new Date());
-
+        printMyArray(new Rectangle(1,2,3,4),78, 5.4, new Date(), 334, 34354, new Object(), new Date());
 
 
     }
 
-    private static void printMyArray(int n, Object... objects){
+    private static void printMyArray(Object... objects){
 
-        System.out.println(" this is my number: "+ n);
         for (int nC = 0; nC < objects.length; nC++) {
-            System.out.println(objects[nC]);
+            printMe(objects[nC].getClass().getSimpleName());
 
         }
+    }
+
+    private static void printMe(String str){
+        System.out.println(capitalize(str));
+    }
+
+
+    private static String capitalize(String s) {
+        return s.toUpperCase();
+    }
+
+
+    private static String capitalizeRecursively(String s) {
+        // Base case: if the string is empty, return an empty string.
+        if (s.isEmpty()) {
+            return "";
+        }
+        //Recursive case
+
+        // Capitalize the first character.
+        char firstChar = Character.toUpperCase(s.charAt(0));
+        // Recursively capitalize the rest of the string.
+        String restOfString = capitalizeRecursively(s.substring(1));
+        // Concatenate and return the result.
+        return firstChar + restOfString;
     }
 
 
