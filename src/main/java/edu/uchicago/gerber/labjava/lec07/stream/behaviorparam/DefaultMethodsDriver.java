@@ -1,5 +1,7 @@
 package edu.uchicago.gerber.labjava.lec07.stream.behaviorparam;
 
+import java.util.Arrays;
+
 // Define an interface with a default method
 interface Greetable {
     void greet();
@@ -17,6 +19,19 @@ class English implements Greetable {
         System.out.println("Hello!");
     }
 }
+
+class Spanish implements Greetable {
+    @Override
+    public void greet() {
+        System.out.println("¡Hola!");
+    }
+
+    @Override
+    public void sayHello() {
+        System.out.println("¡Hola, este es el método por defecto!");
+    }
+}
+
 
 // Implement the interface and override the default method
 
@@ -38,10 +53,18 @@ public class DefaultMethodsDriver {
         Greetable englishGreetable = new English();
         Greetable chineseGreetable = new Chinese();
 
-        englishGreetable.greet();      // Calls the abstract method implementation
-        englishGreetable.sayHello();   // Calls the default method
+        Greetable[] greetables = {new English(), new Chinese(), new Spanish()};
 
-        chineseGreetable.greet();      // Calls the abstract method implementation
-        chineseGreetable.sayHello();   // Calls the overridden default method
+        Arrays.stream(greetables)
+                        .forEach(g -> g.greet());
+
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+        Arrays.stream(greetables)
+                .forEach(g -> g.sayHello());
+
     }
+
+
+
 }
