@@ -10,9 +10,9 @@ public class FlatMapDriver {
     public static void main(String[] args) {
 
         List<Sport> sports = new ArrayList<>();
-        sports.add(new Sport("Chicago", new String[] {"Sox", "Cubs", "Bears", "Bulls", "Blackhawks"}));
-        sports.add(new Sport("New York", new String[] {"Yankees", "Mets", "Giants", "Jets", "Nets", "Knicks", "Rangers",
-                "Islanders",}));
+        sports.add(new Sport("Chicago", new String[] {"White Sox", "Cubs", "Bears", "Bulls", "Blackhawks"}));
+        sports.add(new Sport("Boston", new String[] {"Red Sox", "Bruins", "Celtics", "Patriots"}));
+        sports.add(new Sport("New York", new String[] {"Yankees", "Mets", "Giants", "Jets", "Nets", "Knicks", "Rangers", "Islanders",}));
 
 
 
@@ -20,7 +20,6 @@ public class FlatMapDriver {
         sports.stream()
                 .map(sport -> sport.getTeams())
                 .flatMap(teams -> Arrays.stream(teams))
-                .filter(team -> !team.startsWith("B"))
                 .forEach(s -> System.out.println(s));
 
 
