@@ -42,6 +42,7 @@ public class MethodReferenceDemo {
         rectangle.setBounds(1,2,3,4);
         System.out.println(rectangle);
 
+        //create some more ArrayLists of strings
         List<String> strings2 = Arrays.asList("Four", "Five");
         List<String> strings3 = Arrays.asList("Six", "Seven", "Eight");
 
