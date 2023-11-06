@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ColorSelect implements ChangeListener {
+public class ColorSelect  {
 
 	private JFrame frame;
 	private JPanel panelColor;
@@ -73,7 +73,12 @@ public class ColorSelect implements ChangeListener {
 //		};
 		
 		sliderRed = new JSlider(0,255,1);
-		sliderRed.addChangeListener(this);
+		sliderRed.addChangeListener(new ChangeListener() {
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				setPanelColor();
+			}
+		});
 
 		panelSlider.add(sliderRed);
 		
@@ -82,7 +87,12 @@ public class ColorSelect implements ChangeListener {
 		
 		sliderGreen = new JSlider(0,255,57);
 
-		sliderGreen.addChangeListener(this);
+		sliderGreen.addChangeListener(new ChangeListener() {
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				setPanelColor();
+			}
+		});
 
 		panelSlider.add(sliderGreen);
 		
@@ -92,7 +102,12 @@ public class ColorSelect implements ChangeListener {
 		
 		sliderBlue = new JSlider(0,255,168);
 
-		sliderBlue.addChangeListener(this);
+		sliderBlue.addChangeListener(new ChangeListener() {
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				setPanelColor();
+			}
+		});
 
 		panelSlider.add(sliderBlue);
 		
@@ -125,13 +140,13 @@ public class ColorSelect implements ChangeListener {
 		
 	}
 
-	@Override
-	public void stateChanged(ChangeEvent e) {
-		setPanelColor();
-
-
-
-	}
+//	@Override
+//	public void stateChanged(ChangeEvent e) {
+//		setPanelColor();
+//
+//
+//
+//	}
 
 
 //	@Override

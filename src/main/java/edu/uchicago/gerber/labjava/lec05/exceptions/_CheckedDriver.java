@@ -14,8 +14,8 @@ public class _CheckedDriver {
         byte[] arrayOfBytes;
         System.out.println("What is the absolute path to your file?");
         String filePath = scanner.nextLine();
-        //arrayOfBytes = Files.readAllBytes(Paths.get(filePath));
-        //System.out.println(new String(arrayOfBytes, Charset.defaultCharset()));
+      //  arrayOfBytes = Files.readAllBytes(Paths.get(filePath));
+      //  System.out.println(new String(arrayOfBytes, Charset.defaultCharset()));
 
 
     }

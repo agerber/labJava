@@ -1,6 +1,8 @@
 package edu.uchicago.gerber.labjava.lec05.inner;
 
 
+import edu.uchicago.gerber.labjava.lec05.reflection.Reflector;
+
 public class PrintNumbersDriver {
 
 
@@ -37,16 +39,11 @@ public class PrintNumbersDriver {
                     public double doubleValue() {
                         return 0;
                     }
-
-                    @Override
-                    public String toString() {
-                        return "Gerber's made-up toString";
-                    }
                 },
                 new Number() {
                     @Override
                     public int intValue() {
-                        return 0;
+                        return 4565465;
                     }
 
                     @Override
@@ -69,7 +66,7 @@ public class PrintNumbersDriver {
 
         for (Number number : numbers) {
             System.out.println(number.getClass().getName() + " : " + number );
-            //Reflector.printClass(number.getClass());
+           // Reflector.printClass(number.getClass());
         }
 
     }

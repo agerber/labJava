@@ -22,7 +22,7 @@ public class MyStringDriver {
     }
 
     private static void printMe(String str){
-        System.out.println(capitalize(str));
+        System.out.println(capitalizeRecursively(str));
     }
 
 

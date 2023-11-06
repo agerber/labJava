@@ -9,7 +9,6 @@ import java.awt.event.MouseEvent;
 public class CircleClicker {
     private JPanel mPanel;
     private JButton btnGo;
-    private JButton button1;
 
 
     //my vars
