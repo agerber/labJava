@@ -2,6 +2,7 @@ package edu.uchicago.gerber.labjava.lec08.bi_entities;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.BiConsumer;
 
 public class BiConsumerDriver {
@@ -24,7 +25,13 @@ public class BiConsumerDriver {
 
 
         //let's assume this value comes from another query at R/T
-        final String message = "Presenting";
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("What is your left-tab message:");
+
+        //let's assume this variable is coming from the user, and therefore we can not set it at compile time.
+        final String message = String.valueOf(in.nextLine());
+
 
         //BiConsumer use case, the second value can not be determined at compile time.
         BiConsumer<Dish, String> dishWithMessage = (dish, s) -> System.out.println(s + ":"  + dish);
