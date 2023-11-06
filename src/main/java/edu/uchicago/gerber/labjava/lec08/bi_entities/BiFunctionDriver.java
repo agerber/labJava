@@ -2,6 +2,7 @@ package edu.uchicago.gerber.labjava.lec08.bi_entities;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.BiFunction;
 
 public class BiFunctionDriver {
@@ -20,21 +21,24 @@ public class BiFunctionDriver {
                         new Dish("salmon", false, 450, Dish.Type.FISH));
 
 
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter your character:");
 
         //let's assume this variable is coming from the user, and therefore we can not set it at compile time.
-        final String someString = "s";
+        final Character someChar = String.valueOf(in.nextLine()).charAt(0);
 
-        //one good use case for BiFunctions is that the second parameter is not known at R/T
-        BiFunction<Dish, String, Dish> dishStringDishBiFunction = (dish, s) ->
+
+        //one good use case for BiFunctions is that the second parameter is not known at R/T, or is passed in.
+        BiFunction<Dish, Character, Dish> dishStringDishBiFunction = (dish, c) ->
         {
-            if (dish.getName().startsWith(s))
+            if (dish.getName().charAt(0) == c)
                return new Dish(dish.getName().toUpperCase(), dish.isVegetarian(), dish.getCalories(), dish.getType());
             else
                 return dish;
         };
 
         menu.stream()
-                .map(d -> dishStringDishBiFunction.apply(d, someString ))
+                .map(d -> dishStringDishBiFunction.apply(d, someChar ))
                 .forEach(d -> System.out.println(d));
 
     }
