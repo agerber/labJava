@@ -26,16 +26,26 @@ public class MethodReferenceDemo {
 
         // Reference to a static method
         strings1.forEach(MethodReferenceDemo::staticMethod);
+        //the lambda expression equivalent
+        strings1.forEach(s -> MethodReferenceDemo.staticMethod(s));
 
         // Reference to an instance method of a particular object
         MethodReferenceDemo demo = new MethodReferenceDemo();
         strings1.forEach(demo::instanceMethod);
+        //the lambda expression equivalent
+        strings1.forEach(s -> demo.instanceMethod(s));
 
         // Reference to an instance method of an arbitrary object of a particular type
         strings1.forEach(String::toLowerCase);
+        //the lambda expression equivalent
+        strings1.forEach(s -> s.toLowerCase());
 
         // Reference to a constructor
         Supplier<Rectangle> supplier = Rectangle::new;
+         //the lambda expression equivalent
+        Supplier<Rectangle> supplier2 = () -> new Rectangle();
+
+
         Rectangle rectangle = supplier.get();
 
         // Use the reference to call the instance method
