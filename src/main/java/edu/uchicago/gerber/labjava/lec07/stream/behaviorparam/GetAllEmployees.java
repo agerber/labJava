@@ -19,6 +19,17 @@ public class GetAllEmployees {
         //the algorithm in terms of how a computer processes data, in terms
         //of conditional and looping logic; think pseudo-code algorithm.
 
+
+
+        //collections are automatically streamable
+//        List<Employee> collection = new ArrayList<>();
+//        collection.add(new Employee("Jack", 28000, 3, 4, 1999));
+//        collection.add(new Employee("John", 88000, 3, 4, 1999));
+//        collection.add(new Employee("Jane", 198000, 3, 4, 1999));
+//        collection.add(new Employee("Jody", 18000, 3, 4, 1999));
+//        collection.add(new Employee("Jason", 21000, 3, 4, 1999));
+
+
         Employee[] employees = {
                 new Employee("Jack", 28000, 3, 4, 1999),
                 new Employee("John", 88000, 3, 4, 1999),
@@ -27,7 +38,6 @@ public class GetAllEmployees {
                 new Employee("Jason", 21000, 3, 4, 1999),
 
         };
-
         System.out.println("&&&&&&&&&&&&&&& with java7 &&&&&&&&&&&&&&&&&&&&&&");
 
 

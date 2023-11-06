@@ -23,20 +23,11 @@ public class SumAllEmployees {
 
       double sumOfSalaries =  employees.stream()
                 //filter out those employees we don't want
-                .filter((Employee employee) -> employee.getName().charAt(0) == 'J'
-                        && employee.getHireDate().compareTo(new Date("1/1/2000")) < 0 )
+                .filter((Employee employee) -> employee.getName().charAt(0) == 'J')
                 .mapToDouble(employee -> employee.getSalary())
                 .sum();
 
-
-        double sumOfSalaries2 =  employees.stream()
-                //filter out those employees we don't want
-                .filter(employee -> employee.getName().charAt(0) == 'J'
-                        && employee.getHireDate().getYear() < 2000 )
-                .mapToDouble(Employee::getSalary)
-                .sum();
-
-
+        System.out.println("The sum of employee salaries is: " + sumOfSalaries);
 
 
 
