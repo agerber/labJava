@@ -3,10 +3,7 @@ package edu.uchicago.gerber.labjava.lec08.lambda.behaviorParam2;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.BiFunction;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.function.Consumer;
+import java.util.function.*;
 import java.util.stream.Collectors;
 
 public class MethodReferenceDemo {
@@ -23,7 +20,7 @@ public class MethodReferenceDemo {
     }
 
     private static boolean isNotEmpty(String str) {
-        return !str.isEmpty();
+        return str.length() > 0;
     }
 
 
@@ -34,12 +31,27 @@ public class MethodReferenceDemo {
 
         List<String> cities = Arrays.asList("Boston", "New York", "", "Shanghai", "London", "Chicago");
 
+        //we can toggle among anonymous inner classes, lambdas, and method references.
 
         cities.stream()
-                .filter(city -> isNotEmpty(city))
-                //.filter(MethodReferenceDemo::isNotEmpty)
-                .map(city -> upperCaseMe(city))
+                .filter(new Predicate<String>() {
+                    @Override
+                    public boolean test(String city) {
+                        return !city.isEmpty();
+                    }
+                })
+//                .filter(city -> !city.isEmpty())
+//                .filter(MethodReferenceDemo::isNotEmpty)
+                .map(new Function<String, String>() {
+                    @Override
+                    public String apply(String city) {
+                        return city.toUpperCase();
+                    }
+                })
+                //.map(city -> city.toUpperCase())
+                //.map(String::toUpperCase)
                 //.map(MethodReferenceDemo::upperCaseMe)
+
                 .sorted(new Comparator<String>() {
                     @Override
                     public int compare(String str1, String str2) {
