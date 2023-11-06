@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.function.Consumer;
 
-public class MyConsumer {
+public class ConsumerExample {
     public static void main(String[] args) {
 
         //A consumer is like a function but it returns void
