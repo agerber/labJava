@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class BehaviorParam1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
         //the problems
@@ -20,31 +20,35 @@ public class BehaviorParam1 {
         final ActionListener actionListener7 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(this.getClass().getSimpleName() + e.getWhen());
+                System.out.println(e.getWhen());
             }
         };
 
-
-
         Timer timer1 = new Timer(1000, actionListener7);
         timer1.start();
-
-
-
 
         //in Java8
         //extract variable
 
         final ActionListener actionListener8 = (e) -> {
-            System.out.println(e.getWhen());
+            System.out.println( e.getWhen());
         };
 
         Timer timer2 = new Timer(1000, actionListener8);
         timer2.start();
 
 
+        // we can also inline it
+        Timer timer3 = new Timer(1000, e -> System.out.println(e.getWhen()));
+        timer3.start();
 
 
+
+
+        while(true){
+            Thread.sleep(20_000);
+            System.out.println("hello");
+        }
 
 
 
