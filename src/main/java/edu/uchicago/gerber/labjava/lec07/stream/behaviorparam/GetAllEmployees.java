@@ -28,49 +28,35 @@ public class GetAllEmployees {
 
         };
 
+        System.out.println("&&&&&&&&&&&&&&& with java7 &&&&&&&&&&&&&&&&&&&&&&");
 
 
-       //Stream<Employee> employeeStream = Arrays.stream(employees);
-
-
-
+        //before streams, we need to use an accumulator to do a filter operation
         List<Employee> accumulator = new ArrayList<>();
         for (Employee employee : employees) {
             if (employee.getSalary() < 30000){
-                accumulator.add(employee);
+                if (employee.getName().charAt(1) == 'a')
+                     accumulator.add(employee);
             }
         }
 
-
-        //let's try to do this with java8
-
-
-
-        List<Employee> poorEmployees =
-                Arrays.stream(employees)
-                .filter(e -> e.getSalary() < 30_000)  //Stream<Employee>
-                .collect(Collectors.toList());
-
-
-
-
-
-        //1/ limit by salary,
-        //2/  convert the collection of Employees to a collection of String
-
-        for (Employee employee : employees) {
-            if (employee.getSalary() < 30_000 && employee.getName().charAt(1) == 'o'){
-                System.out.println(employee.getName().toUpperCase());
-            }
+        for (Employee employee : accumulator) {
+                String upperCaseName = employee.getName().toUpperCase();
+                System.out.println(upperCaseName);
         }
+
+
+        System.out.println("&&&&&&&&&&&&&&& with java8 streams &&&&&&&&&&&&&&&&&&&&&&");
+
 
 
         //in one statement, we use functional programming (declarative) we do the same thing
         Arrays.stream(employees)
                 .filter(employee -> employee.getSalary() < 30_000)  //Stream<Employee>
                 .map(employee -> employee.getName())  //Stream<String>
-                .filter(name -> name.charAt(1) == 'o') //Stream<String>
-                .forEach(name -> System.out.println(name.toUpperCase())); //Terminal operation
+                .filter(name -> name.charAt(1) == 'a')
+                .map(name -> name.toUpperCase())
+                .forEach(name -> System.out.println(name)); //Terminal operation
 
 
 
