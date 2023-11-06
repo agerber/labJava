@@ -6,6 +6,7 @@ import edu.uchicago.gerber.labjava.lec08.Dish;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 public class SortingStreamsDriver {
     public static void main(String[] args) {
@@ -24,11 +25,16 @@ public class SortingStreamsDriver {
 
 
 
-           //both examples here of sorted() and sorted(new Comparable...
-
+           //We can toggle among, anon, lambda, and meth reference
             menu.stream()
-                    .sorted(Comparator.comparing(dish -> dish.getCalories())
-                    )
+                    .sorted(new Comparator<Dish>() {
+                        @Override
+                        public int compare(Dish o1, Dish o2) {
+                           return o1.compareTo(o2);
+                        }
+                    })
+                    //.map(dish -> dish.getName())
+                  //  .map(String::toUpperCase)
                     .forEach(d -> System.out.println(d));
 
         }
