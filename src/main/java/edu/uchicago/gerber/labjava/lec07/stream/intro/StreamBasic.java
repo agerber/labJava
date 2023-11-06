@@ -12,16 +12,17 @@ public class StreamBasic {
 
     public static void main(String...args){
         // Java 7
-        getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
+        getHighCaloricDishesNamesInJava7(Dish.menu);
+
 
         System.out.println("---");
 
         // Java 8
-        getLowCaloricDishesNamesInJava8(Dish.menu).forEach(System.out::println);
+        getHighCaloricDishesNamesInJava8(Dish.menu);
 
     }
 
-    public static List<String> getLowCaloricDishesNamesInJava7(List<Dish> dishes){
+    public static void getHighCaloricDishesNamesInJava7(List<Dish> dishes){
         List<Dish> lowCaloricDishes = new ArrayList<>();
         for(Dish d: dishes){
             if(d.getCalories() > 400){
@@ -37,14 +38,18 @@ public class StreamBasic {
         for(Dish d: lowCaloricDishes){
             lowCaloricDishesName.add(d.getName());
         }
-        return lowCaloricDishesName;
+
+        for (String dish : lowCaloricDishesName) {
+            System.out.println(dish);
+        }
+
     }
 
-    public static List<String> getLowCaloricDishesNamesInJava8(List<Dish> dishes){
-        return dishes.stream()
+    public static void getHighCaloricDishesNamesInJava8(List<Dish> dishes){
+         dishes.stream()
                 .filter(d -> d.getCalories() > 400)
                 .sorted(comparing(d -> d.getCalories()))
                 .map(d -> d.getName())
-                .collect(toList());
+                .forEach(s -> System.out.println(s));
     }
 }
