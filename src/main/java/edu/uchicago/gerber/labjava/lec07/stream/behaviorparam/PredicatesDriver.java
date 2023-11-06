@@ -14,16 +14,22 @@ public class PredicatesDriver {
         myNames.add("Silvester");
         myNames.add("Carl");
 
-        //here I have two predicates
-        Predicate<String> predContainsLetterS = name -> name.toLowerCase().contains("s");
-        Predicate<String> predLongerThan5 = name -> name.length() > 5;
+
+        Predicate<String> longerThan5 = name -> name.length() > 5;
 
         //I have to check each element O(n)
         for (String myName : myNames) {
-            if (predLongerThan5.test(myName) && predContainsLetterS.negate().test(myName)){
+            if (longerThan5.test(myName)){
                 System.out.println(myName);
             }
         }
+
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+        //with streams, I don't iterate the entire collection - it uses internal iteration
+        myNames.stream()
+                .filter(longerThan5)
+                .forEach(s -> System.out.println(s));
 
 
 
