@@ -4,18 +4,18 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ThrowingUpCallStackChecked {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-       // method1();
+      //  method1();
 
-        while (true){
-            try {
-                method1();
-                break;
-            } catch (IOException e) {
-                System.out.print("Sorry, try again. ");
-            }
-        }
+//        while (true){
+//            try {
+//                method1();
+//                break;
+//            } catch (IOException e) {
+//                System.out.print("Sorry, try again. ");
+//            }
+//        }
 
 
     }

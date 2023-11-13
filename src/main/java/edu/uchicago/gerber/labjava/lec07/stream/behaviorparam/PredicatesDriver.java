@@ -28,7 +28,7 @@ public class PredicatesDriver {
 
         //with streams, I don't iterate the entire collection - it uses internal iteration
         myNames.stream()
-                .filter(longerThan5)
+                .filter(name -> name.length() > 5)
                 .forEach(s -> System.out.println(s));
 
 

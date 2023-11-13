@@ -27,8 +27,8 @@ public class CircleClicker {
     public CircleClicker() {
 
 
-        final ActionListener actionListener = e -> System.out.println(e.getWhen());
-        btnGo.addActionListener(actionListener);
+        //final ActionListener actionListener = ;
+        btnGo.addActionListener(e -> System.out.println(e.getWhen()));
 
        // mPanel.addMouseListener;
 

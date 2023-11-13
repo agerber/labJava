@@ -8,7 +8,7 @@ public class ConsumerExample {
     public static void main(String[] args) {
 
         //A consumer is like a function but it returns void
-        Consumer<Rectangle> printRectangle = r -> System.out.println(r);
+        Consumer<Rectangle> printRectangle = r -> System.out.println(r.toString());
 
         Rectangle[] rectangles = {
 

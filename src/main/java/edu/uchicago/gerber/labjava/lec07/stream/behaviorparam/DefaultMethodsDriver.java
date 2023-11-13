@@ -50,8 +50,8 @@ class Chinese implements Greetable {
 
 public class DefaultMethodsDriver {
     public static void main(String[] args) {
-        Greetable englishGreetable = new English();
-        Greetable chineseGreetable = new Chinese();
+//        Greetable englishGreetable = new English();
+//        Greetable chineseGreetable = new Chinese();
 
         Greetable[] greetables = {new English(), new Chinese(), new Spanish()};
 

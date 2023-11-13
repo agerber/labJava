@@ -30,9 +30,8 @@ public class BehaviorParam1 {
         //in Java8
         //extract variable
 
-        final ActionListener actionListener8 = (e) -> {
-            System.out.println( e.getWhen());
-        };
+        final ActionListener actionListener8 = (evt) ->  System.out.println( evt.getWhen());
+
 
         Timer timer2 = new Timer(1000, actionListener8);
         timer2.start();

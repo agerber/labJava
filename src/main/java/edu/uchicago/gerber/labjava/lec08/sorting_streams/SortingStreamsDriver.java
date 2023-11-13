@@ -27,10 +27,18 @@ public class SortingStreamsDriver {
 
            //We can toggle among, anon, lambda, and meth reference
             menu.stream()
+
                     .sorted(new Comparator<Dish>() {
                         @Override
                         public int compare(Dish o1, Dish o2) {
                            return o1.compareTo(o2);
+                        }
+                    })
+                    .map(d -> d.getName())
+                    .map(new Function<String, String>() {
+                        @Override
+                        public String apply(String s) {
+                            return s.toUpperCase();
                         }
                     })
                     //.map(dish -> dish.getName())

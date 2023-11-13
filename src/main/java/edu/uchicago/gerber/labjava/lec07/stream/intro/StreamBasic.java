@@ -1,9 +1,6 @@
 package edu.uchicago.gerber.labjava.lec07.stream.intro;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
@@ -47,9 +44,10 @@ public class StreamBasic {
 
     public static void getHighCaloricDishesNamesInJava8(List<Dish> dishes){
          dishes.stream()
-                .filter(d -> d.getCalories() > 400)
-                .sorted(comparing(d -> d.getCalories()))
-                .map(d -> d.getName())
-                .forEach(s -> System.out.println(s));
+                .filter(d -> d.getCalories() > 400)  //intermediate
+                .sorted(comparing(d -> d.getCalories())) //intermediate
+                .map(d -> d.getName())//intermediate
+                .forEach(s -> System.out.println(s)); //terminal
+
     }
 }
