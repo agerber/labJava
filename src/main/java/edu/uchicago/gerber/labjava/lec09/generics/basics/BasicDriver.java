@@ -7,26 +7,10 @@ public class BasicDriver {
         GenericClass<Integer> iOb = new GenericClass<>(88);
         iOb.showType();
 
-//        List<Pair<Integer, String>> list = new ArrayList<>();
-//        list.add(new Pair<>(60101, "Chicago"));
-//        list.add(new Pair<>(94562, "San Francisco"));
-//        list.add(new Pair<>(12183, "Boston"));
-//
-//        for (Pair<Integer, String> integerStringPair : list) {
-//            System.out.println(integerStringPair);
-//        }
-
-//
-//        // no cast is needed.
-//        int v = iOb.getOb();
-//        System.out.println("value: " + v);
-//
 //        // Create a Gen object for Strings.
         GenericClass<String> strOb = new GenericClass<>("Generics Test");
         strOb.showType();
-//
-//        String str = strOb.getOb();
-//        System.out.println("value: " + str);
+
     }
 }
 
