@@ -15,6 +15,8 @@ public class StreamTerminalOperationsDemo {
         System.out.println("Printing each element in the stream:");
         strings.stream().forEach(System.out::println);
 
+
+
         // collect - collect the elements of the stream into a list
         List<String> filteredList = strings.stream()
                 .filter(s -> s.contains("a"))
@@ -34,18 +36,23 @@ public class StreamTerminalOperationsDemo {
         long count = strings.stream().filter(s -> s.contains("a")).count();
         System.out.println("Number of strings that contain 'a': " + count);
 
-        // reduce - perform a reduction on the elements of the stream to produce a single result
-        Optional<String> concatenatedString = strings.stream().reduce((a, b) -> a + "-" + b);
-        concatenatedString.ifPresent(s -> System.out.println("Concatenated String: " + s));
+
+        // findFirst - find the first element of the stream
+        Optional<String> firstString = strings.stream().findFirst();
+        System.out.println("First string in the list: " + firstString.orElse("None"));
+
 
         // reduce - sum all the values
         Stream<Integer> numbers = Stream.of(1,2,3,4,5);
         Optional<Integer> sum = numbers.reduce(Integer::sum);
         System.out.println(sum.orElse(0));
 
-        // findFirst - find the first element of the stream
-        Optional<String> firstString = strings.stream().findFirst();
-        System.out.println("First string in the list: " + firstString.orElse("None"));
+
+        // reduce - perform a reduction on the elements of the stream to produce a single result
+        Optional<String> concatenatedString = strings.stream().reduce((a, b) -> a + "-" + b);
+        concatenatedString.ifPresent(s -> System.out.println("Concatenated String: " + s));
+
+
 
 
 
