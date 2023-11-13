@@ -38,6 +38,7 @@ public class GroupByDriver {
         menu.stream()
                 .filter(predicateMoreThan400)
                 .map(functionSuperSizeMe)
+                //returns a map of KEY : List<key>. This is effectively the opposite of flatmap
                 .collect(Collectors.groupingBy(dish -> dish.getType()))
                 .forEach(printMe);
 
