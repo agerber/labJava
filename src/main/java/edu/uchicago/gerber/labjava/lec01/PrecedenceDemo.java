@@ -22,8 +22,7 @@ public class PrecedenceDemo {
         System.out.println(a < b && b < c);  // Output: true
         System.out.println(true && true);  // Output: true
 
-        // Additive vs Shift
-        System.out.println(a + b << 2);  // Output: 64 (6+10 = 16, 16<<2)
+
 
 
 

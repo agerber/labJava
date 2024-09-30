@@ -5,8 +5,10 @@ public class CountToTenDriver {
 
     public static void main(String[] args) {
 
-        for (int nCounter = 0; nCounter < 10; nCounter++) {
-            System.out.println(nCounter);
+        int count = 10;
+
+        while (count-- > 0) {
+            System.out.println(count);
         }
 
     }

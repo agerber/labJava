@@ -15,10 +15,10 @@ public class PromotionAndCastingPrimitives {
 		//there are two operands of different primtive types; the smaller precision operand will get promoted to larger precision operand
 		double dResult = dOperand1 / nOperand2; //here nOperand2 is promoted to double
 
-		//integer division - will truncate, not round! The result will be 2
+		//integer division - will truncate, not round! The result will be 2, not 2.875
 		int nResultIntDivision =  23/ 8;
 
-
+		System.out.println( "My byte" +  (byte)130  ); //watch out!!
 
 		//the primitive result on the left of the assignment operator is of greater precision than the result of the right expression
 		//in this case, the result of integer division is 2.66666 trucated to 2, then the result is assigned as (2.0)
