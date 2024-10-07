@@ -1,5 +1,7 @@
 package edu.uchicago.gerber.labjava.lec02.this_new_keywords;
 
+import java.util.ArrayList;
+
 public class NewAndThisDriver {
     public static void main(String[] args) {
 
@@ -25,8 +27,60 @@ public class NewAndThisDriver {
         System.out.println(person1);
         System.out.println(person2);
         System.out.println(person3);
+
+        /////////////////////////////////////////
+        // exceptions to using the new keyword to instantiate
+        /////////////////////////////////////////
+        String str1 = new String("me");
+        //this is a shortcut, but we are still constructing as above.
+        String str2 = "me";
+
+        printPair(str1, str2);
+
+
+        ///////////////////////////////////////////
+        double[] vals1 = new double[3];
+        vals1[0] = 23.1;
+        vals1[1] = 19.2;
+        vals1[2] = 21.3;
+        //this is a shortcut, but we are still constructing like above
+        double[] vals2 = {23.1, 19.2, 21.3};
+
+        printPair(vals1, vals2);
+
+        ///////////////////////////////////////////
+        Integer myInt1 = new Integer(14);
+        //this is a shortcut, but we are still constructing like above
+        Integer myInt2 = 14;
+
+        printPair(myInt1, myInt2);
+
+        ///////////////////////////////////////////
+
+        ArrayList<Integer> nums = new ArrayList<>();
+        nums.add(new Integer(101));
+        //Auto-Boxing
+        nums.add(102);
+
+        System.out.println("Iterating over this ArrayList of Integer objects");
+        for (Integer num : nums) {
+            System.out.println(num.getClass().getSimpleName() + " : " + num.intValue());
+        }
+
+        //Auto-UnBoxing
+        int primitiveValue101 = nums.get(0);
+        System.out.println("Auto-UnBoxing");
+        System.out.println("This is a primitive int: " + primitiveValue101);
+
+
+    }
+
+    private static void printPair(Object obj1, Object obj2){
+        System.out.println(obj1 + " : " + obj2);
     }
 }
+
+
 
 class Person {
     private String name;
