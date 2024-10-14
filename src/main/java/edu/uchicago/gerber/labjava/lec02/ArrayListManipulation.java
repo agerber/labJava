@@ -26,7 +26,17 @@ public class ArrayListManipulation {
 		strNames.add("Jan");
 		strNames.add("Cindy");
 
+		strNames.add("Carol");
+		strNames.add("Marcia");
+		strNames.add("Jan");
+		strNames.add("Cindy");
 
+		strNames.add("Carol");
+		strNames.add("Marcia");  //capacity
+
+
+		strNames.add("Jan");
+		strNames.add("Cindy");
 
 
 		

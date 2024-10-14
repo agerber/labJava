@@ -3,7 +3,7 @@ package edu.uchicago.gerber.labjava.lec02;
 
 import java.awt.Rectangle;
 import java.util.Date;
-
+import java.awt.Rectangle;
 
 public class StringManipulation {
 
@@ -30,9 +30,42 @@ public class StringManipulation {
 		System.out.println(strResult1);
 
 
+
+
 		//Ox32BC
 		String strOne = "MPCS";
+		//copy the memory address located in strOne to strTwo, effectively pointing strTwo to same object.
 		String strTwo = strOne;
+
+		//should print TRUE
+		System.out.println("strOne and strTwo have same memory address?");
+		System.out.println(strOne == strTwo);
+
+		//attempting to mutate the object.
+		//strOne.toLowerCase();
+		//since Strings are not mutable, the proper way to do this is like so:
+		strOne = strOne.toLowerCase();
+		System.out.println("Printing strOne and then strTwo");
+		System.out.println(strOne);
+		System.out.println(strTwo);
+
+		System.out.println(strOne.compareTo(strTwo));
+
+
+		//let's try the same with Rectanmgle
+		Rectangle rec1 = new Rectangle(1,2,3,4);
+		Rectangle rec2 = rec1;
+
+		//should print TRUE
+		System.out.println("rec1 and rec2 have same memory address?");
+		System.out.println(rec1 == rec2);
+
+		//attempting to mutate the object.
+		rec1.setLocation(30, 90);
+		System.out.println("Printing rec1 and then rec2");
+		System.out.println(rec1);
+		System.out.println(rec2);
+
 
 		
 		String strState = "Mississippi";

@@ -11,8 +11,10 @@ public class NewAndThisDriver {
 
         //'this' keyword provides two things:
         //1. provides a way to call other constructors from within constructors
-        //2. provides a way to get a reference to the object on the heap at runtime, which is NOT know to us at
+        //2. a way to access instances members.
+        //3. provides a way to get a reference to the object on the heap at runtime, which is NOT know to us at
         // compile-time.
+
 
 
         //one-arg consturctor
@@ -72,6 +74,9 @@ public class NewAndThisDriver {
         System.out.println("Auto-UnBoxing");
         System.out.println("This is a primitive int: " + primitiveValue101);
 
+        //returns the doubled-object
+        System.out.println(new Person("Adam", 50).doubleAgeOfPerson());
+
 
     }
 
@@ -106,10 +111,16 @@ class Person {
         this.age = age;
     }
 
-    // Method that creates and returns a new instance of Person with the same details
-    public Person createCopy() {
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Method that mutates the existing object.
+    public Person doubleAgeOfPerson() {
         // Use of 'new' to create a new object
-        return new Person(this.name, this.age);
+        setAge(this.age * 2);
+        return this;
     }
 
     @Override

@@ -1,14 +1,14 @@
 package edu.uchicago.gerber.labjava.lec02.packages;
 
 // Importing Date from java.util package
-import java.util.Date;
+//import java.util.Date;
 
 
 public class PackagesDemo  {
 
     public static void main(String[] args) {
         // Using Date from java.util package
-        Date utilDate = new Date();
+        java.util.Date utilDate = new java.util.Date();
         System.out.println("java.util.Date: " + utilDate);
 
         // Using Date from java.sql package using fully-qualified name

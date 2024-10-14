@@ -13,6 +13,7 @@ public class AnonObjectsDemo {
         // Populate an array with anonymous Rectangle objects
         Rectangle[] rectanglesArray = new Rectangle[size];
         for (int i = 0; i < size; i++) {
+            //Rectangle rec1 = new Rectangle(1,2,3,4);
             rectanglesArray[i] = new Rectangle(i, i, i + 1, i + 1);
             System.out.println("Array Rectangle " + i + ": " + rectanglesArray[i]);
         }

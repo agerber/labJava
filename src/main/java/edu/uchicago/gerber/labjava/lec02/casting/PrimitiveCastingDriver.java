@@ -65,6 +65,7 @@ public class PrimitiveCastingDriver {
 
     }
 
+
     //http://stackoverflow.com/questions/5263187/print-an-integer-in-binary-format-in-java
     private static String intToString(long number, int bitsInType) {
         StringBuilder result = new StringBuilder();
