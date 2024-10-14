@@ -24,16 +24,25 @@ class BankAccount {
     private String accountName;
     private double balance;
 
-    //static member to keep track of accounts (Academic only).
-    //there are better ways to do this, for example, using a singleton.
-    //leave the .class-object alone, it's there to load the meta-data of the class pior to runtime
-
+    //static member to keep track of accounts
     public static int numberOfAccounts;
+
+    //constant -- this is a good use of the .class object
+    public static double OVERDRAFT_FEE = 50.00;
 
 
     public BankAccount(String accountName, double balance) {
         this.accountName = accountName;
         this.balance = balance;
         numberOfAccounts++;
+    }
+
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "accountName='" + accountName + '\'' +
+                ", balance=" + balance +
+                '}' + "Overdraft Fee is " + OVERDRAFT_FEE;
     }
 }
