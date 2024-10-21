@@ -7,7 +7,7 @@ public class OchrestraSinging {
 
     public static void main(String[] args) {
 
-        List<Singable> singers = new LinkedList<>();
+        LinkedList<Singable> singers = new LinkedList<>();
 
         singers.add(new Bear());
         singers.add(new Frog());
@@ -17,6 +17,5 @@ public class OchrestraSinging {
         for (Singable singer : singers) {
             System.out.println( singer.dance() + "\n" + singer.sing());
         }
-
     }
 }

@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec04._simplepoly;
+package edu.uchicago.gerber.labjava.lec03._simplepoly;
 
 import java.util.ArrayList;
 import java.awt.Rectangle;
