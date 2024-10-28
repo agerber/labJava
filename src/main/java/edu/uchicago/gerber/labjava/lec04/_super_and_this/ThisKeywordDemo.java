@@ -6,10 +6,10 @@ public class ThisKeywordDemo {
         System.out.println("----- Creating an instance of MyClass -----");
         Instructor instructor1 = new Instructor("Adam", 3);
         Instructor instructor2 = new Instructor("Charlie", 2);
-        Instructor instructor3 = new Instructor("Mia", 5);
+        Instructor instructor3 = new Instructor("Bobby", 5);
 
         instructor3
-                .setNameChain("Mi Hyun")
+                .setNameChain("Robert")
                 .setNumChain(6);
 
         System.out.println(instructor1);

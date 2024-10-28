@@ -9,7 +9,8 @@ public class Driver {
     public static void main(String[] args) {
 
         //programming to interfaces
-        List<String> list = new LinkedList<>();
+        List<String> list = new ArrayList<>();
+        //List<String> list = new ArrayList<>();
 
         list.add("United States");
         list.add("Lithuania");

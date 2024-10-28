@@ -1,6 +1,6 @@
 package edu.uchicago.gerber.labjava.lec03._simplepoly;
 
-public class MyClass    {
+public class MyClass  {
 
 
 	@Override
@@ -9,6 +9,6 @@ public class MyClass    {
 		return "Gerber's made-up class called MyClass";
 	}
 
-	
-	
+
+
 }

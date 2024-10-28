@@ -23,7 +23,8 @@ public class _3_PolySimpleInheritance {
 		objObjects.add(new MyClass());
 
 		for (Object objObject : objObjects) {
-			System.out.println(objObject.toString());
+			System.out.print("Underlying object type: " + objObject.getClass());
+			System.out.println(" : " + objObject);
 		}
 
 		System.out.println("-----------------------------------");
@@ -45,7 +46,7 @@ public class _3_PolySimpleInheritance {
 		for (Number numTemp : numTemps) {
 			Class clazz = numTemp.getClass();
 			String clazzName = clazz.getSimpleName();
-			System.out.println(clazzName + " : " + numTemp.toString());
+			System.out.println(clazzName + " : " + numTemp);
 
 		}
 

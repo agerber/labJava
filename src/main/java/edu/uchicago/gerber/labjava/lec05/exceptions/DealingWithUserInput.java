@@ -7,18 +7,22 @@ public class DealingWithUserInput {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        int num;
+        int num = -999;
+        String input = "";
 
         while (true){
-            System.out.println("Enter your integer:");
+            System.out.println("Enter your integer or exit to quit:");
             try {
-                num =  Integer.parseInt(in.nextLine());
+                input = in.nextLine();
+                num =  Integer.parseInt(input);
                 break;
             } catch (NumberFormatException e) {
-                System.out.print("Sorry, try again. ");
+                if (input.equalsIgnoreCase("exit")) break;
+                System.out.println("Sorry, try again. " + e.getMessage());
             }
         }
 
+        if (num == -999) return;
         System.out.println("Well done, " + num + " is an integer." );
 
 

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ThrowingUpCallStackChecked {
     public static void main(String[] args) throws IOException {
 
-      //  method1();
+        method1();
 
 //        while (true){
 //            try {
