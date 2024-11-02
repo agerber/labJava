@@ -6,13 +6,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
+///Users/macbook/dev/labJava/target/classes/alice.txt
 public class CheckedDriver {
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         byte[] arrayOfBytes;
-
 
         while (true) {
 

@@ -1,0 +1,22 @@
+prompt1:
+create an object-oriented tetris game in java based on this description:
+
+tetris is a game where the player is confronted with falling shapes called tetriminos. A tetrimino  has seven
+variations; S, L, O, Z, J, I, and T.  See http://en.wikipedia.org/wiki/Tetris for exact configurations.
+
+Tetriminos float down from the top of the gaming-environment. The starting column is random, but the tetrimino always starts at top row and floats downward propelled by a gravitational-force that increases with time. Likewise, the points awarded increase as the speed increases. The player can also see which tetrimino is on-deck, allowing him/her to place the current-tetrimino strategically.
+
+The player may rotate the tetrimino 90 degrees clock-wise while it is still floating, so long as the rotation does not cause the tetrimino to be out-of-bounds. The player may also laterally-move the tetrimino left or right. And finally, the player may force the tetrimino to free-fall.
+
+When the bottom of a tetrimino touches either the bottom of the gaming-environment or the top of the wall made of previously accumulated tetrimino blocks, then its blocks too become immediately integrated into the wall.
+
+This integration triggers a series of events which are described below:
+If the integration results in a wall with complete-rows, then those rows dissappear and the player is awarded points. A high-scoring "tetris" occurs when "I" is integrated vertically into a wall where 4 rows become complete --and then dissappear. Progressively smaller awards are provided for 3, 2, and 1 row completions.
+
+Once the integration occurs (and any row completions are finished) the on-deck tetrimino become the current tetrimino and a new tetrimino is randomly generated to be the on-deck one. The now current tetrimino begins its descent, and the cycle continues until the wall reaches 90% of the height of the gaming environment, at which point the game is over.
+
+
+prompt2:
+regenerate the game using Swing and double-buffered images to avoid flicker.
+
+

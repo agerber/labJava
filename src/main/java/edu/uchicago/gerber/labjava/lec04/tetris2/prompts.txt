@@ -1,0 +1,7 @@
+
+prompt3:
+given the above swing tetris game, regenerate the tetriminos and their behavior given the attached image.
+(see image called tetriminos.png).
+
+prompt4:
+add an element on the jpanel which shows the nextTetrimino e.g. the one on-deck.

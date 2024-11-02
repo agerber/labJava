@@ -14,6 +14,22 @@ public class PolymorphismDemo {
         executor.submit(new CountingTask());
         executor.submit(new SumTask());
         executor.submit(new GoodbyeTask());
+        executor.submit(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("hello from anon inner class");
+                System.out.println(this.getClass());
+            }
+        });
+
+
+//        executor.submit(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("helllo from anon");
+//               // System.out.println(this.getClass());
+//            }
+//        });
 
         // Shutdown the executor
         executor.shutdown();
@@ -24,6 +40,7 @@ public class PolymorphismDemo {
         @Override
         public void run() {
             System.out.println("Hello");
+            System.out.println(this.getClass());
         }
     }
 
