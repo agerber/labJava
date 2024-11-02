@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec04.tetris;
+package edu.uchicago.gerber.labjava.lec06.tetris;
 
 import javax.swing.*;
 import java.awt.*;
