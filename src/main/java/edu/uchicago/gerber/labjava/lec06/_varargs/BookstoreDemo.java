@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.labjava.lec04._varargs;
+package edu.uchicago.gerber.labjava.lec06._varargs;
 
 import java.util.Arrays;
 
