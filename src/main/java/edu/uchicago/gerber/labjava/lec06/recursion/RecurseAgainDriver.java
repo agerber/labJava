@@ -5,7 +5,7 @@ public class RecurseAgainDriver {
     public static void main(String[] args) {
 
 
-       // System.out.println(reverso("abcdefghijklmnopqrstuvwxyz"));
+        System.out.println(reverso("abcdefghijklmnopqrstuvwxyz"));
 
         System.out.println(yodaString("speak no evil jedi"));
         System.out.println(yodaString("wars not make one great"));
@@ -51,23 +51,23 @@ public class RecurseAgainDriver {
 
 
     private static int factorialIterative(int factor){
-        int nReturn = 1;
+        int ret = 1;
         for (int nC = factor; nC > 1; nC--) {
-            nReturn *= nC;
+            ret *= nC;
         }
-        return  nReturn;
+        return  ret;
     }
 
 
     private static String replaceChar(String sentence, char cOrig, char cNew){
 
         //base-case
-        if (sentence == null || sentence.length() == 0){
+        if (sentence == null){
             throw  new RuntimeException("Sorry, your sentence must contain some data");
         }
 
         //base case
-        if (sentence.length() == 1){
+        if (sentence.isEmpty()){
             return sentence;
         }
         //recursive case

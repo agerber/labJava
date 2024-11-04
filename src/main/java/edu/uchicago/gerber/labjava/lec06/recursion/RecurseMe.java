@@ -14,11 +14,11 @@ public class RecurseMe {
         if (factor < 1){
             throw  new ArithmeticException("not good!");
         }
-        //base(s)
+        //base-case(s)
         else if(factor == 1){
             return  factor;
         }
-        ////recursive-case(s) must converge towards the b
+        ////recursive-case(s) must converge towards the base
         else {
             return factor * facorial(factor-1);
         }
@@ -29,20 +29,19 @@ public class RecurseMe {
     private static String replaceChar(String sentence, char cOrig, char cNew){
 
         //base-case
-        if (sentence == null || sentence.length() == 0){
+        if (sentence == null){
             throw  new RuntimeException("Sorry, your sentence must contain some data");
         }
 
-        //base-case
-        if (sentence.length() == 1){
-            return  sentence;
+        //base case
+        if (sentence.isEmpty()){
+            return sentence;
         }
-
-        //recursive-case
+        //recursive case
         else {
             char cFirst = sentence.charAt(0);
-            cFirst = (cFirst == cOrig) ? cNew : cFirst;
-            return cFirst +replaceChar(sentence.substring(1), cOrig, cNew);
+            cFirst =  (cFirst == cOrig) ? cNew : cFirst;
+            return cFirst + replaceChar(sentence.substring(1), cOrig, cNew);
         }
     }
 }
