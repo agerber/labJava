@@ -9,8 +9,7 @@ public class SpentStreams2 {
         Stream<String> stream = Stream.of("a", "b", "c", "d");
 
         // Use the Stream in a terminal operation: forEach
-        stream
-                .forEach(x -> System.out.println(x));
+        stream.forEach(x -> System.out.println(x));
 
         // Try to use the consumed Stream again
         try {

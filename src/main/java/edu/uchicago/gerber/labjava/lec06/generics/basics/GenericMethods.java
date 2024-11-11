@@ -35,7 +35,7 @@ public class GenericMethods {
     }
 
     //convert an array to a list generically
-    private static <T> List<T> fromArrayToList(T[] a) {
+    private static <U> List<U> fromArrayToList(U[] a) {
         return Arrays.stream(a).collect(Collectors.toList());
     }
 

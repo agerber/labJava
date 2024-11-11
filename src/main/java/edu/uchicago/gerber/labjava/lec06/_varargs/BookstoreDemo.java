@@ -7,8 +7,10 @@ public class BookstoreDemo {
     public static void main(String... args) {
         BookstoreDemo demo = new BookstoreDemo();
 
+        String[] myTags = new String[] {"Adventure", "Fantasy"};
+        
         // Creating books with title, author, and tags
-        demo.createBook("The Great Adventure", "John Doe", "Adventure", "Fantasy");
+        demo.createBook("The Great Adventure", "John Doe", myTags);
         demo.createBook("History of Java", "Jane Smith", "Programming", "Java", "History");
         demo.createBook("Cosmic Journey", "Alice Johnson", "Space", "Mystery", "Sci-Fi");
         demo.createBook("No Tags Book", "Robert Brown");
@@ -23,6 +25,7 @@ public class BookstoreDemo {
             this.title = title;
             this.author = author;
             this.tags = tags;
+
         }
 
         @Override

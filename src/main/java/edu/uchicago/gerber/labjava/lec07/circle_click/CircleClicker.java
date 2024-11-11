@@ -2,10 +2,7 @@ package edu.uchicago.gerber.labjava.lec07.circle_click;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class CircleClicker {
     private JPanel mPanel;
@@ -24,13 +21,18 @@ public class CircleClicker {
         frame.setSize(new Dimension(800, 600));
     }
 
+    //best to drag from bottom-right to top-left
     public CircleClicker() {
 
 
-        //final ActionListener actionListener = ;
-        btnGo.addActionListener(e -> System.out.println(e.getWhen()));
 
-       // mPanel.addMouseListener;
+        btnGo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(CircleClicker.this.getClass());
+            }
+        });
+
 
         mPanel.addMouseListener(new MouseListener() {
             @Override
