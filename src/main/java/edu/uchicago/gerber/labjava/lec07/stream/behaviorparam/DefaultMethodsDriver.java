@@ -20,17 +20,6 @@ class English implements Greetable {
     }
 }
 
-class Spanish implements Greetable {
-    @Override
-    public void greet() {
-        System.out.println("¡Hola!");
-    }
-
-    @Override
-    public void sayHello() {
-        System.out.println("¡Hola, este es el método por defecto!");
-    }
-}
 
 
 // Implement the interface and override the default method
@@ -50,18 +39,16 @@ class Chinese implements Greetable {
 
 public class DefaultMethodsDriver {
     public static void main(String[] args) {
-//        Greetable englishGreetable = new English();
-//        Greetable chineseGreetable = new Chinese();
 
-        Greetable[] greetables = {new English(), new Chinese(), new Spanish()};
+        Greetable[] greetables = {new English(), new Chinese()};
 
         Arrays.stream(greetables)
-                        .forEach(g -> g.greet());
+                        .forEach(g -> {
+                            g.greet();
+                            g.sayHello();
+                        });
 
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-
-        Arrays.stream(greetables)
-                .forEach(g -> g.sayHello());
+ ;
 
     }
 

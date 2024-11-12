@@ -1,6 +1,7 @@
 package edu.uchicago.gerber.labjava.lec08.lambda.behaviorParam2;
 
 
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class MethodReferences {
@@ -33,6 +34,9 @@ public class MethodReferences {
     }
 
 
+    private static Integer apply(String str) {
+        return new Integer(str.length());
+    }
 }
 
 class Employee {
